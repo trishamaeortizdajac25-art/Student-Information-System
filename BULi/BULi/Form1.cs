@@ -12,9 +12,34 @@ namespace BULi
 {
     public partial class Form1 : Form
     {
+        public static Form1 Instance{get;private set;}
+        private Form currentChildForm = null;
         public Form1()
         {
             InitializeComponent();
+            Instance = this;
+            OpenChildForm(new StarterSignUp());
+
         }
+
+        // display ng forms sa main panel(pnlMain)
+        public void OpenChildForm(Form childForm)
+        {
+            if (currentChildForm != null)
+                currentChildForm.Close();
+
+            currentChildForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle= FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+
+            pnlMain.Controls.Clear();
+            pnlMain.Controls.Add(childForm);
+            pnlMain.Tag = childForm;
+
+            childForm.BringToFront();
+            childForm.Show();
+        }
+
     }
 }
