@@ -17,9 +17,9 @@ namespace BULi
             InitializeComponent();
         }
 
-        private void btnSignUp_Click(object sender, EventArgs e)
+        private void btnSignIn_Click(object sender, EventArgs e)
         {
-            Form1.Instance.OpenChildForm(new HomePage());
+            SIS.Instance.OpenChildForm(new HomePage());
         }
     }
 }

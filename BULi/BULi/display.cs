@@ -21,9 +21,38 @@ namespace BULi
         public display(string yearLevel) : this()
         {
             yearLvl = yearLevel;
-            lblYearTitle.Text = $"{yearLvl} Students";
+            lblYearTitle.Text = $"{yearLvl} Student Register";
         }
 
 
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lnbReturn_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            SIS.Instance.OpenChildForm(new HomePage());
+        }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace BULi
 {
-    partial class Form1
+    partial class SIS
     {
         /// <summary>
         /// Required designer variable.
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SIS));
             this.pnlMain = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
@@ -41,16 +42,18 @@
             this.pnlMain.Size = new System.Drawing.Size(982, 563);
             this.pnlMain.TabIndex = 1;
             // 
-            // Form1
+            // SIS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(982, 563);
             this.Controls.Add(this.pnlMain);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(1000, 500);
-            this.Name = "Form1";
+            this.Name = "SIS";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Student Information System";
             this.ResumeLayout(false);
             this.PerformLayout();
 

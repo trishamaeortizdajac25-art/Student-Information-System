@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace BULi
 {
-    public partial class Form1 : Form
+    public partial class SIS : Form
     {
-        public static Form1 Instance{get;private set;}
+        public static SIS Instance{get;private set;}
         private Form currentChildForm = null;
-        public Form1()
+        public SIS()
         {
             InitializeComponent();
             Instance = this;

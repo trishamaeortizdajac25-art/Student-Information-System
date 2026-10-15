@@ -19,12 +19,12 @@ namespace BULi
 
         private void btnSignUpRDT_Click(object sender, EventArgs e)
         {
-            Form1.Instance.OpenChildForm(new SignIn());
+            SIS.Instance.OpenChildForm(new SignIn());
         }
 
         private void btnSignUp_Click(object sender, EventArgs e)
         {
-            Form1.Instance.OpenChildForm(new HomePage());
+            SIS.Instance.OpenChildForm(new HomePage());
         }
     }
 }

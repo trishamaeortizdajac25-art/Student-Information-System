@@ -23,26 +23,26 @@ namespace BULi
 
         private void pnlFreshie_Click(object sender, EventArgs e)
         {
-            Form1.Instance.OpenChildForm(new display());
-            Form1.Instance.OpenChildForm(new display("Freshmen"));
+            SIS.Instance.OpenChildForm(new display());
+            SIS.Instance.OpenChildForm(new display("Freshmen"));
         }
 
         private void pnlSophomore_Click(object sender, EventArgs e)
         {
-            Form1.Instance.OpenChildForm(new display());
-            Form1.Instance.OpenChildForm(new display("Sophomore"));
+            SIS.Instance.OpenChildForm(new display());
+            SIS.Instance.OpenChildForm(new display("Sophomore"));
         }
 
         private void pnlJunior_Click(object sender, EventArgs e)
         {
-            Form1.Instance.OpenChildForm(new display());
-            Form1.Instance.OpenChildForm(new display("Junior"));
+            SIS.Instance.OpenChildForm(new display());
+            SIS.Instance.OpenChildForm(new display("Junior"));
         }
 
         private void pnlSenior_Click(object sender, EventArgs e)
         {
-            Form1.Instance.OpenChildForm(new display());
-            Form1.Instance.OpenChildForm(new display("Senior"));
+            SIS.Instance.OpenChildForm(new display());
+            SIS.Instance.OpenChildForm(new display("Senior"));
         }
 
         private void btnColorScheme_Click(object sender, EventArgs e)
@@ -73,6 +73,26 @@ namespace BULi
                 timer1.Stop();
                 this.BackColor = targetColor;
             }
+        }
+
+        private void pnlFreshie_MouseHover(object sender, EventArgs e)
+        {
+            pnlFreshie.BackColor=Color.FromArgb(238, 240, 243);
+        }
+
+        private void pnlSophomore_MouseHover(object sender, EventArgs e)
+        {
+            pnlSophomore.BackColor = Color.FromArgb(238, 240, 243);
+        }
+
+        private void pnlJunior_MouseHover(object sender, EventArgs e)
+        {
+            pnlJunior.BackColor = Color.FromArgb(238, 240, 243);
+        }
+
+        private void pnlSenior_MouseHover(object sender, EventArgs e)
+        {
+            pnlSenior.BackColor = Color.FromArgb(238, 240, 243);
         }
     }
 }

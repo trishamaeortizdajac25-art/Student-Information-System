@@ -38,6 +38,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label3
@@ -46,12 +47,13 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(659, 117);
+            this.label3.Font = new System.Drawing.Font("Segoe UI Black", 23F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
+            this.label3.Location = new System.Drawing.Point(565, 96);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(115, 25);
+            this.label3.Size = new System.Drawing.Size(313, 52);
             this.label3.TabIndex = 16;
-            this.label3.Text = "Placeholder";
+            this.label3.Text = "Create Account";
             // 
             // btnSignUpRDT
             // 
@@ -59,23 +61,28 @@
             this.btnSignUpRDT.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnSignUpRDT.FlatAppearance.BorderSize = 0;
             this.btnSignUpRDT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSignUpRDT.Location = new System.Drawing.Point(531, 488);
+            this.btnSignUpRDT.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSignUpRDT.Location = new System.Drawing.Point(792, 498);
+            this.btnSignUpRDT.Margin = new System.Windows.Forms.Padding(0);
             this.btnSignUpRDT.Name = "btnSignUpRDT";
-            this.btnSignUpRDT.Size = new System.Drawing.Size(375, 32);
+            this.btnSignUpRDT.Size = new System.Drawing.Size(86, 39);
             this.btnSignUpRDT.TabIndex = 15;
-            this.btnSignUpRDT.Text = "Already have an account? Sign in";
+            this.btnSignUpRDT.Text = "Sign In";
+            this.btnSignUpRDT.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSignUpRDT.UseVisualStyleBackColor = false;
             this.btnSignUpRDT.Click += new System.EventHandler(this.btnSignUpRDT_Click);
             // 
             // btnSignUp
             // 
-            this.btnSignUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSignUp.Location = new System.Drawing.Point(597, 369);
+            this.btnSignUp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
+            this.btnSignUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.btnSignUp.ForeColor = System.Drawing.Color.White;
+            this.btnSignUp.Location = new System.Drawing.Point(597, 368);
             this.btnSignUp.Name = "btnSignUp";
             this.btnSignUp.Size = new System.Drawing.Size(244, 47);
             this.btnSignUp.TabIndex = 14;
             this.btnSignUp.Text = "Sign Up";
-            this.btnSignUp.UseVisualStyleBackColor = true;
+            this.btnSignUp.UseVisualStyleBackColor = false;
             this.btnSignUp.Click += new System.EventHandler(this.btnSignUp_Click);
             // 
             // pnlPlaceholder
@@ -83,12 +90,12 @@
             this.pnlPlaceholder.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlPlaceholder.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.pnlPlaceholder.Location = new System.Drawing.Point(53, 76);
-            this.pnlPlaceholder.MaximumSize = new System.Drawing.Size(400, 500);
+            this.pnlPlaceholder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
+            this.pnlPlaceholder.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.pnlPlaceholder.Location = new System.Drawing.Point(0, 1);
             this.pnlPlaceholder.MinimumSize = new System.Drawing.Size(350, 0);
             this.pnlPlaceholder.Name = "pnlPlaceholder";
-            this.pnlPlaceholder.Size = new System.Drawing.Size(400, 397);
+            this.pnlPlaceholder.Size = new System.Drawing.Size(466, 563);
             this.pnlPlaceholder.TabIndex = 13;
             // 
             // textBox2
@@ -96,6 +103,7 @@
             this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox2.Location = new System.Drawing.Point(515, 295);
             this.textBox2.MaximumSize = new System.Drawing.Size(400, 30);
             this.textBox2.Multiline = true;
@@ -108,6 +116,7 @@
             this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(515, 215);
             this.textBox1.MaximumSize = new System.Drawing.Size(400, 30);
             this.textBox1.Multiline = true;
@@ -121,10 +130,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
             this.label2.Location = new System.Drawing.Point(510, 267);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(109, 25);
+            this.label2.Size = new System.Drawing.Size(108, 28);
             this.label2.TabIndex = 10;
             this.label2.Text = "Password: ";
             // 
@@ -134,16 +144,18 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
             this.label1.Location = new System.Drawing.Point(510, 175);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(113, 25);
+            this.label1.Size = new System.Drawing.Size(115, 28);
             this.label1.TabIndex = 9;
             this.label1.Text = "Username: ";
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(515, 203);
+            this.txtUsername.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsername.Location = new System.Drawing.Point(515, 206);
             this.txtUsername.Multiline = true;
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(399, 39);
@@ -151,17 +163,38 @@
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(515, 295);
+            this.txtPassword.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.Location = new System.Drawing.Point(515, 298);
             this.txtPassword.Multiline = true;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(399, 39);
             this.txtPassword.TabIndex = 18;
             // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
+            this.label4.Location = new System.Drawing.Point(560, 503);
+            this.label4.Margin = new System.Windows.Forms.Padding(0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(234, 28);
+            this.label4.TabIndex = 19;
+            this.label4.Text = "Already have an account?";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // StarterSignUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.ClientSize = new System.Drawing.Size(982, 563);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.label3);
@@ -173,7 +206,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "StarterSignUp";
-            this.Text = "a";
+            this.Text = " ";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -191,5 +224,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.Label label4;
     }
 }
