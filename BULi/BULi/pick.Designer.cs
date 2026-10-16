@@ -70,7 +70,7 @@
             // btnTeacher
             // 
             this.btnTeacher.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTeacher.Location = new System.Drawing.Point(581, 235);
+            this.btnTeacher.Location = new System.Drawing.Point(601, 255);
             this.btnTeacher.Name = "btnTeacher";
             this.btnTeacher.Size = new System.Drawing.Size(198, 168);
             this.btnTeacher.TabIndex = 3;

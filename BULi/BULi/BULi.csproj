@@ -97,9 +97,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="setUp.cs">
       <SubType>Form</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="setUp.Designer.cs">
       <DependentUpon>setUp.cs</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="SignUp.cs">
       <SubType>Form</SubType>
@@ -152,6 +154,7 @@
     </Compile>
     <EmbeddedResource Include="setUp.resx">
       <DependentUpon>setUp.cs</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="SignUp.resx">
       <DependentUpon>SignUp.cs</DependentUpon>

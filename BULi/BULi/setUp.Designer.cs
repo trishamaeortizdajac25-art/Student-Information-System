@@ -79,21 +79,21 @@
             // 
             // txtGender
             // 
-            this.txtGender.Location = new System.Drawing.Point(603, 331);
+            this.txtGender.Location = new System.Drawing.Point(617, 331);
             this.txtGender.Name = "txtGender";
             this.txtGender.Size = new System.Drawing.Size(258, 22);
             this.txtGender.TabIndex = 4;
             // 
             // txtDate
             // 
-            this.txtDate.Location = new System.Drawing.Point(591, 384);
+            this.txtDate.Location = new System.Drawing.Point(617, 384);
             this.txtDate.Name = "txtDate";
             this.txtDate.Size = new System.Drawing.Size(258, 22);
             this.txtDate.TabIndex = 5;
             // 
             // txtContact
             // 
-            this.txtContact.Location = new System.Drawing.Point(632, 437);
+            this.txtContact.Location = new System.Drawing.Point(617, 437);
             this.txtContact.Name = "txtContact";
             this.txtContact.Size = new System.Drawing.Size(258, 22);
             this.txtContact.TabIndex = 6;
