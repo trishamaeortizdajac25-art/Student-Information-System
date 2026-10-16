@@ -27,7 +27,16 @@ namespace BULi
             SIS.Instance.OpenChildForm(new HomePage());
         }
 
+<<<<<<< HEAD
         private void stdSignIn_Load(object sender, EventArgs e)
+=======
+        private void txtUsername_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPassword_TextChanged(object sender, EventArgs e)
+>>>>>>> main
         {
 
         }
