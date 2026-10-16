@@ -49,9 +49,10 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Black", 23F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
-            this.label3.Location = new System.Drawing.Point(565, 96);
+            this.label3.Location = new System.Drawing.Point(424, 78);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(313, 52);
+            this.label3.Size = new System.Drawing.Size(249, 42);
             this.label3.TabIndex = 16;
             this.label3.Text = "Create Account";
             // 
@@ -62,10 +63,10 @@
             this.btnSignUpRDT.FlatAppearance.BorderSize = 0;
             this.btnSignUpRDT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSignUpRDT.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSignUpRDT.Location = new System.Drawing.Point(792, 498);
+            this.btnSignUpRDT.Location = new System.Drawing.Point(594, 405);
             this.btnSignUpRDT.Margin = new System.Windows.Forms.Padding(0);
             this.btnSignUpRDT.Name = "btnSignUpRDT";
-            this.btnSignUpRDT.Size = new System.Drawing.Size(86, 39);
+            this.btnSignUpRDT.Size = new System.Drawing.Size(64, 32);
             this.btnSignUpRDT.TabIndex = 15;
             this.btnSignUpRDT.Text = "Sign Up";
             this.btnSignUpRDT.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -77,9 +78,10 @@
             this.btnSignUp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
             this.btnSignUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.btnSignUp.ForeColor = System.Drawing.Color.White;
-            this.btnSignUp.Location = new System.Drawing.Point(597, 368);
+            this.btnSignUp.Location = new System.Drawing.Point(448, 299);
+            this.btnSignUp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSignUp.Name = "btnSignUp";
-            this.btnSignUp.Size = new System.Drawing.Size(244, 47);
+            this.btnSignUp.Size = new System.Drawing.Size(183, 38);
             this.btnSignUp.TabIndex = 14;
             this.btnSignUp.Text = "Sign In";
             this.btnSignUp.UseVisualStyleBackColor = false;
@@ -93,9 +95,10 @@
             this.pnlPlaceholder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
             this.pnlPlaceholder.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.pnlPlaceholder.Location = new System.Drawing.Point(0, 1);
-            this.pnlPlaceholder.MinimumSize = new System.Drawing.Size(350, 0);
+            this.pnlPlaceholder.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlPlaceholder.MinimumSize = new System.Drawing.Size(262, 0);
             this.pnlPlaceholder.Name = "pnlPlaceholder";
-            this.pnlPlaceholder.Size = new System.Drawing.Size(466, 563);
+            this.pnlPlaceholder.Size = new System.Drawing.Size(350, 457);
             this.pnlPlaceholder.TabIndex = 13;
             // 
             // textBox2
@@ -104,11 +107,12 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(515, 295);
-            this.textBox2.MaximumSize = new System.Drawing.Size(400, 30);
+            this.textBox2.Location = new System.Drawing.Point(386, 240);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox2.MaximumSize = new System.Drawing.Size(301, 25);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(400, 0);
+            this.textBox2.Size = new System.Drawing.Size(301, 1);
             this.textBox2.TabIndex = 12;
             // 
             // textBox1
@@ -117,11 +121,12 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(515, 215);
-            this.textBox1.MaximumSize = new System.Drawing.Size(400, 30);
+            this.textBox1.Location = new System.Drawing.Point(386, 175);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.MaximumSize = new System.Drawing.Size(301, 25);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(400, 0);
+            this.textBox1.Size = new System.Drawing.Size(301, 1);
             this.textBox1.TabIndex = 11;
             // 
             // label2
@@ -132,9 +137,10 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
-            this.label2.Location = new System.Drawing.Point(510, 267);
+            this.label2.Location = new System.Drawing.Point(382, 217);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(108, 28);
+            this.label2.Size = new System.Drawing.Size(87, 21);
             this.label2.TabIndex = 10;
             this.label2.Text = "Password: ";
             // 
@@ -146,29 +152,34 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
-            this.label1.Location = new System.Drawing.Point(510, 175);
+            this.label1.Location = new System.Drawing.Point(382, 142);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(115, 28);
+            this.label1.Size = new System.Drawing.Size(91, 21);
             this.label1.TabIndex = 9;
             this.label1.Text = "Username: ";
             // 
             // txtUsername
             // 
             this.txtUsername.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsername.Location = new System.Drawing.Point(515, 206);
+            this.txtUsername.Location = new System.Drawing.Point(386, 167);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtUsername.Multiline = true;
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(399, 39);
+            this.txtUsername.Size = new System.Drawing.Size(300, 32);
             this.txtUsername.TabIndex = 17;
+            this.txtUsername.TextChanged += new System.EventHandler(this.txtUsername_TextChanged);
             // 
             // txtPassword
             // 
             this.txtPassword.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(515, 298);
+            this.txtPassword.Location = new System.Drawing.Point(386, 242);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtPassword.Multiline = true;
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(399, 39);
+            this.txtPassword.Size = new System.Drawing.Size(300, 32);
             this.txtPassword.TabIndex = 18;
+            this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
             // 
             // label4
             // 
@@ -180,20 +191,20 @@
             this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
-            this.label4.Location = new System.Drawing.Point(560, 503);
+            this.label4.Location = new System.Drawing.Point(420, 409);
             this.label4.Margin = new System.Windows.Forms.Padding(0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(234, 28);
+            this.label4.Size = new System.Drawing.Size(186, 21);
             this.label4.TabIndex = 19;
             this.label4.Text = "Already have an account?";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // stdSignIn
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.ClientSize = new System.Drawing.Size(982, 563);
+            this.ClientSize = new System.Drawing.Size(736, 457);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsername);
@@ -205,6 +216,7 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "stdSignIn";
             this.Text = "f";
             this.ResumeLayout(false);

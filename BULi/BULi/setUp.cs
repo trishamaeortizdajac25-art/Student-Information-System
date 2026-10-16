@@ -22,6 +22,9 @@ namespace BULi
             SIS.Instance.OpenChildForm(new infoCard());
         }
 
-  
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
