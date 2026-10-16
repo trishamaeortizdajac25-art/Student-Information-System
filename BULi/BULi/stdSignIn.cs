@@ -26,11 +26,10 @@ namespace BULi
             string username = txtUsername.Text.Trim();
             string password = txtPassword.Text.Trim();
 
-<<<<<<< HEAD
             SIS.Instance.OpenChildForm(new setUp());
-=======
+
             SIS.Instance.OpenChildForm(new stdSignIn());
->>>>>>> 8aad0831b43691706615188a810514480c7c7eba
+
 
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
             {
