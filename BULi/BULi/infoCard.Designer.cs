@@ -76,7 +76,6 @@
             this.btnDropDownHeader.TabIndex = 1;
             this.btnDropDownHeader.Text = "Menu Options";
             this.btnDropDownHeader.UseVisualStyleBackColor = false;
-            this.btnDropDownHeader.Click += new System.EventHandler(this.btnDropDownHeader_Click);
             // 
             // label1
             // 
@@ -299,12 +298,10 @@
             this.label5.TabIndex = 6;
             this.label5.Tag = "";
             this.label5.Text = "Program: ";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // tmrDropDown
             // 
             this.tmrDropDown.Interval = 15;
-            this.tmrDropDown.Tick += new System.EventHandler(this.tmrDropDown_Tick);
             // 
             // lnbReturn
             // 
@@ -320,7 +317,6 @@
             this.lnbReturn.TabIndex = 10;
             this.lnbReturn.TabStop = true;
             this.lnbReturn.Text = "> Back to Dashboard";
-            this.lnbReturn.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnbReturn_LinkClicked);
             // 
             // infoCard
             // 

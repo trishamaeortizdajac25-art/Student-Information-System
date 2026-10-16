@@ -10,7 +10,7 @@ namespace BULi
 {
     public partial class SignUp : Form
     {
-        private string connectionString = "Server=localhost;Database=sis_db;Uid=root;Pwd=kleenpIn*1;";
+        private string connectionString = "Server=localhost;Database=sis_db;Uid=root;Pwd=nU^Ns3L07_26;";
 
         public SignUp()
         {
