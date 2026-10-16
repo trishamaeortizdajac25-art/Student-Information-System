@@ -111,7 +111,7 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.DarkOliveGreen;
-            this.pictureBox1.Location = new System.Drawing.Point(180, 161);
+            this.pictureBox1.Location = new System.Drawing.Point(124, 161);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(223, 220);
@@ -226,7 +226,6 @@
             this.txtYearlvl.Name = "txtYearlvl";
             this.txtYearlvl.Size = new System.Drawing.Size(257, 22);
             this.txtYearlvl.TabIndex = 20;
-            this.txtYearlvl.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // txtEmailAdd
             // 

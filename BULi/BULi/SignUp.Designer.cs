@@ -121,7 +121,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(286, 217);
+            this.label1.Location = new System.Drawing.Point(286, 207);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(113, 25);
             this.label1.TabIndex = 19;
@@ -132,14 +132,16 @@
             this.picSignInLogo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.picSignInLogo.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.picSignInLogo.Location = new System.Drawing.Point(389, 76);
+            this.picSignInLogo.BackColor = System.Drawing.Color.Transparent;
+            this.picSignInLogo.BackgroundImage = global::BULi.Properties.Resources.nonclogo;
+            this.picSignInLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picSignInLogo.Location = new System.Drawing.Point(273, -13);
             this.picSignInLogo.Name = "picSignInLogo";
-            this.picSignInLogo.Size = new System.Drawing.Size(216, 127);
+            this.picSignInLogo.Size = new System.Drawing.Size(434, 255);
             this.picSignInLogo.TabIndex = 0;
             this.picSignInLogo.TabStop = false;
             // 
-            // SignIn
+            // SignUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -152,7 +154,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.picSignInLogo);
-            this.Name = "SignIn";
+            this.Name = "SignUp";
             this.Text = "SignIn";
             this.Load += new System.EventHandler(this.SignIn_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picSignInLogo)).EndInit();

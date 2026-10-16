@@ -145,7 +145,6 @@
     <Compile Include="pick.Designer.cs">
       <DependentUpon>pick.cs</DependentUpon>
     </Compile>
-    <Compile Include="PreDisplay.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="setUp.cs">
