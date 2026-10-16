@@ -125,7 +125,7 @@
             // btnPhoto
             // 
             this.btnPhoto.Font = new System.Drawing.Font("Segoe UI Semibold", 12F);
-            this.btnPhoto.Location = new System.Drawing.Point(212, 236);
+            this.btnPhoto.Location = new System.Drawing.Point(224, 236);
             this.btnPhoto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPhoto.Name = "btnPhoto";
             this.btnPhoto.Size = new System.Drawing.Size(57, 56);

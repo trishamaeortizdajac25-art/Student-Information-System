@@ -285,10 +285,10 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(249, 121);
+            this.textBox1.Location = new System.Drawing.Point(204, 121);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(415, 32);
+            this.textBox1.Size = new System.Drawing.Size(484, 32);
             this.textBox1.TabIndex = 7;
             // 
             // btnProfile
@@ -339,7 +339,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(689, 121);
+            this.button2.Location = new System.Drawing.Point(717, 121);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(66, 32);
             this.button2.TabIndex = 8;
@@ -362,6 +362,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "HomePage";
             this.Text = "HomePage";
+            this.Load += new System.EventHandler(this.HomePage_Load);
             this.pnlFreshie.ResumeLayout(false);
             this.pnlFreshie.PerformLayout();
             this.pnlSophomore.ResumeLayout(false);
