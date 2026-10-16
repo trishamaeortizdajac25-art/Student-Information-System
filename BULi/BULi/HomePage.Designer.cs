@@ -32,7 +32,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnProfile = new System.Windows.Forms.Button();
             this.pnlFreshie = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -51,6 +50,7 @@
             this.label12 = new System.Windows.Forms.Label();
             this.btnColorScheme = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.btnProfile = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.pnlFreshie.SuspendLayout();
             this.pnlSophomore.SuspendLayout();
@@ -91,19 +91,6 @@
             this.label1.Size = new System.Drawing.Size(292, 40);
             this.label1.TabIndex = 1;
             this.label1.Text = "Dashboard Overview";
-            // 
-            // btnProfile
-            // 
-            this.btnProfile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnProfile.BackColor = System.Drawing.Color.Transparent;
-            this.btnProfile.BackgroundImage = global::BULi.Properties.Resources.image_removebg_preview__1_;
-            this.btnProfile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProfile.Location = new System.Drawing.Point(920, 18);
-            this.btnProfile.Name = "btnProfile";
-            this.btnProfile.Size = new System.Drawing.Size(50, 49);
-            this.btnProfile.TabIndex = 0;
-            this.btnProfile.UseVisualStyleBackColor = false;
             // 
             // pnlFreshie
             // 
@@ -327,6 +314,18 @@
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // btnProfile
+            // 
+            this.btnProfile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnProfile.BackColor = System.Drawing.Color.Transparent;
+            this.btnProfile.BackgroundImage = global::BULi.Properties.Resources.icon;
+            this.btnProfile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnProfile.Location = new System.Drawing.Point(920, 18);
+            this.btnProfile.Name = "btnProfile";
+            this.btnProfile.Size = new System.Drawing.Size(50, 49);
+            this.btnProfile.TabIndex = 0;
+            this.btnProfile.UseVisualStyleBackColor = false;
             // 
             // HomePage
             // 

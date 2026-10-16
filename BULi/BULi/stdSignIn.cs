@@ -10,14 +10,19 @@ using System.Windows.Forms;
 
 namespace BULi
 {
-    public partial class SignIn : Form
+    public partial class stdSignIn : Form
     {
-        public SignIn()
+        public stdSignIn()
         {
             InitializeComponent();
         }
 
-        private void btnSignIn_Click(object sender, EventArgs e)
+        private void btnSignUpRDT_Click(object sender, EventArgs e)
+        {
+            SIS.Instance.OpenChildForm(new SignUp());
+        }
+
+        private void btnSignUp_Click(object sender, EventArgs e)
         {
             SIS.Instance.OpenChildForm(new HomePage());
         }

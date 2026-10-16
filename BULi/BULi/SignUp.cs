@@ -10,21 +10,21 @@ using System.Windows.Forms;
 
 namespace BULi
 {
-    public partial class StarterSignUp : Form
+    public partial class SignUp : Form
     {
-        public StarterSignUp()
+        public SignUp()
         {
             InitializeComponent();
         }
 
-        private void btnSignUpRDT_Click(object sender, EventArgs e)
-        {
-            SIS.Instance.OpenChildForm(new SignIn());
-        }
-
-        private void btnSignUp_Click(object sender, EventArgs e)
+        private void btnSignIn_Click(object sender, EventArgs e)
         {
             SIS.Instance.OpenChildForm(new HomePage());
+        }
+
+        private void SignIn_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

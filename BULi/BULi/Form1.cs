@@ -18,7 +18,7 @@ namespace BULi
         {
             InitializeComponent();
             Instance = this;
-            OpenChildForm(new StarterSignUp());
+            OpenChildForm(new Starter());
 
         }
 

@@ -81,19 +81,43 @@
     <Compile Include="HomePage.Designer.cs">
       <DependentUpon>HomePage.cs</DependentUpon>
     </Compile>
+    <Compile Include="infoCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="infoCard.Designer.cs">
+      <DependentUpon>infoCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="pick.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pick.Designer.cs">
+      <DependentUpon>pick.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SignIn.cs">
+    <Compile Include="SignUp.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SignIn.Designer.cs">
-      <DependentUpon>SignIn.cs</DependentUpon>
+    <Compile Include="SignUp.Designer.cs">
+      <DependentUpon>SignUp.cs</DependentUpon>
     </Compile>
-    <Compile Include="StarterSignUp.cs">
+    <Compile Include="Starter.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="StarterSignUp.Designer.cs">
-      <DependentUpon>StarterSignUp.cs</DependentUpon>
+    <Compile Include="Starter.Designer.cs">
+      <DependentUpon>Starter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="stdSignIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="stdSignIn.Designer.cs">
+      <DependentUpon>stdSignIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="tcrSignIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="tcrSignIn.Designer.cs">
+      <DependentUpon>tcrSignIn.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="display.resx">
       <DependentUpon>display.cs</DependentUpon>
@@ -103,6 +127,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HomePage.resx">
       <DependentUpon>HomePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="infoCard.resx">
+      <DependentUpon>infoCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pick.resx">
+      <DependentUpon>pick.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -114,11 +144,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="SignIn.resx">
-      <DependentUpon>SignIn.cs</DependentUpon>
+    <EmbeddedResource Include="SignUp.resx">
+      <DependentUpon>SignUp.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="StarterSignUp.resx">
-      <DependentUpon>StarterSignUp.cs</DependentUpon>
+    <EmbeddedResource Include="Starter.resx">
+      <DependentUpon>Starter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="stdSignIn.resx">
+      <DependentUpon>stdSignIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tcrSignIn.resx">
+      <DependentUpon>tcrSignIn.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -141,6 +177,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>Database1.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\icon.png" />
     <None Include="Resources\image-removebg-preview %281%29.png" />
   </ItemGroup>
   <ItemGroup>

@@ -1,6 +1,6 @@
 ﻿namespace BULi
 {
-    partial class StarterSignUp
+    partial class stdSignIn
     {
         /// <summary>
         /// Required designer variable.
@@ -206,7 +206,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "StarterSignUp";
-            this.Text = " ";
+            this.Text = "f";
             this.ResumeLayout(false);
             this.PerformLayout();
 
