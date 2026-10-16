@@ -54,5 +54,10 @@ namespace BULi
         {
             SIS.Instance.OpenChildForm(new HomePage());
         }
+
+        private void lblYearTitle_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

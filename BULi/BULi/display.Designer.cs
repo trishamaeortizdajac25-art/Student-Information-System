@@ -44,13 +44,13 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.btnUpdateSI = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnProfile = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnView = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnSort = new System.Windows.Forms.Button();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.btnProfile = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.pnlhawakupdate.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -68,6 +68,7 @@
             this.lblYearTitle.Size = new System.Drawing.Size(142, 46);
             this.lblYearTitle.TabIndex = 0;
             this.lblYearTitle.Text = "student";
+            this.lblYearTitle.Click += new System.EventHandler(this.lblYearTitle_Click);
             // 
             // panel1
             // 
@@ -257,6 +258,19 @@
             this.panel2.Size = new System.Drawing.Size(690, 95);
             this.panel2.TabIndex = 2;
             // 
+            // btnProfile
+            // 
+            this.btnProfile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnProfile.BackColor = System.Drawing.Color.Transparent;
+            this.btnProfile.BackgroundImage = global::BULi.Properties.Resources.image_removebg_preview__1_;
+            this.btnProfile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProfile.Location = new System.Drawing.Point(628, 21);
+            this.btnProfile.Name = "btnProfile";
+            this.btnProfile.Size = new System.Drawing.Size(50, 49);
+            this.btnProfile.TabIndex = 1;
+            this.btnProfile.UseVisualStyleBackColor = false;
+            // 
             // dataGridView1
             // 
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -292,6 +306,18 @@
             this.panel3.Size = new System.Drawing.Size(537, 63);
             this.panel3.TabIndex = 7;
             // 
+            // btnSearch
+            // 
+            this.btnSearch.BackgroundImage = global::BULi.Properties.Resources.search;
+            this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.Image = global::BULi.Properties.Resources.search;
+            this.btnSearch.Location = new System.Drawing.Point(482, 14);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(34, 37);
+            this.btnSearch.TabIndex = 1;
+            this.btnSearch.UseVisualStyleBackColor = true;
+            // 
             // textBox1
             // 
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -312,31 +338,6 @@
             this.btnSort.TabIndex = 8;
             this.btnSort.Text = "Filter";
             this.btnSort.UseVisualStyleBackColor = false;
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.BackgroundImage = global::BULi.Properties.Resources.search;
-            this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.Image = global::BULi.Properties.Resources.search;
-            this.btnSearch.Location = new System.Drawing.Point(482, 14);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(34, 37);
-            this.btnSearch.TabIndex = 1;
-            this.btnSearch.UseVisualStyleBackColor = true;
-            // 
-            // btnProfile
-            // 
-            this.btnProfile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnProfile.BackColor = System.Drawing.Color.Transparent;
-            this.btnProfile.BackgroundImage = global::BULi.Properties.Resources.image_removebg_preview__1_;
-            this.btnProfile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProfile.Location = new System.Drawing.Point(628, 21);
-            this.btnProfile.Name = "btnProfile";
-            this.btnProfile.Size = new System.Drawing.Size(50, 49);
-            this.btnProfile.TabIndex = 1;
-            this.btnProfile.UseVisualStyleBackColor = false;
             // 
             // display
             // 

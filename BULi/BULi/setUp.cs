@@ -1,31 +1,52 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using Org.BouncyCastle.Pqc.Crypto.Lms;
+using System;
 using System.Data;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
 
 namespace BULi
 {
     public partial class setUp : Form
     {
-        private string connectionString = "Server=localhost;Database=sis_db;Uid=root;Pwd=your_mysql_password;";
+        private string connectionString = "Server=localhost;Database=sis_db;Uid=root;Pwd=kleenpIn*1;";
         private string currentUsername;
+        private bool isSignUpMode;
 
         public setUp()
         {
             InitializeComponent();
         }
 
-        public setUp(string username) : this()
+        public setUp(string username, bool isSignUp = false) : this()
         {
             this.currentUsername = username;
+            this.isSignUpMode = isSignUp;
         }
 
         private void setUp_Load(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(currentUsername))
+            if (isSignUpMode)
+            {
+                ClearAllFields();
+            }
+            else if (!string.IsNullOrEmpty(currentUsername))
             {
                 LoadStudentData(currentUsername);
             }
+        }
+
+        private void ClearAllFields()
+        {
+            txtName.Text = "";
+            txtID.Text = "";
+            txtProgram.Text = "";
+            txtYearlvl.Text = "";
+            txtBloc.Text = "";
+            txtDate.Text = "";
+            txtAge.Text = "";
+            txtGender.Text = "";
+            txtContact.Text = "";
+            txtEmailAdd.Text = "";
         }
 
         private void LoadStudentData(string username)
@@ -50,45 +71,24 @@ namespace BULi
                             if (reader.Read())
                             {
                                 string firstName = reader["first_name"].ToString();
+                                string middleName = reader["middle_name"].ToString();
                                 string lastName = reader["last_name"].ToString();
 
-                                // Check if account has initial placeholder data from SignUp.cs
-                                bool isNewAccount = (firstName == "New" && lastName == "Student");
+                                txtName.Text = $"{firstName} {middleName} {lastName}".Replace("  ", " ").Trim();
+                                txtID.Text = reader["student_number"].ToString();
+                                txtProgram.Text = reader["program"].ToString();
+                                txtYearlvl.Text = reader["year_level"].ToString();
+                                txtBloc.Text = reader["block"].ToString();
 
-                                if (isNewAccount)
+                                if (reader["birthdate"] != DBNull.Value)
                                 {
-                                    // Leave all fields empty for fresh sign-up completion
-                                    txtName.Text = "";
-                                    txtID.Text = "";
-                                    txtProgram.Text = "";
-                                    txtYearlvl.Text = "";
-                                    txtBloc.Text = "";
-                                    txtDate.Text = "";
-                                    txtAge.Text = "";
-                                    txtGender.Text = "";
-                                    txtContact.Text = "";
-                                    txtEmailAdd.Text = "";
+                                    txtDate.Text = Convert.ToDateTime(reader["birthdate"]).ToString("yyyy-MM-dd");
                                 }
-                                else
-                                {
-                                    // Load stored student details
-                                    string middleName = reader["middle_name"].ToString();
-                                    txtName.Text = $"{firstName} {middleName} {lastName}".Replace("  ", " ").Trim();
-                                    txtID.Text = reader["student_number"].ToString();
-                                    txtProgram.Text = reader["program"].ToString();
-                                    txtYearlvl.Text = reader["year_level"].ToString();
-                                    txtBloc.Text = reader["block"].ToString();
 
-                                    if (reader["birthdate"] != DBNull.Value)
-                                    {
-                                        txtDate.Text = Convert.ToDateTime(reader["birthdate"]).ToString("yyyy-MM-dd");
-                                    }
-
-                                    txtAge.Text = reader["calculated_age"].ToString();
-                                    txtGender.Text = reader["gender"].ToString();
-                                    txtContact.Text = reader["contact_number"].ToString();
-                                    txtEmailAdd.Text = reader["email"].ToString();
-                                }
+                                txtAge.Text = reader["calculated_age"].ToString();
+                                txtGender.Text = reader["gender"].ToString();
+                                txtContact.Text = reader["contact_number"].ToString();
+                                txtEmailAdd.Text = reader["email"].ToString();
                             }
                         }
                     }
@@ -100,14 +100,10 @@ namespace BULi
             }
         }
 
-        // ==========================================
-        // 1. UPDATE / SAVE BUTTON
-        // ==========================================
-        private void btnUpdate_Click(object sender, EventArgs e)
+        private void btnSave_Click(object sender, EventArgs e)
         {
             try
             {
-                // Parse full name entered in txtName
                 string rawName = txtName.Text.Trim();
                 string[] nameParts = rawName.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
 
@@ -117,24 +113,25 @@ namespace BULi
 
                 DateTime birthdate;
                 bool validDate = DateTime.TryParse(txtDate.Text.Trim(), out birthdate);
+
                 using (MySqlConnection conn = new MySqlConnection(connectionString))
                 {
                     conn.Open();
 
                     string updateQuery = @"
-                UPDATE students 
-                SET student_number = @StudentID,
-                    first_name = @FirstName, 
-                    middle_name = @MiddleName, 
-                    last_name = @LastName, 
-                    gender = @Gender, 
-                    birthdate = @Birthdate, 
-                    year_level = @YearLevel, 
-                    program = @Program, 
-                    block = @Block, 
-                    contact_number = @Contact, 
-                    email = @Email 
-                WHERE username = @Username AND is_deleted = 0";
+                        UPDATE students 
+                        SET student_number = @StudentID,
+                            first_name = @FirstName, 
+                            middle_name = @MiddleName, 
+                            last_name = @LastName, 
+                            gender = @Gender, 
+                            birthdate = @Birthdate, 
+                            year_level = @YearLevel, 
+                            program = @Program, 
+                            block = @Block, 
+                            contact_number = @Contact, 
+                            email = @Email 
+                        WHERE username = @Username AND is_deleted = 0";
 
                     using (MySqlCommand cmd = new MySqlCommand(updateQuery, conn))
                     {
@@ -167,9 +164,6 @@ namespace BULi
             }
         }
 
-        // ==========================================
-        // 2. DELETE ACCOUNT BUTTON
-        // ==========================================
         private void btnDelete_Click(object sender, EventArgs e)
         {
             DialogResult confirm = MessageBox.Show(
@@ -186,7 +180,6 @@ namespace BULi
                     using (MySqlConnection conn = new MySqlConnection(connectionString))
                     {
                         conn.Open();
-                        // Soft delete execution matching database schema
                         string deleteQuery = "UPDATE students SET is_deleted = 1 WHERE username = @Username";
 
                         using (MySqlCommand cmd = new MySqlCommand(deleteQuery, conn))
@@ -197,8 +190,6 @@ namespace BULi
                             if (rows > 0)
                             {
                                 MessageBox.Show("Your account has been deleted.", "Account Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                                // Log out and redirect back to Sign In
                                 SIS.Instance.OpenChildForm(new stdSignIn());
                             }
                         }
@@ -211,13 +202,22 @@ namespace BULi
             }
         }
 
-        // ==========================================
-        // 3. SHOW STUDENT CARD BUTTON
-        // ==========================================
         private void btnShowCard_Click(object sender, EventArgs e)
         {
-            // Opens the Student Card form passing the current logged-in username
             SIS.Instance.OpenChildForm(new infoCard(currentUsername));
         }
+
+        // ==========================================================
+        // DESIGNER DUMMY HANDLERS (Required by setUp.Designer.cs)
+        // ==========================================================
+        private void txtBloc_TextChanged(object sender, EventArgs e) { }
+        private void txtID_TextChanged(object sender, EventArgs e) { }
+        private void txtGender_TextChanged(object sender, EventArgs e) { }
+        private void txtYearlvl_TextChanged(object sender, EventArgs e) { }
+        private void lbl_Click(object sender, EventArgs e) { }
+        private void label5_Click(object sender, EventArgs e) { }
+        private void label2_Click(object sender, EventArgs e) { }
+        private void label7_Click(object sender, EventArgs e) { }
+        private void pictureBox1_Click(object sender, EventArgs e) { }
     }
 }
