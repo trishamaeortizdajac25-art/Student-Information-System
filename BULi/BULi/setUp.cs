@@ -22,6 +22,9 @@ namespace BULi
             SIS.Instance.OpenChildForm(new infoCard());
         }
 
-  
+        private void setUp_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

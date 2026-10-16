@@ -183,7 +183,7 @@
             // 
             this.btnCreate.Location = new System.Drawing.Point(647, 482);
             this.btnCreate.Name = "btnCreate";
-            this.btnCreate.Size = new System.Drawing.Size(183, 69);
+            this.btnCreate.Size = new System.Drawing.Size(183, 54);
             this.btnCreate.TabIndex = 17;
             this.btnCreate.Text = "Create";
             this.btnCreate.UseVisualStyleBackColor = true;
@@ -223,6 +223,7 @@
             this.Controls.Add(this.txtName);
             this.Name = "setUp";
             this.Text = "setUp";
+            this.Load += new System.EventHandler(this.setUp_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

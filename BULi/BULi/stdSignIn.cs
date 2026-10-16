@@ -26,5 +26,10 @@ namespace BULi
         {
             SIS.Instance.OpenChildForm(new HomePage());
         }
+
+        private void stdSignIn_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
