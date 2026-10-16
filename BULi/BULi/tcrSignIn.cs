@@ -16,5 +16,10 @@ namespace BULi
         {
             InitializeComponent();
         }
+
+        private void btnEnter_Click(object sender, EventArgs e)
+        {
+            SIS.Instance.OpenChildForm(new HomePage());
+        }
     }
 }

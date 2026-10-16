@@ -67,7 +67,7 @@
             this.btnSignUpRDT.Name = "btnSignUpRDT";
             this.btnSignUpRDT.Size = new System.Drawing.Size(86, 39);
             this.btnSignUpRDT.TabIndex = 15;
-            this.btnSignUpRDT.Text = "Sign In";
+            this.btnSignUpRDT.Text = "Sign Up";
             this.btnSignUpRDT.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSignUpRDT.UseVisualStyleBackColor = false;
             this.btnSignUpRDT.Click += new System.EventHandler(this.btnSignUpRDT_Click);
@@ -81,7 +81,7 @@
             this.btnSignUp.Name = "btnSignUp";
             this.btnSignUp.Size = new System.Drawing.Size(244, 47);
             this.btnSignUp.TabIndex = 14;
-            this.btnSignUp.Text = "Sign Up";
+            this.btnSignUp.Text = "Sign In";
             this.btnSignUp.UseVisualStyleBackColor = false;
             this.btnSignUp.Click += new System.EventHandler(this.btnSignUp_Click);
             // 
@@ -188,7 +188,7 @@
             this.label4.Text = "Already have an account?";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // StarterSignUp
+            // stdSignIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -205,7 +205,7 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "StarterSignUp";
+            this.Name = "stdSignIn";
             this.Text = "f";
             this.ResumeLayout(false);
             this.PerformLayout();
