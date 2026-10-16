@@ -1,17 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace BULi
 {
     public partial class stdSignIn : Form
     {
+        private string connectionString = "Server=localhost;Database=sis_db;Uid=root;Pwd=nU^Ns3L*07_26;";
+
         public stdSignIn()
         {
             InitializeComponent();
@@ -19,28 +18,72 @@ namespace BULi
 
         private void btnSignUpRDT_Click(object sender, EventArgs e)
         {
-            SIS.Instance.OpenChildForm(new SignUp());
+            SIS.Instance.OpenChildForm(new stdSignIn());
         }
 
-        private void btnSignUp_Click(object sender, EventArgs e)
+        private void btnSignUp_Click(object sender, EventArgs e) // Sign In Button
         {
-            SIS.Instance.OpenChildForm(new HomePage());
+            string username = txtUsername.Text.Trim();
+            string password = txtPassword.Text.Trim();
+
+            SIS.Instance.OpenChildForm(new editInfo());
+
+            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+            {
+                MessageBox.Show("Please enter both username and password.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            try
+            {
+                string hashedPassword = ComputeSha256Hash(password);
+
+                using (MySqlConnection conn = new MySqlConnection(connectionString))
+                {
+                    conn.Open();
+                    string query = "SELECT COUNT(1) FROM students WHERE username = @Username AND password_hash = @PasswordHash AND is_deleted = 0";
+
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@Username", username);
+                        cmd.Parameters.AddWithValue("@PasswordHash", hashedPassword);
+
+                        int count = Convert.ToInt32(cmd.ExecuteScalar());
+
+                        if (count > 0)
+                        {
+                            MessageBox.Show("Sign In successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            SIS.Instance.OpenChildForm(new setUp(username));
+                        }
+                        else
+                        {
+                            MessageBox.Show("Invalid username or password.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Database error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
-        private void stdSignIn_Load(object sender, EventArgs e)
+        private string ComputeSha256Hash(string rawData)
         {
-
+            using (SHA256 sha256Hash = SHA256.Create())
+            {
+                byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(rawData));
+                StringBuilder builder = new StringBuilder();
+                for (int i = 0; i < bytes.Length; i++)
+                {
+                    builder.Append(bytes[i].ToString("x2"));
+                }
+                return builder.ToString();
+            }
         }
 
-        private void txtUsername_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtPassword_TextChanged(object sender, EventArgs e)
-
-        {
-
-        }
+        private void txtUsername_TextChanged(object sender, EventArgs e) { }
+        private void txtPassword_TextChanged(object sender, EventArgs e) { }
+        private void stdSignIn_Load(object sender, EventArgs e) { }
     }
 }
