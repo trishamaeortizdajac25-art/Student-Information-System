@@ -60,5 +60,10 @@ namespace BULi
         {
 
         }
+
+        private void lnbReturn_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            SIS.Instance.OpenChildForm(new HomePage());
+        }
     }
 }

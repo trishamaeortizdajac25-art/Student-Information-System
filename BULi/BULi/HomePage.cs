@@ -94,5 +94,10 @@ namespace BULi
         {
             pnlSenior.BackColor = Color.FromArgb(238, 240, 243);
         }
+
+        private void HomePage_Load(object sender, EventArgs e)
+        {
+            ControlRounder.MakeRounded(pnlFreshie, 20);
+        }
     }
 }
