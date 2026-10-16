@@ -29,9 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.pnlFreshie = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -50,47 +47,18 @@
             this.label12 = new System.Windows.Forms.Label();
             this.btnColorScheme = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnProfile = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
+            this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.pnlFreshie.SuspendLayout();
             this.pnlSophomore.SuspendLayout();
             this.pnlJunior.SuspendLayout();
             this.pnlSenior.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.btnProfile);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F);
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(982, 95);
-            this.panel1.TabIndex = 0;
-            // 
-            // button1
-            // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(15, 20);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(48, 47);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 17F);
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(356, 27);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(292, 40);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Dashboard Overview";
             // 
             // pnlFreshie
             // 
@@ -315,6 +283,14 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(249, 121);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(415, 32);
+            this.textBox1.TabIndex = 7;
+            // 
             // btnProfile
             // 
             this.btnProfile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -327,12 +303,57 @@
             this.btnProfile.TabIndex = 0;
             this.btnProfile.UseVisualStyleBackColor = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 17F);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(356, 27);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(292, 40);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Dashboard Overview";
+            // 
+            // button1
+            // 
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(15, 20);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(48, 47);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.btnProfile);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(982, 95);
+            this.panel1.TabIndex = 0;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(689, 121);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(66, 32);
+            this.button2.TabIndex = 8;
+            this.button2.Text = "Search";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
             // HomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
             this.ClientSize = new System.Drawing.Size(982, 563);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.btnColorScheme);
             this.Controls.Add(this.pnlSenior);
             this.Controls.Add(this.pnlJunior);
@@ -341,8 +362,6 @@
             this.Controls.Add(this.panel1);
             this.Name = "HomePage";
             this.Text = "HomePage";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.pnlFreshie.ResumeLayout(false);
             this.pnlFreshie.PerformLayout();
             this.pnlSophomore.ResumeLayout(false);
@@ -351,15 +370,14 @@
             this.pnlJunior.PerformLayout();
             this.pnlSenior.ResumeLayout(false);
             this.pnlSenior.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnProfile;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel pnlFreshie;
         private System.Windows.Forms.Label lblFreshie;
         private System.Windows.Forms.Label label2;
@@ -378,6 +396,11 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button btnColorScheme;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnProfile;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button button2;
     }
 }
