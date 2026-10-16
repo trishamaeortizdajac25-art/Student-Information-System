@@ -9,7 +9,7 @@ namespace BULi
 {
     public partial class stdSignIn : Form
     {
-        private string connectionString = "Server=localhost;Database=sis_db;Uid=root;Pwd=nU^Ns3L*07_26;";
+        private string connectionString = "Server=localhost;Database=sis_db;Uid=root;Pwd=kleenpIn*1;";
 
         public stdSignIn()
         {
@@ -26,7 +26,11 @@ namespace BULi
             string username = txtUsername.Text.Trim();
             string password = txtPassword.Text.Trim();
 
+<<<<<<< HEAD
+            SIS.Instance.OpenChildForm(new setUp());
+=======
             SIS.Instance.OpenChildForm(new stdSignIn());
+>>>>>>> 8aad0831b43691706615188a810514480c7c7eba
 
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
             {
