@@ -37,9 +37,11 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(384, 49);
+            this.pictureBox1.BackgroundImage = global::BULi.Properties.Resources.nonclogo;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(283, -8);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(224, 121);
+            this.pictureBox1.Size = new System.Drawing.Size(415, 237);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
@@ -56,10 +58,11 @@
             // btnStudent
             // 
             this.btnStudent.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStudent.Location = new System.Drawing.Point(179, 244);
+            this.btnStudent.Location = new System.Drawing.Point(180, 255);
             this.btnStudent.Name = "btnStudent";
             this.btnStudent.Size = new System.Drawing.Size(198, 168);
             this.btnStudent.TabIndex = 2;
+            this.btnStudent.Text = "Student";
             this.btnStudent.UseVisualStyleBackColor = true;
             this.btnStudent.UseWaitCursor = true;
             this.btnStudent.Click += new System.EventHandler(this.btnStudent_Click);
@@ -71,7 +74,7 @@
             this.btnTeacher.Name = "btnTeacher";
             this.btnTeacher.Size = new System.Drawing.Size(198, 168);
             this.btnTeacher.TabIndex = 3;
-            this.btnTeacher.Text = "button2";
+            this.btnTeacher.Text = "Teacher ";
             this.btnTeacher.UseVisualStyleBackColor = true;
             this.btnTeacher.Click += new System.EventHandler(this.btnTeacher_Click);
             // 

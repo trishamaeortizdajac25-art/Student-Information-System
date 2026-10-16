@@ -36,9 +36,11 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(345, 144);
+            this.pictureBox1.BackgroundImage = global::BULi.Properties.Resources.nonclogo;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Location = new System.Drawing.Point(57, 63);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(240, 165);
+            this.pictureBox1.Size = new System.Drawing.Size(856, 425);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
@@ -55,7 +57,7 @@
             this.Controls.Add(this.pictureBox1);
             this.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.Name = "Starter";
-            this.Text = "Starter";
+            this.Text = "Bicol University Learner\'s Information";
             this.Load += new System.EventHandler(this.Starter_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
