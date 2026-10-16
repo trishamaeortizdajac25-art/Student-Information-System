@@ -1,10 +1,3 @@
--- ============================================================
--- Student Information System - COMPLETE Database Script (v2)
--- MySQL 8.0.16+ | Import with:
---   mysql -u root -p < student_information_system_complete_v2.sql
--- Or in MySQL Workbench: File > Open SQL Script > run (lightning bolt)
--- ============================================================
-
 CREATE DATABASE IF NOT EXISTS sis_db
     CHARACTER SET utf8mb4
     COLLATE utf8mb4_unicode_ci;
@@ -228,67 +221,3 @@ SELECT username FROM students WHERE username = 'test.student' AND password_hash 
 USE sis_db;
 DELETE FROM programs
 WHERE program_name IN ('BS Education', 'BS Business Administration', 'BS Nursing');
--- ============================================================
--- 8. EXAMPLE QUERIES FOR YOUR C# CODE
--- (use @parameters from MySqlCommand.Parameters, never string concatenation)
--- ============================================================
-
--- Teacher homepage (four cards with counts):
---   SELECT year_level, total_students FROM vw_year_level_counts ORDER BY sort_order;
-
--- Records form for the chosen year level:
---   SELECT * FROM vw_student_information WHERE year_level = @year ORDER BY student_number;
-
--- Live search by name or ID within a year level:
---   SELECT * FROM vw_student_information
---   WHERE year_level = @year
---     AND (student_number LIKE @kw OR full_name LIKE @kw);
-
--- Sort options (pick from a fixed list in C#, don't paste user text into SQL):
---   ... ORDER BY student_number ASC;
---   ... ORDER BY last_name ASC, first_name ASC;
---   ... ORDER BY gender ASC, last_name ASC, first_name ASC;
-
--- Filter by gender or program:
---   SELECT * FROM vw_student_information WHERE gender = @gender AND program = @program;
-
--- Register / add a student:
---   INSERT INTO students (student_number, first_name, middle_name, last_name, gender, birthdate,
---       year_level, program, block, contact_number, username, password_hash, profile_picture)
---   VALUES (@StudentNumber, @FirstName, @MiddleName, @LastName, @Gender, @Birthdate,
---       @YearLevel, @Program, @Block, @ContactNumber, @Username, @PasswordHash, @ProfilePicture);
-
--- Update a student (students: restrict to their own student_id from the login session):
---   UPDATE students SET first_name=@FirstName, middle_name=@MiddleName, last_name=@LastName,
---       block=@Block, year_level=@YearLevel, program=@Program, birthdate=@Birthdate,
---       gender=@Gender, contact_number=@ContactNumber, profile_picture=@ProfilePicture
---   WHERE student_id = @StudentID;
-
--- Delete (ask "Are you sure?" first). Soft delete, then restore if needed:
---   UPDATE students SET is_deleted = 1 WHERE student_id = @StudentID;
---   UPDATE students SET is_deleted = 0 WHERE student_id = @StudentID;
--- Permanent delete (e.g. from the recycle bin):
---   DELETE FROM students WHERE student_id = @StudentID AND is_deleted = 1;
-
--- Login lookups (compare the hash in C#, or in SQL with SHA2):
---   SELECT student_id, username, password_hash FROM students WHERE username = @Username AND is_deleted = 0;
---   SELECT teacher_id, username, password_hash FROM teachers WHERE username = @Username AND is_active = 1;
---   -- or: ... WHERE username = @Username AND password_hash = SHA2(@Password, 256);
-
--- Student ID card (includes the photo):
---   SELECT student_number, CONCAT(first_name,' ',last_name) AS full_name, block, year_level, profile_picture
---   FROM students WHERE student_id = @StudentID;
-
--- Auto-generate the next student number for this year:
---   SELECT CONCAT(YEAR(CURDATE()), '-',
---          LPAD(IFNULL(MAX(CAST(SUBSTRING(student_number, 6) AS UNSIGNED)), 0) + 1, 4, '0'))
---   FROM students WHERE student_number LIKE CONCAT(YEAR(CURDATE()), '-%');
-
--- Dashboard:
---   SELECT * FROM vw_program_counts;
---   SELECT gender, COUNT(*) FROM students WHERE is_deleted = 0 GROUP BY gender;
---   SELECT status, COUNT(*) FROM students WHERE is_deleted = 0 GROUP BY status;
-
--- Log an action:
---   INSERT INTO activity_logs (actor_type, actor_id, action, target_student_id, details)
---   VALUES ('Teacher', @TeacherID, 'DELETE', @StudentID, @Details);
