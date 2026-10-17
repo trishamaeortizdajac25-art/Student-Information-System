@@ -1,0 +1,15 @@
+C:\Users\remia\Student-Information-System\BULi\BULi\obj\Debug\BULi.csproj.AssemblyReference.cache
+C:\Users\remia\Student-Information-System\BULi\BULi\obj\Debug\BULi.display.resources
+C:\Users\remia\Student-Information-System\BULi\BULi\obj\Debug\BULi.editInfo.resources
+C:\Users\remia\Student-Information-System\BULi\BULi\obj\Debug\BULi.SIS.resources
+C:\Users\remia\Student-Information-System\BULi\BULi\obj\Debug\BULi.HomePage.resources
+C:\Users\remia\Student-Information-System\BULi\BULi\obj\Debug\BULi.infoCard.resources
+C:\Users\remia\Student-Information-System\BULi\BULi\obj\Debug\BULi.pick.resources
+C:\Users\remia\Student-Information-System\BULi\BULi\obj\Debug\BULi.Properties.Resources.resources
+C:\Users\remia\Student-Information-System\BULi\BULi\obj\Debug\BULi.setUp.resources
+C:\Users\remia\Student-Information-System\BULi\BULi\obj\Debug\BULi.SignUp.resources
+C:\Users\remia\Student-Information-System\BULi\BULi\obj\Debug\BULi.Starter.resources
+C:\Users\remia\Student-Information-System\BULi\BULi\obj\Debug\BULi.stdSignIn.resources
+C:\Users\remia\Student-Information-System\BULi\BULi\obj\Debug\BULi.tcrSignIn.resources
+C:\Users\remia\Student-Information-System\BULi\BULi\obj\Debug\BULi.csproj.GenerateResource.cache
+C:\Users\remia\Student-Information-System\BULi\BULi\obj\Debug\BULi.csproj.CoreCompileInputs.cache
