@@ -3,28 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\remia\\Student-Information-System\\BULi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{95417A84-3F33-4A28-B904-DC4688582F34}|BULi\\BULi.csproj|c:\\users\\remia\\student-information-system\\buli\\buli\\stdsignin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{95417A84-3F33-4A28-B904-DC4688582F34}|BULi\\BULi.csproj|solutionrelative:buli\\stdsignin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\remia\\Student-Information-System\\BULi\\buli\\setup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:buli\\setup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{95417A84-3F33-4A28-B904-DC4688582F34}|BULi\\BULi.csproj|C:\\Users\\remia\\Student-Information-System\\BULi\\buli\\tcrsignin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{95417A84-3F33-4A28-B904-DC4688582F34}|BULi\\BULi.csproj|solutionrelative:buli\\tcrsignin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\remia\\Student-Information-System\\BULi\\buli\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:buli\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{95417A84-3F33-4A28-B904-DC4688582F34}|BULi\\BULi.csproj|C:\\Users\\remia\\Student-Information-System\\BULi\\buli\\starter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{95417A84-3F33-4A28-B904-DC4688582F34}|BULi\\BULi.csproj|solutionrelative:buli\\starter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\remia\\Student-Information-System\\BULi\\buli\\signup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:buli\\signup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{95417A84-3F33-4A28-B904-DC4688582F34}|BULi\\BULi.csproj|C:\\Users\\remia\\Student-Information-System\\BULi\\buli\\signup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{95417A84-3F33-4A28-B904-DC4688582F34}|BULi\\BULi.csproj|solutionrelative:buli\\signup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\remia\\Student-Information-System\\BULi\\buli\\tcrsignin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:buli\\tcrsignin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{95417A84-3F33-4A28-B904-DC4688582F34}|BULi\\BULi.csproj|C:\\Users\\remia\\Student-Information-System\\BULi\\buli\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{95417A84-3F33-4A28-B904-DC4688582F34}|BULi\\BULi.csproj|solutionrelative:buli\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{95417A84-3F33-4A28-B904-DC4688582F34}|BULi\\BULi.csproj|C:\\Users\\remia\\Student-Information-System\\BULi\\buli\\setup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{95417A84-3F33-4A28-B904-DC4688582F34}|BULi\\BULi.csproj|solutionrelative:buli\\setup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\remia\\Student-Information-System\\BULi\\buli\\starter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:buli\\starter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -42,19 +38,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "stdSignIn.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\remia\\Student-Information-System\\BULi\\BULi\\stdSignIn.cs",
-              "RelativeDocumentMoniker": "BULi\\stdSignIn.cs",
-              "ToolTip": "C:\\Users\\remia\\Student-Information-System\\BULi\\BULi\\stdSignIn.cs [Design]",
-              "RelativeToolTip": "BULi\\stdSignIn.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-17T09:26:40.608Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "tcrSignIn.cs [Design]",
               "DocumentMoniker": "C:\\Users\\remia\\Student-Information-System\\BULi\\BULi\\tcrSignIn.cs",
               "RelativeDocumentMoniker": "BULi\\tcrSignIn.cs",
@@ -65,7 +49,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Starter.cs [Design]",
               "DocumentMoniker": "C:\\Users\\remia\\Student-Information-System\\BULi\\BULi\\Starter.cs",
               "RelativeDocumentMoniker": "BULi\\Starter.cs",
@@ -76,7 +60,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "SignUp.cs [Design]",
               "DocumentMoniker": "C:\\Users\\remia\\Student-Information-System\\BULi\\BULi\\SignUp.cs",
               "RelativeDocumentMoniker": "BULi\\SignUp.cs",
@@ -87,7 +71,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 0,
               "Title": "setUp.cs [Design]",
               "DocumentMoniker": "C:\\Users\\remia\\Student-Information-System\\BULi\\BULi\\setUp.cs",
               "RelativeDocumentMoniker": "BULi\\setUp.cs",
@@ -98,7 +82,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "Form1.cs [Design]",
               "DocumentMoniker": "C:\\Users\\remia\\Student-Information-System\\BULi\\BULi\\Form1.cs",
               "RelativeDocumentMoniker": "BULi\\Form1.cs",
