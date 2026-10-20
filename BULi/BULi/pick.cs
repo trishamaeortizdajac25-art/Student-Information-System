@@ -28,7 +28,7 @@ namespace BULi
         private void btnTeacher_Click(object sender, EventArgs e)
         {
 
-            SelectedRole = "Student";
+            SelectedRole = "Teacher";
             SIS.Instance.OpenChildForm(new tcrSignIn());
         }
 

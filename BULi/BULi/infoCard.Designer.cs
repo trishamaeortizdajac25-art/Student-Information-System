@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnDropDownHeader = new System.Windows.Forms.Button();
+            this.btnDrop = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
@@ -45,11 +45,14 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.tmrDropDown = new System.Windows.Forms.Timer(this.components);
             this.lnkReturn = new System.Windows.Forms.LinkLabel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.uploadImageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteImageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -61,16 +64,17 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // btnDropDownHeader
+            // btnDrop
             // 
-            this.btnDropDownHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(32)))));
-            this.btnDropDownHeader.ForeColor = System.Drawing.Color.White;
-            this.btnDropDownHeader.Location = new System.Drawing.Point(270, 239);
-            this.btnDropDownHeader.Name = "btnDropDownHeader";
-            this.btnDropDownHeader.Size = new System.Drawing.Size(66, 57);
-            this.btnDropDownHeader.TabIndex = 1;
-            this.btnDropDownHeader.Text = "Menu Options";
-            this.btnDropDownHeader.UseVisualStyleBackColor = false;
+            this.btnDrop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(32)))));
+            this.btnDrop.ForeColor = System.Drawing.Color.White;
+            this.btnDrop.Location = new System.Drawing.Point(270, 239);
+            this.btnDrop.Name = "btnDrop";
+            this.btnDrop.Size = new System.Drawing.Size(66, 57);
+            this.btnDrop.TabIndex = 1;
+            this.btnDrop.Text = "Menu Options";
+            this.btnDrop.UseVisualStyleBackColor = false;
+            this.btnDrop.Click += new System.EventHandler(this.btnDrop_Click);
             // 
             // label1
             // 
@@ -227,10 +231,6 @@
             this.label5.Tag = "";
             this.label5.Text = "Program: ";
             // 
-            // tmrDropDown
-            // 
-            this.tmrDropDown.Interval = 15;
-            // 
             // lnkReturn
             // 
             this.lnkReturn.ActiveLinkColor = System.Drawing.Color.White;
@@ -242,10 +242,10 @@
             this.lnkReturn.LinkColor = System.Drawing.Color.White;
             this.lnkReturn.Location = new System.Drawing.Point(34, 24);
             this.lnkReturn.Name = "lnkReturn";
-            this.lnkReturn.Size = new System.Drawing.Size(172, 23);
+            this.lnkReturn.Size = new System.Drawing.Size(70, 23);
             this.lnkReturn.TabIndex = 10;
             this.lnkReturn.TabStop = true;
-            this.lnkReturn.Text = "> Back to Dashboard";
+            this.lnkReturn.Text = "<- Back";
             this.lnkReturn.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkReturn_LinkClicked);
             // 
             // panel1
@@ -260,7 +260,7 @@
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.lblProgram);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.btnDropDownHeader);
+            this.panel1.Controls.Add(this.btnDrop);
             this.panel1.Controls.Add(this.lblName);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label4);
@@ -271,6 +271,27 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(788, 391);
             this.panel1.TabIndex = 17;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.uploadImageToolStripMenuItem,
+            this.deleteImageToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(174, 52);
+            // 
+            // uploadImageToolStripMenuItem
+            // 
+            this.uploadImageToolStripMenuItem.Name = "uploadImageToolStripMenuItem";
+            this.uploadImageToolStripMenuItem.Size = new System.Drawing.Size(173, 24);
+            this.uploadImageToolStripMenuItem.Text = "Upload Image";
+            // 
+            // deleteImageToolStripMenuItem
+            // 
+            this.deleteImageToolStripMenuItem.Name = "deleteImageToolStripMenuItem";
+            this.deleteImageToolStripMenuItem.Size = new System.Drawing.Size(173, 24);
+            this.deleteImageToolStripMenuItem.Text = "Delete Image";
             // 
             // infoCard
             // 
@@ -288,6 +309,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -296,7 +318,7 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button btnDropDownHeader;
+        private System.Windows.Forms.Button btnDrop;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblName;
@@ -304,7 +326,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Timer tmrDropDown;
         private System.Windows.Forms.Label lblBloc;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lblYearlvl;
@@ -314,5 +335,8 @@
         private System.Windows.Forms.Label lblContact;
         private System.Windows.Forms.Label lblID;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem uploadImageToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deleteImageToolStripMenuItem;
     }
 }

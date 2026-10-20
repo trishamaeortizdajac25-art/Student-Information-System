@@ -1,26 +1,23 @@
 using MySql.Data.MySqlClient;
-using Org.BouncyCastle.Pqc.Crypto.Lms;
 using System;
 using System.Data;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace BULi
 {
     public partial class infoCard : Form
     {
-
         private string connectionString = "Server=localhost;Database=sis_db;Uid=root;Pwd=kleenpIn*1;";
         private string currentUsername;
-
-
 
         // Default constructor
         public infoCard()
         {
             InitializeComponent();
         }
-                
-        // Parameterized constructor accepting active username (fixes CS1729)
+
+        // Parameterized constructor accepting active username
         public infoCard(string username) : this()
         {
             this.currentUsername = username;
@@ -33,15 +30,20 @@ namespace BULi
                 LoadStudentCardData(currentUsername);
             }
 
-            if (pick.SelectedRole == "Student")
+            // Case-insensitive check to prevent failure if role casing varies
+            if (string.Equals(pick.SelectedRole, "Student", StringComparison.OrdinalIgnoreCase))
             {
                 lnkReturn.Text = "Return";
             }
-            else if (pick.SelectedRole == "Teacher")
+            else if (string.Equals(pick.SelectedRole, "Teacher", StringComparison.OrdinalIgnoreCase))
             {
-                lnkReturn.Text = "return to list";
+                lnkReturn.Text = "Return to List";
             }
-
+            else
+            {
+                // Fallback default if pick.SelectedRole was not set
+                lnkReturn.Text = "Return";
+            }
         }
 
         private void LoadStudentCardData(string username)
@@ -93,14 +95,20 @@ namespace BULi
 
         private void lnkReturn_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            if (pick.SelectedRole == "Student")
-            {
-                SIS.Instance.OpenChildForm(new setUp());
-            }
-            else if (pick.SelectedRole == "Teacher")
+            if (string.Equals(pick.SelectedRole, "Teacher", StringComparison.OrdinalIgnoreCase))
             {
                 SIS.Instance.OpenChildForm(new display());
             }
+            else
+            {
+                // Default to setUp for Student or unassigned role
+                SIS.Instance.OpenChildForm(new setUp());
+            }
+        }
+
+        private void btnDrop_Click(object sender, EventArgs e)
+        {
+            contextMenuStrip1.Show(btnDrop, new Point(0, btnDrop.Height));
         }
     }
 }

@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtBloc = new System.Windows.Forms.TextBox();
             this.txtID = new System.Windows.Forms.TextBox();
-            this.txtGender = new System.Windows.Forms.TextBox();
             this.txtDate = new System.Windows.Forms.TextBox();
             this.txtContact = new System.Windows.Forms.TextBox();
             this.btnPhoto = new System.Windows.Forms.Button();
@@ -56,8 +56,17 @@
             this.txtAge = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.uploadImageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteImageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.femaleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.maleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnGender = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
+            this.contextMenuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtName
@@ -89,16 +98,6 @@
             this.txtID.TabIndex = 3;
             this.txtID.TextChanged += new System.EventHandler(this.txtID_TextChanged);
             // 
-            // txtGender
-            // 
-            this.txtGender.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGender.Location = new System.Drawing.Point(689, 233);
-            this.txtGender.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtGender.Name = "txtGender";
-            this.txtGender.Size = new System.Drawing.Size(126, 34);
-            this.txtGender.TabIndex = 4;
-            this.txtGender.TextChanged += new System.EventHandler(this.txtGender_TextChanged);
-            // 
             // txtDate
             // 
             this.txtDate.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -127,6 +126,7 @@
             this.btnPhoto.TabIndex = 8;
             this.btnPhoto.Text = "+";
             this.btnPhoto.UseVisualStyleBackColor = true;
+            this.btnPhoto.Click += new System.EventHandler(this.btnPhoto_Click);
             // 
             // lbl
             // 
@@ -341,10 +341,10 @@
             this.label8.TabIndex = 30;
             this.label8.Text = "Email";
             // 
-
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
+            this.panel3.Controls.Add(this.btnGender);
             this.panel3.Controls.Add(this.label8);
             this.panel3.Controls.Add(this.txtAge);
             this.panel3.Controls.Add(this.label7);
@@ -364,7 +364,6 @@
             this.panel3.Controls.Add(this.pictureBox1);
             this.panel3.Controls.Add(this.txtContact);
             this.panel3.Controls.Add(this.txtDate);
-            this.panel3.Controls.Add(this.txtGender);
             this.panel3.Controls.Add(this.txtID);
             this.panel3.Controls.Add(this.txtBloc);
             this.panel3.Controls.Add(this.txtName);
@@ -372,6 +371,60 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(888, 422);
             this.panel3.TabIndex = 32;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.uploadImageToolStripMenuItem,
+            this.deleteImageToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(174, 52);
+            // 
+            // uploadImageToolStripMenuItem
+            // 
+            this.uploadImageToolStripMenuItem.Name = "uploadImageToolStripMenuItem";
+            this.uploadImageToolStripMenuItem.Size = new System.Drawing.Size(173, 24);
+            this.uploadImageToolStripMenuItem.Text = "Upload Image";
+            // 
+            // deleteImageToolStripMenuItem
+            // 
+            this.deleteImageToolStripMenuItem.Name = "deleteImageToolStripMenuItem";
+            this.deleteImageToolStripMenuItem.Size = new System.Drawing.Size(173, 24);
+            this.deleteImageToolStripMenuItem.Text = "Delete Image";
+            // 
+            // contextMenuStrip2
+            // 
+            this.contextMenuStrip2.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.femaleToolStripMenuItem,
+            this.maleToolStripMenuItem});
+            this.contextMenuStrip2.Name = "contextMenuStrip2";
+            this.contextMenuStrip2.Size = new System.Drawing.Size(211, 80);
+            // 
+            // femaleToolStripMenuItem
+            // 
+            this.femaleToolStripMenuItem.Name = "femaleToolStripMenuItem";
+            this.femaleToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.femaleToolStripMenuItem.Text = "Female";
+            this.femaleToolStripMenuItem.Click += new System.EventHandler(this.genderOption_Click);
+            // 
+            // maleToolStripMenuItem
+            // 
+            this.maleToolStripMenuItem.Name = "maleToolStripMenuItem";
+            this.maleToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.maleToolStripMenuItem.Text = "Male";
+            this.maleToolStripMenuItem.Click += new System.EventHandler(this.genderOption_Click);
+            // 
+            // btnGender
+            // 
+            this.btnGender.Font = new System.Drawing.Font("Segoe UI Semibold", 12F);
+            this.btnGender.Location = new System.Drawing.Point(689, 231);
+            this.btnGender.Name = "btnGender";
+            this.btnGender.Size = new System.Drawing.Size(126, 33);
+            this.btnGender.TabIndex = 35;
+            this.btnGender.UseVisualStyleBackColor = true;
+            this.btnGender.Click += new System.EventHandler(this.btnGender_Click);
             // 
             // setUp
             // 
@@ -392,6 +445,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.contextMenuStrip1.ResumeLayout(false);
+            this.contextMenuStrip2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -402,7 +457,6 @@
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.TextBox txtBloc;
         private System.Windows.Forms.TextBox txtID;
-        private System.Windows.Forms.TextBox txtGender;
         private System.Windows.Forms.TextBox txtDate;
         private System.Windows.Forms.TextBox txtContact;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -427,5 +481,12 @@
         private System.Windows.Forms.TextBox txtAge;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem uploadImageToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deleteImageToolStripMenuItem;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
+        private System.Windows.Forms.ToolStripMenuItem femaleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem maleToolStripMenuItem;
+        private System.Windows.Forms.Button btnGender;
     }
 }

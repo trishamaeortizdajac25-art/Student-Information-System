@@ -2,6 +2,7 @@
 using Org.BouncyCastle.Pqc.Crypto.Lms;
 using System;
 using System.Data;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace BULi
@@ -10,7 +11,7 @@ namespace BULi
     {
 
 
- 
+
         private string connectionString = "Server=localhost;Database=sis_db;Uid=root;Pwd=nU^Ns3L07_26;";
 
         private string currentUsername;
@@ -48,7 +49,7 @@ namespace BULi
             txtBloc.Text = "";
             txtDate.Text = "";
             txtAge.Text = "";
-            txtGender.Text = "";
+            btnGender.Text = "";
             txtContact.Text = "";
             txtEmailAdd.Text = "";
         }
@@ -90,7 +91,7 @@ namespace BULi
                                 }
 
                                 txtAge.Text = reader["calculated_age"].ToString();
-                                txtGender.Text = reader["gender"].ToString();
+                                btnGender.Text = reader["gender"].ToString();
                                 txtContact.Text = reader["contact_number"].ToString();
                                 txtEmailAdd.Text = reader["email"].ToString();
                             }
@@ -144,7 +145,7 @@ namespace BULi
                         cmd.Parameters.AddWithValue("@FirstName", string.IsNullOrEmpty(firstName) ? "N/A" : firstName);
                         cmd.Parameters.AddWithValue("@MiddleName", string.IsNullOrEmpty(middleName) ? (object)DBNull.Value : middleName);
                         cmd.Parameters.AddWithValue("@LastName", string.IsNullOrEmpty(lastName) ? "N/A" : lastName);
-                        cmd.Parameters.AddWithValue("@Gender", string.IsNullOrEmpty(txtGender.Text.Trim()) ? "Prefer not to say" : txtGender.Text.Trim());
+                        cmd.Parameters.AddWithValue("@Gender", string.IsNullOrEmpty(btnGender.Text.Trim()) ? "Prefer not to say" : btnGender.Text.Trim());
                         cmd.Parameters.AddWithValue("@Birthdate", validDate ? birthdate.ToString("yyyy-MM-dd") : "2000-01-01");
                         cmd.Parameters.AddWithValue("@YearLevel", string.IsNullOrEmpty(txtYearlvl.Text.Trim()) ? "Freshman" : txtYearlvl.Text.Trim());
                         cmd.Parameters.AddWithValue("@Program", string.IsNullOrEmpty(txtProgram.Text.Trim()) ? "BS Information Technology" : txtProgram.Text.Trim());
@@ -223,6 +224,28 @@ namespace BULi
         private void label2_Click(object sender, EventArgs e) { }
         private void label7_Click(object sender, EventArgs e) { }
         private void pictureBox1_Click(object sender, EventArgs e) { }
+
+        private void btnPhoto_Click(object sender, EventArgs e)
+        {
+            contextMenuStrip1.Show(btnPhoto, new Point(0, btnPhoto.Height));
+        }
+
+        private void btnGender_Click(object sender, EventArgs e)
+        {
+            contextMenuStrip2.Show(btnGender, new Point(0, btnGender.Height));
+
+            
+        }
+
+        private void genderOption_Click(object sender, EventArgs e)
+        {
+            ToolStripMenuItem clickedItem = sender as ToolStripMenuItem;
+
+            if (clickedItem != null)
+            {
+
+                btnGender.Text = clickedItem.Text;
+            }
+        }
     }
 }
-
