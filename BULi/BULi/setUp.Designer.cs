@@ -56,9 +56,9 @@
             this.txtAge = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnAddPhoto = new System.Windows.Forms.Button();
-            this.btnUpdatePhoto = new System.Windows.Forms.Button();
             this.btnDeletePhoto = new System.Windows.Forms.Button();
+            this.btnUpdatePhoto = new System.Windows.Forms.Button();
+            this.btnAddPhoto = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -302,6 +302,7 @@
             this.btnUpdate.TabIndex = 26;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnDelete
             // 
@@ -312,6 +313,7 @@
             this.btnDelete.TabIndex = 27;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnShowCard
             // 
@@ -322,6 +324,7 @@
             this.btnShowCard.TabIndex = 28;
             this.btnShowCard.Text = "View Student Information";
             this.btnShowCard.UseVisualStyleBackColor = true;
+            this.btnShowCard.Click += new System.EventHandler(this.btnShowCard_Click);
             // 
             // txtAge
             // 
@@ -354,16 +357,15 @@
             this.panel2.TabIndex = 31;
             this.panel2.Visible = false;
             // 
-            // btnAddPhoto
+            // btnDeletePhoto
             // 
-            this.btnAddPhoto.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnAddPhoto.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold);
-            this.btnAddPhoto.Location = new System.Drawing.Point(0, 0);
-            this.btnAddPhoto.Name = "btnAddPhoto";
-            this.btnAddPhoto.Size = new System.Drawing.Size(218, 42);
-            this.btnAddPhoto.TabIndex = 32;
-            this.btnAddPhoto.Text = "Add Photo";
-            this.btnAddPhoto.UseVisualStyleBackColor = true;
+            this.btnDeletePhoto.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnDeletePhoto.Location = new System.Drawing.Point(0, 84);
+            this.btnDeletePhoto.Name = "btnDeletePhoto";
+            this.btnDeletePhoto.Size = new System.Drawing.Size(218, 45);
+            this.btnDeletePhoto.TabIndex = 34;
+            this.btnDeletePhoto.Text = "button3";
+            this.btnDeletePhoto.UseVisualStyleBackColor = true;
             // 
             // btnUpdatePhoto
             // 
@@ -376,15 +378,16 @@
             this.btnUpdatePhoto.Text = "Update Photo";
             this.btnUpdatePhoto.UseVisualStyleBackColor = true;
             // 
-            // btnDeletePhoto
+            // btnAddPhoto
             // 
-            this.btnDeletePhoto.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnDeletePhoto.Location = new System.Drawing.Point(0, 84);
-            this.btnDeletePhoto.Name = "btnDeletePhoto";
-            this.btnDeletePhoto.Size = new System.Drawing.Size(218, 45);
-            this.btnDeletePhoto.TabIndex = 34;
-            this.btnDeletePhoto.Text = "button3";
-            this.btnDeletePhoto.UseVisualStyleBackColor = true;
+            this.btnAddPhoto.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAddPhoto.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold);
+            this.btnAddPhoto.Location = new System.Drawing.Point(0, 0);
+            this.btnAddPhoto.Name = "btnAddPhoto";
+            this.btnAddPhoto.Size = new System.Drawing.Size(218, 42);
+            this.btnAddPhoto.TabIndex = 32;
+            this.btnAddPhoto.Text = "Add Photo";
+            this.btnAddPhoto.UseVisualStyleBackColor = true;
             // 
             // panel3
             // 

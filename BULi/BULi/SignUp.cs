@@ -1,88 +1,90 @@
-﻿
+﻿using MySql.Data.MySqlClient;
+using Org.BouncyCastle.Pqc.Crypto.Lms;
 using System;
 using System.Data;
 using System.Security.Cryptography;
 using System.Text;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
 
 namespace BULi
 {
     public partial class SignUp : Form
     {
-        private string connectionString = "Server=localhost;Database=sis_db;Uid=root;Pwd=nU^Ns3L07_26;";
+        private string connectionString = "Server=localhost;Database=sis_db;Uid=root;Pwd=your_mysql_password;";
 
         public SignUp()
         {
             InitializeComponent();
         }
 
-        private void btnSignIn_Click(object sender, EventArgs e) // Sign Up Button
+        private void btnSignUp_Click(object sender, EventArgs e)
         {
             string username = txtUsername.Text.Trim();
             string password = txtPassword.Text.Trim();
 
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
             {
-                MessageBox.Show("Please fill in both username and password.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please fill in both the username and password fields.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (username.Contains(" "))
+            {
+                MessageBox.Show("Username cannot contain spaces.", "Invalid Username", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             try
             {
-                string hashedPassword = ComputeSha256Hash(password);
-
                 using (MySqlConnection conn = new MySqlConnection(connectionString))
                 {
                     conn.Open();
 
-                    // 1. Check if username exists
-                    string checkQuery = "SELECT COUNT(1) FROM students WHERE username = @Username";
-                    using (MySqlCommand checkCmd = new MySqlCommand(checkQuery, conn))
+                    string checkUserQuery = "SELECT COUNT(*) FROM students WHERE username = @Username";
+                    using (MySqlCommand checkCmd = new MySqlCommand(checkUserQuery, conn))
                     {
                         checkCmd.Parameters.AddWithValue("@Username", username);
-                        int exists = Convert.ToInt32(checkCmd.ExecuteScalar());
-                        if (exists > 0)
+                        long userCount = Convert.ToInt64(checkCmd.ExecuteScalar());
+
+                        if (userCount > 0)
                         {
-                            MessageBox.Show("Username already taken. Please choose another.", "Registration Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            MessageBox.Show("Username is already taken. Please choose another one.", "Registration Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             return;
                         }
                     }
 
-                    // 2. Generate Next Student Number (e.g. 2026-0001)
-                    string genNumQuery = "SELECT CONCAT(YEAR(CURDATE()), '-', LPAD(IFNULL(MAX(CAST(SUBSTRING(student_number, 6) AS UNSIGNED)), 0) + 1, 4, '0')) FROM students WHERE student_number LIKE CONCAT(YEAR(CURDATE()), '-%')";
-                    string nextStudentNum = "2026-0001";
-                    using (MySqlCommand numCmd = new MySqlCommand(genNumQuery, conn))
-                    {
-                        object result = numCmd.ExecuteScalar();
-                        if (result != null && result != DBNull.Value)
-                        {
-                            nextStudentNum = result.ToString();
-                        }
-                    }
+                    string hashedPassword = ComputeSha256Hash(password);
 
-                    // 3. Insert initial student record matching strict foreign keys
                     string insertQuery = @"
                         INSERT INTO students 
-                        (student_number, first_name, last_name, gender, birthdate, year_level, program, block, contact_number, username, password_hash)
+                        (username, password_hash, first_name, last_name, is_deleted, created_at) 
                         VALUES 
-                        (@StudentNumber, 'New', 'Student', 'Male', '2000-01-01', 'Freshman', 'BS Information Technology', 'Block A', '00000000000', @Username, @PasswordHash)";
+                        (@Username, @PasswordHash, 'New', 'Student', 0, NOW())";
 
                     using (MySqlCommand insertCmd = new MySqlCommand(insertQuery, conn))
                     {
-                        insertCmd.Parameters.AddWithValue("@StudentNumber", nextStudentNum);
                         insertCmd.Parameters.AddWithValue("@Username", username);
                         insertCmd.Parameters.AddWithValue("@PasswordHash", hashedPassword);
-                        insertCmd.ExecuteNonQuery();
-                    }
 
-                    MessageBox.Show("Account created successfully! Please complete your setup details.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    SIS.Instance.OpenChildForm(new setUp(username));
+                        int rowsAffected = insertCmd.ExecuteNonQuery();
+
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("Account registered successfully! Please complete your profile details.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                            // Opens setUp form in Sign-Up mode (isSignUp = true) to keep textboxes blank
+                            SIS.Instance.OpenChildForm(new setUp(username, true));
+                        }
+                        else
+                        {
+                            MessageBox.Show("Failed to register account. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Database error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Database error during registration: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -100,6 +102,13 @@ namespace BULi
             }
         }
 
+        private void btnSignInRedirect_Click(object sender, EventArgs e)
+        {
+            SIS.Instance.OpenChildForm(new stdSignIn());
+        }
+
+        // Handles designer event bindings
+        private void SignUp_Load(object sender, EventArgs e) { }
         private void SignIn_Load(object sender, EventArgs e) { }
     }
 }

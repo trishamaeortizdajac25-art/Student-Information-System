@@ -1,23 +1,15 @@
-<<<<<<< HEAD
-﻿using MySql.Data.MySqlClient;
+using MySql.Data.MySqlClient;
 using Org.BouncyCastle.Pqc.Crypto.Lms;
 using System;
-=======
-﻿using System;
->>>>>>> 21d713051af4c74e0a1bfd08895d59824b09b2ff
 using System.Data;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
 
 namespace BULi
 {
     public partial class infoCard : Form
     {
-<<<<<<< HEAD
+
         private string connectionString = "Server=localhost;Database=sis_db;Uid=root;Pwd=kleenpIn*1;";
-=======
-        private string connectionString = "Server=localhost;Database=sis_db;Uid=root;Pwd=nU^Ns3L07_26;";
->>>>>>> 21d713051af4c74e0a1bfd08895d59824b09b2ff
         private string currentUsername;
 
         // Default constructor
