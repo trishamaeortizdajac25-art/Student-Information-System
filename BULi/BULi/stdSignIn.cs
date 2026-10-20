@@ -1,48 +1,25 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Data;
 using System.Security.Cryptography;
 using System.Text;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
 
 namespace BULi
 {
     public partial class stdSignIn : Form
     {
+        private string connectionString = "Server=localhost;Database=sis_db;Uid=root;Pwd=Trishamae1122;";
 
-        private string connectionString = "Server=localhost;Database=sis_db;Uid=root;Pwd=kleenpIn*1;";
-
-        
-
-<<<<<<< HEAD
-        private string connectionString = "Server=localhost;Database=sis_db;Uid=root;Pwd=Trishamae1122";
-
-
-
-
-=======
->>>>>>> 675f73809431e97523c0e17e81706cc609515221
         public stdSignIn()
         {
             InitializeComponent();
         }
 
-
-        private void btnSignUpRDT_Click(object sender, EventArgs e)
-        {
-            SIS.Instance.OpenChildForm(new SignUp());
-        }
-
-
-        private void btnSignUp_Click(object sender, EventArgs e) // Sign In Button
+        private void btnSignUp_Click(object sender, EventArgs e)
         {
             string username = txtUsername.Text.Trim();
             string password = txtPassword.Text.Trim();
-
-            SIS.Instance.OpenChildForm(new setUp());
-
-            SIS.Instance.OpenChildForm(new stdSignIn());
-
 
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
             {
@@ -57,23 +34,30 @@ namespace BULi
                 using (MySqlConnection conn = new MySqlConnection(connectionString))
                 {
                     conn.Open();
-                    string query = "SELECT COUNT(1) FROM students WHERE username = @Username AND password_hash = @PasswordHash AND is_deleted = 0";
+                    string query = @"
+                        SELECT username 
+                        FROM students 
+                        WHERE username = @Username 
+                          AND password_hash = @PasswordHash 
+                          AND is_deleted = 0";
 
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@Username", username);
                         cmd.Parameters.AddWithValue("@PasswordHash", hashedPassword);
 
-                        int count = Convert.ToInt32(cmd.ExecuteScalar());
-
-                        if (count > 0)
+                        using (MySqlDataReader reader = cmd.ExecuteReader())
                         {
-                            MessageBox.Show("Sign In successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            SIS.Instance.OpenChildForm(new setUp(username));
-                        }
-                        else
-                        {
-                            MessageBox.Show("Invalid username or password.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            if (reader.Read())
+                            {
+                                string activeUsername = reader["username"].ToString();
+                                MessageBox.Show("Sign in successful!", "Welcome", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                SIS.Instance.OpenChildForm(new setUp(activeUsername, false));
+                            }
+                            else
+                            {
+                                MessageBox.Show("Invalid username or password.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
                         }
                     }
                 }
@@ -82,6 +66,11 @@ namespace BULi
             {
                 MessageBox.Show("Database error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnSignUpRDT_Click(object sender, EventArgs e)
+        {
+            SIS.Instance.OpenChildForm(new SignUp());
         }
 
         private string ComputeSha256Hash(string rawData)
@@ -101,12 +90,5 @@ namespace BULi
         private void txtUsername_TextChanged(object sender, EventArgs e) { }
         private void txtPassword_TextChanged(object sender, EventArgs e) { }
         private void stdSignIn_Load(object sender, EventArgs e) { }
-
-        private void lnkSignUpRDT_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            SIS.Instance.OpenChildForm(new SignUp());
-        }
-
-
     }
 }
