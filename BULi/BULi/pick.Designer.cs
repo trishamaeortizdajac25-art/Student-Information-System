@@ -42,9 +42,9 @@
             // 
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(305, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(360, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(415, 237);
+            this.pictureBox1.Size = new System.Drawing.Size(312, 195);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
@@ -54,7 +54,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(422, 189);
+            this.label1.Location = new System.Drawing.Point(426, 212);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(166, 28);
             this.label1.TabIndex = 1;
@@ -89,7 +89,7 @@
             this.pnlPlaceholder.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlPlaceholder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
+            this.pnlPlaceholder.BackColor = System.Drawing.Color.White;
             this.pnlPlaceholder.Controls.Add(this.pictureBox1);
             this.pnlPlaceholder.Controls.Add(this.label1);
             this.pnlPlaceholder.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
