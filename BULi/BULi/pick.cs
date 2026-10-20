@@ -12,6 +12,7 @@ namespace BULi
 {
     public partial class pick : Form
     {
+        public static string SelectedRole { get; set; }
         public pick()
         {
             InitializeComponent();
@@ -19,17 +20,15 @@ namespace BULi
 
         private void btnStudent_Click(object sender, EventArgs e)
         {
-            infoCard card = new infoCard();
-            card.SetUserRole("Student");
 
+            SelectedRole = "Student";
             SIS.Instance.OpenChildForm(new stdSignIn());
         }
 
         private void btnTeacher_Click(object sender, EventArgs e)
         {
-            infoCard card = new infoCard();
-            card.SetUserRole("Teacher");
 
+            SelectedRole = "Student";
             SIS.Instance.OpenChildForm(new tcrSignIn());
         }
 

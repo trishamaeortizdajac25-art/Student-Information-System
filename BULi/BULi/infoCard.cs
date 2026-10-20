@@ -12,6 +12,8 @@ namespace BULi
         private string connectionString = "Server=localhost;Database=sis_db;Uid=root;Pwd=kleenpIn*1;";
         private string currentUsername;
 
+
+
         // Default constructor
         public infoCard()
         {
@@ -30,6 +32,16 @@ namespace BULi
             {
                 LoadStudentCardData(currentUsername);
             }
+
+            if (pick.SelectedRole == "Student")
+            {
+                lnkReturn.Text = "Return";
+            }
+            else if (pick.SelectedRole == "Teacher")
+            {
+                lnkReturn.Text = "return to list";
+            }
+
         }
 
         private void LoadStudentCardData(string username)
@@ -79,6 +91,16 @@ namespace BULi
             }
         }
 
-
+        private void lnkReturn_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            if (pick.SelectedRole == "Student")
+            {
+                SIS.Instance.OpenChildForm(new setUp());
+            }
+            else if (pick.SelectedRole == "Teacher")
+            {
+                SIS.Instance.OpenChildForm(new display());
+            }
+        }
     }
 }
