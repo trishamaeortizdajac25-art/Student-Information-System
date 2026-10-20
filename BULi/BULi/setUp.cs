@@ -1,5 +1,4 @@
 ﻿using MySql.Data.MySqlClient;
-using Org.BouncyCastle.Pqc.Crypto.Lms;
 using System;
 using System.Data;
 using System.Drawing;
@@ -9,10 +8,7 @@ namespace BULi
 {
     public partial class setUp : Form
     {
-
-
-
-        private string connectionString = "Server=localhost;Database=sis_db;Uid=root;Pwd=nU^Ns3L07_26;";
+        private string connectionString = "Server=localhost;Database=sis_db;Uid=root;Pwd=Trishamae1122;";
 
         private string currentUsername;
         private bool isSignUpMode;
@@ -105,6 +101,9 @@ namespace BULi
             }
         }
 
+        // ==========================================================
+        // UPDATE BUTTON -> SAVES CHANGES & DIRECTLY OPENS INFOCARD
+        // ==========================================================
         private void btnSave_Click(object sender, EventArgs e)
         {
             try
@@ -158,7 +157,9 @@ namespace BULi
                         if (rows > 0)
                         {
                             MessageBox.Show("Profile updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            SIS.Instance.OpenChildForm(new HomePage());
+
+                            // Directly navigates to infoCard passing active username
+                            SIS.Instance.OpenChildForm(new infoCard(currentUsername));
                         }
                     }
                 }
@@ -195,7 +196,7 @@ namespace BULi
                             if (rows > 0)
                             {
                                 MessageBox.Show("Your account has been deleted.", "Account Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                SIS.Instance.OpenChildForm(new stdSignIn());
+                                Application.Exit();
                             }
                         }
                     }
@@ -212,9 +213,7 @@ namespace BULi
             SIS.Instance.OpenChildForm(new infoCard(currentUsername));
         }
 
-        // ==========================================================
-        // DUMMY EVENT HANDLERS (Clears CS1061 designer errors)
-        // ==========================================================
+        // Dummy handlers for designer bindings
         private void txtBloc_TextChanged(object sender, EventArgs e) { }
         private void txtID_TextChanged(object sender, EventArgs e) { }
         private void txtGender_TextChanged(object sender, EventArgs e) { }
@@ -233,8 +232,6 @@ namespace BULi
         private void btnGender_Click(object sender, EventArgs e)
         {
             contextMenuStrip2.Show(btnGender, new Point(0, btnGender.Height));
-
-            
         }
 
         private void genderOption_Click(object sender, EventArgs e)
@@ -243,7 +240,6 @@ namespace BULi
 
             if (clickedItem != null)
             {
-
                 btnGender.Text = clickedItem.Text;
             }
         }

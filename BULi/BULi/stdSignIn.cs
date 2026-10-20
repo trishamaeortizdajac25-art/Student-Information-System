@@ -12,7 +12,7 @@ namespace BULi
 
         
 
-        private string connectionString = "Server=localhost;Database=sis_db;Uid=root;Pwd=nU^Ns3L07_26;";
+        private string connectionString = "Server=localhost;Database=sis_db;Uid=root;Pwd=Trishamae1122";
 
 
 

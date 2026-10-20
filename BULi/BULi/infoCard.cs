@@ -8,16 +8,14 @@ namespace BULi
 {
     public partial class infoCard : Form
     {
-        private string connectionString = "Server=localhost;Database=sis_db;Uid=root;Pwd=kleenpIn*1;";
+        private string connectionString = "Server=localhost;Database=sis_db;Uid=root;Pwd=Trishamae1122;";
         private string currentUsername;
 
-        // Default constructor
         public infoCard()
         {
             InitializeComponent();
         }
 
-        // Parameterized constructor accepting active username
         public infoCard(string username) : this()
         {
             this.currentUsername = username;
@@ -30,7 +28,6 @@ namespace BULi
                 LoadStudentCardData(currentUsername);
             }
 
-            // Case-insensitive check to prevent failure if role casing varies
             if (string.Equals(pick.SelectedRole, "Student", StringComparison.OrdinalIgnoreCase))
             {
                 lnkReturn.Text = "Return";
@@ -41,7 +38,6 @@ namespace BULi
             }
             else
             {
-                // Fallback default if pick.SelectedRole was not set
                 lnkReturn.Text = "Return";
             }
         }
@@ -93,6 +89,9 @@ namespace BULi
             }
         }
 
+        // ==========================================================
+        // RETURN BUTTON -> OPENS SETUP WITH ACTIVE USERNAME PASSED
+        // ==========================================================
         private void lnkReturn_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             if (string.Equals(pick.SelectedRole, "Teacher", StringComparison.OrdinalIgnoreCase))
@@ -101,8 +100,8 @@ namespace BULi
             }
             else
             {
-                // Default to setUp for Student or unassigned role
-                SIS.Instance.OpenChildForm(new setUp());
+                // Passes currentUsername so setUp loads with all fields populated
+                SIS.Instance.OpenChildForm(new setUp(currentUsername, false));
             }
         }
 
