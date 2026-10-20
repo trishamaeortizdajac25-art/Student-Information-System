@@ -297,6 +297,7 @@
             this.btnUpdate.TabIndex = 26;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnDelete
             // 
@@ -307,6 +308,7 @@
             this.btnDelete.TabIndex = 27;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnShowCard
             // 
@@ -317,6 +319,7 @@
             this.btnShowCard.TabIndex = 28;
             this.btnShowCard.Text = "View Student Information";
             this.btnShowCard.UseVisualStyleBackColor = true;
+            this.btnShowCard.Click += new System.EventHandler(this.btnShowCard_Click);
             // 
             // txtAge
             // 
@@ -338,6 +341,7 @@
             this.label8.TabIndex = 30;
             this.label8.Text = "Email";
             // 
+
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
