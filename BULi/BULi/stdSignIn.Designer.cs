@@ -65,7 +65,7 @@
             this.btnSignUpRDT.Location = new System.Drawing.Point(767, 492);
             this.btnSignUpRDT.Margin = new System.Windows.Forms.Padding(0);
             this.btnSignUpRDT.Name = "btnSignUpRDT";
-            this.btnSignUpRDT.Size = new System.Drawing.Size(85, 39);
+            this.btnSignUpRDT.Size = new System.Drawing.Size(123, 39);
             this.btnSignUpRDT.TabIndex = 15;
             this.btnSignUpRDT.Text = "Sign Up";
             this.btnSignUpRDT.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;

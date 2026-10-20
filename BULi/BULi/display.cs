@@ -50,14 +50,19 @@ namespace BULi
 
         }
 
-        private void lnbReturn_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            SIS.Instance.OpenChildForm(new HomePage());
-        }
+
 
         private void lblYearTitle_Click(object sender, EventArgs e)
         {
 
         }
+
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+            SIS.Instance.OpenChildForm(new HomePage());
+
+        }
+
+
     }
 }

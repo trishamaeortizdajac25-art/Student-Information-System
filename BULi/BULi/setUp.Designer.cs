@@ -55,13 +55,8 @@
             this.btnShowCard = new System.Windows.Forms.Button();
             this.txtAge = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btnAddPhoto = new System.Windows.Forms.Button();
-            this.btnUpdatePhoto = new System.Windows.Forms.Button();
-            this.btnDeletePhoto = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -343,54 +338,10 @@
             this.label8.TabIndex = 30;
             this.label8.Text = "Email";
             // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.btnDeletePhoto);
-            this.panel2.Controls.Add(this.btnUpdatePhoto);
-            this.panel2.Controls.Add(this.btnAddPhoto);
-            this.panel2.Location = new System.Drawing.Point(20, 271);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(218, 129);
-            this.panel2.TabIndex = 31;
-            this.panel2.Visible = false;
-            // 
-            // btnAddPhoto
-            // 
-            this.btnAddPhoto.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnAddPhoto.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold);
-            this.btnAddPhoto.Location = new System.Drawing.Point(0, 0);
-            this.btnAddPhoto.Name = "btnAddPhoto";
-            this.btnAddPhoto.Size = new System.Drawing.Size(218, 42);
-            this.btnAddPhoto.TabIndex = 32;
-            this.btnAddPhoto.Text = "Add Photo";
-            this.btnAddPhoto.UseVisualStyleBackColor = true;
-            // 
-            // btnUpdatePhoto
-            // 
-            this.btnUpdatePhoto.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnUpdatePhoto.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold);
-            this.btnUpdatePhoto.Location = new System.Drawing.Point(0, 42);
-            this.btnUpdatePhoto.Name = "btnUpdatePhoto";
-            this.btnUpdatePhoto.Size = new System.Drawing.Size(218, 42);
-            this.btnUpdatePhoto.TabIndex = 33;
-            this.btnUpdatePhoto.Text = "Update Photo";
-            this.btnUpdatePhoto.UseVisualStyleBackColor = true;
-            // 
-            // btnDeletePhoto
-            // 
-            this.btnDeletePhoto.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnDeletePhoto.Location = new System.Drawing.Point(0, 84);
-            this.btnDeletePhoto.Name = "btnDeletePhoto";
-            this.btnDeletePhoto.Size = new System.Drawing.Size(218, 45);
-            this.btnDeletePhoto.TabIndex = 34;
-            this.btnDeletePhoto.Text = "button3";
-            this.btnDeletePhoto.UseVisualStyleBackColor = true;
-            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
             this.panel3.Controls.Add(this.label8);
-            this.panel3.Controls.Add(this.panel2);
             this.panel3.Controls.Add(this.txtAge);
             this.panel3.Controls.Add(this.label7);
             this.panel3.Controls.Add(this.label2);
@@ -434,7 +385,6 @@
             this.Text = "setUp";
             this.Load += new System.EventHandler(this.setUp_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.ResumeLayout(false);
@@ -471,10 +421,6 @@
         private System.Windows.Forms.Button btnShowCard;
         private System.Windows.Forms.TextBox txtAge;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button btnDeletePhoto;
-        private System.Windows.Forms.Button btnUpdatePhoto;
-        private System.Windows.Forms.Button btnAddPhoto;
         private System.Windows.Forms.Panel panel3;
     }
 }
