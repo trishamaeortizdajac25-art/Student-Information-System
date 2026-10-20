@@ -23,7 +23,7 @@ HEAD
 
         private void btnSignUpRDT_Click(object sender, EventArgs e)
         {
-            SIS.Instance.OpenChildForm(new stdSignIn());
+            SIS.Instance.OpenChildForm(new SignUp());
         }
 
         private void btnSignUp_Click(object sender, EventArgs e) // Sign In Button
