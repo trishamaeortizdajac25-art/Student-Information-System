@@ -219,5 +219,12 @@ SELECT username FROM teachers WHERE username = 'test.teacher' AND password_hash 
 SELECT username FROM students WHERE username = 'test.student' AND password_hash = SHA2('test123', 256);
 
 USE sis_db;
-DELETE FROM programs
+DELETE FROM programsactivity_logs
 WHERE program_name IN ('BS Education', 'BS Business Administration', 'BS Nursing');
+
+USE sis_db;
+SELECT student_id, student_number, username, is_deleted
+FROM students
+WHERE username = 'test.student';
+
+UPDATE students SET is_deleted = 0 WHERE username = 'test.student';
