@@ -63,6 +63,14 @@ namespace BULi
 
         }
 
+        private void display_Load(object sender, EventArgs e)
+        {
+            pnlScroll.MouseEnter += (s, ev) => pnlScroll.Focus();
+        }
 
+        private void btnView_Click(object sender, EventArgs e)
+        {
+            SIS.Instance.OpenChildForm(new infoCard());
+        }
     }
 }

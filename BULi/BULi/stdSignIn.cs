@@ -1,10 +1,9 @@
-﻿using MySql.Data.MySqlClient;
-using Org.BouncyCastle.Pqc.Crypto.Lms;
-using System;
+﻿using System;
 using System.Data;
 using System.Security.Cryptography;
 using System.Text;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace BULi
 {
@@ -20,10 +19,12 @@ namespace BULi
             InitializeComponent();
         }
 
+
         private void btnSignUpRDT_Click(object sender, EventArgs e)
         {
             SIS.Instance.OpenChildForm(new SignUp());
         }
+
 
         private void btnSignUp_Click(object sender, EventArgs e) // Sign In Button
         {
@@ -92,6 +93,12 @@ namespace BULi
         private void txtUsername_TextChanged(object sender, EventArgs e) { }
         private void txtPassword_TextChanged(object sender, EventArgs e) { }
         private void stdSignIn_Load(object sender, EventArgs e) { }
+
+        private void lnkSignUpRDT_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            SIS.Instance.OpenChildForm(new SignUp());
+        }
+
+
     }
 }
-

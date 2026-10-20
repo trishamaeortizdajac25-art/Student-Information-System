@@ -276,5 +276,23 @@
   <ItemGroup>
     <None Include="Resources\bluehp1.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\default.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tcrnull.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tempstarter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\greenhp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\yellowhp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\redhp.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

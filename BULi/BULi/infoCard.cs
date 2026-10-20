@@ -1,14 +1,13 @@
 using MySql.Data.MySqlClient;
-using Org.BouncyCastle.Pqc.Crypto.Lms;
 using System;
 using System.Data;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace BULi
 {
     public partial class infoCard : Form
     {
-
         private string connectionString = "Server=localhost;Database=sis_db;Uid=root;Pwd=kleenpIn*1;";
         private string currentUsername;
 
@@ -17,8 +16,8 @@ namespace BULi
         {
             InitializeComponent();
         }
-                
-        // Parameterized constructor accepting active username (fixes CS1729)
+
+        // Parameterized constructor accepting active username
         public infoCard(string username) : this()
         {
             this.currentUsername = username;
@@ -29,6 +28,21 @@ namespace BULi
             if (!string.IsNullOrEmpty(currentUsername))
             {
                 LoadStudentCardData(currentUsername);
+            }
+
+            // Case-insensitive check to prevent failure if role casing varies
+            if (string.Equals(pick.SelectedRole, "Student", StringComparison.OrdinalIgnoreCase))
+            {
+                lnkReturn.Text = "Return";
+            }
+            else if (string.Equals(pick.SelectedRole, "Teacher", StringComparison.OrdinalIgnoreCase))
+            {
+                lnkReturn.Text = "Return to List";
+            }
+            else
+            {
+                // Fallback default if pick.SelectedRole was not set
+                lnkReturn.Text = "Return";
             }
         }
 
@@ -79,6 +93,22 @@ namespace BULi
             }
         }
 
+        private void lnkReturn_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            if (string.Equals(pick.SelectedRole, "Teacher", StringComparison.OrdinalIgnoreCase))
+            {
+                SIS.Instance.OpenChildForm(new display());
+            }
+            else
+            {
+                // Default to setUp for Student or unassigned role
+                SIS.Instance.OpenChildForm(new setUp());
+            }
+        }
 
+        private void btnDrop_Click(object sender, EventArgs e)
+        {
+            contextMenuStrip1.Show(btnDrop, new Point(0, btnDrop.Height));
+        }
     }
 }
