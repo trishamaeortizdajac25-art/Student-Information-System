@@ -156,15 +156,19 @@ ORDER BY p.program_name;
 -- Passwords are stored as SHA-256 hex hashes (SHA2(..., 256)).
 --
 -- LOGINS YOU CAN TRY:
---   Teacher : test.teacher / test123      (also: teacher1 / teacher123, admin / admin123)
---   Student : test.student / test123      (also: juan.delacruz / student123, and all
---                                          other sample students use student123)
+--   Teacher : jonpel       / pass1
+--             lasteph      / pass12
+--             arsat        / pass123
+--   Student : test.student / test123
+--             juan.delacruz (and the other students) / student123
 -- ============================================================
+
+-- Year levels MUST match the values used in the students below (foreign key).
 INSERT INTO year_levels (year_level, sort_order) VALUES
-    ('Freshman', 1),
-    ('Sophomore', 2),
-    ('Junior', 3),
-    ('Senior', 4);
+    ('1st Year', 1),
+    ('2nd Year', 2),
+    ('3rd Year', 3),
+    ('4th Year', 4);
 
 -- The ONLY five programs in the system: BSIT, BSCS, BSMet, BSBio, BSChem.
 -- Every program used by a student below MUST be listed here (foreign key).
@@ -175,73 +179,44 @@ INSERT INTO programs (program_name) VALUES
     ('BS Biology'),
     ('BS Chemistry');
 
--- teachers data
+-- Teachers (final names/logins already applied)
 INSERT INTO teachers (teacher_number, first_name, middle_name, last_name, username, password_hash) VALUES
-    ('T-0001', 'Ana',    'Lopez', 'Rivera',  'teacher1',     SHA2('teacher123', 256)),
-    ('T-0002', 'System',  NULL,   'Admin',   'admin',        SHA2('admin123', 256)),
-    ('T-0003', 'Test',    NULL,   'Teacher', 'test.teacher', SHA2('test123', 256));
+    ('T-0001', 'Jonathan',      NULL, 'Pelon',   'jonpel',  SHA2('pass1', 256)),
+    ('T-0002', 'Lance Stephen', NULL, 'Bronzal', 'lasteph', SHA2('pass12', 256)),
+    ('T-0003', 'Arlene',        NULL, 'Satuito', 'arsat',   SHA2('pass123', 256));
 
 INSERT INTO students
-    (student_number, first_name, middle_name, last_name, gender, birthdate,s
+    (student_number, first_name, middle_name, last_name, gender, birthdate,
      year_level, program, block, contact_number, email, address, status, username, password_hash)
 VALUES
-    ('2026-0001', 'Juan',    'Santos',  'Dela Cruz',  'Male',   '2008-03-14', 'Freshman',  'BS Information Technology',  'A', '09171234567', 'juan.delacruz@example.com',   'Legazpi City, Albay', 'Active',    'juan.delacruz',   SHA2('student123', 256)),
-    ('2026-0002', 'Maria',   NULL,      'Santos',     'Female', '2007-07-22', 'Freshman',  'BS Computer Science',        'B', '09281234568', 'maria.santos@example.com',    'Daraga, Albay',       'Active',    'maria.santos',    SHA2('student123', 256)),
-    ('2026-0003', 'Angela',  'Cruz',    'Garcia',     'Female', '2008-01-30', 'Freshman',  'BS Biology',                 'A', '09451234570', 'angela.garcia@example.com',   'Tabaco City, Albay',  'Active',    'angela.garcia',   SHA2('student123', 256)),
-    ('2026-0004', 'Sofia',   NULL,      'Ramos',      'Female', '2008-08-11', 'Freshman',  'BS Information Technology',  'C', '09891234574', 'sofia.ramos@example.com',     'Guinobatan, Albay',   'Active',    'sofia.ramos',     SHA2('student123', 256)),
-    ('2025-0011', 'Katrina', 'Lim',     'Mendoza',    'Female', '2006-05-09', 'Sophomore', 'BS Information Technology',  'A', '09671234572', 'katrina.mendoza@example.com', 'Polangui, Albay',     'Active',    'katrina.mendoza', SHA2('student123', 256)),
-    ('2025-0012', 'Bianca',  NULL,      'Torres',     'Female', '2006-10-16', 'Sophomore', 'BS Computer Science',        'B', '09181234576', 'bianca.torres@example.com',   'Daraga, Albay',       'Active',    'bianca.torres',   SHA2('student123', 256)),
-    ('2025-0013', 'Miguel',  'Tan',     'Aquino',     'Male',   '2006-12-02', 'Sophomore', 'BS Computer Science',        'A', '09201234577', 'miguel.aquino@example.com',   'Legazpi City, Albay', 'Active',    'miguel.aquino',   SHA2('student123', 256)),
-    ('2024-0021', 'Jose',    NULL,      'Reyes',      'Male',   '2005-11-05', 'Junior',    'BS Information Technology',  'B', '09391234569', 'jose.reyes@example.com',      'Camalig, Albay',      'Active',    'jose.reyes',      SHA2('student123', 256)),
-    ('2024-0022', 'Carlo',   NULL,      'Navarro',    'Male',   '2005-02-03', 'Junior',    'BS Metrology',               'A', '09911234575', 'carlo.navarro@example.com',   'Oas, Albay',          'Dropped',   'carlo.navarro',   SHA2('student123', 256)),
-    ('2023-0031', 'Mark',    'Dy',      'Villanueva', 'Male',   '2004-09-18', 'Senior',    'BS Chemistry',               'A', '09561234571', 'mark.villanueva@example.com', 'Ligao City, Albay',   'On Leave',  'mark.villanueva', SHA2('student123', 256)),
-    ('2023-0032', 'Paolo',   NULL,      'Bautista',   'Male',   '2004-12-27', 'Senior',    'BS Computer Science',        'B', '09781234573', 'paolo.bautista@example.com',  'Legazpi City, Albay', 'Graduated', 'paolo.bautista',  SHA2('student123', 256)),
-    ('2023-0033', 'Hannah',  'Reyes',   'Castillo',   'Female', '2004-04-21', 'Senior',    'BS Biology',                 'A', '09151234578', 'hannah.castillo@example.com', 'Daraga, Albay',       'Active',    'hannah.castillo', SHA2('student123', 256)),
-    ('2026-0099', 'Test',    NULL,      'Student',    'Male',   '2008-06-15', 'Freshman',  'BS Information Technology',  'A', '09123456789', 'test.student@example.com',    'Naga City, Camarines Sur', 'Active', 'test.student',  SHA2('test123', 256));
+    ('2026-0001', 'Juan',    'Santos',  'Dela Cruz',  'Male',   '2008-03-14', '1st Year',  'BS Information Technology',  'A', '09171234567', 'juan.delacruz@example.com',   'Legazpi City, Albay', 'Active',    'juan.delacruz',   SHA2('student123', 256)),
+    ('2026-0002', 'Maria',   NULL,      'Santos',     'Female', '2007-07-22', '1st Year',  'BS Computer Science',        'B', '09281234568', 'maria.santos@example.com',    'Daraga, Albay',       'Active',    'maria.santos',    SHA2('student123', 256)),
+    ('2026-0003', 'Angela',  'Cruz',    'Garcia',     'Female', '2008-01-30', '1st Year',  'BS Biology',                 'A', '09451234570', 'angela.garcia@example.com',   'Tabaco City, Albay',  'Active',    'angela.garcia',   SHA2('student123', 256)),
+    ('2026-0004', 'Sofia',   NULL,      'Ramos',      'Female', '2008-08-11', '1st Year',  'BS Information Technology',  'C', '09891234574', 'sofia.ramos@example.com',     'Guinobatan, Albay',   'Active',    'sofia.ramos',     SHA2('student123', 256)),
+    ('2025-0011', 'Katrina', 'Lim',     'Mendoza',    'Female', '2006-05-09', '2nd Year',  'BS Information Technology',  'A', '09671234572', 'katrina.mendoza@example.com', 'Polangui, Albay',     'Active',    'katrina.mendoza', SHA2('student123', 256)),
+    ('2025-0012', 'Bianca',  NULL,      'Torres',     'Female', '2006-10-16', '2nd Year',  'BS Computer Science',        'B', '09181234576', 'bianca.torres@example.com',   'Daraga, Albay',       'Active',    'bianca.torres',   SHA2('student123', 256)),
+    ('2025-0013', 'Miguel',  'Tan',     'Aquino',     'Male',   '2006-12-02', '2nd Year',  'BS Computer Science',        'A', '09201234577', 'miguel.aquino@example.com',   'Legazpi City, Albay', 'Active',    'miguel.aquino',   SHA2('student123', 256)),
+    ('2024-0021', 'Jose',    NULL,      'Reyes',      'Male',   '2005-11-05', '3rd Year',  'BS Information Technology',  'B', '09391234569', 'jose.reyes@example.com',      'Camalig, Albay',      'Active',    'jose.reyes',      SHA2('student123', 256)),
+    ('2024-0022', 'Carlo',   NULL,      'Navarro',    'Male',   '2005-02-03', '3rd Year',  'BS Metrology',               'A', '09911234575', 'carlo.navarro@example.com',   'Oas, Albay',          'Dropped',   'carlo.navarro',   SHA2('student123', 256)),
+    ('2023-0031', 'Mark',    'Dy',      'Villanueva', 'Male',   '2004-09-18', '4th Year',  'BS Chemistry',               'A', '09561234571', 'mark.villanueva@example.com', 'Ligao City, Albay',   'On Leave',  'mark.villanueva', SHA2('student123', 256)),
+    ('2023-0032', 'Paolo',   NULL,      'Bautista',   'Male',   '2004-12-27', '4th Year',  'BS Computer Science',        'B', '09781234573', 'paolo.bautista@example.com',  'Legazpi City, Albay', 'Graduated', 'paolo.bautista',  SHA2('student123', 256)),
+    ('2023-0033', 'Hannah',  'Reyes',   'Castillo',   'Female', '2004-04-21', '4th Year',  'BS Biology',                 'A', '09151234578', 'hannah.castillo@example.com', 'Daraga, Albay',       'Active',    'hannah.castillo', SHA2('student123', 256)),
+    ('2026-0099', 'Test',    NULL,      'Student',    'Male',   '2008-06-15', '1st Year',  'BS Information Technology',  'A', '09123456789', 'test.student@example.com',    'Naga City, Camarines Sur', 'Active', 'test.student',  SHA2('test123', 256));
 
 INSERT INTO activity_logs (actor_type, actor_id, action, target_student_id, details) VALUES
-    ('Teacher', 1, 'LOGIN',    NULL, 'Teacher Ana Rivera signed in'),
+    ('Teacher', 1, 'LOGIN',    NULL, 'Teacher Jonathan Pelon signed in'),
     ('Student', 1, 'REGISTER', 1,    'Student 2026-0001 registered'),
     ('Teacher', 1, 'EDIT',     10,   'Status changed to On Leave');
-
-
 
 -- ============================================================
 -- 7. QUICK CHECKS (run these after importing)
 -- ============================================================
 
--- Expected: Freshman 5, Sophomore 3, Junior 2, Senior 3
+-- Expected: 1st Year 5, 2nd Year 3, 3rd Year 2, 4th Year 3
 SELECT year_level, total_students
 FROM vw_year_level_counts
 ORDER BY sort_order;
 
 -- Each should return exactly 1 row if the test logins work:
-SELECT username FROM teachers WHERE username = 'test.teacher' AND password_hash = SHA2('test123', 256);
+SELECT username FROM teachers WHERE username = 'jonpel'       AND password_hash = SHA2('pass1', 256);
 SELECT username FROM students WHERE username = 'test.student' AND password_hash = SHA2('test123', 256);
-
-USE sis_db;
-DELETE FROM programsactivity_logs
-WHERE program_name IN ('BS Education', 'BS Business Administration', 'BS Nursing');
-
-USE sis_db;
-SELECT student_id, student_number, username, is_deleted
-FROM students
-WHERE username = 'test.student';
-UPDATE students SET is_deleted = 0 WHERE username = 'test.student';
-
-USE sis_db;
-UPDATE teachers SET first_name='Jonathan', middle_name=NULL, last_name='Pelon',
-    username='jonpel', password_hash=SHA2('pass1', 256)
-WHERE teacher_number='T-0001';
-
-UPDATE teachers SET first_name='Lance Stephen', middle_name=NULL, last_name='Bronzal',
-    username='lasteph', password_hash=SHA2('pass12', 256)
-WHERE teacher_number='T-0002';
-
-UPDATE teachers SET first_name='Arlene', middle_name=NULL, last_name='Satuito',
-    username='arsat', password_hash=SHA2('pass123', 256)
-WHERE teacher_number='T-0003';
-
-
-
-
