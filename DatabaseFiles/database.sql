@@ -175,7 +175,7 @@ INSERT INTO year_levels (year_level, sort_order) VALUES
 INSERT INTO programs (program_name) VALUES
     ('BS Information Technology'),
     ('BS Computer Science'),
-    ('BS Metrology'),
+    ('BS Metreology'),
     ('BS Biology'),
     ('BS Chemistry');
 
@@ -197,7 +197,7 @@ VALUES
     ('2025-0012', 'Bianca',  NULL,      'Torres',     'Female', '2006-10-16', '2nd Year',  'BS Computer Science',        'B', '09181234576', 'bianca.torres@example.com',   'Daraga, Albay',       'Active',    'bianca.torres',   SHA2('student123', 256)),
     ('2025-0013', 'Miguel',  'Tan',     'Aquino',     'Male',   '2006-12-02', '2nd Year',  'BS Computer Science',        'A', '09201234577', 'miguel.aquino@example.com',   'Legazpi City, Albay', 'Active',    'miguel.aquino',   SHA2('student123', 256)),
     ('2024-0021', 'Jose',    NULL,      'Reyes',      'Male',   '2005-11-05', '3rd Year',  'BS Information Technology',  'B', '09391234569', 'jose.reyes@example.com',      'Camalig, Albay',      'Active',    'jose.reyes',      SHA2('student123', 256)),
-    ('2024-0022', 'Carlo',   NULL,      'Navarro',    'Male',   '2005-02-03', '3rd Year',  'BS Metrology',               'A', '09911234575', 'carlo.navarro@example.com',   'Oas, Albay',          'Dropped',   'carlo.navarro',   SHA2('student123', 256)),
+    ('2024-0022', 'Carlo',   NULL,      'Navarro',    'Male',   '2005-02-03', '3rd Year',  'BS Metreology',               'A', '09911234575', 'carlo.navarro@example.com',   'Oas, Albay',          'Dropped',   'carlo.navarro',   SHA2('student123', 256)),
     ('2023-0031', 'Mark',    'Dy',      'Villanueva', 'Male',   '2004-09-18', '4th Year',  'BS Chemistry',               'A', '09561234571', 'mark.villanueva@example.com', 'Ligao City, Albay',   'On Leave',  'mark.villanueva', SHA2('student123', 256)),
     ('2023-0032', 'Paolo',   NULL,      'Bautista',   'Male',   '2004-12-27', '4th Year',  'BS Computer Science',        'B', '09781234573', 'paolo.bautista@example.com',  'Legazpi City, Albay', 'Graduated', 'paolo.bautista',  SHA2('student123', 256)),
     ('2023-0033', 'Hannah',  'Reyes',   'Castillo',   'Female', '2004-04-21', '4th Year',  'BS Biology',                 'A', '09151234578', 'hannah.castillo@example.com', 'Daraga, Albay',       'Active',    'hannah.castillo', SHA2('student123', 256)),
