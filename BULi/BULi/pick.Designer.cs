@@ -83,6 +83,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
+            this.BackgroundImage = global::BULi.Properties.Resources.homepage;
             this.ClientSize = new System.Drawing.Size(982, 563);
             this.Controls.Add(this.btnTeacher);
             this.Controls.Add(this.btnStudent);

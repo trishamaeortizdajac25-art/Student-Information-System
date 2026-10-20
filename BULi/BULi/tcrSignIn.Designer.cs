@@ -33,8 +33,8 @@
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.btnEnter = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -83,7 +83,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(23)))), ((int)(((byte)(42)))));
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.btnEnter);
@@ -94,17 +94,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(653, 406);
             this.panel1.TabIndex = 4;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F);
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(131, 116);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(115, 28);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Username: ";
             // 
             // label3
             // 
@@ -117,12 +106,25 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Password: ";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(131, 116);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(115, 28);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Username: ";
+            // 
             // tcrSignIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::BULi.Properties.Resources.tcrnull;
             this.ClientSize = new System.Drawing.Size(982, 563);
             this.Controls.Add(this.panel1);
+            this.Cursor = System.Windows.Forms.Cursors.No;
             this.Name = "tcrSignIn";
             this.Text = "  ";
             this.panel1.ResumeLayout(false);

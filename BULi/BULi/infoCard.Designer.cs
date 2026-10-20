@@ -29,23 +29,20 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(infoCard));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnDropDownHeader = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlInfo = new System.Windows.Forms.Panel();
             this.lblContact = new System.Windows.Forms.Label();
             this.lblID = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lblProgram = new System.Windows.Forms.Label();
             this.lblYearlvl = new System.Windows.Forms.Label();
             this.lblBloc = new System.Windows.Forms.Label();
-            this.pnlMenu = new System.Windows.Forms.Panel();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnUpdate = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -53,8 +50,7 @@
             this.tmrDropDown = new System.Windows.Forms.Timer(this.components);
             this.lnbReturn = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel1.SuspendLayout();
-            this.pnlMenu.SuspendLayout();
+            this.pnlInfo.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -82,7 +78,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(457, 41);
+            this.label1.Location = new System.Drawing.Point(480, 51);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(307, 35);
             this.label1.TabIndex = 2;
@@ -120,30 +116,29 @@
             this.label4.Size = new System.Drawing.Size(0, 28);
             this.label4.TabIndex = 5;
             // 
-            // panel1
+            // pnlInfo
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
-            this.panel1.Controls.Add(this.lblContact);
-            this.panel1.Controls.Add(this.lblID);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.lblProgram);
-            this.panel1.Controls.Add(this.lblYearlvl);
-            this.panel1.Controls.Add(this.lblBloc);
-            this.panel1.Controls.Add(this.pnlMenu);
-            this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.lblName);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.btnDropDownHeader);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Location = new System.Drawing.Point(53, 75);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(870, 459);
-            this.panel1.TabIndex = 6;
+            this.pnlInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(23)))), ((int)(((byte)(42)))));
+            this.pnlInfo.Controls.Add(this.lblContact);
+            this.pnlInfo.Controls.Add(this.lblID);
+            this.pnlInfo.Controls.Add(this.label3);
+            this.pnlInfo.Controls.Add(this.lblProgram);
+            this.pnlInfo.Controls.Add(this.lblYearlvl);
+            this.pnlInfo.Controls.Add(this.lblBloc);
+            this.pnlInfo.Controls.Add(this.label8);
+            this.pnlInfo.Controls.Add(this.label7);
+            this.pnlInfo.Controls.Add(this.label6);
+            this.pnlInfo.Controls.Add(this.label5);
+            this.pnlInfo.Controls.Add(this.label4);
+            this.pnlInfo.Controls.Add(this.lblName);
+            this.pnlInfo.Controls.Add(this.label2);
+            this.pnlInfo.Controls.Add(this.label1);
+            this.pnlInfo.Controls.Add(this.btnDropDownHeader);
+            this.pnlInfo.Controls.Add(this.pictureBox1);
+            this.pnlInfo.Location = new System.Drawing.Point(60, 80);
+            this.pnlInfo.Name = "pnlInfo";
+            this.pnlInfo.Size = new System.Drawing.Size(877, 434);
+            this.pnlInfo.TabIndex = 6;
             // 
             // lblContact
             // 
@@ -160,7 +155,7 @@
             // 
             this.lblID.AutoSize = true;
             this.lblID.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblID.ForeColor = System.Drawing.Color.White;
+            this.lblID.ForeColor = System.Drawing.Color.Transparent;
             this.lblID.Location = new System.Drawing.Point(628, 300);
             this.lblID.Name = "lblID";
             this.lblID.Size = new System.Drawing.Size(170, 28);
@@ -210,48 +205,6 @@
             this.lblBloc.Size = new System.Drawing.Size(170, 28);
             this.lblBloc.TabIndex = 11;
             this.lblBloc.Text = "name of student ";
-            // 
-            // pnlMenu
-            // 
-            this.pnlMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
-            this.pnlMenu.Controls.Add(this.btnDelete);
-            this.pnlMenu.Controls.Add(this.btnUpdate);
-            this.pnlMenu.Controls.Add(this.btnAdd);
-            this.pnlMenu.Location = new System.Drawing.Point(31, 255);
-            this.pnlMenu.Name = "pnlMenu";
-            this.pnlMenu.Size = new System.Drawing.Size(251, 140);
-            this.pnlMenu.TabIndex = 10;
-            this.pnlMenu.Visible = false;
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnDelete.Location = new System.Drawing.Point(0, 90);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(251, 50);
-            this.btnDelete.TabIndex = 2;
-            this.btnDelete.Text = "Delete Photo";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnUpdate.Location = new System.Drawing.Point(0, 45);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(251, 45);
-            this.btnUpdate.TabIndex = 1;
-            this.btnUpdate.Text = "Update Photo";
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnAdd.Location = new System.Drawing.Point(0, 0);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(251, 45);
-            this.btnAdd.TabIndex = 0;
-            this.btnAdd.Text = "Add Photo";
-            this.btnAdd.UseVisualStyleBackColor = true;
             // 
             // label8
             // 
@@ -307,13 +260,14 @@
             // 
             this.lnbReturn.ActiveLinkColor = System.Drawing.Color.White;
             this.lnbReturn.AutoSize = true;
-            this.lnbReturn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(32)))));
-            this.lnbReturn.Font = new System.Drawing.Font("Segoe UI Semibold", 12F);
+            this.lnbReturn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(78)))), ((int)(((byte)(192)))));
+            this.lnbReturn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lnbReturn.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lnbReturn.ForeColor = System.Drawing.Color.White;
             this.lnbReturn.LinkColor = System.Drawing.Color.White;
-            this.lnbReturn.Location = new System.Drawing.Point(26, 32);
+            this.lnbReturn.Location = new System.Drawing.Point(34, 24);
             this.lnbReturn.Name = "lnbReturn";
-            this.lnbReturn.Size = new System.Drawing.Size(203, 28);
+            this.lnbReturn.Size = new System.Drawing.Size(172, 23);
             this.lnbReturn.TabIndex = 10;
             this.lnbReturn.TabStop = true;
             this.lnbReturn.Text = "> Back to Dashboard";
@@ -322,16 +276,18 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(982, 598);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(250)))), ((int)(((byte)(236)))));
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(982, 563);
             this.Controls.Add(this.lnbReturn);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlInfo);
+            this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "infoCard";
             this.Text = "Student Information Card";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.pnlMenu.ResumeLayout(false);
+            this.pnlInfo.ResumeLayout(false);
+            this.pnlInfo.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -345,14 +301,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlInfo;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Panel pnlMenu;
-        private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Timer tmrDropDown;
         private System.Windows.Forms.Label lblBloc;
         private System.Windows.Forms.Label label5;

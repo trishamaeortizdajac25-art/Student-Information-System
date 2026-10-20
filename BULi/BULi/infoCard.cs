@@ -17,7 +17,7 @@ namespace BULi
         {
             InitializeComponent();
         }
-
+                
         // Parameterized constructor accepting active username (fixes CS1729)
         public infoCard(string username) : this()
         {
@@ -78,5 +78,7 @@ namespace BULi
                 MessageBox.Show("Error loading Student Card: " + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+
     }
 }

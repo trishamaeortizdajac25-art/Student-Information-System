@@ -53,11 +53,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
+            this.BackgroundImage = global::BULi.Properties.Resources.temp;
             this.ClientSize = new System.Drawing.Size(982, 563);
             this.Controls.Add(this.pictureBox1);
             this.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.Name = "Starter";
-            this.Text = "Bicol University Learner\'s Information";
+            this.Text = "`";
             this.Load += new System.EventHandler(this.Starter_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
