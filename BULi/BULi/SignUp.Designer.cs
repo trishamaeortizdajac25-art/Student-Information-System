@@ -47,7 +47,7 @@
             this.txtPassword.Location = new System.Drawing.Point(291, 337);
             this.txtPassword.Multiline = true;
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(399, 39);
+            this.txtPassword.Size = new System.Drawing.Size(393, 39);
             this.txtPassword.TabIndex = 25;
             // 
             // txtUsername
@@ -58,7 +58,7 @@
             this.txtUsername.Location = new System.Drawing.Point(291, 245);
             this.txtUsername.Multiline = true;
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(399, 39);
+            this.txtUsername.Size = new System.Drawing.Size(393, 39);
             this.txtUsername.TabIndex = 24;
             // 
             // btnSignIn
@@ -71,7 +71,7 @@
             this.btnSignIn.ForeColor = System.Drawing.Color.White;
             this.btnSignIn.Location = new System.Drawing.Point(373, 411);
             this.btnSignIn.Name = "btnSignIn";
-            this.btnSignIn.Size = new System.Drawing.Size(244, 47);
+            this.btnSignIn.Size = new System.Drawing.Size(238, 47);
             this.btnSignIn.TabIndex = 23;
             this.btnSignIn.Text = "Sign In";
             this.btnSignIn.UseVisualStyleBackColor = false;
@@ -85,7 +85,7 @@
             this.textBox2.MaximumSize = new System.Drawing.Size(400, 30);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(400, 0);
+            this.textBox2.Size = new System.Drawing.Size(394, 0);
             this.textBox2.TabIndex = 22;
             // 
             // textBox1
@@ -97,7 +97,7 @@
             this.textBox1.MaximumSize = new System.Drawing.Size(400, 30);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(400, 0);
+            this.textBox1.Size = new System.Drawing.Size(394, 0);
             this.textBox1.TabIndex = 21;
             // 
             // label2
@@ -136,7 +136,7 @@
             this.picSignInLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picSignInLogo.Location = new System.Drawing.Point(273, -13);
             this.picSignInLogo.Name = "picSignInLogo";
-            this.picSignInLogo.Size = new System.Drawing.Size(434, 255);
+            this.picSignInLogo.Size = new System.Drawing.Size(428, 255);
             this.picSignInLogo.TabIndex = 0;
             this.picSignInLogo.TabStop = false;
             // 
@@ -145,7 +145,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::BULi.Properties.Resources._default;
-            this.ClientSize = new System.Drawing.Size(982, 563);
+            this.ClientSize = new System.Drawing.Size(976, 563);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.btnSignIn);
