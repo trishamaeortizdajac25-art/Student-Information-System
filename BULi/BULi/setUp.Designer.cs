@@ -73,7 +73,7 @@
             // 
             this.txtName.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtName.Location = new System.Drawing.Point(339, 29);
-            this.txtName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtName.Margin = new System.Windows.Forms.Padding(2);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(194, 29);
             this.txtName.TabIndex = 0;
@@ -82,7 +82,7 @@
             // 
             this.txtBloc.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBloc.Location = new System.Drawing.Point(339, 113);
-            this.txtBloc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtBloc.Margin = new System.Windows.Forms.Padding(2);
             this.txtBloc.Name = "txtBloc";
             this.txtBloc.Size = new System.Drawing.Size(48, 29);
             this.txtBloc.TabIndex = 2;
@@ -92,7 +92,7 @@
             // 
             this.txtID.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtID.Location = new System.Drawing.Point(340, 72);
-            this.txtID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtID.Margin = new System.Windows.Forms.Padding(2);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(194, 29);
             this.txtID.TabIndex = 3;
@@ -102,7 +102,7 @@
             // 
             this.txtDate.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDate.Location = new System.Drawing.Point(341, 224);
-            this.txtDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDate.Margin = new System.Windows.Forms.Padding(2);
             this.txtDate.Name = "txtDate";
             this.txtDate.Size = new System.Drawing.Size(194, 29);
             this.txtDate.TabIndex = 5;
@@ -111,7 +111,7 @@
             // 
             this.txtContact.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtContact.Location = new System.Drawing.Point(339, 264);
-            this.txtContact.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtContact.Margin = new System.Windows.Forms.Padding(2);
             this.txtContact.Name = "txtContact";
             this.txtContact.Size = new System.Drawing.Size(194, 29);
             this.txtContact.TabIndex = 6;
@@ -120,7 +120,7 @@
             // 
             this.btnPhoto.Font = new System.Drawing.Font("Segoe UI Semibold", 12F);
             this.btnPhoto.Location = new System.Drawing.Point(168, 192);
-            this.btnPhoto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnPhoto.Margin = new System.Windows.Forms.Padding(2);
             this.btnPhoto.Name = "btnPhoto";
             this.btnPhoto.Size = new System.Drawing.Size(43, 46);
             this.btnPhoto.TabIndex = 8;
@@ -229,7 +229,7 @@
             // 
             this.txtProgram.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtProgram.Location = new System.Drawing.Point(339, 152);
-            this.txtProgram.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtProgram.Margin = new System.Windows.Forms.Padding(2);
             this.txtProgram.Name = "txtProgram";
             this.txtProgram.Size = new System.Drawing.Size(194, 29);
             this.txtProgram.TabIndex = 19;
@@ -238,7 +238,7 @@
             // 
             this.txtYearlvl.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtYearlvl.Location = new System.Drawing.Point(517, 113);
-            this.txtYearlvl.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtYearlvl.Margin = new System.Windows.Forms.Padding(2);
             this.txtYearlvl.Name = "txtYearlvl";
             this.txtYearlvl.Size = new System.Drawing.Size(96, 29);
             this.txtYearlvl.TabIndex = 20;
@@ -248,7 +248,7 @@
             // 
             this.txtEmailAdd.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmailAdd.Location = new System.Drawing.Point(339, 302);
-            this.txtEmailAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtEmailAdd.Margin = new System.Windows.Forms.Padding(2);
             this.txtEmailAdd.Name = "txtEmailAdd";
             this.txtEmailAdd.Size = new System.Drawing.Size(194, 29);
             this.txtEmailAdd.TabIndex = 21;
@@ -257,7 +257,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
             this.pictureBox1.Location = new System.Drawing.Point(15, 32);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(174, 184);
             this.pictureBox1.TabIndex = 7;
@@ -268,7 +268,7 @@
             // 
             this.panel1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.Location = new System.Drawing.Point(373, 65);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(7, 6);
             this.panel1.TabIndex = 22;
@@ -303,7 +303,7 @@
             // 
             this.btnUpdate.Font = new System.Drawing.Font("Segoe UI Semibold", 12F);
             this.btnUpdate.Location = new System.Drawing.Point(314, 406);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(2);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(104, 41);
             this.btnUpdate.TabIndex = 26;
@@ -315,7 +315,7 @@
             // 
             this.btnDelete.Font = new System.Drawing.Font("Segoe UI Semibold", 12F);
             this.btnDelete.Location = new System.Drawing.Point(432, 406);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(2);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(104, 41);
             this.btnDelete.TabIndex = 27;
@@ -327,7 +327,7 @@
             // 
             this.btnShowCard.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.btnShowCard.Location = new System.Drawing.Point(550, 406);
-            this.btnShowCard.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnShowCard.Margin = new System.Windows.Forms.Padding(2);
             this.btnShowCard.Name = "btnShowCard";
             this.btnShowCard.Size = new System.Drawing.Size(177, 41);
             this.btnShowCard.TabIndex = 28;
@@ -339,7 +339,7 @@
             // 
             this.txtAge.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAge.Location = new System.Drawing.Point(341, 187);
-            this.txtAge.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAge.Margin = new System.Windows.Forms.Padding(2);
             this.txtAge.Name = "txtAge";
             this.txtAge.Size = new System.Drawing.Size(48, 29);
             this.txtAge.TabIndex = 29;
@@ -383,7 +383,7 @@
             this.panel3.Controls.Add(this.txtBloc);
             this.panel3.Controls.Add(this.txtName);
             this.panel3.Location = new System.Drawing.Point(33, 50);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(666, 343);
             this.panel3.TabIndex = 32;
@@ -392,7 +392,7 @@
             // 
             this.btnGender.Font = new System.Drawing.Font("Segoe UI Semibold", 12F);
             this.btnGender.Location = new System.Drawing.Point(517, 188);
-            this.btnGender.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGender.Margin = new System.Windows.Forms.Padding(2);
             this.btnGender.Name = "btnGender";
             this.btnGender.Size = new System.Drawing.Size(94, 27);
             this.btnGender.TabIndex = 35;
@@ -455,7 +455,7 @@
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "setUp";
             this.Text = "setUp";
             this.Load += new System.EventHandler(this.setUp_Load);

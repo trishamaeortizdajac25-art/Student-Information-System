@@ -8,7 +8,8 @@ namespace BULi
 {
     public partial class setUp : Form
     {
-        private string connectionString = "Server=localhost;Database=sis_db;Uid=root;Pwd=Trishamae1122;";
+        private string connectionString = "Server=localhost;Database=sis_db;Uid=root;Pwd=Trishamae1122";
+
         private string currentUsername;
         private bool isSignUpMode;
 
@@ -100,6 +101,9 @@ namespace BULi
             }
         }
 
+        // ==========================================================
+        // UPDATE BUTTON -> SAVES CHANGES & DIRECTLY OPENS INFOCARD
+        // ==========================================================
         private void btnSave_Click(object sender, EventArgs e)
         {
             try
@@ -153,6 +157,8 @@ namespace BULi
                         if (rows > 0)
                         {
                             MessageBox.Show("Profile updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                            // Directly navigates to infoCard passing active username
                             SIS.Instance.OpenChildForm(new infoCard(currentUsername));
                         }
                     }
@@ -207,6 +213,7 @@ namespace BULi
             SIS.Instance.OpenChildForm(new infoCard(currentUsername));
         }
 
+        // Dummy handlers for designer bindings
         private void txtBloc_TextChanged(object sender, EventArgs e) { }
         private void txtID_TextChanged(object sender, EventArgs e) { }
         private void txtGender_TextChanged(object sender, EventArgs e) { }
