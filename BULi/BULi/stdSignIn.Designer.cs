@@ -51,9 +51,9 @@
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
             this.label3.Location = new System.Drawing.Point(511, 75);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(313, 52);
+            this.label3.Size = new System.Drawing.Size(200, 52);
             this.label3.TabIndex = 16;
-            this.label3.Text = "Create Account";
+            this.label3.Text = "Welcome";
             // 
             // btnSignUp
             // 
@@ -172,9 +172,9 @@
             this.label4.Location = new System.Drawing.Point(504, 488);
             this.label4.Margin = new System.Windows.Forms.Padding(0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(234, 28);
+            this.label4.Size = new System.Drawing.Size(216, 28);
             this.label4.TabIndex = 19;
-            this.label4.Text = "Already have an account?";
+            this.label4.Text = "Dont have an account? ";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lnkSignUpRDT

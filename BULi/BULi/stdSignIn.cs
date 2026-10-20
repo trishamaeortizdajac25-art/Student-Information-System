@@ -9,29 +9,23 @@ namespace BULi
 {
     public partial class stdSignIn : Form
     {
-<<<<<<< HEAD
-HEAD
-        private string connectionString = "Server=localhost;Database=sis_db;Uid=root;Pwd=remia2006;";
 
-        private string connectionString = "Server=localhost;Database=sis_db;Uid=root;Pwd=Trishamae1122";
-    d2ec6d6 (updated code)
-=======
+        
+
         private string connectionString = "Server=localhost;Database=sis_db;Uid=root;Pwd=nU^Ns3L07_26;";
->>>>>>> 063135f (buttons)
+
 
         public stdSignIn()
         {
             InitializeComponent();
         }
 
-<<<<<<< HEAD
+
         private void btnSignUpRDT_Click(object sender, EventArgs e)
         {
             SIS.Instance.OpenChildForm(new SignUp());
         }
-=======
 
->>>>>>> 063135f (buttons)
 
         private void btnSignUp_Click(object sender, EventArgs e) // Sign In Button
         {
