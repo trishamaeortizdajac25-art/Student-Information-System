@@ -48,7 +48,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.tmrDropDown = new System.Windows.Forms.Timer(this.components);
-            this.lnbReturn = new System.Windows.Forms.LinkLabel();
+            this.lnkReturn = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlInfo.SuspendLayout();
             this.SuspendLayout();
@@ -118,6 +118,7 @@
             // 
             // pnlInfo
             // 
+            this.pnlInfo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnlInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(23)))), ((int)(((byte)(42)))));
             this.pnlInfo.Controls.Add(this.lblContact);
             this.pnlInfo.Controls.Add(this.lblID);
@@ -137,7 +138,7 @@
             this.pnlInfo.Controls.Add(this.pictureBox1);
             this.pnlInfo.Location = new System.Drawing.Point(60, 80);
             this.pnlInfo.Name = "pnlInfo";
-            this.pnlInfo.Size = new System.Drawing.Size(877, 434);
+            this.pnlInfo.Size = new System.Drawing.Size(879, 453);
             this.pnlInfo.TabIndex = 6;
             // 
             // lblContact
@@ -256,35 +257,38 @@
             // 
             this.tmrDropDown.Interval = 15;
             // 
-            // lnbReturn
+            // lnkReturn
             // 
-            this.lnbReturn.ActiveLinkColor = System.Drawing.Color.White;
-            this.lnbReturn.AutoSize = true;
-            this.lnbReturn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(78)))), ((int)(((byte)(192)))));
-            this.lnbReturn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lnbReturn.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lnbReturn.ForeColor = System.Drawing.Color.White;
-            this.lnbReturn.LinkColor = System.Drawing.Color.White;
-            this.lnbReturn.Location = new System.Drawing.Point(34, 24);
-            this.lnbReturn.Name = "lnbReturn";
-            this.lnbReturn.Size = new System.Drawing.Size(172, 23);
-            this.lnbReturn.TabIndex = 10;
-            this.lnbReturn.TabStop = true;
-            this.lnbReturn.Text = "> Back to Dashboard";
+            this.lnkReturn.ActiveLinkColor = System.Drawing.Color.White;
+            this.lnkReturn.AutoSize = true;
+            this.lnkReturn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(78)))), ((int)(((byte)(192)))));
+            this.lnkReturn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lnkReturn.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lnkReturn.ForeColor = System.Drawing.Color.White;
+            this.lnkReturn.LinkColor = System.Drawing.Color.White;
+            this.lnkReturn.Location = new System.Drawing.Point(34, 24);
+            this.lnkReturn.Name = "lnkReturn";
+            this.lnkReturn.Size = new System.Drawing.Size(63, 23);
+            this.lnkReturn.TabIndex = 10;
+            this.lnkReturn.TabStop = true;
+            this.lnkReturn.Text = "> Back";
+            this.lnkReturn.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkReturn_LinkClicked);
             // 
             // infoCard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(250)))), ((int)(((byte)(236)))));
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(982, 563);
-            this.Controls.Add(this.lnbReturn);
+            this.Controls.Add(this.lnkReturn);
             this.Controls.Add(this.pnlInfo);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MaximizeBox = false;
             this.Name = "infoCard";
             this.Text = "Student Information Card";
+            this.Load += new System.EventHandler(this.infoCard_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnlInfo.ResumeLayout(false);
             this.pnlInfo.PerformLayout();
@@ -311,7 +315,7 @@
         private System.Windows.Forms.Label lblYearlvl;
         private System.Windows.Forms.Label lblProgram;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.LinkLabel lnbReturn;
+        private System.Windows.Forms.LinkLabel lnkReturn;
         private System.Windows.Forms.Label lblContact;
         private System.Windows.Forms.Label lblID;
     }

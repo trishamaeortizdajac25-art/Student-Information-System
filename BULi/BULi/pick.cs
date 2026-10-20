@@ -19,11 +19,17 @@ namespace BULi
 
         private void btnStudent_Click(object sender, EventArgs e)
         {
+            infoCard card = new infoCard();
+            card.SetUserRole("Student");
+
             SIS.Instance.OpenChildForm(new stdSignIn());
         }
 
         private void btnTeacher_Click(object sender, EventArgs e)
         {
+            infoCard card = new infoCard();
+            card.SetUserRole("Teacher");
+
             SIS.Instance.OpenChildForm(new tcrSignIn());
         }
 

@@ -11,7 +11,7 @@ namespace BULi
 
         private string connectionString = "Server=localhost;Database=sis_db;Uid=root;Pwd=remia2006;";
         private string currentUsername;
-
+        private string userRole = "";
         // Default constructor
         public infoCard()
         {
@@ -24,6 +24,29 @@ namespace BULi
             this.currentUsername = username;
         }
 
+        public void SetUserRole(string role)
+        {
+            userRole = role;
+
+ 
+            if (userRole == "Student")
+            {
+                lnkReturn.Text = "Return";
+            }
+            else if (userRole == "Teacher")
+            {
+                lnkReturn.Text = "Return to Register";
+            }
+        }
+
+        private void lnkReturn_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            if (userRole == "Student")
+                SIS.Instance.OpenChildForm(new setUp());
+
+            else if (userRole == "Teacher")
+                SIS.Instance.OpenChildForm(new display());
+        }
         private void infoCard_Load(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(currentUsername))
@@ -77,6 +100,11 @@ namespace BULi
             {
                 MessageBox.Show("Error loading Student Card: " + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void infoCard_Load_1(object sender, EventArgs e)
+        {
+
         }
 
 

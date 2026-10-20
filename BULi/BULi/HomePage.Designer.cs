@@ -78,7 +78,7 @@
             this.pnlFreshie.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlFreshie.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(23)))), ((int)(((byte)(42)))));
+            this.pnlFreshie.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(32)))), ((int)(((byte)(48)))));
             this.pnlFreshie.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnlFreshie.Controls.Add(this.panel3);
             this.pnlFreshie.Controls.Add(this.label3);
@@ -101,7 +101,7 @@
             this.panel3.Controls.Add(this.label14);
             this.panel3.Location = new System.Drawing.Point(23, 15);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(126, 116);
+            this.panel3.Size = new System.Drawing.Size(120, 120);
             this.panel3.TabIndex = 7;
             // 
             // label2
@@ -155,7 +155,7 @@
             this.pnlSophomore.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlSophomore.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(23)))), ((int)(((byte)(42)))));
+            this.pnlSophomore.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(32)))), ((int)(((byte)(48)))));
             this.pnlSophomore.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnlSophomore.Controls.Add(this.label4);
             this.pnlSophomore.Controls.Add(this.panel2);
@@ -183,12 +183,14 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(70)))), ((int)(((byte)(50)))));
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.BackgroundImage = global::BULi.Properties.Resources.greenhp;
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel2.Controls.Add(this.label13);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Location = new System.Drawing.Point(18, 15);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(131, 116);
+            this.panel2.Size = new System.Drawing.Size(120, 120);
             this.panel2.TabIndex = 6;
             // 
             // label13
@@ -210,9 +212,9 @@
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(20, 25);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(54, 62);
+            this.label5.Size = new System.Drawing.Size(53, 62);
             this.label5.TabIndex = 3;
-            this.label5.Text = "0";
+            this.label5.Text = "  ";
             // 
             // label6
             // 
@@ -230,7 +232,7 @@
             this.pnlJunior.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlJunior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(23)))), ((int)(((byte)(42)))));
+            this.pnlJunior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(32)))), ((int)(((byte)(48)))));
             this.pnlJunior.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnlJunior.Controls.Add(this.panel4);
             this.pnlJunior.Controls.Add(this.label7);
@@ -246,12 +248,14 @@
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(70)))), ((int)(((byte)(20)))));
+            this.panel4.BackColor = System.Drawing.Color.Transparent;
+            this.panel4.BackgroundImage = global::BULi.Properties.Resources.yellowhp;
+            this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel4.Controls.Add(this.label8);
             this.panel4.Controls.Add(this.label11);
             this.panel4.Location = new System.Drawing.Point(23, 11);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(131, 116);
+            this.panel4.Size = new System.Drawing.Size(120, 120);
             this.panel4.TabIndex = 8;
             // 
             // label8
@@ -305,7 +309,7 @@
             this.pnlSenior.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlSenior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(23)))), ((int)(((byte)(42)))));
+            this.pnlSenior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(32)))), ((int)(((byte)(48)))));
             this.pnlSenior.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnlSenior.Controls.Add(this.panel5);
             this.pnlSenior.Controls.Add(this.label10);
@@ -321,12 +325,14 @@
             // 
             // panel5
             // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(30)))), ((int)(((byte)(35)))));
+            this.panel5.BackColor = System.Drawing.Color.Transparent;
+            this.panel5.BackgroundImage = global::BULi.Properties.Resources.redhp;
+            this.panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel5.Controls.Add(this.label15);
             this.panel5.Controls.Add(this.label16);
             this.panel5.Location = new System.Drawing.Point(18, 11);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(131, 116);
+            this.panel5.Size = new System.Drawing.Size(120, 120);
             this.panel5.TabIndex = 9;
             // 
             // label15
