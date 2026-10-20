@@ -175,10 +175,11 @@ INSERT INTO programs (program_name) VALUES
     ('BS Biology'),
     ('BS Chemistry');
 
+-- teachers data
 INSERT INTO teachers (teacher_number, first_name, middle_name, last_name, username, password_hash) VALUES
     ('T-0001', 'Ana',    'Lopez', 'Rivera',  'teacher1',     SHA2('teacher123', 256)),
     ('T-0002', 'System',  NULL,   'Admin',   'admin',        SHA2('admin123', 256)),
-    ('T-0099', 'Test',    NULL,   'Teacher', 'test.teacher', SHA2('test123', 256));
+    ('T-0003', 'Test',    NULL,   'Teacher', 'test.teacher', SHA2('test123', 256));
 
 INSERT INTO students
     (student_number, first_name, middle_name, last_name, gender, birthdate,
@@ -226,5 +227,21 @@ USE sis_db;
 SELECT student_id, student_number, username, is_deleted
 FROM students
 WHERE username = 'test.student';
-
 UPDATE students SET is_deleted = 0 WHERE username = 'test.student';
+
+USE sis_db;
+UPDATE teachers SET first_name='Jonathan', middle_name=NULL, last_name='Pelon',
+    username='jonpel', password_hash=SHA2('pass1', 256)
+WHERE teacher_number='T-0001';
+
+UPDATE teachers SET first_name='Lance Stephen', middle_name=NULL, last_name='Bronzal',
+    username='lasteph', password_hash=SHA2('pass12', 256)
+WHERE teacher_number='T-0002';
+
+UPDATE teachers SET first_name='Arlene', middle_name=NULL, last_name='Satuito',
+    username='arsat', password_hash=SHA2('pass123', 256)
+WHERE teacher_number='T-0003';
+
+
+
+
