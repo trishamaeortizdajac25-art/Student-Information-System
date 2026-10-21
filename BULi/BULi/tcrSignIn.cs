@@ -9,7 +9,11 @@ namespace BULi
 {
     public partial class tcrSignIn : Form
     {
+<<<<<<< HEAD
         private string connectionString = "Server=localhost;Database=sis_db;Uid=root;Pwd=kleenpIn*1;";
+=======
+        private string connectionString = "Server=localhost;Database=sis_db;Uid=root;Pwd=Trishamae1122;";
+>>>>>>> 002f0d57e00f1b78c5c9fb72ea52d888c93a1b7b
 
         public tcrSignIn()
         {
@@ -30,6 +34,28 @@ namespace BULi
                 return builder.ToString();
             }
         }
+
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+            SIS.Instance.OpenChildForm(new pick());
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+            UIcolor.ApplySunsetGradient((Control)sender, e);
+
+        }
+
+        private void tcrSignIn_Load(object sender, EventArgs e)
+        {
+            ControlRounder.MakeRounded(panel1, 16);
+            ControlRounder.MakeRounded(btnReturn, 8);
+            ControlRounder.MakeRounded(btnEnter, 8);
+            ControlRounder.MakeRounded(txtName, 8);
+            ControlRounder.MakeRounded(txtPassword, 8);
+        }
+
 
         private void btnEnter_Click(object sender, EventArgs e)
         {
@@ -99,11 +125,11 @@ namespace BULi
             }
         }
 
-        private void tcrSignIn_Load(object sender, EventArgs e) { }
+       
 
         private void txtName_TextChanged(object sender, EventArgs e) { }
 
-        private void panel1_Paint(object sender, PaintEventArgs e) { }
+  
 
         private void txtPassword_TextChanged(object sender, EventArgs e) { }
     }

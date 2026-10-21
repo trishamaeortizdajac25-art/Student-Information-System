@@ -41,11 +41,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(246)))), ((int)(((byte)(248)))));
-            this.BackgroundImage = global::BULi.Properties.Resources.tempstarter;
+            this.BackgroundImage = global::BULi.Properties.Resources.starter;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(982, 563);
             this.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.Name = "Starter";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "`";
             this.Load += new System.EventHandler(this.Starter_Load);
             this.ResumeLayout(false);

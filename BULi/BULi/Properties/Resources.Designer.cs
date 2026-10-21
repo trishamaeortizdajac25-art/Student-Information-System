@@ -83,9 +83,49 @@ namespace BULi.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap BULitrans {
+            get {
+                object obj = ResourceManager.GetObject("BULitrans", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap darknull {
+            get {
+                object obj = ResourceManager.GetObject("darknull", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap display {
             get {
                 object obj = ResourceManager.GetObject("display", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gradient {
+            get {
+                object obj = ResourceManager.GetObject("gradient", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gradientnull {
+            get {
+                object obj = ResourceManager.GetObject("gradientnull", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -153,16 +193,6 @@ namespace BULi.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap nonclogo {
-            get {
-                object obj = ResourceManager.GetObject("nonclogo", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap redhp {
             get {
                 object obj = ResourceManager.GetObject("redhp", resourceCulture);
@@ -176,6 +206,16 @@ namespace BULi.Properties {
         internal static System.Drawing.Bitmap search {
             get {
                 object obj = ResourceManager.GetObject("search", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap starter {
+            get {
+                object obj = ResourceManager.GetObject("starter", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

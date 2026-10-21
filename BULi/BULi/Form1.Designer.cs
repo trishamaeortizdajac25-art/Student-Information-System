@@ -1,4 +1,6 @@
-﻿namespace BULi
+﻿using System.Drawing;
+
+namespace BULi
 {
     partial class SIS
     {
@@ -35,7 +37,7 @@
             // pnlMain
             // 
             this.pnlMain.AutoSize = true;
-            this.pnlMain.BackColor = System.Drawing.Color.Transparent;
+            pnlMain.BackColor = Color.Transparent;
             this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlMain.Location = new System.Drawing.Point(0, 0);
             this.pnlMain.Name = "pnlMain";
