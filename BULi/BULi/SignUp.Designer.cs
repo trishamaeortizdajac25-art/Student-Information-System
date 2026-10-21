@@ -79,7 +79,7 @@
             this.btnSignIn.TabIndex = 23;
             this.btnSignIn.Text = "Sign Up";
             this.btnSignIn.UseVisualStyleBackColor = false;
-            this.btnSignIn.Click += new System.EventHandler(this.btnSignIn_Click);
+     
             // 
             // textBox2
             // 

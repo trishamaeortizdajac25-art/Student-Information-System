@@ -197,7 +197,7 @@
             this.lnkSignUpRDT.TabIndex = 20;
             this.lnkSignUpRDT.TabStop = true;
             this.lnkSignUpRDT.Text = "Sign Up";
-            this.lnkSignUpRDT.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkSignUpRDT_LinkClicked);
+  
             // 
             // btnReturn
             // 
