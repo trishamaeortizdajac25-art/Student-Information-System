@@ -16,7 +16,7 @@ namespace BULi
         public tcrSignIn()
         {
             InitializeComponent();
-        }
+        } //"C:\Student-Information-System\DatabaseFiles\database.sql"
 
         // Helper method to hash the password in C# perfectly matching MySQL's SHA2(256)
         private string ComputeSHA256Hash(string rawData)
