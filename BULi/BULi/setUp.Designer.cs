@@ -321,7 +321,6 @@
             this.btnDelete.TabIndex = 27;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
-            
             // 
             // btnShowCard
             // 

@@ -90,5 +90,10 @@ namespace BULi
         private void txtUsername_TextChanged(object sender, EventArgs e) { }
         private void txtPassword_TextChanged(object sender, EventArgs e) { }
         private void stdSignIn_Load(object sender, EventArgs e) { }
+
+        private void lnkSignUpRDT_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            SIS.Instance.OpenChildForm(new SignUp());
+        }
     }
 }
