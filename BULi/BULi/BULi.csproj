@@ -191,6 +191,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="infoCard.resx">
       <DependentUpon>infoCard.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="pick.resx">
       <DependentUpon>pick.cs</DependentUpon>

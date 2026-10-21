@@ -34,6 +34,7 @@
             this.btnReturn = new System.Windows.Forms.Button();
             this.pnlhawakupdate = new System.Windows.Forms.Panel();
             this.pnlFixed = new System.Windows.Forms.Panel();
+            this.btnClear = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnUpdateSI = new System.Windows.Forms.Button();
             this.btnAddSI = new System.Windows.Forms.Button();
@@ -43,14 +44,10 @@
             this.txtBloc = new System.Windows.Forms.TextBox();
             this.panel10 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pnlName = new System.Windows.Forms.Panel();
             this.txtName = new System.Windows.Forms.TextBox();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.pnlYear = new System.Windows.Forms.Panel();
-            this.txtYearlvl = new System.Windows.Forms.TextBox();
-            this.panel12 = new System.Windows.Forms.Panel();
             this.pnlProgram = new System.Windows.Forms.Panel();
             this.txtProgram = new System.Windows.Forms.TextBox();
             this.panel14 = new System.Windows.Forms.Panel();
@@ -79,7 +76,6 @@
             this.pnlScroll.SuspendLayout();
             this.pnlBloc.SuspendLayout();
             this.pnlName.SuspendLayout();
-            this.pnlYear.SuspendLayout();
             this.pnlProgram.SuspendLayout();
             this.pnlID.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -137,33 +133,67 @@
             this.pnlhawakupdate.Controls.Add(this.pnlFixed);
             this.pnlhawakupdate.Controls.Add(this.pnlScroll);
             this.pnlhawakupdate.Controls.Add(this.label4);
+<<<<<<< HEAD
             this.pnlhawakupdate.Location = new System.Drawing.Point(20, 106);
             this.pnlhawakupdate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlhawakupdate.Name = "pnlhawakupdate";
             this.pnlhawakupdate.Size = new System.Drawing.Size(257, 436);
+=======
+            this.pnlhawakupdate.Location = new System.Drawing.Point(20, 96);
+            this.pnlhawakupdate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnlhawakupdate.Name = "pnlhawakupdate";
+            this.pnlhawakupdate.Size = new System.Drawing.Size(257, 455);
+>>>>>>> e5efd677a99c5c8c5f04fb4fabcec2cb192ed339
             this.pnlhawakupdate.TabIndex = 4;
             this.pnlhawakupdate.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlhawakupdate_Paint);
             // 
             // pnlFixed
             // 
             this.pnlFixed.BackColor = System.Drawing.Color.Transparent;
+            this.pnlFixed.Controls.Add(this.btnClear);
             this.pnlFixed.Controls.Add(this.panel4);
             this.pnlFixed.Controls.Add(this.btnUpdateSI);
             this.pnlFixed.Controls.Add(this.btnAddSI);
             this.pnlFixed.Controls.Add(this.btnDeleteSI);
             this.pnlFixed.Dock = System.Windows.Forms.DockStyle.Bottom;
+<<<<<<< HEAD
             this.pnlFixed.Location = new System.Drawing.Point(0, 267);
             this.pnlFixed.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlFixed.Name = "pnlFixed";
             this.pnlFixed.Size = new System.Drawing.Size(255, 167);
+=======
+            this.pnlFixed.Location = new System.Drawing.Point(0, 225);
+            this.pnlFixed.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnlFixed.Name = "pnlFixed";
+            this.pnlFixed.Size = new System.Drawing.Size(255, 228);
+>>>>>>> e5efd677a99c5c8c5f04fb4fabcec2cb192ed339
             this.pnlFixed.TabIndex = 10;
+            // 
+            // btnClear
+            // 
+            this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(204)))), ((int)(((byte)(21)))));
+            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClear.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.ForeColor = System.Drawing.Color.White;
+            this.btnClear.Location = new System.Drawing.Point(25, 111);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(211, 36);
+            this.btnClear.TabIndex = 16;
+            this.btnClear.Text = "Clear Information";
+            this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(61)))), ((int)(((byte)(85)))));
             this.panel4.Enabled = false;
             this.panel4.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+<<<<<<< HEAD
             this.panel4.Location = new System.Drawing.Point(31, 98);
+=======
+            this.panel4.Location = new System.Drawing.Point(31, 165);
+>>>>>>> e5efd677a99c5c8c5f04fb4fabcec2cb192ed339
             this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(200, 5);
@@ -175,7 +205,11 @@
             this.btnUpdateSI.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdateSI.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdateSI.ForeColor = System.Drawing.Color.White;
+<<<<<<< HEAD
             this.btnUpdateSI.Location = new System.Drawing.Point(25, 50);
+=======
+            this.btnUpdateSI.Location = new System.Drawing.Point(24, 60);
+>>>>>>> e5efd677a99c5c8c5f04fb4fabcec2cb192ed339
             this.btnUpdateSI.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUpdateSI.Name = "btnUpdateSI";
             this.btnUpdateSI.Size = new System.Drawing.Size(211, 36);
@@ -205,7 +239,11 @@
             this.btnDeleteSI.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeleteSI.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeleteSI.ForeColor = System.Drawing.Color.White;
+<<<<<<< HEAD
             this.btnDeleteSI.Location = new System.Drawing.Point(25, 122);
+=======
+            this.btnDeleteSI.Location = new System.Drawing.Point(25, 177);
+>>>>>>> e5efd677a99c5c8c5f04fb4fabcec2cb192ed339
             this.btnDeleteSI.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDeleteSI.Name = "btnDeleteSI";
             this.btnDeleteSI.Size = new System.Drawing.Size(211, 36);
@@ -220,18 +258,23 @@
             this.pnlScroll.BackColor = System.Drawing.Color.Transparent;
             this.pnlScroll.Controls.Add(this.pnlBloc);
             this.pnlScroll.Controls.Add(this.label1);
-            this.pnlScroll.Controls.Add(this.label5);
             this.pnlScroll.Controls.Add(this.label2);
             this.pnlScroll.Controls.Add(this.pnlName);
-            this.pnlScroll.Controls.Add(this.pnlYear);
             this.pnlScroll.Controls.Add(this.pnlProgram);
             this.pnlScroll.Controls.Add(this.label3);
             this.pnlScroll.Controls.Add(this.label6);
             this.pnlScroll.Controls.Add(this.pnlID);
+<<<<<<< HEAD
             this.pnlScroll.Location = new System.Drawing.Point(3, 44);
             this.pnlScroll.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlScroll.Name = "pnlScroll";
             this.pnlScroll.Size = new System.Drawing.Size(249, 217);
+=======
+            this.pnlScroll.Location = new System.Drawing.Point(7, 56);
+            this.pnlScroll.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnlScroll.Name = "pnlScroll";
+            this.pnlScroll.Size = new System.Drawing.Size(245, 145);
+>>>>>>> e5efd677a99c5c8c5f04fb4fabcec2cb192ed339
             this.pnlScroll.TabIndex = 2;
             // 
             // pnlBloc
@@ -239,7 +282,11 @@
             this.pnlBloc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(23)))), ((int)(((byte)(42)))));
             this.pnlBloc.Controls.Add(this.txtBloc);
             this.pnlBloc.Controls.Add(this.panel10);
+<<<<<<< HEAD
             this.pnlBloc.Location = new System.Drawing.Point(8, 167);
+=======
+            this.pnlBloc.Location = new System.Drawing.Point(8, 166);
+>>>>>>> e5efd677a99c5c8c5f04fb4fabcec2cb192ed339
             this.pnlBloc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlBloc.Name = "pnlBloc";
             this.pnlBloc.Size = new System.Drawing.Size(211, 32);
@@ -278,6 +325,7 @@
             this.label1.Text = "Student ID: ";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
+<<<<<<< HEAD
             // label5
             // 
             this.label5.AutoSize = true;
@@ -289,6 +337,8 @@
             this.label5.TabIndex = 20;
             this.label5.Text = "Year Level: ";
             // 
+=======
+>>>>>>> e5efd677a99c5c8c5f04fb4fabcec2cb192ed339
             // label2
             // 
             this.label2.AutoSize = true;
@@ -333,6 +383,7 @@
             this.panel8.Size = new System.Drawing.Size(3, 32);
             this.panel8.TabIndex = 17;
             // 
+<<<<<<< HEAD
             // pnlYear
             // 
             this.pnlYear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(23)))), ((int)(((byte)(42)))));
@@ -365,12 +416,18 @@
             this.panel12.Size = new System.Drawing.Size(3, 32);
             this.panel12.TabIndex = 17;
             // 
+=======
+>>>>>>> e5efd677a99c5c8c5f04fb4fabcec2cb192ed339
             // pnlProgram
             // 
             this.pnlProgram.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(23)))), ((int)(((byte)(42)))));
             this.pnlProgram.Controls.Add(this.txtProgram);
             this.pnlProgram.Controls.Add(this.panel14);
+<<<<<<< HEAD
             this.pnlProgram.Location = new System.Drawing.Point(8, 306);
+=======
+            this.pnlProgram.Location = new System.Drawing.Point(8, 231);
+>>>>>>> e5efd677a99c5c8c5f04fb4fabcec2cb192ed339
             this.pnlProgram.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlProgram.Name = "pnlProgram";
             this.pnlProgram.Size = new System.Drawing.Size(211, 32);
@@ -390,7 +447,7 @@
             // 
             // panel14
             // 
-            this.panel14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(78)))), ((int)(((byte)(192)))));
+            this.panel14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(113)))), ((int)(((byte)(113)))));
             this.panel14.Location = new System.Drawing.Point(0, 0);
             this.panel14.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel14.Name = "panel14";
@@ -402,7 +459,11 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(204)))), ((int)(((byte)(21)))));
+<<<<<<< HEAD
             this.label3.Location = new System.Drawing.Point(8, 144);
+=======
+            this.label3.Location = new System.Drawing.Point(8, 143);
+>>>>>>> e5efd677a99c5c8c5f04fb4fabcec2cb192ed339
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(46, 20);
             this.label3.TabIndex = 13;
@@ -413,8 +474,13 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
+<<<<<<< HEAD
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(165)))), ((int)(((byte)(250)))));
             this.label6.Location = new System.Drawing.Point(8, 284);
+=======
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(113)))), ((int)(((byte)(113)))));
+            this.label6.Location = new System.Drawing.Point(8, 209);
+>>>>>>> e5efd677a99c5c8c5f04fb4fabcec2cb192ed339
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(73, 20);
             this.label6.TabIndex = 18;
@@ -458,7 +524,11 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
+<<<<<<< HEAD
             this.label4.Location = new System.Drawing.Point(23, 18);
+=======
+            this.label4.Location = new System.Drawing.Point(23, 22);
+>>>>>>> e5efd677a99c5c8c5f04fb4fabcec2cb192ed339
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(208, 23);
             this.label4.TabIndex = 14;
@@ -537,6 +607,10 @@
             // 
             this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+<<<<<<< HEAD
+=======
+            this.btnSearch.Image = global::BULi.Properties.Resources.search;
+>>>>>>> e5efd677a99c5c8c5f04fb4fabcec2cb192ed339
             this.btnSearch.Location = new System.Drawing.Point(487, 14);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSearch.Name = "btnSearch";
@@ -629,8 +703,6 @@
             this.pnlBloc.PerformLayout();
             this.pnlName.ResumeLayout(false);
             this.pnlName.PerformLayout();
-            this.pnlYear.ResumeLayout(false);
-            this.pnlYear.PerformLayout();
             this.pnlProgram.ResumeLayout(false);
             this.pnlProgram.PerformLayout();
             this.pnlID.ResumeLayout(false);
@@ -677,10 +749,6 @@
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Panel pnlScroll;
         private System.Windows.Forms.Panel pnlFixed;
-        private System.Windows.Forms.Panel pnlYear;
-        private System.Windows.Forms.TextBox txtYearlvl;
-        private System.Windows.Forms.Panel panel12;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel pnlProgram;
         private System.Windows.Forms.TextBox txtProgram;
         private System.Windows.Forms.Panel panel14;
@@ -691,5 +759,6 @@
         private System.Windows.Forms.ToolStripMenuItem gToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem blocToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem programToolStripMenuItem;
+        private System.Windows.Forms.Button btnClear;
     }
 }
