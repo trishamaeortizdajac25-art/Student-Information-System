@@ -20,6 +20,45 @@ namespace BULi
         public setUp()
         {
             InitializeComponent();
+
+            // Subscribe to global theme changes and apply initial theme
+            ThemeState.ThemeChanged += OnThemeChanged;
+            ApplyTheme(ThemeState.IsDarkMode);
+        }
+
+        protected override void OnFormClosed(FormClosedEventArgs e)
+        {
+            ThemeState.ThemeChanged -= OnThemeChanged;
+            base.OnFormClosed(e);
+        }
+
+        private void OnThemeChanged(object sender, bool isDark)
+        {
+            ApplyTheme(isDark);
+        }
+
+        private void ApplyTheme(bool isDark)
+        {
+            Color navyDarkMode = Color.FromArgb(15, 23, 42);
+
+            if (isDark)
+            {
+                this.BackgroundImage = Properties.Resources.darknull;
+                this.BackgroundImageLayout = ImageLayout.Stretch;
+
+                // Style pnlGlassCard to navy dark mode
+                pnlGlassCard.BackColor = navyDarkMode;
+            }
+            else
+            {
+                this.BackgroundImage = Properties.Resources._default;
+                this.BackgroundImageLayout = ImageLayout.Stretch;
+
+                // Revert pnlGlassCard back to transparent so its Paint event handles the sunset gradient normally
+                pnlGlassCard.BackColor = Color.Transparent;
+            }
+
+            this.Invalidate(true);
         }
 
         public setUp(string username, bool isSignUp = false) : this()
@@ -428,7 +467,8 @@ namespace BULi
 
         private void pnlGlassCard_Paint(object sender, PaintEventArgs e)
         {
-            UIcolor.ApplySunsetGradient((Control)sender, e);
+            if (!ThemeState.IsDarkMode)
+                UIcolor.ApplySunsetGradient((Control)sender, e);
         }
 
         // Dummy handlers for designer bindings

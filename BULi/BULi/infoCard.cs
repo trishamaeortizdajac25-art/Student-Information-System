@@ -20,6 +20,45 @@ namespace BULi
         public infoCard()
         {
             InitializeComponent();
+
+            // Subscribe to global theme changes and apply initial theme
+            ThemeState.ThemeChanged += OnThemeChanged;
+            ApplyTheme(ThemeState.IsDarkMode);
+        }
+
+        protected override void OnFormClosed(FormClosedEventArgs e)
+        {
+            ThemeState.ThemeChanged -= OnThemeChanged;
+            base.OnFormClosed(e);
+        }
+
+        private void OnThemeChanged(object sender, bool isDark)
+        {
+            ApplyTheme(isDark);
+        }
+
+        private void ApplyTheme(bool isDark)
+        {
+            Color navyDarkMode = Color.FromArgb(15, 23, 42);
+
+            if (isDark)
+            {
+                this.BackgroundImage = Properties.Resources.darknull;
+                this.BackgroundImageLayout = ImageLayout.Stretch;
+
+                // Style panel1 to navy dark mode
+                panel1.BackColor = navyDarkMode;
+            }
+            else
+            {
+                this.BackgroundImage = Properties.Resources.gradient;
+                this.BackgroundImageLayout = ImageLayout.Stretch;
+
+                // Revert panel1 back to transparent so its Paint event handles the sunset gradient normally
+                panel1.BackColor = Color.Transparent;
+            }
+
+            this.Invalidate(true);
         }
 
         public infoCard(string username) : this()
@@ -160,7 +199,8 @@ namespace BULi
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
-            UIcolor.ApplySunsetGradient((Control)sender, e);
+            if (!ThemeState.IsDarkMode)
+                UIcolor.ApplySunsetGradient((Control)sender, e);
         }
 
         private void btnExit_Click(object sender, EventArgs e)

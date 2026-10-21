@@ -16,7 +16,7 @@ namespace BULi
         private const string ConnStr = "Server=localhost;Database=sis_db;Uid=root;Pwd=nunez26*7;";
 
 
-        private String yearLvl;          // what the homepage sent, e.g. "Senior"
+        private String yearLvl;        // what the homepage sent, e.g. "Senior"
         private string dbYearLevel;      // what the database stores, e.g. "4th Year"
 
         private int _selectedId = -1;    // student_id of the selected student (-1 = none)
@@ -27,6 +27,53 @@ namespace BULi
         public display()
         {
             InitializeComponent();
+
+            // Subscribe to global theme changes and apply initial theme
+            ThemeState.ThemeChanged += OnThemeChanged;
+            ApplyTheme(ThemeState.IsDarkMode);
+        }
+
+        protected override void OnFormClosed(FormClosedEventArgs e)
+        {
+            ThemeState.ThemeChanged -= OnThemeChanged;
+            base.OnFormClosed(e);
+        }
+
+        private void OnThemeChanged(object sender, bool isDark)
+        {
+            ApplyTheme(isDark);
+        }
+
+        private void ApplyTheme(bool isDark)
+        {
+            Color navyDarkMode = Color.FromArgb(15, 23, 42);
+
+            if (isDark)
+            {
+                this.BackgroundImage = Properties.Resources.darknull;
+                this.BackgroundImageLayout = ImageLayout.Stretch;
+
+                // Style panels to navy dark mode
+                pnlhawakupdate.BackColor = navyDarkMode;
+                pnlID.BackColor = navyDarkMode;
+                pnlName.BackColor = navyDarkMode;
+                pnlBloc.BackColor = navyDarkMode;
+                pnlProgram.BackColor = navyDarkMode;
+            }
+            else
+            {
+                this.BackgroundImage = Properties.Resources.gradient;
+                this.BackgroundImageLayout = ImageLayout.Stretch;
+
+                // Revert panels back to default/transparent so their Paint events handle gradients normally
+                pnlhawakupdate.BackColor = Color.Transparent;
+                pnlID.BackColor = Color.Transparent;
+                pnlName.BackColor = Color.Transparent;
+                pnlBloc.BackColor = Color.Transparent;
+                pnlProgram.BackColor = Color.Transparent;
+            }
+
+            this.Invalidate(true);
         }
 
         public display(string yearLevel) : this()
@@ -64,7 +111,7 @@ namespace BULi
                 lblYearTitle.Text = $"{yearLvl} Student Register";
             }
 
-          
+
             SetupGrid();
             SetupSortMenu();
 
@@ -622,7 +669,7 @@ namespace BULi
         // Live search: shows matching students of this year level as the teacher types
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            if (dbYearLevel == null) return;   // fires before Load finishes
+            if (dbYearLevel == null) return;    // fires before Load finishes
             LoadStudents();
         }
 
@@ -645,44 +692,57 @@ namespace BULi
 
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
-            UIcolor.ApplyDeepHeaderGradient((Control)sender, e);
+            if (!ThemeState.IsDarkMode)
+            {
+                UIcolor.ApplyDeepHeaderGradient((Control)sender, e);
+            }
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
-            UIcolor.ApplySunsetGradient((Control)sender, e);
+
+            if (!ThemeState.IsDarkMode)
+            {
+                UIcolor.ApplyDeepHeaderGradient((Control)sender, e);
+            }
         }
 
         private void pnlhawakupdate_Paint(object sender, PaintEventArgs e)
         {
-            UIcolor.ApplyLightInnerPanelGradient((Control)sender, e);
+            if (!ThemeState.IsDarkMode)
+                UIcolor.ApplyLightInnerPanelGradient((Control)sender, e);
+
+
         }
 
         private void pnlID_Paint(object sender, PaintEventArgs e)
         {
-            UIcolor.ApplyLightInnerPanelGradient((Control)sender, e);
+            if (!ThemeState.IsDarkMode)
+                UIcolor.ApplyLightInnerPanelGradient((Control)sender, e);
         }
 
         private void pnlName_Paint(object sender, PaintEventArgs e)
         {
-            UIcolor.ApplyLightInnerPanelGradient((Control)sender, e);
+            if (!ThemeState.IsDarkMode)
+                UIcolor.ApplyLightInnerPanelGradient((Control)sender, e);
         }
 
         private void pnlBloc_Paint(object sender, PaintEventArgs e)
         {
-            UIcolor.ApplyLightInnerPanelGradient((Control)sender, e);
+            if (!ThemeState.IsDarkMode)
+                UIcolor.ApplyLightInnerPanelGradient((Control)sender, e);
         }
 
         private void pnlYear_Paint(object sender, PaintEventArgs e)
         {
-            UIcolor.ApplyLightInnerPanelGradient((Control)sender, e);
+            if (!ThemeState.IsDarkMode)
+                UIcolor.ApplyLightInnerPanelGradient((Control)sender, e);
         }
 
         private void pnlProgram_Paint(object sender, PaintEventArgs e)
         {
-            UIcolor.ApplyLightInnerPanelGradient((Control)sender, e);
+            if (!ThemeState.IsDarkMode)
+                UIcolor.ApplyLightInnerPanelGradient((Control)sender, e);
         }
-
-
     }
 }
