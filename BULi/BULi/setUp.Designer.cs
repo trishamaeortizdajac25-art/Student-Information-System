@@ -225,7 +225,7 @@
             this.label1.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(348, 33);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(348, 46);
+            this.label1.Size = new System.Drawing.Size(337, 45);
             this.label1.TabIndex = 18;
             this.label1.Text = "Student Information";
             // 
@@ -421,19 +421,19 @@
             this.femaleToolStripMenuItem,
             this.maleToolStripMenuItem});
             this.contextMenuStrip2.Name = "contextMenuStrip2";
-            this.contextMenuStrip2.Size = new System.Drawing.Size(127, 52);
+            this.contextMenuStrip2.Size = new System.Drawing.Size(211, 80);
             // 
             // femaleToolStripMenuItem
             // 
             this.femaleToolStripMenuItem.Name = "femaleToolStripMenuItem";
-            this.femaleToolStripMenuItem.Size = new System.Drawing.Size(126, 24);
+            this.femaleToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
             this.femaleToolStripMenuItem.Text = "Female";
             this.femaleToolStripMenuItem.Click += new System.EventHandler(this.genderOption_Click);
             // 
             // maleToolStripMenuItem
             // 
             this.maleToolStripMenuItem.Name = "maleToolStripMenuItem";
-            this.maleToolStripMenuItem.Size = new System.Drawing.Size(126, 24);
+            this.maleToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
             this.maleToolStripMenuItem.Text = "Male";
             this.maleToolStripMenuItem.Click += new System.EventHandler(this.genderOption_Click);
             // 
