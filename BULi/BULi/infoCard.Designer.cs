@@ -47,11 +47,11 @@
             this.label5 = new System.Windows.Forms.Label();
             this.lnkReturn = new System.Windows.Forms.LinkLabel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnDrop = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.uploadImageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteImageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.btnDrop = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
@@ -292,6 +292,17 @@
             this.panel1.TabIndex = 17;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // btnDrop
+            // 
+            this.btnDrop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(32)))));
+            this.btnDrop.ForeColor = System.Drawing.Color.White;
+            this.btnDrop.Location = new System.Drawing.Point(221, 216);
+            this.btnDrop.Name = "btnDrop";
+            this.btnDrop.Size = new System.Drawing.Size(45, 39);
+            this.btnDrop.TabIndex = 1;
+            this.btnDrop.Text = "+";
+            this.btnDrop.UseVisualStyleBackColor = false;
+            // 
             // btnExit
             // 
             this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(78)))), ((int)(((byte)(192)))));
@@ -326,22 +337,10 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(174, 52);
             // 
-            // btnDrop
-            // 
-            this.btnDrop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(32)))));
-            this.btnDrop.ForeColor = System.Drawing.Color.White;
-            this.btnDrop.Location = new System.Drawing.Point(221, 216);
-            this.btnDrop.Name = "btnDrop";
-            this.btnDrop.Size = new System.Drawing.Size(45, 39);
-            this.btnDrop.TabIndex = 1;
-            this.btnDrop.Text = "+";
-            this.btnDrop.UseVisualStyleBackColor = false;
-            // 
             // infoCard
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(250)))), ((int)(((byte)(236)))));
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(982, 563);
             this.Controls.Add(this.btnExit);

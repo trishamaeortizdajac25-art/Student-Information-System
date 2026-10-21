@@ -9,7 +9,11 @@ namespace BULi
 {
     public partial class stdSignIn : Form
     {
+<<<<<<< HEAD
         private string connectionString = "Server=localhost;Database=sis_db;Uid=root;Pwd=kleenpIn*1;";
+=======
+        private string connectionString = "Server=localhost;Database=sis_db;Uid=root;Pwd=nunez26*7;";
+>>>>>>> 829cf98cf293fd05a27fa7d5549db66caaef3c04
         public stdSignIn()
         {
             InitializeComponent();

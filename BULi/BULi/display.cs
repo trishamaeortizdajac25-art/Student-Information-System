@@ -13,7 +13,11 @@ namespace BULi
 {
     public partial class display : Form
     {
+<<<<<<< HEAD
         private const string ConnStr = "Server=localhost;Database=sis_db;Uid=root;Pwd=kleenpIn*1;";
+=======
+        private const string ConnStr = "Server=localhost;Database=sis_db;Uid=root;Pwd=nunez26*7;";
+>>>>>>> 829cf98cf293fd05a27fa7d5549db66caaef3c04
 
         private String yearLvl;          // what the homepage sent, e.g. "Senior"
         private string dbYearLevel;      // what the database stores, e.g. "4th Year"
