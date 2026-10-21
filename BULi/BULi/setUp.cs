@@ -254,6 +254,11 @@ namespace BULi
             }
         }
 
+        private void pnlGlassCard_Paint(object sender, PaintEventArgs e)
+        {
+            UIcolor.ApplySunsetGradient((Control)sender, e);
+        }
+
         // Dummy handlers for designer bindings
         private void txtBloc_TextChanged(object sender, EventArgs e) { }
         private void txtID_TextChanged(object sender, EventArgs e) { }

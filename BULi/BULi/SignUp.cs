@@ -18,7 +18,6 @@ namespace BULi
 
         private void btnSignUp_Click(object sender, EventArgs e)
         {
-<<<<<<< HEAD
             SIS.Instance.OpenChildForm(new setUp());
         }
 
@@ -38,10 +37,9 @@ namespace BULi
         }
     }
 }
-=======
+
             string username = txtUsername.Text.Trim();
             string password = txtPassword.Text.Trim();
->>>>>>> c13c184e3e70fcd8431adb80eefe5d98e28153de
 
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
             {
