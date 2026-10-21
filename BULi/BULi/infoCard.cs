@@ -10,13 +10,10 @@ namespace BULi
     public partial class infoCard : Form
     {
 
-<<<<<<< HEAD
         private string connectionString = "Server=localhost;Database=sis_db;Uid=root;Pwd=nunez26*7;";
-=======
 
-        private string connectionString = "Server=localhost;Database=sis_db;Uid=root;Pwd=Trishamae1122;";
 
->>>>>>> a218e08418ebdc233dd80aa8554471878ba538e2
+
 
         private string currentUsername;
 
@@ -33,9 +30,10 @@ namespace BULi
         private void infoCard_Load(object sender, EventArgs e)
         {
             ControlRounder.MakeRounded(panel1, 16);
+            ControlRounder.MakeRounded(lnkReturn, 10);
+            ControlRounder.MakeRounded(btnExit, 10);
 
             // Display only: hide the + button
-            btnDrop.Visible = false;
 
             lnkReturn.LinkClicked -= lnkReturn_LinkClicked;
             lnkReturn.LinkClicked += lnkReturn_LinkClicked;

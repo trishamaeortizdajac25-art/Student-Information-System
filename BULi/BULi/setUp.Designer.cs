@@ -61,6 +61,7 @@
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.femaleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.maleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnTheme = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlGlassCard.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
@@ -443,12 +444,23 @@
             this.maleToolStripMenuItem.Text = "Male";
             this.maleToolStripMenuItem.Click += new System.EventHandler(this.genderOption_Click);
             // 
+            // btnTheme
+            // 
+            this.btnTheme.Location = new System.Drawing.Point(23, 518);
+            this.btnTheme.Name = "btnTheme";
+            this.btnTheme.Size = new System.Drawing.Size(47, 33);
+            this.btnTheme.TabIndex = 35;
+            this.btnTheme.Text = "button1";
+            this.btnTheme.UseVisualStyleBackColor = true;
+            this.btnTheme.Click += new System.EventHandler(this.btnTheme_Click);
+            // 
             // setUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::BULi.Properties.Resources._default;
-            this.ClientSize = new System.Drawing.Size(736, 457);
+            this.ClientSize = new System.Drawing.Size(982, 563);
+            this.Controls.Add(this.btnTheme);
             this.Controls.Add(this.pnlGlassCard);
             this.Controls.Add(this.btnShowCard);
             this.Controls.Add(this.btnUpdate);
@@ -501,5 +513,6 @@
         private System.Windows.Forms.ToolStripMenuItem femaleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem maleToolStripMenuItem;
         private System.Windows.Forms.Button btnGender;
+        private System.Windows.Forms.Button btnTheme;
     }
 }

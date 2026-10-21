@@ -51,7 +51,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Segoe UI Black", 23F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
-            this.label3.Location = new System.Drawing.Point(562, 76);
+            this.label3.Location = new System.Drawing.Point(560, 77);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(214, 52);
             this.label3.TabIndex = 16;
@@ -78,11 +78,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlPlaceholder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(23)))), ((int)(((byte)(42)))));
             this.pnlPlaceholder.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pnlPlaceholder.Location = new System.Drawing.Point(0, 1);
+            this.pnlPlaceholder.Location = new System.Drawing.Point(-5, 1);
             this.pnlPlaceholder.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlPlaceholder.MinimumSize = new System.Drawing.Size(349, 0);
             this.pnlPlaceholder.Name = "pnlPlaceholder";
-            this.pnlPlaceholder.Size = new System.Drawing.Size(360, 560);
+            this.pnlPlaceholder.Size = new System.Drawing.Size(365, 565);
             this.pnlPlaceholder.TabIndex = 13;
             this.pnlPlaceholder.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlPlaceholder_Paint);
             // 
@@ -204,11 +204,11 @@
             this.btnReturn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
             this.btnReturn.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReturn.ForeColor = System.Drawing.Color.White;
-            this.btnReturn.Location = new System.Drawing.Point(1163, 15);
-            this.btnReturn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnReturn.Location = new System.Drawing.Point(839, 13);
+            this.btnReturn.Margin = new System.Windows.Forms.Padding(4);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(129, 36);
-            this.btnReturn.TabIndex = 21;
+            this.btnReturn.TabIndex = 23;
             this.btnReturn.Text = "Return";
             this.btnReturn.UseVisualStyleBackColor = false;
             this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);

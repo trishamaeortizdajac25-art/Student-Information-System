@@ -9,15 +9,9 @@ namespace BULi
 {
     public partial class setUp : Form
     {
-<<<<<<< HEAD
 
         private string connectionString = "Server=localhost;Database=sis_db;Uid=root;Pwd=nunez26*7;";
 
-
-=======
->>>>>>> a218e08418ebdc233dd80aa8554471878ba538e2
-
-        private string connectionString = "Server=localhost;Database=sis_db;Uid=root;Pwd=Trishamae1122;";
 
 
         private string currentUsername;
@@ -447,5 +441,10 @@ namespace BULi
         private void label2_Click(object sender, EventArgs e) { }
         private void label7_Click(object sender, EventArgs e) { }
         private void pictureBox1_Click(object sender, EventArgs e) { }
+
+        private void btnTheme_Click(object sender, EventArgs e)
+        {
+            ThemeState.ToggleTheme();
+        }
     }
 }

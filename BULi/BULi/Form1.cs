@@ -23,7 +23,7 @@ namespace BULi
             // 1. Subscribe to global theme changes
             ThemeState.ThemeChanged += OnGlobalThemeChanged;
 
-            // 2. Apply initial theme settings on startup (Checks if dark mode is active)
+            // 2. Apply initial theme settings on startup
             ApplyThemeToSIS(ThemeState.IsDarkMode);
 
             // 3. Load initial starter form
@@ -38,9 +38,9 @@ namespace BULi
         }
 
         // --- Theme Toggle Button Click Handler ---
-        // Bind this to your btnColorScheme click event in the Designer
         private void btnColorScheme_Click(object sender, EventArgs e)
         {
+            // Toggle your global theme state (dark <-> light)
             ThemeState.ToggleTheme();
         }
 
@@ -49,11 +49,11 @@ namespace BULi
         {
             ApplyThemeToSIS(isDark);
 
-            // If a child form is currently open, refresh its paint and text colors live
+            // Refresh current child form's background and panel colors live
             if (currentChildForm != null)
             {
+                ApplyFormTheme(currentChildForm, isDark);
                 currentChildForm.Invalidate(true);
-                UpdateControlTextColors(currentChildForm, isDark);
             }
         }
 
@@ -63,69 +63,117 @@ namespace BULi
             if (isDark)
             {
                 this.BackColor = Color.FromArgb(10, 15, 35);
-                this.BackgroundImage = null; // Clear form bg to let panel handle it
-
-                // Force pnlMain to paint the darknull background image across the workspace
-                pnlMain.Paint -= PnlMain_Paint; // Prevent duplicate event binding
-                pnlMain.Paint += PnlMain_Paint;
+                pnlMain.BackColor = Color.Transparent;
+                pnlMain.BackgroundImage = null;
             }
             else
             {
                 this.BackColor = Color.FromArgb(254, 250, 236);
-                this.BackgroundImage = null;
-
-                // Remove the custom dark background paint handler
-                pnlMain.Paint -= PnlMain_Paint;
                 pnlMain.BackColor = Color.FromArgb(254, 250, 236);
+                pnlMain.BackgroundImage = null;
             }
 
             pnlMain.Invalidate();
             this.Invalidate(true);
         }
 
-        // --- Custom Paint Handler for Dark Background Image ---
-        private void PnlMain_Paint(object sender, PaintEventArgs e)
+        // --- Centralized Background & Panel Theme Handler ---
+        private void ApplyFormTheme(Form form, bool isDark)
         {
-            if (ThemeState.IsDarkMode)
-            {
-                object darkResource = Properties.Resources.ResourceManager.GetObject("darknull");
-                Image darkImage = (darkResource as Image) ?? (darkResource as Bitmap);
+            if (form == null) return;
 
-                if (darkImage != null)
+            string formName = form.GetType().Name;
+            form.BackgroundImageLayout = ImageLayout.Stretch;
+
+            // 1. EXCLUDED FORMS (NO CHANGE - Keep their designated background images and default styles)
+            if (formName == "Starter")
+            {
+                form.BackgroundImage = Properties.Resources.starter;
+                return;
+            }
+            else if (formName == "pick")
+            {
+                form.BackgroundImage = Properties.Resources.gradientnull;
+                return;
+            }
+            else if (formName == "SignUp")
+            {
+                form.BackgroundImage = Properties.Resources._default;
+                return;
+            }
+            else if (formName == "stdSignIn")
+            {
+                form.BackgroundImage = Properties.Resources.gradient;
+                return;
+            }
+            else if (formName == "tcrSignIn")
+            {
+                form.BackgroundImage = Properties.Resources.tcrnull;
+                return;
+            }
+
+            // 2. AFFECTED FORMS (Switch background image + apply navy dark mode to panels)
+            Color navyDarkMode = Color.FromArgb(15, 23, 42);
+
+            if (isDark)
+            {
+                form.BackgroundImage = Properties.Resources.darknull;
+
+                // Recursively style all panels and text on this form to match dark navy mode
+                StyleControlsForDarkTheme(form, navyDarkMode, true);
+            }
+            else
+            {
+                // Revert to respective light mode backgrounds
+                if (formName == "infoCard" || formName == "display")
                 {
-                    // Stretch the darknull image to fill the entire pnlMain canvas perfectly
-                    e.Graphics.DrawImage(darkImage, pnlMain.ClientRectangle);
+                    form.BackgroundImage = Properties.Resources.gradient;
                 }
+                else if (formName == "HomePage")
+                {
+                    form.BackgroundImage = Properties.Resources.homepage;
+                }
+                else if (formName == "setUp")
+                {
+                    form.BackgroundImage = Properties.Resources._default;
+                }
+                else
+                {
+                    form.BackgroundImage = null;
+                }
+
+                // Revert panel/text styles for light mode
+                StyleControlsForDarkTheme(form, Color.White, false);
             }
         }
-        // --- Recursive Font & Input Color Switcher ---
-        public static void UpdateControlTextColors(Control parent, bool isDark)
+
+        // --- Helper to style panels and labels recursively across any form ---
+        private void StyleControlsForDarkTheme(Control parentControl, Color panelColor, bool isDark)
         {
-            Color targetColor = isDark ? Color.White : Color.FromArgb(51, 41, 36);
-
-            foreach (Control ctrl in parent.Controls)
+            foreach (Control ctrl in parentControl.Controls)
             {
-                if (ctrl is Label || ctrl is CheckBox || ctrl is RadioButton)
+                // If it's a panel, update its background
+                if (ctrl is Panel)
                 {
-                    ctrl.ForeColor = targetColor;
+                    ctrl.BackColor = isDark ? panelColor : Color.Transparent; // Adjust if light mode needs specific panel colors
                 }
-                else if (ctrl is TextBox || ctrl is ComboBox)
+                // If it's a label or title, adjust text color for visibility
+                else if (ctrl is Label)
                 {
-                    ctrl.ForeColor = targetColor;
-                    ctrl.BackColor = isDark ? Color.FromArgb(20, 25, 45) : Color.White;
+                    ctrl.ForeColor = isDark ? Color.White : Color.Black;
                 }
 
+                // If the control contains child controls (like panels inside panels), recurse deeper
                 if (ctrl.HasChildren)
                 {
-                    UpdateControlTextColors(ctrl, isDark);
+                    StyleControlsForDarkTheme(ctrl, panelColor, isDark);
                 }
             }
         }
 
-        // --- display ng forms sa main panel (pnlMain) ---
+        // --- Display child forms in the main panel (pnlMain) ---
         public void OpenChildForm(Form childForm)
         {
-            // 1. Freeze the panel layout to prevent mid-air flashing
             pnlMain.SuspendLayout();
 
             try
@@ -133,7 +181,7 @@ namespace BULi
                 if (currentChildForm != null)
                 {
                     currentChildForm.Close();
-                    currentChildForm.Dispose(); // Ensure old form resources are freed
+                    currentChildForm.Dispose();
                 }
 
                 currentChildForm = childForm;
@@ -141,26 +189,19 @@ namespace BULi
                 childForm.FormBorderStyle = FormBorderStyle.None;
                 childForm.Dock = DockStyle.Fill;
 
-                // 2. Clear previous controls from the host panel safely
-                pnlMain.Controls.Clear();
+                // Apply correct background image and panel styling based on current theme
+                ApplyFormTheme(childForm, ThemeState.IsDarkMode);
 
-                // 3. Add and display the new child form
+                pnlMain.Controls.Clear();
                 pnlMain.Controls.Add(childForm);
                 pnlMain.Tag = childForm;
-
-                // 4. Enforce active theme text colors on the newly injected child form instantly
-                UpdateControlTextColors(childForm, ThemeState.IsDarkMode);
 
                 childForm.BringToFront();
                 childForm.Show();
             }
             finally
             {
-                // 5. Resume layout and force a single clean draw pass
                 pnlMain.ResumeLayout(true);
-                // Inside your SIS() constructor, add this:
-pnlMain.BackColor = Color.Transparent;
-
             }
         }
     }
