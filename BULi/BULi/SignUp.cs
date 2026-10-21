@@ -1,6 +1,6 @@
-﻿using MySql.Data.MySqlClient;
+﻿using BULi;
+using MySql.Data.MySqlClient;
 using System;
-using System.Data;
 using System.Security.Cryptography;
 using System.Text;
 using System.Windows.Forms;
@@ -9,7 +9,7 @@ namespace BULi
 {
     public partial class SignUp : Form
     {
-        private string connectionString = "Server=localhost;Database=sis_db;Uid=root;Pwd=Trishamae1122;";
+        private string connectionString = "Server=localhost;Database=sis_db;Uid=root;Pwd=YOUR_PASSWORD;";
 
         public SignUp()
         {
@@ -18,26 +18,6 @@ namespace BULi
 
         private void btnSignUp_Click(object sender, EventArgs e)
         {
-            SIS.Instance.OpenChildForm(new setUp());
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-            UIcolor.ApplySunsetGradient((Control)sender, e);
-
-        }
-
-        private void SignUp_Load(object sender, EventArgs e)
-        {
-            ControlRounder.MakeRounded(panel1, 16);
-            ControlRounder.MakeRounded(txtUsername,6);
-            ControlRounder.MakeRounded(txtPassword, 6);
-            ControlRounder.MakeRounded(btnSignIn, 6);
-
-        }
-    }
-}
-
             string username = txtUsername.Text.Trim();
             string password = txtPassword.Text.Trim();
 
@@ -59,37 +39,33 @@ namespace BULi
                 {
                     conn.Open();
 
-                    string checkUserQuery = "SELECT COUNT(*) FROM students WHERE username = @Username";
-                    using (MySqlCommand checkCmd = new MySqlCommand(checkUserQuery, conn))
+                    // Check if username already exists
+                    using (MySqlCommand checkCmd = new MySqlCommand(
+                        "SELECT COUNT(*) FROM students WHERE username = @Username", conn))
                     {
                         checkCmd.Parameters.AddWithValue("@Username", username);
-                        long userCount = Convert.ToInt64(checkCmd.ExecuteScalar());
-
-                        if (userCount > 0)
+                        if (Convert.ToInt64(checkCmd.ExecuteScalar()) > 0)
                         {
                             MessageBox.Show("Username is already taken. Please choose another one.", "Registration Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             return;
                         }
                     }
 
-                    string hashedPassword = ComputeSha256Hash(password);
-
+                    // Insert ONLY username + password; profile fields stay empty
                     string insertQuery = @"
-                        INSERT INTO students 
-                        (username, password_hash, first_name, last_name, is_deleted, created_at) 
-                        VALUES 
-                        (@Username, @PasswordHash, 'New', 'Student', 0, NOW())";
+                        INSERT INTO students
+                        (username, password_hash, first_name, last_name, is_deleted, created_at)
+                        VALUES
+                        (@Username, @PasswordHash, '', '', 0, NOW())";
 
                     using (MySqlCommand insertCmd = new MySqlCommand(insertQuery, conn))
                     {
                         insertCmd.Parameters.AddWithValue("@Username", username);
-                        insertCmd.Parameters.AddWithValue("@PasswordHash", hashedPassword);
+                        insertCmd.Parameters.AddWithValue("@PasswordHash", ComputeSha256Hash(password));
 
-                        int rowsAffected = insertCmd.ExecuteNonQuery();
-
-                        if (rowsAffected > 0)
+                        if (insertCmd.ExecuteNonQuery() > 0)
                         {
-                            MessageBox.Show("Account registered successfully! Please complete your profile details.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("Account registered! Please complete your profile details.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             SIS.Instance.OpenChildForm(new setUp(username, true));
                         }
                         else
@@ -105,26 +81,29 @@ namespace BULi
             }
         }
 
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+            UIcolor.ApplySunsetGradient((Control)sender, e);
+        }
+
+        private void SignUp_Load(object sender, EventArgs e)
+        {
+            ControlRounder.MakeRounded(panel1, 16);
+            ControlRounder.MakeRounded(txtUsername, 6);
+            ControlRounder.MakeRounded(txtPassword, 6);
+        }
+
         private string ComputeSha256Hash(string rawData)
         {
-            using (SHA256 sha256Hash = SHA256.Create())
+            using (SHA256 sha256 = SHA256.Create())
             {
-                byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(rawData));
-                StringBuilder builder = new StringBuilder();
-                for (int i = 0; i < bytes.Length; i++)
-                {
-                    builder.Append(bytes[i].ToString("x2"));
-                }
-                return builder.ToString();
+                byte[] bytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(rawData));
+                StringBuilder sb = new StringBuilder();
+                foreach (byte b in bytes) sb.Append(b.ToString("x2"));
+                return sb.ToString();
             }
         }
 
-        private void btnSignInRedirect_Click(object sender, EventArgs e)
-        {
-            SIS.Instance.OpenChildForm(new stdSignIn());
-        }
 
-        private void SignUp_Load(object sender, EventArgs e) { }
-        private void SignIn_Load(object sender, EventArgs e) { }
     }
 }
