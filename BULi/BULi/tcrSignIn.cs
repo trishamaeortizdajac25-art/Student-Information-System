@@ -11,7 +11,7 @@ namespace BULi
     {
 
 
-        private string connectionString = "Server=localhost;Database=sis_db;Uid=root;Pwd=kleenpIn*1;";
+        private string connectionString = "Server=localhost;Database=sis_db;Uid=root;Pwd=Trishamae1122;";
 
 
         public tcrSignIn()
