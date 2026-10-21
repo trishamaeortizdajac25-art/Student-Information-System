@@ -13,6 +13,7 @@ namespace BULi
         private string connectionString = "Server=localhost;Database=sis_db;Uid=root;Pwd=Trishamae1122;";
 
 
+
         private string currentUsername;
         private bool isSignUpMode;
 

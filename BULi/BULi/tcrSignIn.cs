@@ -10,6 +10,7 @@ namespace BULi
     public partial class tcrSignIn : Form
     {
 
+
         private string connectionString = "Server=localhost;Database=sis_db;Uid=root;Pwd=Trishamae1122;";
 
 
