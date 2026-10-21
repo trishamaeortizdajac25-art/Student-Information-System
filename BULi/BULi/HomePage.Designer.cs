@@ -431,13 +431,17 @@
             // 
             this.btnProfile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnProfile.BackColor = System.Drawing.Color.Transparent;
-            this.btnProfile.BackgroundImage = global::BULi.Properties.Resources.icon;
             this.btnProfile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnProfile.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnProfile.Location = new System.Drawing.Point(920, 18);
+            this.btnProfile.FlatAppearance.BorderSize = 0;
+            this.btnProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProfile.Font = new System.Drawing.Font("Segoe UI Black", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProfile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
+            this.btnProfile.Location = new System.Drawing.Point(920, 3);
             this.btnProfile.Name = "btnProfile";
-            this.btnProfile.Size = new System.Drawing.Size(50, 49);
+            this.btnProfile.Size = new System.Drawing.Size(50, 64);
             this.btnProfile.TabIndex = 0;
+            this.btnProfile.Text = "≡";
             this.btnProfile.UseVisualStyleBackColor = false;
             // 
             // label1

@@ -47,12 +47,12 @@ namespace BULi
             ControlRounder.MakeRounded(pnlID, 6);
             ControlRounder.MakeRounded(pnlName, 6);
             ControlRounder.MakeRounded(pnlBloc, 6);
-            ControlRounder.MakeRounded(pnlYear, 6);
             ControlRounder.MakeRounded(pnlProgram, 6);
             ControlRounder.MakeRounded(btnAddSI, 8);
             ControlRounder.MakeRounded(btnUpdateSI, 8);
             ControlRounder.MakeRounded(btnDeleteSI, 8);
             ControlRounder.MakeRounded(btnView, 8);
+            ControlRounder.MakeRounded(btnClear, 6);
             ControlRounder.MakeRounded(txtSearch, 6);
 
             // opened without a year (e.g. returning from the info card with no argument)
@@ -63,10 +63,7 @@ namespace BULi
                 lblYearTitle.Text = $"{yearLvl} Student Register";
             }
 
-            // Year level is fixed to the list being viewed
-            txtYearlvl.ReadOnly = true;
-            txtYearlvl.Text = dbYearLevel;
-
+          
             SetupGrid();
             SetupSortMenu();
 
@@ -271,7 +268,6 @@ namespace BULi
             txtName.Text = row.Cells["Name"].Value.ToString();
             txtBloc.Text = row.Cells["Bloc"].Value.ToString();
             txtProgram.Text = row.Cells["Program"].Value.ToString();
-            txtYearlvl.Text = dbYearLevel;
         }
 
         private void ClearFields()
@@ -282,7 +278,6 @@ namespace BULi
             txtName.Clear();
             txtBloc.Clear();
             txtProgram.Clear();
-            txtYearlvl.Text = dbYearLevel;
         }
 
         /// <summary>
@@ -686,5 +681,7 @@ namespace BULi
         {
             UIcolor.ApplyLightInnerPanelGradient((Control)sender, e);
         }
+
+
     }
 }
