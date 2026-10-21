@@ -2,13 +2,14 @@
 using System;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 
 namespace BULi
 {
     public partial class setUp : Form
     {
-        private string connectionString = "Server=localhost;Database=sis_db;Uid=root;Pwd=Trishamae1122";
+        private string connectionString = "Server=localhost;Database=sis_db;Uid=root;Pwd=Trishamae1122;";
 
         private string currentUsername;
         private bool isSignUpMode;
@@ -48,6 +49,7 @@ namespace BULi
             btnGender.Text = "";
             txtContact.Text = "";
             txtEmailAdd.Text = "";
+            pictureBox1.Image = null;
         }
 
         private void LoadStudentData(string username)
@@ -60,6 +62,7 @@ namespace BULi
                     string query = @"
                         SELECT student_number, first_name, middle_name, last_name, gender, 
                                birthdate, year_level, program, block, contact_number, email,
+                               profile_picture,
                                TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) AS calculated_age
                         FROM students 
                         WHERE username = @Username AND is_deleted = 0";
@@ -90,6 +93,20 @@ namespace BULi
                                 btnGender.Text = reader["gender"].ToString();
                                 txtContact.Text = reader["contact_number"].ToString();
                                 txtEmailAdd.Text = reader["email"].ToString();
+
+                                // Load Profile Picture
+                                if (reader["profile_picture"] != DBNull.Value)
+                                {
+                                    byte[] imgBytes = (byte[])reader["profile_picture"];
+                                    using (MemoryStream ms = new MemoryStream(imgBytes))
+                                    {
+                                        pictureBox1.Image = Image.FromStream(ms);
+                                    }
+                                }
+                                else
+                                {
+                                    pictureBox1.Image = null;
+                                }
                             }
                         }
                     }
@@ -118,6 +135,21 @@ namespace BULi
                 DateTime birthdate;
                 bool validDate = DateTime.TryParse(txtDate.Text.Trim(), out birthdate);
 
+                // Convert picturebox image to byte array for MySQL BLOB storage
+                byte[] imageBytes = null;
+                if (pictureBox1.Image != null)
+                {
+                    using (MemoryStream ms = new MemoryStream())
+                    {
+                        // Clone image to avoid GDI+ lock during save
+                        using (Bitmap bmp = new Bitmap(pictureBox1.Image))
+                        {
+                            bmp.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+                        }
+                        imageBytes = ms.ToArray();
+                    }
+                }
+
                 using (MySqlConnection conn = new MySqlConnection(connectionString))
                 {
                     conn.Open();
@@ -134,7 +166,8 @@ namespace BULi
                             program = @Program, 
                             block = @Block, 
                             contact_number = @Contact, 
-                            email = @Email 
+                            email = @Email,
+                            profile_picture = @ProfilePic
                         WHERE username = @Username AND is_deleted = 0";
 
                     using (MySqlCommand cmd = new MySqlCommand(updateQuery, conn))
@@ -146,11 +179,12 @@ namespace BULi
                         cmd.Parameters.AddWithValue("@LastName", string.IsNullOrEmpty(lastName) ? "N/A" : lastName);
                         cmd.Parameters.AddWithValue("@Gender", string.IsNullOrEmpty(btnGender.Text.Trim()) ? "Prefer not to say" : btnGender.Text.Trim());
                         cmd.Parameters.AddWithValue("@Birthdate", validDate ? birthdate.ToString("yyyy-MM-dd") : "2000-01-01");
-                        cmd.Parameters.AddWithValue("@YearLevel", string.IsNullOrEmpty(txtYearlvl.Text.Trim()) ? "Freshman" : txtYearlvl.Text.Trim());
+                        cmd.Parameters.AddWithValue("@YearLevel", string.IsNullOrEmpty(txtYearlvl.Text.Trim()) ? "1st Year" : txtYearlvl.Text.Trim());
                         cmd.Parameters.AddWithValue("@Program", string.IsNullOrEmpty(txtProgram.Text.Trim()) ? "BS Information Technology" : txtProgram.Text.Trim());
                         cmd.Parameters.AddWithValue("@Block", string.IsNullOrEmpty(txtBloc.Text.Trim()) ? "Block A" : txtBloc.Text.Trim());
                         cmd.Parameters.AddWithValue("@Contact", txtContact.Text.Trim());
                         cmd.Parameters.AddWithValue("@Email", string.IsNullOrEmpty(txtEmailAdd.Text.Trim()) ? (object)DBNull.Value : txtEmailAdd.Text.Trim());
+                        cmd.Parameters.AddWithValue("@ProfilePic", imageBytes != null ? (object)imageBytes : DBNull.Value);
 
                         int rows = cmd.ExecuteNonQuery();
 
@@ -170,63 +204,39 @@ namespace BULi
             }
         }
 
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            DialogResult confirm = MessageBox.Show(
-                "Are you sure you want to delete your account? This action cannot be undone.",
-                "Confirm Account Deletion",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Warning
-            );
-
-            if (confirm == DialogResult.Yes)
-            {
-                try
-                {
-                    using (MySqlConnection conn = new MySqlConnection(connectionString))
-                    {
-                        conn.Open();
-                        string deleteQuery = "UPDATE students SET is_deleted = 1 WHERE username = @Username";
-
-                        using (MySqlCommand cmd = new MySqlCommand(deleteQuery, conn))
-                        {
-                            cmd.Parameters.AddWithValue("@Username", currentUsername ?? "");
-                            int rows = cmd.ExecuteNonQuery();
-
-                            if (rows > 0)
-                            {
-                                MessageBox.Show("Your account has been deleted.", "Account Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                Application.Exit();
-                            }
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error deleting account: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-        }
-
         private void btnShowCard_Click(object sender, EventArgs e)
         {
             SIS.Instance.OpenChildForm(new infoCard(currentUsername));
         }
 
-        // Dummy handlers for designer bindings
-        private void txtBloc_TextChanged(object sender, EventArgs e) { }
-        private void txtID_TextChanged(object sender, EventArgs e) { }
-        private void txtGender_TextChanged(object sender, EventArgs e) { }
-        private void txtYearlvl_TextChanged(object sender, EventArgs e) { }
-        private void lbl_Click(object sender, EventArgs e) { }
-        private void label5_Click(object sender, EventArgs e) { }
-        private void label2_Click(object sender, EventArgs e) { }
-        private void label7_Click(object sender, EventArgs e) { }
-        private void pictureBox1_Click(object sender, EventArgs e) { }
-
+        // ==========================================================
+        // PHOTO DROPDOWN & MANAGEMENT (contextMenuStrip1)
+        // ==========================================================
         private void btnPhoto_Click(object sender, EventArgs e)
         {
             contextMenuStrip1.Show(btnPhoto, new Point(0, btnPhoto.Height));
+        }
+
+        // Bind this method to the "Upload Photo" item in contextMenuStrip1
+        private void uploadPhotoOption_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.Filter = "Image Files (*.jpg; *.jpeg; *.png; *.bmp)|*.jpg;*.jpeg;*.png;*.bmp";
+                openFileDialog.Title = "Select Profile Picture";
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    pictureBox1.Image = Image.FromFile(openFileDialog.FileName);
+                    pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+                }
+            }
+        }
+
+        // Bind this method to the "Delete Photo" / "Remove Photo" item in contextMenuStrip1
+        private void deletePhotoOption_Click(object sender, EventArgs e)
+        {
+            pictureBox1.Image = null;
         }
 
         private void btnGender_Click(object sender, EventArgs e)
@@ -244,9 +254,15 @@ namespace BULi
             }
         }
 
-        private void pnlGlassCard_Paint(object sender, PaintEventArgs e)
-        {
-            UIcolor.ApplySunsetGradient((Control)sender, e);
-        }
+        // Dummy handlers for designer bindings
+        private void txtBloc_TextChanged(object sender, EventArgs e) { }
+        private void txtID_TextChanged(object sender, EventArgs e) { }
+        private void txtGender_TextChanged(object sender, EventArgs e) { }
+        private void txtYearlvl_TextChanged(object sender, EventArgs e) { }
+        private void lbl_Click(object sender, EventArgs e) { }
+        private void label5_Click(object sender, EventArgs e) { }
+        private void label2_Click(object sender, EventArgs e) { }
+        private void label7_Click(object sender, EventArgs e) { }
+        private void pictureBox1_Click(object sender, EventArgs e) { }
     }
 }
