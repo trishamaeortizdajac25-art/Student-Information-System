@@ -381,7 +381,7 @@
             this.pnlGlassCard.Controls.Add(this.txtBloc);
             this.pnlGlassCard.Controls.Add(this.txtName);
             this.pnlGlassCard.Location = new System.Drawing.Point(84, 80);
-            this.pnlGlassCard.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlGlassCard.Margin = new System.Windows.Forms.Padding(4);
             this.pnlGlassCard.Name = "pnlGlassCard";
             this.pnlGlassCard.Size = new System.Drawing.Size(833, 414);
             this.pnlGlassCard.TabIndex = 32;
