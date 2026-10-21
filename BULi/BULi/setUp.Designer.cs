@@ -449,6 +449,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::BULi.Properties.Resources._default;
             this.ClientSize = new System.Drawing.Size(981, 562);
+            this.ClientSize = new System.Drawing.Size(736, 457);
             this.Controls.Add(this.pnlGlassCard);
             this.Controls.Add(this.btnShowCard);
             this.Controls.Add(this.btnUpdate);
