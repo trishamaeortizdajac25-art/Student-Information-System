@@ -231,3 +231,17 @@ ALTER TABLE students
     MODIFY program         VARCHAR(100) NULL,
     MODIFY block           VARCHAR(20)  NULL,
     MODIFY contact_number  VARCHAR(20)  NULL;
+    
+USE sis_db;
+SELECT * FROM students;
+
+SELECT student_id, username, first_name, last_name, year_level, program, block
+FROM students
+ORDER BY student_id DESC
+LIMIT 10;
+
+USE sis_db;
+SHOW COLUMNS FROM students;
+
+SELECT student_id, student_number, first_name, last_name, year_level, program, block, created_at
+FROM students ORDER BY student_id DESC LIMIT 5;
