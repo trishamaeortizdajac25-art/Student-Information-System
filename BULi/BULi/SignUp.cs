@@ -33,6 +33,8 @@ namespace BULi
                 return;
             }
 
+            bool registered = false;
+
             try
             {
                 using (MySqlConnection conn = new MySqlConnection(connectionString))
@@ -51,7 +53,7 @@ namespace BULi
                         }
                     }
 
-                    // Insert ONLY username + password; profile fields stay empty
+                    // Insert ONLY username + password; profile fields stay empty (NULL)
                     string insertQuery = @"
                         INSERT INTO students
                         (username, password_hash, first_name, last_name, is_deleted, created_at)
@@ -65,8 +67,19 @@ namespace BULi
 
                         if (insertCmd.ExecuteNonQuery() > 0)
                         {
-                            MessageBox.Show("Account registered! Please complete your profile details.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            SIS.Instance.OpenChildForm(new setUp(username, true));
+                            long newId = insertCmd.LastInsertedId;
+
+                            // Record the registration in the activity log
+                            using (MySqlCommand logCmd = new MySqlCommand(
+                                @"INSERT INTO activity_logs (actor_type, actor_id, action, target_student_id, details)
+      VALUES ('Student', @Id, 'REGISTER', @Id, @Details)", conn))
+                            {
+                                logCmd.Parameters.AddWithValue("@Id", newId);
+                                logCmd.Parameters.AddWithValue("@Details", "Student account '" + username + "' registered");
+                                logCmd.ExecuteNonQuery();
+                            }
+
+                            registered = true;
                         }
                         else
                         {
@@ -78,6 +91,14 @@ namespace BULi
             catch (Exception ex)
             {
                 MessageBox.Show("Database error during registration: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Open setUp only after the account is saved and the connection is closed
+            if (registered)
+            {
+                MessageBox.Show("Account registered! Please complete your profile details.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                SIS.Instance.OpenChildForm(new setUp(username, true));
             }
         }
 
@@ -103,7 +124,5 @@ namespace BULi
                 return sb.ToString();
             }
         }
-
-
     }
 }
