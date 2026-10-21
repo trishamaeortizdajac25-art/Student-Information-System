@@ -95,11 +95,32 @@ namespace BULi
 
         private void txtUsername_TextChanged(object sender, EventArgs e) { }
         private void txtPassword_TextChanged(object sender, EventArgs e) { }
-        private void stdSignIn_Load(object sender, EventArgs e) { }
+        private void stdSignIn_Load(object sender, EventArgs e) 
+        {
+            ControlRounder.MakeRounded(pnlPlaceholder, 20);
+            ControlRounder.MakeRounded(txtUsername, 6);
+            ControlRounder.MakeRounded(txtPassword, 6);
+            ControlRounder.MakeRounded(btnSignUp, 8);
+            ControlRounder.MakeRounded(btnReturn, 8);
+
+
+        }
 
         private void lnkSignUpRDT_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             SIS.Instance.OpenChildForm(new SignUp());
+        }
+
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+            SIS.Instance.OpenChildForm(new pick());
+
+        }
+
+        private void pnlPlaceholder_Paint(object sender, PaintEventArgs e)
+        {
+            UIcolor.ApplySunsetGradient((Control)sender, e);
+
         }
 
 

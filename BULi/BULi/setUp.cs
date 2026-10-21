@@ -247,5 +247,10 @@ namespace BULi
                 btnGender.Text = clickedItem.Text;
             }
         }
+
+        private void pnlGlassCard_Paint(object sender, PaintEventArgs e)
+        {
+            UIcolor.ApplySunsetGradient((Control)sender, e);
+        }
     }
 }

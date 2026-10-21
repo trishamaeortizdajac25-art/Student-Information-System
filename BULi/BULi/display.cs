@@ -66,11 +66,85 @@ namespace BULi
         private void display_Load(object sender, EventArgs e)
         {
             pnlScroll.MouseEnter += (s, ev) => pnlScroll.Focus();
+            ControlRounder.MakeRounded(btnReturn, 10);
+            ControlRounder.MakeRounded(pnlhawakupdate, 16);
+            ControlRounder.MakeRounded(pnlID, 6);
+            ControlRounder.MakeRounded(pnlName, 6);
+            ControlRounder.MakeRounded(pnlBloc, 6);
+            ControlRounder.MakeRounded(pnlYear, 6);
+            ControlRounder.MakeRounded(pnlProgram, 6);
+            ControlRounder.MakeRounded(btnAddSI, 8);
+            ControlRounder.MakeRounded(btnUpdateSI, 8);
+            ControlRounder.MakeRounded(btnDeleteSI, 8);
+            ControlRounder.MakeRounded(btnView, 8);
+            ControlRounder.MakeRounded(txtSearch, 6);
+
+
+
+
         }
 
         private void btnView_Click(object sender, EventArgs e)
         {
             SIS.Instance.OpenChildForm(new infoCard());
+        }
+
+        private void btnSort_Click(object sender, EventArgs e)
+        {
+            contextMenuStrip1.Show(btnSort, new Point(0, btnSort.Height));
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+            UIcolor.ApplyDeepHeaderGradient((Control)sender, e);
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+            UIcolor.ApplySunsetGradient((Control)sender, e);
+
+        }
+
+
+
+        private void pnlhawakupdate_Paint(object sender, PaintEventArgs e)
+        {
+            UIcolor.ApplyLightInnerPanelGradient((Control)sender, e);
+        }
+
+        private void pnlID_Paint(object sender, PaintEventArgs e)
+        {
+            UIcolor.ApplyLightInnerPanelGradient((Control)sender, e);
+        }
+
+        private void pnlName_Paint(object sender, PaintEventArgs e)
+        {
+            UIcolor.ApplyLightInnerPanelGradient((Control)sender, e);
+
+        }
+
+        private void pnlBloc_Paint(object sender, PaintEventArgs e)
+        {
+            UIcolor.ApplyLightInnerPanelGradient((Control)sender, e);
+
+        }
+
+        private void pnlYear_Paint(object sender, PaintEventArgs e)
+        {
+            UIcolor.ApplyLightInnerPanelGradient((Control)sender, e);
+
+        }
+
+        private void pnlProgram_Paint(object sender, PaintEventArgs e)
+        {
+            UIcolor.ApplyLightInnerPanelGradient((Control)sender, e);
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

@@ -28,6 +28,21 @@ namespace BULi
         {
             SIS.Instance.OpenChildForm(new setUp());
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+            UIcolor.ApplySunsetGradient((Control)sender, e);
+
+        }
+
+        private void SignUp_Load(object sender, EventArgs e)
+        {
+            ControlRounder.MakeRounded(panel1, 16);
+            ControlRounder.MakeRounded(txtUsername,6);
+            ControlRounder.MakeRounded(txtPassword, 6);
+            ControlRounder.MakeRounded(btnSignIn, 6);
+
+        }
     }
 }
 

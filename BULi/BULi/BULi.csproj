@@ -179,6 +179,7 @@
     <Compile Include="tcrSignIn.Designer.cs">
       <DependentUpon>tcrSignIn.cs</DependentUpon>
     </Compile>
+    <Compile Include="UIcolor.cs" />
     <EmbeddedResource Include="display.resx">
       <DependentUpon>display.cs</DependentUpon>
     </EmbeddedResource>
@@ -293,6 +294,30 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\redhp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gradient.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BULiunmarked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BULitrans.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\starter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BULitrans1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gradientnull.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gradientnull1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\darknull.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

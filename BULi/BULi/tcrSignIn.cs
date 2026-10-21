@@ -22,6 +22,27 @@ namespace BULi
             SIS.Instance.OpenChildForm(new HomePage());
         }
 
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+            SIS.Instance.OpenChildForm(new pick());
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+            UIcolor.ApplySunsetGradient((Control)sender, e);
+
+        }
+
+        private void tcrSignIn_Load(object sender, EventArgs e)
+        {
+            ControlRounder.MakeRounded(panel1, 16);
+            ControlRounder.MakeRounded(btnReturn, 8);
+            ControlRounder.MakeRounded(btnEnter, 8);
+            ControlRounder.MakeRounded(txtName, 8);
+            ControlRounder.MakeRounded(txtPassword, 8);
+        }
+
 
     }
 }

@@ -32,5 +32,32 @@ namespace BULi
             SIS.Instance.OpenChildForm(new tcrSignIn());
         }
 
+        private void pick_Load(object sender, EventArgs e)
+        {
+            ControlRounder.MakeRounded(btnStudent, 15);
+            ControlRounder.MakeRounded(btnTeacher, 15);
+            ControlRounder.MakeRounded(panel2, 15);
+            ControlRounder.MakeRounded(panel3, 15);
+            ControlRounder.MakeRounded(panel1, 16);
+
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+            UIcolor.ApplySunsetGradient((Control)sender, e);
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+            UIcolor.ApplySunsetGradient((Control)sender, e);
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+            UIcolor.ApplyLightInnerPanelGradient((Control)sender, e);
+
+        }
     }
 }

@@ -110,5 +110,16 @@ namespace BULi
         {
             contextMenuStrip1.Show(btnDrop, new Point(0, btnDrop.Height));
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+            UIcolor.ApplySunsetGradient((Control)sender, e);
+
+        }
+
+        private void infoCard_Load_1(object sender, EventArgs e)
+        {
+            ControlRounder.MakeRounded(panel1, 16);
+        }
     }
 }
