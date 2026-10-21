@@ -25,6 +25,7 @@ namespace BULi
             this.isSignUpMode = isSignUp;
         }
 
+
         private void setUp_Load(object sender, EventArgs e)
         {
             if (isSignUpMode)
@@ -35,6 +36,12 @@ namespace BULi
             {
                 LoadStudentData(currentUsername);
             }
+
+            ControlRounder.MakeRounded(btnUpdate, 8);
+            ControlRounder.MakeRounded(btnShowCard, 8);
+            ControlRounder.MakeRounded(pnlGlassCard, 16);
+
+
         }
 
         private void ClearAllFields()

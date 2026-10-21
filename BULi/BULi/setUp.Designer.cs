@@ -71,20 +71,22 @@
             // 
             this.txtName.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
-            this.txtName.Location = new System.Drawing.Point(442, 26);
+            this.txtName.Location = new System.Drawing.Point(259, 57);
             this.txtName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtName.Multiline = true;
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(257, 34);
+            this.txtName.Size = new System.Drawing.Size(257, 30);
             this.txtName.TabIndex = 0;
             // 
             // txtBloc
             // 
             this.txtBloc.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBloc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
-            this.txtBloc.Location = new System.Drawing.Point(442, 129);
+            this.txtBloc.Location = new System.Drawing.Point(259, 226);
             this.txtBloc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtBloc.Multiline = true;
             this.txtBloc.Name = "txtBloc";
-            this.txtBloc.Size = new System.Drawing.Size(63, 34);
+            this.txtBloc.Size = new System.Drawing.Size(72, 30);
             this.txtBloc.TabIndex = 2;
             this.txtBloc.TextChanged += new System.EventHandler(this.txtBloc_TextChanged);
             // 
@@ -92,10 +94,11 @@
             // 
             this.txtID.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
-            this.txtID.Location = new System.Drawing.Point(443, 79);
+            this.txtID.Location = new System.Drawing.Point(259, 138);
             this.txtID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtID.Multiline = true;
             this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(257, 34);
+            this.txtID.Size = new System.Drawing.Size(257, 30);
             this.txtID.TabIndex = 3;
             this.txtID.TextChanged += new System.EventHandler(this.txtID_TextChanged);
             // 
@@ -103,29 +106,31 @@
             // 
             this.txtDate.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
-            this.txtDate.Location = new System.Drawing.Point(445, 266);
+            this.txtDate.Location = new System.Drawing.Point(546, 138);
             this.txtDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtDate.Multiline = true;
             this.txtDate.Name = "txtDate";
-            this.txtDate.Size = new System.Drawing.Size(257, 34);
+            this.txtDate.Size = new System.Drawing.Size(257, 30);
             this.txtDate.TabIndex = 5;
             // 
             // txtContact
             // 
             this.txtContact.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtContact.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
-            this.txtContact.Location = new System.Drawing.Point(442, 315);
+            this.txtContact.Location = new System.Drawing.Point(546, 226);
             this.txtContact.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtContact.Multiline = true;
             this.txtContact.Name = "txtContact";
-            this.txtContact.Size = new System.Drawing.Size(257, 34);
+            this.txtContact.Size = new System.Drawing.Size(257, 30);
             this.txtContact.TabIndex = 6;
             // 
             // btnPhoto
             // 
             this.btnPhoto.Font = new System.Drawing.Font("Segoe UI Semibold", 12F);
-            this.btnPhoto.Location = new System.Drawing.Point(224, 236);
+            this.btnPhoto.Location = new System.Drawing.Point(189, 190);
             this.btnPhoto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPhoto.Name = "btnPhoto";
-            this.btnPhoto.Size = new System.Drawing.Size(57, 57);
+            this.btnPhoto.Size = new System.Drawing.Size(55, 52);
             this.btnPhoto.TabIndex = 8;
             this.btnPhoto.Text = "+";
             this.btnPhoto.UseVisualStyleBackColor = true;
@@ -137,7 +142,7 @@
             this.lbl.BackColor = System.Drawing.Color.Transparent;
             this.lbl.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl.ForeColor = System.Drawing.Color.White;
-            this.lbl.Location = new System.Drawing.Point(315, 29);
+            this.lbl.Location = new System.Drawing.Point(254, 27);
             this.lbl.Name = "lbl";
             this.lbl.Size = new System.Drawing.Size(77, 28);
             this.lbl.TabIndex = 9;
@@ -150,7 +155,7 @@
             this.ls.BackColor = System.Drawing.Color.Transparent;
             this.ls.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ls.ForeColor = System.Drawing.Color.White;
-            this.ls.Location = new System.Drawing.Point(315, 79);
+            this.ls.Location = new System.Drawing.Point(254, 108);
             this.ls.Name = "ls";
             this.ls.Size = new System.Drawing.Size(120, 28);
             this.ls.TabIndex = 11;
@@ -162,7 +167,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(315, 132);
+            this.label3.Location = new System.Drawing.Point(254, 189);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(55, 28);
             this.label3.TabIndex = 12;
@@ -174,7 +179,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(317, 226);
+            this.label4.Location = new System.Drawing.Point(258, 284);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(59, 28);
             this.label4.TabIndex = 13;
@@ -186,7 +191,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(543, 223);
+            this.label5.Location = new System.Drawing.Point(384, 284);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(91, 28);
             this.label5.TabIndex = 14;
@@ -199,7 +204,7 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(317, 272);
+            this.label6.Location = new System.Drawing.Point(541, 108);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(115, 28);
             this.label6.TabIndex = 15;
@@ -211,7 +216,7 @@
             this.v.BackColor = System.Drawing.Color.Transparent;
             this.v.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.v.ForeColor = System.Drawing.Color.White;
-            this.v.Location = new System.Drawing.Point(317, 315);
+            this.v.Location = new System.Drawing.Point(541, 190);
             this.v.Name = "v";
             this.v.Size = new System.Drawing.Size(86, 28);
             this.v.TabIndex = 16;
@@ -232,20 +237,22 @@
             // 
             this.txtProgram.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtProgram.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
-            this.txtProgram.Location = new System.Drawing.Point(442, 177);
+            this.txtProgram.Location = new System.Drawing.Point(546, 57);
             this.txtProgram.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtProgram.Multiline = true;
             this.txtProgram.Name = "txtProgram";
-            this.txtProgram.Size = new System.Drawing.Size(257, 34);
+            this.txtProgram.Size = new System.Drawing.Size(257, 30);
             this.txtProgram.TabIndex = 19;
             // 
             // txtYearlvl
             // 
             this.txtYearlvl.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtYearlvl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
-            this.txtYearlvl.Location = new System.Drawing.Point(679, 129);
+            this.txtYearlvl.Location = new System.Drawing.Point(389, 226);
             this.txtYearlvl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtYearlvl.Multiline = true;
             this.txtYearlvl.Name = "txtYearlvl";
-            this.txtYearlvl.Size = new System.Drawing.Size(127, 34);
+            this.txtYearlvl.Size = new System.Drawing.Size(127, 30);
             this.txtYearlvl.TabIndex = 20;
             this.txtYearlvl.TextChanged += new System.EventHandler(this.txtYearlvl_TextChanged);
             // 
@@ -253,10 +260,11 @@
             // 
             this.txtEmailAdd.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmailAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
-            this.txtEmailAdd.Location = new System.Drawing.Point(442, 362);
+            this.txtEmailAdd.Location = new System.Drawing.Point(546, 315);
             this.txtEmailAdd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtEmailAdd.Multiline = true;
             this.txtEmailAdd.Name = "txtEmailAdd";
-            this.txtEmailAdd.Size = new System.Drawing.Size(257, 34);
+            this.txtEmailAdd.Size = new System.Drawing.Size(257, 30);
             this.txtEmailAdd.TabIndex = 21;
             // 
             // pictureBox1
@@ -265,7 +273,7 @@
             this.pictureBox1.Location = new System.Drawing.Point(20, 39);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(232, 226);
+            this.pictureBox1.Size = new System.Drawing.Size(198, 179);
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
@@ -276,7 +284,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(314, 180);
+            this.label2.Location = new System.Drawing.Point(541, 27);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(95, 28);
             this.label2.TabIndex = 23;
@@ -289,7 +297,7 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(543, 132);
+            this.label7.Location = new System.Drawing.Point(381, 189);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(108, 28);
             this.label7.TabIndex = 24;
@@ -298,36 +306,41 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Font = new System.Drawing.Font("Segoe UI Semibold", 12F);
-            this.btnUpdate.Location = new System.Drawing.Point(496, 501);
+            this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(204)))), ((int)(((byte)(21)))));
+            this.btnUpdate.Font = new System.Drawing.Font("Segoe UI Semibold", 9.5F);
+            this.btnUpdate.ForeColor = System.Drawing.Color.White;
+            this.btnUpdate.Location = new System.Drawing.Point(557, 511);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(139, 50);
+            this.btnUpdate.Size = new System.Drawing.Size(128, 40);
             this.btnUpdate.TabIndex = 26;
             this.btnUpdate.Text = "Update";
-            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnShowCard
             // 
-            this.btnShowCard.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.btnShowCard.Location = new System.Drawing.Point(733, 500);
+            this.btnShowCard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(78)))), ((int)(((byte)(192)))));
+            this.btnShowCard.Font = new System.Drawing.Font("Segoe UI Semibold", 9.5F);
+            this.btnShowCard.ForeColor = System.Drawing.Color.White;
+            this.btnShowCard.Location = new System.Drawing.Point(725, 510);
             this.btnShowCard.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnShowCard.Name = "btnShowCard";
-            this.btnShowCard.Size = new System.Drawing.Size(236, 50);
+            this.btnShowCard.Size = new System.Drawing.Size(244, 40);
             this.btnShowCard.TabIndex = 28;
             this.btnShowCard.Text = "View Student Information";
-            this.btnShowCard.UseVisualStyleBackColor = true;
+            this.btnShowCard.UseVisualStyleBackColor = false;
             this.btnShowCard.Click += new System.EventHandler(this.btnShowCard_Click);
             // 
             // txtAge
             // 
             this.txtAge.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAge.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
-            this.txtAge.Location = new System.Drawing.Point(445, 220);
+            this.txtAge.Location = new System.Drawing.Point(259, 315);
             this.txtAge.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtAge.Multiline = true;
             this.txtAge.Name = "txtAge";
-            this.txtAge.Size = new System.Drawing.Size(63, 34);
+            this.txtAge.Size = new System.Drawing.Size(72, 30);
             this.txtAge.TabIndex = 29;
             // 
             // label8
@@ -336,7 +349,7 @@
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(315, 362);
+            this.label8.Location = new System.Drawing.Point(541, 284);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(60, 28);
             this.label8.TabIndex = 30;
@@ -344,7 +357,7 @@
             // 
             // pnlGlassCard
             // 
-            this.pnlGlassCard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(247)))), ((int)(((byte)(238)))));
+            this.pnlGlassCard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
             this.pnlGlassCard.Controls.Add(this.btnGender);
             this.pnlGlassCard.Controls.Add(this.label8);
             this.pnlGlassCard.Controls.Add(this.txtAge);
@@ -370,18 +383,18 @@
             this.pnlGlassCard.Location = new System.Drawing.Point(84, 80);
             this.pnlGlassCard.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlGlassCard.Name = "pnlGlassCard";
-            this.pnlGlassCard.Size = new System.Drawing.Size(835, 414);
+            this.pnlGlassCard.Size = new System.Drawing.Size(833, 414);
             this.pnlGlassCard.TabIndex = 32;
             this.pnlGlassCard.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlGlassCard_Paint);
             // 
             // btnGender
             // 
-            this.btnGender.Font = new System.Drawing.Font("Segoe UI Semibold", 12F);
+            this.btnGender.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGender.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
-            this.btnGender.Location = new System.Drawing.Point(679, 221);
+            this.btnGender.Location = new System.Drawing.Point(386, 315);
             this.btnGender.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnGender.Name = "btnGender";
-            this.btnGender.Size = new System.Drawing.Size(125, 33);
+            this.btnGender.Size = new System.Drawing.Size(125, 30);
             this.btnGender.TabIndex = 35;
             this.btnGender.UseVisualStyleBackColor = true;
             this.btnGender.Click += new System.EventHandler(this.btnGender_Click);

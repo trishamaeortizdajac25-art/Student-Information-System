@@ -120,5 +120,21 @@ namespace BULi
         {
             ControlRounder.MakeRounded(panel1, 16);
         }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+
+            DialogResult result = MessageBox.Show(
+                "Are you sure you want to exit the application?",
+                "Confirm Exit",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+            );
+
+            if (result == DialogResult.Yes)   
+                Application.Exit();
+            
+        }
+    
     }
 }
