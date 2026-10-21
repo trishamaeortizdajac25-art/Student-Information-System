@@ -13,7 +13,9 @@ namespace BULi
 {
     public partial class HomePage : Form
     {
-        private string connectionString = "Server=localhost;Database=sis_db;Uid=root;Pwd=Trishamae1122;";
+
+        private string connectionString = "Server=localhost;Database=sis_db;Uid=root;Pwd=kleenpIn*1;";
+
         private DataTable studentDataTable = new DataTable();
 
         // DB year_level value -> name expected by display.cs
