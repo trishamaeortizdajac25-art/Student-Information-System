@@ -9,11 +9,9 @@ namespace BULi
 {
     public partial class infoCard : Form
     {
-<<<<<<< HEAD
-        private string connectionString = "Server=localhost;Database=sis_db;Uid=root;Pwd=nU^Ns3L*07_26;";
-=======
-        private string connectionString = "Server=localhost;Database=sis_db;Uid=root;Pwd=kleenpIn*1;";
->>>>>>> 0f7bc033b31dab9c0e9360c7270eb7e67c284ab4
+
+        private string connectionString = "Server=localhost;Database=sis_db;Uid=root;Pwd=Trishamae1122;";
+
         private string currentUsername;
 
         public infoCard()
