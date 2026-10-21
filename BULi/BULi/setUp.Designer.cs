@@ -380,17 +380,8 @@
             this.pnlGlassCard.Controls.Add(this.txtID);
             this.pnlGlassCard.Controls.Add(this.txtBloc);
             this.pnlGlassCard.Controls.Add(this.txtName);
-<<<<<<< HEAD
-<<<<<<< HEAD
             this.pnlGlassCard.Location = new System.Drawing.Point(84, 80);
             this.pnlGlassCard.Margin = new System.Windows.Forms.Padding(4);
-=======
-            this.pnlGlassCard.Location = new System.Drawing.Point(63, 65);
->>>>>>> d1dc87870633087529b9542ac3ef5a37ddc0f856
-=======
-            this.pnlGlassCard.Location = new System.Drawing.Point(84, 80);
-            this.pnlGlassCard.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
->>>>>>> e5efd677a99c5c8c5f04fb4fabcec2cb192ed339
             this.pnlGlassCard.Name = "pnlGlassCard";
             this.pnlGlassCard.Size = new System.Drawing.Size(833, 414);
             this.pnlGlassCard.TabIndex = 32;
@@ -457,7 +448,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::BULi.Properties.Resources._default;
-            this.ClientSize = new System.Drawing.Size(981, 562);
             this.ClientSize = new System.Drawing.Size(736, 457);
             this.Controls.Add(this.pnlGlassCard);
             this.Controls.Add(this.btnShowCard);
