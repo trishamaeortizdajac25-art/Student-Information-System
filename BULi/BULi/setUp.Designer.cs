@@ -51,7 +51,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.btnUpdate = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
             this.btnShowCard = new System.Windows.Forms.Button();
             this.txtAge = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -136,6 +135,7 @@
             // lbl
             // 
             this.lbl.AutoSize = true;
+            this.lbl.BackColor = System.Drawing.Color.Transparent;
             this.lbl.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
             this.lbl.Location = new System.Drawing.Point(299, 33);
@@ -148,6 +148,7 @@
             // ls
             // 
             this.ls.AutoSize = true;
+            this.ls.BackColor = System.Drawing.Color.Transparent;
             this.ls.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ls.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
             this.ls.Location = new System.Drawing.Point(299, 120);
@@ -159,6 +160,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
             this.label3.Location = new System.Drawing.Point(297, 208);
@@ -170,6 +172,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
             this.label4.Location = new System.Drawing.Point(299, 298);
@@ -181,6 +184,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
             this.label5.Location = new System.Drawing.Point(418, 298);
@@ -193,6 +197,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
             this.label6.Location = new System.Drawing.Point(590, 122);
@@ -204,6 +209,7 @@
             // v
             // 
             this.v.AutoSize = true;
+            this.v.BackColor = System.Drawing.Color.Transparent;
             this.v.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.v.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
             this.v.Location = new System.Drawing.Point(590, 210);
@@ -215,10 +221,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(339, 40);
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(348, 33);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(332, 39);
+            this.label1.Size = new System.Drawing.Size(348, 46);
             this.label1.TabIndex = 18;
             this.label1.Text = "Student Information";
             // 
@@ -276,6 +283,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
             this.label2.Location = new System.Drawing.Point(590, 32);
@@ -288,6 +296,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
             this.label7.Location = new System.Drawing.Point(418, 208);
@@ -300,24 +309,13 @@
             // btnUpdate
             // 
             this.btnUpdate.Font = new System.Drawing.Font("Segoe UI Semibold", 12F);
-            this.btnUpdate.Location = new System.Drawing.Point(419, 500);
+            this.btnUpdate.Location = new System.Drawing.Point(514, 500);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(139, 50);
             this.btnUpdate.TabIndex = 26;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Font = new System.Drawing.Font("Segoe UI Semibold", 12F);
-            this.btnDelete.Location = new System.Drawing.Point(576, 500);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(139, 50);
-            this.btnDelete.TabIndex = 27;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnShowCard
             // 
@@ -343,6 +341,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
             this.label8.Location = new System.Drawing.Point(592, 300);
@@ -447,7 +446,6 @@
             this.ClientSize = new System.Drawing.Size(981, 562);
             this.Controls.Add(this.pnlGlassCard);
             this.Controls.Add(this.btnShowCard);
-            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -488,7 +486,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnShowCard;
         private System.Windows.Forms.TextBox txtAge;
         private System.Windows.Forms.Label label8;
