@@ -32,7 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomePage));
             this.pnlFreshie = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.lblView1 = new System.Windows.Forms.Label();
             this.lblFreshie = new System.Windows.Forms.Label();
@@ -40,18 +39,15 @@
             this.lblView2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.pnlJunior = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.label8 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.lblView3 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.pnlSenior = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.lblView4 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -63,13 +59,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnSearch = new System.Windows.Forms.Button();
             this.pnlFreshie.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.pnlSophomore.SuspendLayout();
             this.panel2.SuspendLayout();
             this.pnlJunior.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.pnlSenior.SuspendLayout();
-            this.panel5.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -81,6 +74,7 @@
             this.pnlFreshie.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(72)))), ((int)(((byte)(63)))));
             this.pnlFreshie.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnlFreshie.Controls.Add(this.panel3);
+            this.pnlFreshie.Controls.Add(this.label14);
             this.pnlFreshie.Controls.Add(this.lblView1);
             this.pnlFreshie.Controls.Add(this.lblFreshie);
             this.pnlFreshie.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -98,23 +92,10 @@
             this.panel3.BackColor = System.Drawing.Color.Transparent;
             this.panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3.BackgroundImage")));
             this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel3.Controls.Add(this.label2);
-            this.panel3.Controls.Add(this.label14);
             this.panel3.Location = new System.Drawing.Point(23, 15);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(120, 120);
             this.panel3.TabIndex = 7;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(20, 83);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 20);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Students";
             // 
             // label14
             // 
@@ -122,7 +103,7 @@
             this.label14.BackColor = System.Drawing.Color.Transparent;
             this.label14.Font = new System.Drawing.Font("Segoe UI", 28.2F, System.Drawing.FontStyle.Bold);
             this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(20, 25);
+            this.label14.Location = new System.Drawing.Point(151, 51);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(54, 62);
             this.label14.TabIndex = 3;
@@ -131,10 +112,10 @@
             // lblView1
             // 
             this.lblView1.AutoSize = true;
-            this.lblView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(96)))), ((int)(((byte)(84)))));
+            this.lblView1.BackColor = System.Drawing.Color.Transparent;
             this.lblView1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblView1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(165)))), ((int)(((byte)(250)))));
-            this.lblView1.Location = new System.Drawing.Point(155, 85);
+            this.lblView1.Location = new System.Drawing.Point(158, 115);
             this.lblView1.Name = "lblView1";
             this.lblView1.Size = new System.Drawing.Size(135, 20);
             this.lblView1.TabIndex = 4;
@@ -146,7 +127,7 @@
             this.lblFreshie.BackColor = System.Drawing.Color.Transparent;
             this.lblFreshie.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold);
             this.lblFreshie.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(165)))), ((int)(((byte)(250)))));
-            this.lblFreshie.Location = new System.Drawing.Point(155, 25);
+            this.lblFreshie.Location = new System.Drawing.Point(155, 15);
             this.lblFreshie.Name = "lblFreshie";
             this.lblFreshie.Size = new System.Drawing.Size(145, 38);
             this.lblFreshie.TabIndex = 2;
@@ -159,6 +140,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlSophomore.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(72)))), ((int)(((byte)(63)))));
             this.pnlSophomore.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlSophomore.Controls.Add(this.label3);
             this.pnlSophomore.Controls.Add(this.lblView2);
             this.pnlSophomore.Controls.Add(this.panel2);
             this.pnlSophomore.Controls.Add(this.label6);
@@ -175,10 +157,10 @@
             // lblView2
             // 
             this.lblView2.AutoSize = true;
-            this.lblView2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(96)))), ((int)(((byte)(84)))));
+            this.lblView2.BackColor = System.Drawing.Color.Transparent;
             this.lblView2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.lblView2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(222)))), ((int)(((byte)(128)))));
-            this.lblView2.Location = new System.Drawing.Point(155, 85);
+            this.lblView2.Location = new System.Drawing.Point(158, 115);
             this.lblView2.Name = "lblView2";
             this.lblView2.Size = new System.Drawing.Size(135, 20);
             this.lblView2.TabIndex = 4;
@@ -189,8 +171,6 @@
             this.panel2.BackColor = System.Drawing.Color.Transparent;
             this.panel2.BackgroundImage = global::BULi.Properties.Resources.greenhp;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.label13);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Location = new System.Drawing.Point(18, 15);
             this.panel2.Name = "panel2";
@@ -203,22 +183,11 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 28.2F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(20, 25);
+            this.label3.Location = new System.Drawing.Point(151, 51);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(54, 62);
             this.label3.TabIndex = 6;
             this.label3.Text = "0";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(20, 83);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(71, 20);
-            this.label13.TabIndex = 5;
-            this.label13.Text = "Students";
             // 
             // label5
             // 
@@ -238,7 +207,7 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(222)))), ((int)(((byte)(128)))));
-            this.label6.Location = new System.Drawing.Point(155, 25);
+            this.label6.Location = new System.Drawing.Point(155, 15);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(170, 38);
             this.label6.TabIndex = 2;
@@ -252,6 +221,7 @@
             this.pnlJunior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(72)))), ((int)(((byte)(63)))));
             this.pnlJunior.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnlJunior.Controls.Add(this.panel4);
+            this.pnlJunior.Controls.Add(this.label11);
             this.pnlJunior.Controls.Add(this.lblView3);
             this.pnlJunior.Controls.Add(this.label9);
             this.pnlJunior.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -269,23 +239,10 @@
             this.panel4.BackColor = System.Drawing.Color.Transparent;
             this.panel4.BackgroundImage = global::BULi.Properties.Resources.yellowhp;
             this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel4.Controls.Add(this.label8);
-            this.panel4.Controls.Add(this.label11);
             this.panel4.Location = new System.Drawing.Point(23, 11);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(120, 120);
             this.panel4.TabIndex = 8;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(20, 83);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(71, 20);
-            this.label8.TabIndex = 5;
-            this.label8.Text = "Students";
             // 
             // label11
             // 
@@ -293,7 +250,7 @@
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Segoe UI", 28.2F, System.Drawing.FontStyle.Bold);
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(20, 25);
+            this.label11.Location = new System.Drawing.Point(151, 52);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(54, 62);
             this.label11.TabIndex = 3;
@@ -302,10 +259,10 @@
             // lblView3
             // 
             this.lblView3.AutoSize = true;
-            this.lblView3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(96)))), ((int)(((byte)(84)))));
+            this.lblView3.BackColor = System.Drawing.Color.Transparent;
             this.lblView3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.lblView3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(204)))), ((int)(((byte)(21)))));
-            this.lblView3.Location = new System.Drawing.Point(155, 85);
+            this.lblView3.Location = new System.Drawing.Point(158, 111);
             this.lblView3.Name = "lblView3";
             this.lblView3.Size = new System.Drawing.Size(135, 20);
             this.lblView3.TabIndex = 4;
@@ -317,7 +274,7 @@
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold);
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(204)))), ((int)(((byte)(21)))));
-            this.label9.Location = new System.Drawing.Point(155, 25);
+            this.label9.Location = new System.Drawing.Point(155, 14);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(99, 38);
             this.label9.TabIndex = 2;
@@ -331,6 +288,7 @@
             this.pnlSenior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(72)))), ((int)(((byte)(63)))));
             this.pnlSenior.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnlSenior.Controls.Add(this.panel5);
+            this.pnlSenior.Controls.Add(this.label16);
             this.pnlSenior.Controls.Add(this.lblView4);
             this.pnlSenior.Controls.Add(this.label12);
             this.pnlSenior.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -348,23 +306,10 @@
             this.panel5.BackColor = System.Drawing.Color.Transparent;
             this.panel5.BackgroundImage = global::BULi.Properties.Resources.redhp;
             this.panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel5.Controls.Add(this.label15);
-            this.panel5.Controls.Add(this.label16);
             this.panel5.Location = new System.Drawing.Point(18, 11);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(120, 120);
             this.panel5.TabIndex = 9;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(20, 83);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(71, 20);
-            this.label15.TabIndex = 5;
-            this.label15.Text = "Students";
             // 
             // label16
             // 
@@ -372,7 +317,7 @@
             this.label16.BackColor = System.Drawing.Color.Transparent;
             this.label16.Font = new System.Drawing.Font("Segoe UI", 28.2F, System.Drawing.FontStyle.Bold);
             this.label16.ForeColor = System.Drawing.Color.White;
-            this.label16.Location = new System.Drawing.Point(20, 25);
+            this.label16.Location = new System.Drawing.Point(151, 49);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(54, 62);
             this.label16.TabIndex = 3;
@@ -381,10 +326,10 @@
             // lblView4
             // 
             this.lblView4.AutoSize = true;
-            this.lblView4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(96)))), ((int)(((byte)(84)))));
+            this.lblView4.BackColor = System.Drawing.Color.Transparent;
             this.lblView4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.lblView4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(113)))), ((int)(((byte)(113)))));
-            this.lblView4.Location = new System.Drawing.Point(155, 85);
+            this.lblView4.Location = new System.Drawing.Point(158, 111);
             this.lblView4.Name = "lblView4";
             this.lblView4.Size = new System.Drawing.Size(135, 20);
             this.lblView4.TabIndex = 4;
@@ -396,7 +341,7 @@
             this.label12.BackColor = System.Drawing.Color.Transparent;
             this.label12.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold);
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(113)))), ((int)(((byte)(113)))));
-            this.label12.Location = new System.Drawing.Point(155, 25);
+            this.label12.Location = new System.Drawing.Point(155, 14);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(101, 38);
             this.label12.TabIndex = 2;
@@ -506,20 +451,14 @@
             this.Load += new System.EventHandler(this.HomePage_Load);
             this.pnlFreshie.ResumeLayout(false);
             this.pnlFreshie.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.pnlSophomore.ResumeLayout(false);
             this.pnlSophomore.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.pnlJunior.ResumeLayout(false);
             this.pnlJunior.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.pnlSenior.ResumeLayout(false);
             this.pnlSenior.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -548,16 +487,12 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label3;
     }

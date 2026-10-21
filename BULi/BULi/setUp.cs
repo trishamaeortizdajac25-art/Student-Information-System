@@ -485,6 +485,25 @@ namespace BULi
         private void btnTheme_Click(object sender, EventArgs e)
         {
             ThemeState.ToggleTheme();
+
+            if (ThemeState.IsDarkMode)
+            {
+                this.BackgroundImage = Properties.Resources.darknull;
+                this.BackgroundImageLayout = ImageLayout.Stretch;
+
+                // Dark Mode: Change button to Navy Blue
+                btnTheme.BackColor = Color.FromArgb(15, 23, 42);
+                btnTheme.ForeColor = Color.White;
+            }
+            else
+            {
+                this.BackgroundImage = Properties.Resources._default; // Or your light background
+                this.BackgroundImageLayout = ImageLayout.Stretch;
+
+                // Day/Light Mode: Change button to Orange (or whatever your light theme color is)
+                btnTheme.BackColor = Color.FromArgb(254, 180, 123);
+                btnTheme.ForeColor = Color.Black;
+            }
         }
     }
 }

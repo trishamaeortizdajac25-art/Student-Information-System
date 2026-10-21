@@ -447,7 +447,6 @@
             // 
             this.btnProfile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnProfile.BackColor = System.Drawing.Color.Transparent;
-            this.btnProfile.BackgroundImage = global::BULi.Properties.Resources.image_removebg_preview__1_;
             this.btnProfile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProfile.Location = new System.Drawing.Point(616, 39);
@@ -455,6 +454,7 @@
             this.btnProfile.Name = "btnProfile";
             this.btnProfile.Size = new System.Drawing.Size(51, 49);
             this.btnProfile.TabIndex = 1;
+            this.btnProfile.Text = "≡";
             this.btnProfile.UseVisualStyleBackColor = false;
             this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click);
             // 

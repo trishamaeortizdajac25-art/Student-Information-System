@@ -470,6 +470,21 @@ namespace BULi
         private void btnColorScheme_Click(object sender, EventArgs e)
         {
             ThemeState.ToggleTheme();
+            Color navyDarkMode = Color.FromArgb(15, 23, 42);
+            Color dayOrangeMode = Color.FromArgb(254, 180, 123); // Adjust this to your exact day/orange color if needed
+
+            if (ThemeState.IsDarkMode)
+            {
+                // Dark Mode: Navy Blue button with white text
+                btnColorScheme.BackColor = navyDarkMode;
+                btnColorScheme.ForeColor = Color.White;
+            }
+            else
+            {
+                // Day Mode: Orange button with dark/black text
+                btnColorScheme.BackColor = dayOrangeMode;
+                btnColorScheme.ForeColor = Color.Black;
+            }
         }
 
         private void pnlFreshie_MouseHover(object sender, EventArgs e)
@@ -523,6 +538,9 @@ namespace BULi
 
         }
 
+        private void label13_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }

@@ -97,7 +97,7 @@
             this.lblName.BackColor = System.Drawing.Color.Transparent;
             this.lblName.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.lblName.ForeColor = System.Drawing.Color.White;
-            this.lblName.Location = new System.Drawing.Point(426, 84);
+            this.lblName.Location = new System.Drawing.Point(400, 85);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(170, 28);
             this.lblName.TabIndex = 4;
@@ -122,7 +122,7 @@
             this.lblContact.BackColor = System.Drawing.Color.Transparent;
             this.lblContact.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.lblContact.ForeColor = System.Drawing.Color.White;
-            this.lblContact.Location = new System.Drawing.Point(426, 297);
+            this.lblContact.Location = new System.Drawing.Point(400, 298);
             this.lblContact.Name = "lblContact";
             this.lblContact.Size = new System.Drawing.Size(170, 28);
             this.lblContact.TabIndex = 16;
@@ -135,7 +135,7 @@
             this.lblID.BackColor = System.Drawing.Color.Transparent;
             this.lblID.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.lblID.ForeColor = System.Drawing.Color.White;
-            this.lblID.Location = new System.Drawing.Point(426, 253);
+            this.lblID.Location = new System.Drawing.Point(400, 254);
             this.lblID.Name = "lblID";
             this.lblID.Size = new System.Drawing.Size(170, 28);
             this.lblID.TabIndex = 15;
@@ -161,7 +161,7 @@
             this.lblProgram.BackColor = System.Drawing.Color.Transparent;
             this.lblProgram.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.lblProgram.ForeColor = System.Drawing.Color.White;
-            this.lblProgram.Location = new System.Drawing.Point(426, 213);
+            this.lblProgram.Location = new System.Drawing.Point(400, 214);
             this.lblProgram.Name = "lblProgram";
             this.lblProgram.Size = new System.Drawing.Size(170, 28);
             this.lblProgram.TabIndex = 13;
@@ -174,7 +174,7 @@
             this.lblYearlvl.BackColor = System.Drawing.Color.Transparent;
             this.lblYearlvl.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.lblYearlvl.ForeColor = System.Drawing.Color.White;
-            this.lblYearlvl.Location = new System.Drawing.Point(426, 169);
+            this.lblYearlvl.Location = new System.Drawing.Point(400, 170);
             this.lblYearlvl.Name = "lblYearlvl";
             this.lblYearlvl.Size = new System.Drawing.Size(170, 28);
             this.lblYearlvl.TabIndex = 12;
@@ -187,7 +187,7 @@
             this.lblBloc.BackColor = System.Drawing.Color.Transparent;
             this.lblBloc.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.lblBloc.ForeColor = System.Drawing.Color.White;
-            this.lblBloc.Location = new System.Drawing.Point(426, 127);
+            this.lblBloc.Location = new System.Drawing.Point(400, 128);
             this.lblBloc.Name = "lblBloc";
             this.lblBloc.Size = new System.Drawing.Size(170, 28);
             this.lblBloc.TabIndex = 11;
