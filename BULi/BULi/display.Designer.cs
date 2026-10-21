@@ -183,6 +183,7 @@
             this.btnUpdateSI.TabIndex = 6;
             this.btnUpdateSI.Text = "Update Information";
             this.btnUpdateSI.UseVisualStyleBackColor = false;
+            this.btnUpdateSI.Click += new System.EventHandler(this.btnUpdateSI_Click);
             // 
             // btnAddSI
             // 
@@ -197,6 +198,7 @@
             this.btnAddSI.TabIndex = 4;
             this.btnAddSI.Text = "Add Student";
             this.btnAddSI.UseVisualStyleBackColor = false;
+            this.btnAddSI.Click += new System.EventHandler(this.btnAddSI_Click);
             // 
             // btnDeleteSI
             // 
@@ -211,6 +213,7 @@
             this.btnDeleteSI.TabIndex = 5;
             this.btnDeleteSI.Text = "Delete";
             this.btnDeleteSI.UseVisualStyleBackColor = false;
+            this.btnDeleteSI.Click += new System.EventHandler(this.btnDeleteSI_Click);
             // 
             // pnlScroll
             // 
@@ -253,6 +256,7 @@
             this.txtBloc.Name = "txtBloc";
             this.txtBloc.Size = new System.Drawing.Size(151, 22);
             this.txtBloc.TabIndex = 9;
+            this.txtBloc.TextChanged += new System.EventHandler(this.txtBloc_TextChanged);
             // 
             // panel10
             // 
@@ -322,6 +326,7 @@
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(151, 22);
             this.txtName.TabIndex = 9;
+            this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             // 
             // panel8
             // 
@@ -353,6 +358,7 @@
             this.txtYearlvl.Name = "txtYearlvl";
             this.txtYearlvl.Size = new System.Drawing.Size(151, 22);
             this.txtYearlvl.TabIndex = 9;
+            this.txtYearlvl.TextChanged += new System.EventHandler(this.txtYearlvl_TextChanged);
             // 
             // panel12
             // 
@@ -384,6 +390,7 @@
             this.txtProgram.Name = "txtProgram";
             this.txtProgram.Size = new System.Drawing.Size(151, 22);
             this.txtProgram.TabIndex = 9;
+            this.txtProgram.TextChanged += new System.EventHandler(this.txtProgram_TextChanged);
             // 
             // panel14
             // 
@@ -440,6 +447,7 @@
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(151, 22);
             this.txtID.TabIndex = 9;
+            this.txtID.TextChanged += new System.EventHandler(this.txtID_TextChanged);
             // 
             // panel6
             // 
@@ -488,6 +496,7 @@
             this.btnProfile.Size = new System.Drawing.Size(38, 40);
             this.btnProfile.TabIndex = 1;
             this.btnProfile.UseVisualStyleBackColor = false;
+            this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click);
             // 
             // dataGridView1
             // 
@@ -503,6 +512,7 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(454, 249);
             this.dataGridView1.TabIndex = 3;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // btnView
             // 
@@ -553,6 +563,7 @@
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(337, 26);
             this.txtSearch.TabIndex = 0;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // btnSort
             // 
