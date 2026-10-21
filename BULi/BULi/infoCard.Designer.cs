@@ -86,7 +86,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(289, 27);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(244, 28);
+            this.label1.Size = new System.Drawing.Size(307, 35);
             this.label1.TabIndex = 2;
             this.label1.Text = "Student Information Card";
             // 
@@ -99,7 +99,7 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(291, 84);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 19);
+            this.label2.Size = new System.Drawing.Size(65, 23);
             this.label2.TabIndex = 3;
             this.label2.Text = "Name: ";
             // 
@@ -112,7 +112,7 @@
             this.lblName.ForeColor = System.Drawing.Color.White;
             this.lblName.Location = new System.Drawing.Point(461, 84);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(115, 19);
+            this.lblName.Size = new System.Drawing.Size(142, 23);
             this.lblName.TabIndex = 4;
             this.lblName.Text = "name of student ";
             // 
@@ -125,7 +125,7 @@
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(291, 141);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(0, 19);
+            this.label4.Size = new System.Drawing.Size(0, 23);
             this.label4.TabIndex = 5;
             // 
             // lblContact
@@ -137,7 +137,7 @@
             this.lblContact.ForeColor = System.Drawing.Color.White;
             this.lblContact.Location = new System.Drawing.Point(461, 297);
             this.lblContact.Name = "lblContact";
-            this.lblContact.Size = new System.Drawing.Size(115, 19);
+            this.lblContact.Size = new System.Drawing.Size(142, 23);
             this.lblContact.TabIndex = 16;
             this.lblContact.Text = "name of student ";
             // 
@@ -150,7 +150,7 @@
             this.lblID.ForeColor = System.Drawing.Color.White;
             this.lblID.Location = new System.Drawing.Point(461, 253);
             this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(115, 19);
+            this.lblID.Size = new System.Drawing.Size(142, 23);
             this.lblID.TabIndex = 15;
             this.lblID.Text = "name of student ";
             // 
@@ -163,7 +163,7 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(291, 169);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(78, 19);
+            this.label3.Size = new System.Drawing.Size(95, 23);
             this.label3.TabIndex = 14;
             this.label3.Text = "Year Level: ";
             // 
@@ -176,7 +176,7 @@
             this.lblProgram.ForeColor = System.Drawing.Color.White;
             this.lblProgram.Location = new System.Drawing.Point(461, 213);
             this.lblProgram.Name = "lblProgram";
-            this.lblProgram.Size = new System.Drawing.Size(115, 19);
+            this.lblProgram.Size = new System.Drawing.Size(142, 23);
             this.lblProgram.TabIndex = 13;
             this.lblProgram.Text = "name of student ";
             // 
@@ -189,7 +189,7 @@
             this.lblYearlvl.ForeColor = System.Drawing.Color.White;
             this.lblYearlvl.Location = new System.Drawing.Point(461, 169);
             this.lblYearlvl.Name = "lblYearlvl";
-            this.lblYearlvl.Size = new System.Drawing.Size(115, 19);
+            this.lblYearlvl.Size = new System.Drawing.Size(142, 23);
             this.lblYearlvl.TabIndex = 12;
             this.lblYearlvl.Text = "name of student ";
             // 
@@ -202,7 +202,7 @@
             this.lblBloc.ForeColor = System.Drawing.Color.White;
             this.lblBloc.Location = new System.Drawing.Point(461, 127);
             this.lblBloc.Name = "lblBloc";
-            this.lblBloc.Size = new System.Drawing.Size(115, 19);
+            this.lblBloc.Size = new System.Drawing.Size(142, 23);
             this.lblBloc.TabIndex = 11;
             this.lblBloc.Text = "name of student ";
             // 
@@ -216,7 +216,7 @@
             this.label8.ForeColor = System.Drawing.Color.White;
             this.label8.Location = new System.Drawing.Point(291, 253);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(83, 19);
+            this.label8.Size = new System.Drawing.Size(101, 23);
             this.label8.TabIndex = 9;
             this.label8.Text = "Student ID: ";
             // 
@@ -229,7 +229,7 @@
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(291, 298);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(88, 19);
+            this.label7.Size = new System.Drawing.Size(107, 23);
             this.label7.TabIndex = 8;
             this.label7.Text = "Contact No: ";
             // 
@@ -242,7 +242,7 @@
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(291, 127);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(43, 19);
+            this.label6.Size = new System.Drawing.Size(51, 23);
             this.label6.TabIndex = 7;
             this.label6.Text = "Bloc: ";
             // 
@@ -255,7 +255,7 @@
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(291, 213);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(69, 19);
+            this.label5.Size = new System.Drawing.Size(85, 23);
             this.label5.TabIndex = 6;
             this.label5.Tag = "";
             this.label5.Text = "Program: ";
@@ -271,7 +271,7 @@
             this.lnkReturn.LinkColor = System.Drawing.Color.White;
             this.lnkReturn.Location = new System.Drawing.Point(34, 24);
             this.lnkReturn.Name = "lnkReturn";
-            this.lnkReturn.Size = new System.Drawing.Size(58, 19);
+            this.lnkReturn.Size = new System.Drawing.Size(70, 23);
             this.lnkReturn.TabIndex = 10;
             this.lnkReturn.TabStop = true;
             this.lnkReturn.Text = "<- Back";
@@ -310,18 +310,18 @@
             this.uploadImageToolStripMenuItem,
             this.deleteImageToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(149, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(174, 52);
             // 
             // uploadImageToolStripMenuItem
             // 
             this.uploadImageToolStripMenuItem.Name = "uploadImageToolStripMenuItem";
-            this.uploadImageToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.uploadImageToolStripMenuItem.Size = new System.Drawing.Size(173, 24);
             this.uploadImageToolStripMenuItem.Text = "Upload Image";
             // 
             // deleteImageToolStripMenuItem
             // 
             this.deleteImageToolStripMenuItem.Name = "deleteImageToolStripMenuItem";
-            this.deleteImageToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.deleteImageToolStripMenuItem.Size = new System.Drawing.Size(173, 24);
             this.deleteImageToolStripMenuItem.Text = "Delete Image";
             // 
             // btnExit
