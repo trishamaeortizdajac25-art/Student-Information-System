@@ -223,9 +223,29 @@ namespace BULi.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap STUDENT_1 {
+            get {
+                object obj = ResourceManager.GetObject("STUDENT 1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap tcrnull {
             get {
                 object obj = ResourceManager.GetObject("tcrnull", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TEACHER {
+            get {
+                object obj = ResourceManager.GetObject("TEACHER", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

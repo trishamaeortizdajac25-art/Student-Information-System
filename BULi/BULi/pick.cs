@@ -34,10 +34,10 @@ namespace BULi
 
         private void pick_Load(object sender, EventArgs e)
         {
-            ControlRounder.MakeRounded(btnStudent, 15);
-            ControlRounder.MakeRounded(btnTeacher, 15);
-            ControlRounder.MakeRounded(panel2, 15);
-            ControlRounder.MakeRounded(panel3, 15);
+            ControlRounder.MakeRounded(btnStudent, 70);
+            ControlRounder.MakeRounded(btnTeacher, 70);
+            ControlRounder.MakeRounded(panel2, 75);
+            ControlRounder.MakeRounded(panel3, 75);
             ControlRounder.MakeRounded(panel1, 16);
 
 

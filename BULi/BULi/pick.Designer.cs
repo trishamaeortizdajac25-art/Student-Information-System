@@ -33,12 +33,14 @@
             this.btnTeacher = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -49,7 +51,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(217, 26);
+            this.label1.Location = new System.Drawing.Point(214, 13);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(239, 38);
             this.label1.TabIndex = 1;
@@ -58,12 +60,13 @@
             // btnStudent
             // 
             this.btnStudent.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnStudent.BackgroundImage = global::BULi.Properties.Resources.STUDENT_1;
+            this.btnStudent.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnStudent.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStudent.Location = new System.Drawing.Point(7, 6);
             this.btnStudent.Name = "btnStudent";
-            this.btnStudent.Size = new System.Drawing.Size(198, 168);
+            this.btnStudent.Size = new System.Drawing.Size(186, 168);
             this.btnStudent.TabIndex = 2;
-            this.btnStudent.Text = "Student";
             this.btnStudent.UseVisualStyleBackColor = false;
             this.btnStudent.UseWaitCursor = true;
             this.btnStudent.Click += new System.EventHandler(this.btnStudent_Click);
@@ -71,12 +74,13 @@
             // btnTeacher
             // 
             this.btnTeacher.BackColor = System.Drawing.Color.DarkGray;
+            this.btnTeacher.BackgroundImage = global::BULi.Properties.Resources.TEACHER;
+            this.btnTeacher.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnTeacher.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTeacher.Location = new System.Drawing.Point(6, 6);
             this.btnTeacher.Name = "btnTeacher";
-            this.btnTeacher.Size = new System.Drawing.Size(198, 168);
+            this.btnTeacher.Size = new System.Drawing.Size(186, 168);
             this.btnTeacher.TabIndex = 3;
-            this.btnTeacher.Text = "Teacher ";
             this.btnTeacher.UseVisualStyleBackColor = false;
             this.btnTeacher.Click += new System.EventHandler(this.btnTeacher_Click);
             // 
@@ -94,6 +98,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.panel3);
@@ -103,17 +109,35 @@
             this.panel1.TabIndex = 4;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // panel3
+            // label3
             // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel3.Controls.Add(this.btnTeacher);
-            this.panel3.Location = new System.Drawing.Point(380, 102);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(210, 180);
-            this.panel3.TabIndex = 5;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(432, 266);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(101, 32);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Teacher";
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(128, 266);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(102, 32);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Student";
             // 
             // panel2
             // 
@@ -121,11 +145,23 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.Controls.Add(this.btnStudent);
-            this.panel2.Location = new System.Drawing.Point(84, 102);
+            this.panel2.Location = new System.Drawing.Point(79, 83);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(211, 180);
+            this.panel2.Size = new System.Drawing.Size(199, 180);
             this.panel2.TabIndex = 4;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // panel3
+            // 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel3.Controls.Add(this.btnTeacher);
+            this.panel3.Location = new System.Drawing.Point(381, 83);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(199, 180);
+            this.panel3.TabIndex = 5;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // pick
             // 
@@ -142,8 +178,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -156,5 +192,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }
