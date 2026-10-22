@@ -366,7 +366,7 @@
             // txtSearch
             // 
             this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 8.5F);
+            this.txtSearch.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
             this.txtSearch.Location = new System.Drawing.Point(283, 27);
             this.txtSearch.Multiline = true;
             this.txtSearch.Name = "txtSearch";

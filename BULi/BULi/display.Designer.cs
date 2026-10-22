@@ -134,7 +134,7 @@
             this.pnlhawakupdate.Controls.Add(this.pnlFixed);
             this.pnlhawakupdate.Controls.Add(this.pnlScroll);
             this.pnlhawakupdate.Controls.Add(this.label4);
-            this.pnlhawakupdate.Location = new System.Drawing.Point(20, 96);
+            this.pnlhawakupdate.Location = new System.Drawing.Point(19, 96);
             this.pnlhawakupdate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlhawakupdate.Name = "pnlhawakupdate";
             this.pnlhawakupdate.Size = new System.Drawing.Size(257, 455);
@@ -155,6 +155,7 @@
             this.pnlFixed.Name = "pnlFixed";
             this.pnlFixed.Size = new System.Drawing.Size(255, 228);
             this.pnlFixed.TabIndex = 10;
+            this.pnlFixed.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlFixed_Paint);
             // 
             // btnClear
             // 
@@ -450,11 +451,12 @@
             this.btnProfile.BackColor = System.Drawing.Color.Transparent;
             this.btnProfile.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnProfile.BackgroundImage")));
             this.btnProfile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnProfile.FlatAppearance.BorderSize = 0;
             this.btnProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProfile.Location = new System.Drawing.Point(617, 44);
+            this.btnProfile.Location = new System.Drawing.Point(614, 44);
             this.btnProfile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnProfile.Name = "btnProfile";
-            this.btnProfile.Size = new System.Drawing.Size(41, 44);
+            this.btnProfile.Size = new System.Drawing.Size(44, 41);
             this.btnProfile.TabIndex = 1;
             this.btnProfile.Text = "≡";
             this.btnProfile.UseVisualStyleBackColor = false;
@@ -462,9 +464,6 @@
             // 
             // dataGridView1
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(250)))), ((int)(((byte)(236)))));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(340, 186);
@@ -493,23 +492,24 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Transparent;
+            this.panel3.Controls.Add(this.btnSort);
             this.panel3.Controls.Add(this.btnSearch);
             this.panel3.Controls.Add(this.txtSearch);
             this.panel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F);
             this.panel3.Location = new System.Drawing.Point(341, 108);
             this.panel3.Margin = new System.Windows.Forms.Padding(0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(537, 63);
+            this.panel3.Size = new System.Drawing.Size(604, 63);
             this.panel3.TabIndex = 7;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // btnSearch
             // 
-            this.btnSearch.BackgroundImage = global::BULi.Properties.Resources.search;
+            this.btnSearch.BackgroundImage = global::BULi.Properties.Resources.glass;
             this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSearch.FlatAppearance.BorderSize = 0;
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.Image = global::BULi.Properties.Resources.search;
-            this.btnSearch.Location = new System.Drawing.Point(487, 14);
+            this.btnSearch.Location = new System.Drawing.Point(485, 13);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(35, 37);
@@ -519,6 +519,7 @@
             // txtSearch
             // 
             this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtSearch.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearch.Location = new System.Drawing.Point(15, 14);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSearch.Multiline = true;
@@ -529,12 +530,17 @@
             // 
             // btnSort
             // 
-            this.btnSort.Location = new System.Drawing.Point(899, 122);
+            this.btnSort.BackColor = System.Drawing.Color.Transparent;
+            this.btnSort.BackgroundImage = global::BULi.Properties.Resources.funnel;
+            this.btnSort.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSort.FlatAppearance.BorderSize = 0;
+            this.btnSort.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSort.Location = new System.Drawing.Point(537, 14);
             this.btnSort.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSort.Name = "btnSort";
-            this.btnSort.Size = new System.Drawing.Size(48, 32);
+            this.btnSort.Size = new System.Drawing.Size(35, 37);
             this.btnSort.TabIndex = 8;
-            this.btnSort.UseVisualStyleBackColor = true;
+            this.btnSort.UseVisualStyleBackColor = false;
             this.btnSort.Click += new System.EventHandler(this.btnSort_Click);
             // 
             // contextMenuStrip1
@@ -580,7 +586,6 @@
             this.BackgroundImage = global::BULi.Properties.Resources.gradient;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(981, 562);
-            this.Controls.Add(this.btnSort);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.btnView);
             this.Controls.Add(this.dataGridView1);

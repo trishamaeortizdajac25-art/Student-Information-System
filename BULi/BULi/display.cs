@@ -134,7 +134,7 @@ namespace BULi
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridView1.ScrollBars = ScrollBars.Vertical;
+            dataGridView1.ScrollBars = ScrollBars.Both;
         }
 
         private void SetupSortMenu()
@@ -292,6 +292,11 @@ namespace BULi
                 _loading = false;
                 MessageBox.Show("Error loading students: " + ex.Message, "Database Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            if (dataGridView1.Rows.Count > 0)
+            {
+                dataGridView1.FirstDisplayedScrollingRowIndex = dataGridView1.Rows.Count - 1;
             }
         }
 
@@ -716,7 +721,9 @@ namespace BULi
         private void textBox4_TextChanged(object sender, EventArgs e) { }
         private void textBox3_TextChanged(object sender, EventArgs e) { }
         private void lblYearTitle_Click(object sender, EventArgs e) { }
-        private void panel3_Paint(object sender, PaintEventArgs e) { }
+        private void panel3_Paint(object sender, PaintEventArgs e) {
+            UIcolor.ApplyInnerPanelGradient(this, e);
+        }
         private void txtID_TextChanged(object sender, EventArgs e) { }
         private void txtName_TextChanged(object sender, EventArgs e) { }
         private void txtBloc_TextChanged(object sender, EventArgs e) { }
@@ -777,6 +784,11 @@ namespace BULi
         {
             if (!ThemeState.IsDarkMode)
                 UIcolor.ApplyLightInnerPanelGradient((Control)sender, e);
+        }
+
+        private void pnlFixed_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
