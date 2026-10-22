@@ -14,7 +14,9 @@ namespace BULi
     public partial class display : Form
     {
 
+
         private const string ConnStr = "Server=localhost;Database=sis_db;Uid=root;Pwd=nunez26*7;";
+
 
 
 
