@@ -9,13 +9,14 @@ namespace BULi
 {
     public partial class infoCard : Form
     {
-        private string connectionString = "Server=localhost;Database=sis_db;Uid=root;Pwd=nunez26*7;";
+        private string connectionString = "Server=localhost;Database=sis_db;Uid=root;Pwd=Trishamae1122;";
 
 
 
 
 
         private string currentUsername;
+        private string returnYearLevel;   // year list to go back to (teacher flow), e.g. "Sophomore"
 
         public infoCard()
         {
@@ -64,6 +65,12 @@ namespace BULi
         public infoCard(string username) : this()
         {
             this.currentUsername = username;
+        }
+
+        // Used by the teacher's year list (display.cs) so Return goes back to the same year
+        public infoCard(string username, string returnYear) : this(username)
+        {
+            this.returnYearLevel = returnYear;
         }
 
         private void infoCard_Load(object sender, EventArgs e)
@@ -189,7 +196,11 @@ namespace BULi
         {
             if (string.Equals(pick.SelectedRole, "Teacher", StringComparison.OrdinalIgnoreCase))
             {
-                SIS.Instance.OpenChildForm(new display());
+                // go back to the same year list the teacher came from
+                if (string.IsNullOrEmpty(returnYearLevel))
+                    SIS.Instance.OpenChildForm(new display());
+                else
+                    SIS.Instance.OpenChildForm(new display(returnYearLevel));
             }
             else
             {

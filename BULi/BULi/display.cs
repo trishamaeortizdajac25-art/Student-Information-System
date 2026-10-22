@@ -13,7 +13,7 @@ namespace BULi
 {
     public partial class display : Form
     {
-        private const string ConnStr = "Server=localhost;Database=sis_db;Uid=root;Pwd=nunez26*7;";
+        private const string ConnStr = "Server=localhost;Database=sis_db;Uid=root;Pwd=Trishamae1122;";
 
 
 
@@ -105,7 +105,6 @@ namespace BULi
             ControlRounder.MakeRounded(txtSearch, 6);
 
             StyleDataGridView();
-            LoadStudents();
 
             // opened without a year (e.g. returning from the info card with no argument)
             if (string.IsNullOrEmpty(dbYearLevel))
@@ -647,7 +646,9 @@ namespace BULi
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            SIS.Instance.OpenChildForm(new infoCard(_selectedUsername));
+
+            // pass the current year level so "Return" comes back to this same list
+            SIS.Instance.OpenChildForm(new infoCard(_selectedUsername, yearLvl));
         }
 
         private void btnSort_Click(object sender, EventArgs e)
@@ -722,7 +723,8 @@ namespace BULi
         private void textBox4_TextChanged(object sender, EventArgs e) { }
         private void textBox3_TextChanged(object sender, EventArgs e) { }
         private void lblYearTitle_Click(object sender, EventArgs e) { }
-        private void panel3_Paint(object sender, PaintEventArgs e) {
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
             UIcolor.ApplyInnerPanelGradient(this, e);
         }
         private void txtID_TextChanged(object sender, EventArgs e) { }
