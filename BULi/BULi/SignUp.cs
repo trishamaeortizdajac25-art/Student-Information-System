@@ -14,6 +14,8 @@ namespace BULi
 
         private string connectionString = "Server=localhost;Database=sis_db;Uid=root;Pwd=nunez26*7;";
 
+
+
         public SignUp()
         {
             InitializeComponent();

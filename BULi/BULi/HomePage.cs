@@ -17,6 +17,7 @@ namespace BULi
         private string connectionString = "Server=localhost;Database=sis_db;Uid=root;Pwd=nunez26*7;";
 
 
+
         private DataTable studentDataTable = new DataTable();
 
         // DB year_level value -> name expected by display.cs
