@@ -192,7 +192,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(384, 284);
+            this.label5.Location = new System.Drawing.Point(364, 284);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(91, 28);
             this.label5.TabIndex = 14;
@@ -249,11 +249,11 @@
             // 
             this.txtYearlvl.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtYearlvl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
-            this.txtYearlvl.Location = new System.Drawing.Point(389, 226);
+            this.txtYearlvl.Location = new System.Drawing.Point(369, 226);
             this.txtYearlvl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtYearlvl.Multiline = true;
             this.txtYearlvl.Name = "txtYearlvl";
-            this.txtYearlvl.Size = new System.Drawing.Size(127, 30);
+            this.txtYearlvl.Size = new System.Drawing.Size(147, 30);
             this.txtYearlvl.TabIndex = 20;
             this.txtYearlvl.TextChanged += new System.EventHandler(this.txtYearlvl_TextChanged);
             // 
@@ -271,10 +271,10 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
-            this.pictureBox1.Location = new System.Drawing.Point(27, 38);
+            this.pictureBox1.Location = new System.Drawing.Point(19, 48);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(180, 180);
+            this.pictureBox1.Size = new System.Drawing.Size(188, 170);
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
@@ -298,7 +298,7 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(381, 190);
+            this.label7.Location = new System.Drawing.Point(361, 190);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(108, 28);
             this.label7.TabIndex = 24;
@@ -392,10 +392,10 @@
             // 
             this.btnGender.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.btnGender.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
-            this.btnGender.Location = new System.Drawing.Point(386, 315);
+            this.btnGender.Location = new System.Drawing.Point(366, 315);
             this.btnGender.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnGender.Name = "btnGender";
-            this.btnGender.Size = new System.Drawing.Size(125, 32);
+            this.btnGender.Size = new System.Drawing.Size(150, 32);
             this.btnGender.TabIndex = 35;
             this.btnGender.UseVisualStyleBackColor = true;
             this.btnGender.Click += new System.EventHandler(this.btnGender_Click);
@@ -446,12 +446,15 @@
             // 
             // btnTheme
             // 
-            this.btnTheme.Location = new System.Drawing.Point(23, 518);
+            this.btnTheme.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(204)))), ((int)(((byte)(21)))));
+            this.btnTheme.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTheme.ForeColor = System.Drawing.Color.White;
+            this.btnTheme.Location = new System.Drawing.Point(22, 517);
             this.btnTheme.Name = "btnTheme";
-            this.btnTheme.Size = new System.Drawing.Size(47, 33);
+            this.btnTheme.Size = new System.Drawing.Size(84, 33);
             this.btnTheme.TabIndex = 35;
-            this.btnTheme.Text = "button1";
-            this.btnTheme.UseVisualStyleBackColor = true;
+            this.btnTheme.Text = "Theme";
+            this.btnTheme.UseVisualStyleBackColor = false;
             this.btnTheme.Click += new System.EventHandler(this.btnTheme_Click);
             // 
             // setUp

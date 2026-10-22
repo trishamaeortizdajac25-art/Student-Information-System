@@ -73,6 +73,16 @@ namespace BULi.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap banner {
+            get {
+                object obj = ResourceManager.GetObject("banner", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bluehp {
             get {
                 object obj = ResourceManager.GetObject("bluehp", resourceCulture);
@@ -193,6 +203,26 @@ namespace BULi.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap logout {
+            get {
+                object obj = ResourceManager.GetObject("logout", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap prof {
+            get {
+                object obj = ResourceManager.GetObject("prof", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap redhp {
             get {
                 object obj = ResourceManager.GetObject("redhp", resourceCulture);
@@ -236,16 +266,6 @@ namespace BULi.Properties {
         internal static System.Drawing.Bitmap tcrnull {
             get {
                 object obj = ResourceManager.GetObject("tcrnull", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap TEACHER {
-            get {
-                object obj = ResourceManager.GetObject("TEACHER", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

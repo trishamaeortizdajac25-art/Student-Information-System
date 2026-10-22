@@ -77,6 +77,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlPlaceholder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(23)))), ((int)(((byte)(42)))));
+            this.pnlPlaceholder.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlPlaceholder.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.pnlPlaceholder.Location = new System.Drawing.Point(-5, 1);
             this.pnlPlaceholder.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -97,7 +98,7 @@
             this.textBox2.MaximumSize = new System.Drawing.Size(400, 30);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(400, 0);
+            this.textBox2.Size = new System.Drawing.Size(400, 10);
             this.textBox2.TabIndex = 12;
             // 
             // textBox1
@@ -111,7 +112,7 @@
             this.textBox1.MaximumSize = new System.Drawing.Size(400, 30);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(400, 0);
+            this.textBox1.Size = new System.Drawing.Size(400, 10);
             this.textBox1.TabIndex = 11;
             // 
             // label2
@@ -151,7 +152,7 @@
             this.txtUsername.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtUsername.Multiline = true;
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(399, 38);
+            this.txtUsername.Size = new System.Drawing.Size(399, 30);
             this.txtUsername.TabIndex = 17;
             // 
             // txtPassword
@@ -161,7 +162,7 @@
             this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPassword.Multiline = true;
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(399, 38);
+            this.txtPassword.Size = new System.Drawing.Size(399, 30);
             this.txtPassword.TabIndex = 18;
             // 
             // label4
@@ -202,7 +203,7 @@
             // btnReturn
             // 
             this.btnReturn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(78)))), ((int)(((byte)(192)))));
-            this.btnReturn.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReturn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.btnReturn.ForeColor = System.Drawing.Color.White;
             this.btnReturn.Location = new System.Drawing.Point(839, 13);
             this.btnReturn.Margin = new System.Windows.Forms.Padding(4);

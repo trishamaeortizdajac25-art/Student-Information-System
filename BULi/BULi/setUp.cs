@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.IO;
 using System.Windows.Forms;
+using static BULi.SIS;
 
 namespace BULi
 {
@@ -69,6 +70,13 @@ namespace BULi
 
         private void setUp_Load(object sender, EventArgs e)
         {
+            this.ActiveControl = null;
+
+            TextBoxHelper.AddPlaceholder(txtDate, "YYYY-MM-DD");
+            TextBoxHelper.AddPlaceholder(txtYearlvl, "e.g. 1st Year");
+            TextBoxHelper.AddPlaceholder(txtProgram, "e.g. BS Biology");
+
+
             WireControls();
 
             if (isSignUpMode)

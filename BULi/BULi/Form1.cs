@@ -171,7 +171,39 @@ namespace BULi
             }
         }
 
-        // --- Display child forms in the main panel (pnlMain) ---
+        public static class TextBoxHelper
+        {
+            public static void AddPlaceholder(TextBox textBox, string placeholderText)
+            {
+                // Only set the placeholder if the box is completely empty
+                if (string.IsNullOrWhiteSpace(textBox.Text))
+                {
+                    textBox.Text = placeholderText;
+                    textBox.ForeColor = Color.Gray;
+                }
+
+                textBox.Enter += (sender, e) =>
+                {
+                    // Clear only if it's currently showing the gray placeholder text
+                    if (textBox.Text == placeholderText && textBox.ForeColor == Color.Gray)
+                    {
+                        textBox.Text = "";
+                        textBox.ForeColor = Color.White; // Change to Color.Black if your input text box background is white
+                    }
+                };
+
+                textBox.Leave += (sender, e) =>
+                {
+                    // Bring the placeholder back if the user leaves it blank
+                    if (string.IsNullOrWhiteSpace(textBox.Text))
+                    {
+                        textBox.Text = placeholderText;
+                        textBox.ForeColor = Color.Gray;
+                    }
+                };
+            }
+        }
+
         public void OpenChildForm(Form childForm)
         {
             pnlMain.SuspendLayout();

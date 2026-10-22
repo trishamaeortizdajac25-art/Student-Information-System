@@ -48,7 +48,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(263, 142);
+            this.label1.Location = new System.Drawing.Point(260, 142);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(196, 32);
             this.label1.TabIndex = 0;
@@ -56,25 +56,25 @@
             // 
             // txtName
             // 
-            this.txtName.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.txtName.ForeColor = System.Drawing.Color.Black;
-            this.txtName.Location = new System.Drawing.Point(150, 244);
+            this.txtName.Font = new System.Drawing.Font("Segoe UI Semibold", 11.5F);
+            this.txtName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
+            this.txtName.Location = new System.Drawing.Point(149, 232);
             this.txtName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtName.Multiline = true;
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(399, 32);
+            this.txtName.Size = new System.Drawing.Size(399, 30);
             this.txtName.TabIndex = 1;
             this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             // 
             // txtPassword
             // 
-            this.txtPassword.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.txtPassword.ForeColor = System.Drawing.Color.Black;
-            this.txtPassword.Location = new System.Drawing.Point(150, 321);
+            this.txtPassword.Font = new System.Drawing.Font("Segoe UI Semibold", 11.5F);
+            this.txtPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
+            this.txtPassword.Location = new System.Drawing.Point(149, 309);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPassword.Multiline = true;
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(399, 32);
+            this.txtPassword.Size = new System.Drawing.Size(399, 30);
             this.txtPassword.TabIndex = 2;
             this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
             // 
@@ -116,16 +116,16 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(291, 174);
+            this.label4.Location = new System.Drawing.Point(294, 174);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(133, 23);
+            this.label4.Size = new System.Drawing.Size(119, 23);
             this.label4.TabIndex = 7;
-            this.label4.Text = "Teacher\'s Access";
+            this.label4.Text = "Faculty Access";
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackgroundImage = global::BULi.Properties.Resources.TEACHER;
+            this.pictureBox1.BackgroundImage = global::BULi.Properties.Resources.prof;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(292, 23);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
@@ -184,7 +184,7 @@
             this.Cursor = System.Windows.Forms.Cursors.No;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "tcrSignIn";
-            this.Text = "  ";
+            this.Text = " ";
             this.Load += new System.EventHandler(this.tcrSignIn_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

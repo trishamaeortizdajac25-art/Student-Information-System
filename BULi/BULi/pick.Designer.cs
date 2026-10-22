@@ -51,11 +51,11 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(214, 13);
+            this.label1.Location = new System.Drawing.Point(148, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(239, 38);
+            this.label1.Size = new System.Drawing.Size(390, 38);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Whats your role?";
+            this.label1.Text = "Select your institutional role";
             // 
             // btnStudent
             // 
@@ -74,7 +74,7 @@
             // btnTeacher
             // 
             this.btnTeacher.BackColor = System.Drawing.Color.DarkGray;
-            this.btnTeacher.BackgroundImage = global::BULi.Properties.Resources.TEACHER;
+            this.btnTeacher.BackgroundImage = global::BULi.Properties.Resources.prof;
             this.btnTeacher.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnTeacher.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTeacher.Location = new System.Drawing.Point(6, 6);
@@ -89,7 +89,7 @@
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.BackgroundImage = global::BULi.Properties.Resources.BULitrans;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(316, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(296, 5);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(415, 237);
             this.pictureBox1.TabIndex = 0;
@@ -103,7 +103,7 @@
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.panel3);
-            this.panel1.Location = new System.Drawing.Point(182, 210);
+            this.panel1.Location = new System.Drawing.Point(162, 212);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(654, 307);
             this.panel1.TabIndex = 4;
@@ -118,7 +118,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
-            this.label3.Location = new System.Drawing.Point(432, 266);
+            this.label3.Location = new System.Drawing.Point(457, 266);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(101, 32);
             this.label3.TabIndex = 7;
@@ -145,7 +145,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.Controls.Add(this.btnStudent);
-            this.panel2.Location = new System.Drawing.Point(79, 83);
+            this.panel2.Location = new System.Drawing.Point(85, 83);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(199, 180);
             this.panel2.TabIndex = 4;
@@ -157,7 +157,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.Controls.Add(this.btnTeacher);
-            this.panel3.Location = new System.Drawing.Point(381, 83);
+            this.panel3.Location = new System.Drawing.Point(396, 83);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(199, 180);
             this.panel3.TabIndex = 5;
