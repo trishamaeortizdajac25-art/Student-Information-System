@@ -10,13 +10,8 @@ namespace BULi
 {
     public partial class setUp : Form
     {
-<<<<<<< HEAD
 
-        private string connectionString = "Server=localhost;Database=sis_db;Uid=root;Pwd=kleenpIn*1;";
-=======
->>>>>>> f7e925df051920b48cfa6cfc5abdf98757995f48
-
-        private string connectionString = "Server=localhost;Database=sis_db;Uid=root;Pwd=Trishamae1122;";
+        private string connectionString = "Server=localhost;Database=sis_db;Uid=root;Pwd=nunez26*7;";
 
 
 

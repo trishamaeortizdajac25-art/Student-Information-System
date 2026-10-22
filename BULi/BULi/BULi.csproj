@@ -179,6 +179,12 @@
     <Compile Include="stdSignIn.Designer.cs">
       <DependentUpon>stdSignIn.cs</DependentUpon>
     </Compile>
+    <Compile Include="tcrInfoCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="tcrInfoCard.Designer.cs">
+      <DependentUpon>tcrInfoCard.cs</DependentUpon>
+    </Compile>
     <Compile Include="tcrSignIn.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -223,6 +229,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="stdSignIn.resx">
       <DependentUpon>stdSignIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tcrInfoCard.resx">
+      <DependentUpon>tcrInfoCard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="tcrSignIn.resx">
       <DependentUpon>tcrSignIn.cs</DependentUpon>
