@@ -72,11 +72,11 @@ namespace BULi
         {
             this.ActiveControl = null;
 
-            TextBoxHelper.AddPlaceholder(txtName, "Enter Full Name");
+            TextBoxHelper.AddPlaceholder(txtName, "e.g. Juan Santos");
             TextBoxHelper.AddPlaceholder(txtDate, "YYYY-MM-DD");
             TextBoxHelper.AddPlaceholder(txtYearlvl, "e.g. 1st Year");
             TextBoxHelper.AddPlaceholder(txtProgram, "e.g. BS Biology");
-            TextBoxHelper.AddPlaceholder(txtProgram, "e.g. Enter Student ID");
+            TextBoxHelper.AddPlaceholder(txtID, "Enter Student ID");
 
 
             WireControls();
