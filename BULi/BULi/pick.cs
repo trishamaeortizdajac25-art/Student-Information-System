@@ -59,5 +59,23 @@ namespace BULi
             UIcolor.ApplyLightInnerPanelGradient((Control)sender, e);
 
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+        private void btnAboutUs_Click(object sender, EventArgs e)
+        {
+            About aboutForm = new About();
+            aboutForm.ShowDialog();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

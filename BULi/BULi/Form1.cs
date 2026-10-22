@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -173,34 +174,27 @@ namespace BULi
 
         public static class TextBoxHelper
         {
-            public static void AddPlaceholder(TextBox textBox, string placeholderText)
+            private const int EM_SETCUEBANNER = 0x1501;
+
+            [DllImport("user32.dll", CharSet = CharSet.Unicode)]
+            private static extern IntPtr SendMessage(IntPtr hWnd, int msg, IntPtr wParam, string lParam);
+
+            public static void AddPlaceholder(TextBox textBox, string placeholder)
             {
-                // Only set the placeholder if the box is completely empty
-                if (string.IsNullOrWhiteSpace(textBox.Text))
-                {
-                    textBox.Text = placeholderText;
-                    textBox.ForeColor = Color.Gray;
-                }
+                // Must be single-line for cue banners to work
+                textBox.Multiline = false;
 
-                textBox.Enter += (sender, e) =>
-                {
-                    // Clear only if it's currently showing the gray placeholder text
-                    if (textBox.Text == placeholderText && textBox.ForeColor == Color.Gray)
-                    {
-                        textBox.Text = "";
-                        textBox.ForeColor = Color.White; // Change to Color.Black if your input text box background is white
-                    }
-                };
+                // The native message needs a real window handle
+                if (textBox.IsHandleCreated)
+                    SetCue(textBox, placeholder);
+                else
+                    textBox.HandleCreated += (s, e) => SetCue(textBox, placeholder);
+            }
 
-                textBox.Leave += (sender, e) =>
-                {
-                    // Bring the placeholder back if the user leaves it blank
-                    if (string.IsNullOrWhiteSpace(textBox.Text))
-                    {
-                        textBox.Text = placeholderText;
-                        textBox.ForeColor = Color.Gray;
-                    }
-                };
+            private static void SetCue(TextBox textBox, string placeholder)
+            {
+                // wParam = 1 -> keeps showing the hint even while the box has focus
+                SendMessage(textBox.Handle, EM_SETCUEBANNER, (IntPtr)1, placeholder);
             }
         }
 
