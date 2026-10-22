@@ -13,7 +13,14 @@ namespace BULi
 {
     public partial class HomePage : Form
     {
+<<<<<<< HEAD
         private string connectionString = "Server=localhost;Database=sis_db;Uid=root;Pwd=kleenpIn*1;";
+=======
+
+        private string connectionString = "Server=localhost;Database=sis_db;Uid=root;Pwd=Trishamae1122;";
+
+
+>>>>>>> f7e925df051920b48cfa6cfc5abdf98757995f48
 
         private DataTable studentDataTable = new DataTable();
 
@@ -51,7 +58,7 @@ namespace BULi
 
         private void HomePage_Load(object sender, EventArgs e)
         {
-            // Apply initial theme styles for header label and search box on load
+            // Apply initial theme styles for header label, button, and search box on load
             ApplyHomePageTheme(ThemeState.IsDarkMode);
 
             // UI Rounding setup
@@ -448,7 +455,7 @@ namespace BULi
             pnlSenior.Invalidate();
             panel1.Invalidate(); // Header panel
 
-            // ONLY change the header title text color (label1).
+            // ONLY change label1 (header title text color). All other labels remain completely untouched.
             if (label1 != null)
             {
                 label1.ForeColor = isDark ? Color.White : Color.FromArgb(51, 41, 36);
@@ -459,6 +466,24 @@ namespace BULi
             {
                 txtSearch.BackColor = isDark ? Color.FromArgb(20, 25, 45) : Color.White;
                 txtSearch.ForeColor = isDark ? Color.White : Color.FromArgb(51, 41, 36);
+            }
+
+            // Update the theme toggle button color dynamically (btnColorScheme)
+            Color navyDarkMode = Color.FromArgb(15, 23, 42);
+            Color dayOrangeMode = Color.FromArgb(254, 180, 123);
+
+            if (btnColorScheme != null)
+            {
+                if (isDark)
+                {
+                    btnColorScheme.BackColor = navyDarkMode;
+                    btnColorScheme.ForeColor = Color.White;
+                }
+                else
+                {
+                    btnColorScheme.BackColor = dayOrangeMode;
+                    btnColorScheme.ForeColor = Color.Black;
+                }
             }
 
             StyleSuggestionList(isDark);
@@ -521,6 +546,9 @@ namespace BULi
 
         }
 
+        private void label13_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }

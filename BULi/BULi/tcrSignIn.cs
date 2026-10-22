@@ -10,7 +10,14 @@ namespace BULi
     public partial class tcrSignIn : Form
     {
 
+<<<<<<< HEAD
         private string connectionString = "Server=localhost;Database=sis_db;Uid=root;Pwd=kleenpIn*1;";
+=======
+
+
+        private string connectionString = "Server=localhost;Database=sis_db;Uid=root;Pwd=Trishamae1122;";
+
+>>>>>>> f7e925df051920b48cfa6cfc5abdf98757995f48
 
 
         public tcrSignIn()
@@ -52,6 +59,8 @@ namespace BULi
             ControlRounder.MakeRounded(btnEnter, 8);
             ControlRounder.MakeRounded(txtName, 8);
             ControlRounder.MakeRounded(txtPassword, 8);
+            ControlRounder.MakeRounded(pictureBox1, 8);
+
         }
 
 
@@ -130,5 +139,10 @@ namespace BULi
   
 
         private void txtPassword_TextChanged(object sender, EventArgs e) { }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

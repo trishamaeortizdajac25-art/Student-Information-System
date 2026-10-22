@@ -34,10 +34,10 @@ namespace BULi
 
         private void pick_Load(object sender, EventArgs e)
         {
-            ControlRounder.MakeRounded(btnStudent, 15);
-            ControlRounder.MakeRounded(btnTeacher, 15);
-            ControlRounder.MakeRounded(panel2, 15);
-            ControlRounder.MakeRounded(panel3, 15);
+            ControlRounder.MakeRounded(btnStudent, 70);
+            ControlRounder.MakeRounded(btnTeacher, 70);
+            ControlRounder.MakeRounded(panel2, 75);
+            ControlRounder.MakeRounded(panel3, 75);
             ControlRounder.MakeRounded(panel1, 16);
 
 
@@ -57,6 +57,24 @@ namespace BULi
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
             UIcolor.ApplyLightInnerPanelGradient((Control)sender, e);
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+        private void btnAboutUs_Click(object sender, EventArgs e)
+        {
+            About aboutForm = new About();
+            aboutForm.ShowDialog();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
 
         }
     }

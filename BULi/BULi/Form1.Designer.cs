@@ -37,7 +37,7 @@ namespace BULi
             // pnlMain
             // 
             this.pnlMain.AutoSize = true;
-            pnlMain.BackColor = Color.Transparent;
+            this.pnlMain.BackColor = System.Drawing.Color.Transparent;
             this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlMain.Location = new System.Drawing.Point(0, 0);
             this.pnlMain.Name = "pnlMain";
@@ -52,6 +52,7 @@ namespace BULi
             this.Controls.Add(this.pnlMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(1000, 500);
             this.Name = "SIS";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

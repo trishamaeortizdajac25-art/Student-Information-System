@@ -109,6 +109,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="About.Designer.cs">
+      <DependentUpon>About.cs</DependentUpon>
+    </Compile>
     <Compile Include="ControlRounder.cs" />
     <Compile Include="display.cs">
       <SubType>Form</SubType>
@@ -180,6 +186,9 @@
       <DependentUpon>tcrSignIn.cs</DependentUpon>
     </Compile>
     <Compile Include="UIcolor.cs" />
+    <EmbeddedResource Include="About.resx">
+      <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="display.resx">
       <DependentUpon>display.cs</DependentUpon>
     </EmbeddedResource>
@@ -320,6 +329,42 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\darknull.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\STUDENT 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TEACHER.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\banner.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\prof.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sort.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\glass.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\funnel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\collegelogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\question.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cutBULi.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

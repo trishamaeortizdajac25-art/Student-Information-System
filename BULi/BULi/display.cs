@@ -13,9 +13,15 @@ namespace BULi
 {
     public partial class display : Form
     {
+<<<<<<< HEAD
         private const string ConnStr = "Server=localhost;Database=sis_db;Uid=root;Pwd=kleenpIn*1;";
+=======
+        private const string ConnStr = "Server=localhost;Database=sis_db;Uid=root;Pwd=Trishamae1122;";
+>>>>>>> f7e925df051920b48cfa6cfc5abdf98757995f48
 
-        private String yearLvl;          // what the homepage sent, e.g. "Senior"
+
+
+        private String yearLvl;        // what the homepage sent, e.g. "Senior"
         private string dbYearLevel;      // what the database stores, e.g. "4th Year"
 
         private int _selectedId = -1;    // student_id of the selected student (-1 = none)
@@ -26,6 +32,53 @@ namespace BULi
         public display()
         {
             InitializeComponent();
+
+            // Subscribe to global theme changes and apply initial theme
+            ThemeState.ThemeChanged += OnThemeChanged;
+            ApplyTheme(ThemeState.IsDarkMode);
+        }
+
+        protected override void OnFormClosed(FormClosedEventArgs e)
+        {
+            ThemeState.ThemeChanged -= OnThemeChanged;
+            base.OnFormClosed(e);
+        }
+
+        private void OnThemeChanged(object sender, bool isDark)
+        {
+            ApplyTheme(isDark);
+        }
+
+        private void ApplyTheme(bool isDark)
+        {
+            Color navyDarkMode = Color.FromArgb(15, 23, 42);
+
+            if (isDark)
+            {
+                this.BackgroundImage = Properties.Resources.darknull;
+                this.BackgroundImageLayout = ImageLayout.Stretch;
+
+                // Style panels to navy dark mode
+                pnlhawakupdate.BackColor = navyDarkMode;
+                pnlID.BackColor = navyDarkMode;
+                pnlName.BackColor = navyDarkMode;
+                pnlBloc.BackColor = navyDarkMode;
+                pnlProgram.BackColor = navyDarkMode;
+            }
+            else
+            {
+                this.BackgroundImage = Properties.Resources.gradient;
+                this.BackgroundImageLayout = ImageLayout.Stretch;
+
+                // Revert panels back to default/transparent so their Paint events handle gradients normally
+                pnlhawakupdate.BackColor = Color.Transparent;
+                pnlID.BackColor = Color.Transparent;
+                pnlName.BackColor = Color.Transparent;
+                pnlBloc.BackColor = Color.Transparent;
+                pnlProgram.BackColor = Color.Transparent;
+            }
+
+            this.Invalidate(true);
         }
 
         public display(string yearLevel) : this()
@@ -55,6 +108,8 @@ namespace BULi
             ControlRounder.MakeRounded(btnClear, 6);
             ControlRounder.MakeRounded(txtSearch, 6);
 
+            StyleDataGridView();
+
             // opened without a year (e.g. returning from the info card with no argument)
             if (string.IsNullOrEmpty(dbYearLevel))
             {
@@ -63,7 +118,7 @@ namespace BULi
                 lblYearTitle.Text = $"{yearLvl} Student Register";
             }
 
-          
+
             SetupGrid();
             SetupSortMenu();
 
@@ -83,7 +138,7 @@ namespace BULi
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridView1.ScrollBars = ScrollBars.Vertical;
+            dataGridView1.ScrollBars = ScrollBars.Both;
         }
 
         private void SetupSortMenu()
@@ -241,6 +296,11 @@ namespace BULi
                 _loading = false;
                 MessageBox.Show("Error loading students: " + ex.Message, "Database Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            if (dataGridView1.Rows.Count > 0)
+            {
+                dataGridView1.FirstDisplayedScrollingRowIndex = dataGridView1.Rows.Count - 1;
             }
         }
 
@@ -590,7 +650,9 @@ namespace BULi
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            SIS.Instance.OpenChildForm(new infoCard(_selectedUsername));
+
+            // pass the current year level so "Return" comes back to this same list
+            SIS.Instance.OpenChildForm(new infoCard(_selectedUsername, yearLvl));
         }
 
         private void btnSort_Click(object sender, EventArgs e)
@@ -618,10 +680,41 @@ namespace BULi
             }
         }
 
+        private void StyleDataGridView()
+        {
+            // Apply Font (Segoe UI Semibold, 9pt)
+            dataGridView1.Font = new Font("Segoe UI Semibold", 9f, FontStyle.Regular);
+
+            // General Grid Settings
+            dataGridView1.EnableHeadersVisualStyles = false;
+            dataGridView1.BorderStyle = BorderStyle.None;
+            dataGridView1.GridColor = Color.FromArgb(226, 232, 240);
+            dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dataGridView1.RowHeadersVisible = false;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            // Column Headers Styling (Using Blue Accent: 12, 78, 192)
+            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(12, 78, 192);
+            dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI Semibold", 9.5f, FontStyle.Bold);
+            dataGridView1.ColumnHeadersHeight = 35;
+            dataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+
+            // Row Styling
+            dataGridView1.DefaultCellStyle.BackColor = Color.White;
+            dataGridView1.DefaultCellStyle.ForeColor = Color.FromArgb(30, 41, 59);
+            dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(248, 250, 252);
+
+            // Selection Styling (Using Green Accent: 40, 167, 100)
+            dataGridView1.DefaultCellStyle.SelectionBackColor = Color.FromArgb(40, 167, 100);
+            dataGridView1.DefaultCellStyle.SelectionForeColor = Color.White;
+        }
+
         // Live search: shows matching students of this year level as the teacher types
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            if (dbYearLevel == null) return;   // fires before Load finishes
+            if (dbYearLevel == null) return;    // fires before Load finishes
             LoadStudents();
         }
 
@@ -634,7 +727,10 @@ namespace BULi
         private void textBox4_TextChanged(object sender, EventArgs e) { }
         private void textBox3_TextChanged(object sender, EventArgs e) { }
         private void lblYearTitle_Click(object sender, EventArgs e) { }
-        private void panel3_Paint(object sender, PaintEventArgs e) { }
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+            UIcolor.ApplyInnerPanelGradient(this, e);
+        }
         private void txtID_TextChanged(object sender, EventArgs e) { }
         private void txtName_TextChanged(object sender, EventArgs e) { }
         private void txtBloc_TextChanged(object sender, EventArgs e) { }
@@ -644,44 +740,62 @@ namespace BULi
 
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
-            UIcolor.ApplyDeepHeaderGradient((Control)sender, e);
+            if (!ThemeState.IsDarkMode)
+            {
+                UIcolor.ApplyDeepHeaderGradient((Control)sender, e);
+            }
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
-            UIcolor.ApplySunsetGradient((Control)sender, e);
+
+            if (!ThemeState.IsDarkMode)
+            {
+                UIcolor.ApplyDeepHeaderGradient((Control)sender, e);
+            }
         }
 
         private void pnlhawakupdate_Paint(object sender, PaintEventArgs e)
         {
-            UIcolor.ApplyLightInnerPanelGradient((Control)sender, e);
+            if (!ThemeState.IsDarkMode)
+                UIcolor.ApplyLightInnerPanelGradient((Control)sender, e);
+
+
         }
 
         private void pnlID_Paint(object sender, PaintEventArgs e)
         {
-            UIcolor.ApplyLightInnerPanelGradient((Control)sender, e);
+            if (!ThemeState.IsDarkMode)
+                UIcolor.ApplyLightInnerPanelGradient((Control)sender, e);
         }
 
         private void pnlName_Paint(object sender, PaintEventArgs e)
         {
-            UIcolor.ApplyLightInnerPanelGradient((Control)sender, e);
+            if (!ThemeState.IsDarkMode)
+                UIcolor.ApplyLightInnerPanelGradient((Control)sender, e);
         }
 
         private void pnlBloc_Paint(object sender, PaintEventArgs e)
         {
-            UIcolor.ApplyLightInnerPanelGradient((Control)sender, e);
+            if (!ThemeState.IsDarkMode)
+                UIcolor.ApplyLightInnerPanelGradient((Control)sender, e);
         }
 
         private void pnlYear_Paint(object sender, PaintEventArgs e)
         {
-            UIcolor.ApplyLightInnerPanelGradient((Control)sender, e);
+            if (!ThemeState.IsDarkMode)
+                UIcolor.ApplyLightInnerPanelGradient((Control)sender, e);
         }
 
         private void pnlProgram_Paint(object sender, PaintEventArgs e)
         {
-            UIcolor.ApplyLightInnerPanelGradient((Control)sender, e);
+            if (!ThemeState.IsDarkMode)
+                UIcolor.ApplyLightInnerPanelGradient((Control)sender, e);
         }
 
+        private void pnlFixed_Paint(object sender, PaintEventArgs e)
+        {
 
+        }
     }
 }

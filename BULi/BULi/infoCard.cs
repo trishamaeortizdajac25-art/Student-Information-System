@@ -9,14 +9,61 @@ namespace BULi
 {
     public partial class infoCard : Form
     {
+        private string connectionString = "Server=localhost;Database=sis_db;Uid=root;Pwd=Trishamae1122;";
 
+
+
+
+<<<<<<< HEAD
         private string connectionString = "Server=localhost;Database=sis_db;Uid=root;Pwd=kleenpIn*1;";
+=======
+>>>>>>> f7e925df051920b48cfa6cfc5abdf98757995f48
 
         private string currentUsername;
+        private string returnYearLevel;   // year list to go back to (teacher flow), e.g. "Sophomore"
 
         public infoCard()
         {
             InitializeComponent();
+
+            // Subscribe to global theme changes and apply initial theme
+            ThemeState.ThemeChanged += OnThemeChanged;
+            ApplyTheme(ThemeState.IsDarkMode);
+        }
+
+        protected override void OnFormClosed(FormClosedEventArgs e)
+        {
+            ThemeState.ThemeChanged -= OnThemeChanged;
+            base.OnFormClosed(e);
+        }
+
+        private void OnThemeChanged(object sender, bool isDark)
+        {
+            ApplyTheme(isDark);
+        }
+
+        private void ApplyTheme(bool isDark)
+        {
+            Color navyDarkMode = Color.FromArgb(15, 23, 42);
+
+            if (isDark)
+            {
+                this.BackgroundImage = Properties.Resources.darknull;
+                this.BackgroundImageLayout = ImageLayout.Stretch;
+
+                // Style panel1 to navy dark mode
+                panel1.BackColor = navyDarkMode;
+            }
+            else
+            {
+                this.BackgroundImage = Properties.Resources.gradient;
+                this.BackgroundImageLayout = ImageLayout.Stretch;
+
+                // Revert panel1 back to transparent so its Paint event handles the sunset gradient normally
+                panel1.BackColor = Color.Transparent;
+            }
+
+            this.Invalidate(true);
         }
 
         public infoCard(string username) : this()
@@ -24,12 +71,19 @@ namespace BULi
             this.currentUsername = username;
         }
 
+        // Used by the teacher's year list (display.cs) so Return goes back to the same year
+        public infoCard(string username, string returnYear) : this(username)
+        {
+            this.returnYearLevel = returnYear;
+        }
+
         private void infoCard_Load(object sender, EventArgs e)
         {
             ControlRounder.MakeRounded(panel1, 16);
+            ControlRounder.MakeRounded(lnkReturn, 10);
+            ControlRounder.MakeRounded(btnExit, 10);
 
             // Display only: hide the + button
-            btnDrop.Visible = false;
 
             lnkReturn.LinkClicked -= lnkReturn_LinkClicked;
             lnkReturn.LinkClicked += lnkReturn_LinkClicked;
@@ -146,7 +200,11 @@ namespace BULi
         {
             if (string.Equals(pick.SelectedRole, "Teacher", StringComparison.OrdinalIgnoreCase))
             {
-                SIS.Instance.OpenChildForm(new display());
+                // go back to the same year list the teacher came from
+                if (string.IsNullOrEmpty(returnYearLevel))
+                    SIS.Instance.OpenChildForm(new display());
+                else
+                    SIS.Instance.OpenChildForm(new display(returnYearLevel));
             }
             else
             {
@@ -156,7 +214,8 @@ namespace BULi
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
-            UIcolor.ApplySunsetGradient((Control)sender, e);
+            if (!ThemeState.IsDarkMode)
+                UIcolor.ApplySunsetGradient((Control)sender, e);
         }
 
         private void btnExit_Click(object sender, EventArgs e)

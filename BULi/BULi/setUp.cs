@@ -4,14 +4,19 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.IO;
 using System.Windows.Forms;
+using static BULi.SIS;
 
 namespace BULi
 {
     public partial class setUp : Form
     {
+<<<<<<< HEAD
 
         private string connectionString = "Server=localhost;Database=sis_db;Uid=root;Pwd=kleenpIn*1;";
+=======
+>>>>>>> f7e925df051920b48cfa6cfc5abdf98757995f48
 
+        private string connectionString = "Server=localhost;Database=sis_db;Uid=root;Pwd=Trishamae1122;";
 
 
 
@@ -21,6 +26,45 @@ namespace BULi
         public setUp()
         {
             InitializeComponent();
+
+            // Subscribe to global theme changes and apply initial theme
+            ThemeState.ThemeChanged += OnThemeChanged;
+            ApplyTheme(ThemeState.IsDarkMode);
+        }
+
+        protected override void OnFormClosed(FormClosedEventArgs e)
+        {
+            ThemeState.ThemeChanged -= OnThemeChanged;
+            base.OnFormClosed(e);
+        }
+
+        private void OnThemeChanged(object sender, bool isDark)
+        {
+            ApplyTheme(isDark);
+        }
+
+        private void ApplyTheme(bool isDark)
+        {
+            Color navyDarkMode = Color.FromArgb(15, 23, 42);
+
+            if (isDark)
+            {
+                this.BackgroundImage = Properties.Resources.darknull;
+                this.BackgroundImageLayout = ImageLayout.Stretch;
+
+                // Style pnlGlassCard to navy dark mode
+                pnlGlassCard.BackColor = navyDarkMode;
+            }
+            else
+            {
+                this.BackgroundImage = Properties.Resources._default;
+                this.BackgroundImageLayout = ImageLayout.Stretch;
+
+                // Revert pnlGlassCard back to transparent so its Paint event handles the sunset gradient normally
+                pnlGlassCard.BackColor = Color.Transparent;
+            }
+
+            this.Invalidate(true);
         }
 
         public setUp(string username, bool isSignUp = false) : this()
@@ -31,6 +75,15 @@ namespace BULi
 
         private void setUp_Load(object sender, EventArgs e)
         {
+            this.ActiveControl = null;
+
+            TextBoxHelper.AddPlaceholder(txtName, "e.g. Juan Santos");
+            TextBoxHelper.AddPlaceholder(txtDate, "YYYY-MM-DD");
+            TextBoxHelper.AddPlaceholder(txtYearlvl, "e.g. 1st Year");
+            TextBoxHelper.AddPlaceholder(txtProgram, "e.g. BS Biology");
+            TextBoxHelper.AddPlaceholder(txtID, "Enter Student ID");
+
+
             WireControls();
 
             if (isSignUpMode)
@@ -429,7 +482,8 @@ namespace BULi
 
         private void pnlGlassCard_Paint(object sender, PaintEventArgs e)
         {
-            UIcolor.ApplySunsetGradient((Control)sender, e);
+            if (!ThemeState.IsDarkMode)
+                UIcolor.ApplySunsetGradient((Control)sender, e);
         }
 
         // Dummy handlers for designer bindings
@@ -442,5 +496,31 @@ namespace BULi
         private void label2_Click(object sender, EventArgs e) { }
         private void label7_Click(object sender, EventArgs e) { }
         private void pictureBox1_Click(object sender, EventArgs e) { }
+
+        private void btnTheme_Click(object sender, EventArgs e)
+        {
+            ThemeState.ToggleTheme();
+
+            if (ThemeState.IsDarkMode)
+            {
+                this.BackgroundImage = Properties.Resources.darknull;
+                this.BackgroundImageLayout = ImageLayout.Stretch;
+
+                // Dark Mode: Change button to Navy Blue
+                btnTheme.BackColor = Color.FromArgb(15, 23, 42);
+                btnTheme.ForeColor = Color.White;
+            }
+            else
+            {
+                this.BackgroundImage = Properties.Resources._default; // Or your light background
+                this.BackgroundImageLayout = ImageLayout.Stretch;
+
+                // Day/Light Mode: Change button to Orange (or whatever your light theme color is)
+                btnTheme.BackColor = Color.FromArgb(254, 180, 123);
+                btnTheme.ForeColor = Color.Black;
+            }
+        }
+
+
     }
 }
