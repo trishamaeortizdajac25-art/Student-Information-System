@@ -11,16 +11,8 @@ namespace BULi
     {
         private string connectionString = "Server=localhost;Database=sis_db;Uid=root;Pwd=Trishamae1122;";
 
-
-
-
-<<<<<<< HEAD
-        private string connectionString = "Server=localhost;Database=sis_db;Uid=root;Pwd=kleenpIn*1;";
-=======
->>>>>>> f7e925df051920b48cfa6cfc5abdf98757995f48
-
         private string currentUsername;
-        private string returnYearLevel;   // year list to go back to (teacher flow), e.g. "Sophomore"
+        private string returnYearLevel; // year list to go back to (teacher flow), e.g. "Sophomore"
 
         public infoCard()
         {
@@ -83,7 +75,11 @@ namespace BULi
             ControlRounder.MakeRounded(lnkReturn, 10);
             ControlRounder.MakeRounded(btnExit, 10);
 
-            // Display only: hide the + button
+            // Hide the dropdown/add button on display-only infoCard
+           // if (btnDrop != null)
+           // {
+            //    btnDrop.Visible = false;
+            //}
 
             lnkReturn.LinkClicked -= lnkReturn_LinkClicked;
             lnkReturn.LinkClicked += lnkReturn_LinkClicked;
