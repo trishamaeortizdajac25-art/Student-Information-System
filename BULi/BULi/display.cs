@@ -103,6 +103,9 @@ namespace BULi
             ControlRounder.MakeRounded(btnClear, 6);
             ControlRounder.MakeRounded(txtSearch, 6);
 
+            StyleDataGridView();
+            LoadStudents();
+
             // opened without a year (e.g. returning from the info card with no argument)
             if (string.IsNullOrEmpty(dbYearLevel))
             {
@@ -664,6 +667,37 @@ namespace BULi
             {
                 SIS.Instance.OpenChildForm(new tcrSignIn());
             }
+        }
+
+        private void StyleDataGridView()
+        {
+            // Apply Font (Segoe UI Semibold, 9pt)
+            dataGridView1.Font = new Font("Segoe UI Semibold", 9f, FontStyle.Regular);
+
+            // General Grid Settings
+            dataGridView1.EnableHeadersVisualStyles = false;
+            dataGridView1.BorderStyle = BorderStyle.None;
+            dataGridView1.GridColor = Color.FromArgb(226, 232, 240);
+            dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dataGridView1.RowHeadersVisible = false;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            // Column Headers Styling (Using Blue Accent: 12, 78, 192)
+            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(12, 78, 192);
+            dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI Semibold", 9.5f, FontStyle.Bold);
+            dataGridView1.ColumnHeadersHeight = 35;
+            dataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+
+            // Row Styling
+            dataGridView1.DefaultCellStyle.BackColor = Color.White;
+            dataGridView1.DefaultCellStyle.ForeColor = Color.FromArgb(30, 41, 59);
+            dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(248, 250, 252);
+
+            // Selection Styling (Using Green Accent: 40, 167, 100)
+            dataGridView1.DefaultCellStyle.SelectionBackColor = Color.FromArgb(40, 167, 100);
+            dataGridView1.DefaultCellStyle.SelectionForeColor = Color.White;
         }
 
         // Live search: shows matching students of this year level as the teacher types
