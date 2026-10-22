@@ -292,11 +292,11 @@
             // btnExit
             // 
             this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(78)))), ((int)(((byte)(192)))));
-            this.btnExit.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.btnExit.ForeColor = System.Drawing.Color.White;
-            this.btnExit.Location = new System.Drawing.Point(558, 414);
+            this.btnExit.Location = new System.Drawing.Point(550, 414);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(115, 27);
+            this.btnExit.Size = new System.Drawing.Size(123, 30);
             this.btnExit.TabIndex = 19;
             this.btnExit.Text = "Finish";
             this.btnExit.UseVisualStyleBackColor = false;

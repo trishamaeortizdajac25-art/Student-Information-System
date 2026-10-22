@@ -36,9 +36,9 @@
             this.lblView1 = new System.Windows.Forms.Label();
             this.lblFreshie = new System.Windows.Forms.Label();
             this.pnlSophomore = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.lblView2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.pnlJunior = new System.Windows.Forms.Panel();
@@ -154,6 +154,18 @@
             this.pnlSophomore.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlSophomore_Paint);
             this.pnlSophomore.MouseHover += new System.EventHandler(this.pnlSophomore_MouseHover);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 28.2F, System.Drawing.FontStyle.Bold);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(151, 51);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(54, 62);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "0";
+            // 
             // lblView2
             // 
             this.lblView2.AutoSize = true;
@@ -176,18 +188,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(120, 120);
             this.panel2.TabIndex = 6;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 28.2F, System.Drawing.FontStyle.Bold);
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(151, 51);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(54, 62);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "0";
             // 
             // label5
             // 
@@ -366,7 +366,7 @@
             // 
             this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 8.5F);
-            this.txtSearch.Location = new System.Drawing.Point(446, 25);
+            this.txtSearch.Location = new System.Drawing.Point(283, 27);
             this.txtSearch.Multiline = true;
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(330, 32);
@@ -381,7 +381,7 @@
             this.btnProfile.FlatAppearance.BorderSize = 0;
             this.btnProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProfile.Font = new System.Drawing.Font("Segoe UI Black", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProfile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
+            this.btnProfile.ForeColor = System.Drawing.Color.White;
             this.btnProfile.Location = new System.Drawing.Point(920, 3);
             this.btnProfile.Name = "btnProfile";
             this.btnProfile.Size = new System.Drawing.Size(50, 64);
@@ -422,11 +422,11 @@
             this.btnSearch.FlatAppearance.BorderSize = 0;
             this.btnSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(783, 23);
+            this.btnSearch.Location = new System.Drawing.Point(631, 27);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(110, 36);
             this.btnSearch.TabIndex = 8;
-            this.btnSearch.Text = "Search";
+            this.btnSearch.Text = " Search";
             this.btnSearch.UseVisualStyleBackColor = false;
             // 
             // HomePage

@@ -390,12 +390,12 @@
             // 
             // btnGender
             // 
-            this.btnGender.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGender.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
             this.btnGender.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
-            this.btnGender.Location = new System.Drawing.Point(387, 315);
+            this.btnGender.Location = new System.Drawing.Point(386, 315);
             this.btnGender.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnGender.Name = "btnGender";
-            this.btnGender.Size = new System.Drawing.Size(125, 30);
+            this.btnGender.Size = new System.Drawing.Size(125, 32);
             this.btnGender.TabIndex = 35;
             this.btnGender.UseVisualStyleBackColor = true;
             this.btnGender.Click += new System.EventHandler(this.btnGender_Click);

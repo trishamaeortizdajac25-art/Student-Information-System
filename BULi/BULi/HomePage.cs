@@ -53,7 +53,7 @@ namespace BULi
 
         private void HomePage_Load(object sender, EventArgs e)
         {
-            // Apply initial theme styles for header label and search box on load
+            // Apply initial theme styles for header label, button, and search box on load
             ApplyHomePageTheme(ThemeState.IsDarkMode);
 
             // UI Rounding setup
@@ -450,7 +450,7 @@ namespace BULi
             pnlSenior.Invalidate();
             panel1.Invalidate(); // Header panel
 
-            // ONLY change the header title text color (label1).
+            // ONLY change label1 (header title text color). All other labels remain completely untouched.
             if (label1 != null)
             {
                 label1.ForeColor = isDark ? Color.White : Color.FromArgb(51, 41, 36);
@@ -463,6 +463,24 @@ namespace BULi
                 txtSearch.ForeColor = isDark ? Color.White : Color.FromArgb(51, 41, 36);
             }
 
+            // Update the theme toggle button color dynamically (btnColorScheme)
+            Color navyDarkMode = Color.FromArgb(15, 23, 42);
+            Color dayOrangeMode = Color.FromArgb(254, 180, 123);
+
+            if (btnColorScheme != null)
+            {
+                if (isDark)
+                {
+                    btnColorScheme.BackColor = navyDarkMode;
+                    btnColorScheme.ForeColor = Color.White;
+                }
+                else
+                {
+                    btnColorScheme.BackColor = dayOrangeMode;
+                    btnColorScheme.ForeColor = Color.Black;
+                }
+            }
+
             StyleSuggestionList(isDark);
         }
 
@@ -470,21 +488,6 @@ namespace BULi
         private void btnColorScheme_Click(object sender, EventArgs e)
         {
             ThemeState.ToggleTheme();
-            Color navyDarkMode = Color.FromArgb(15, 23, 42);
-            Color dayOrangeMode = Color.FromArgb(254, 180, 123); // Adjust this to your exact day/orange color if needed
-
-            if (ThemeState.IsDarkMode)
-            {
-                // Dark Mode: Navy Blue button with white text
-                btnColorScheme.BackColor = navyDarkMode;
-                btnColorScheme.ForeColor = Color.White;
-            }
-            else
-            {
-                // Day Mode: Orange button with dark/black text
-                btnColorScheme.BackColor = dayOrangeMode;
-                btnColorScheme.ForeColor = Color.Black;
-            }
         }
 
         private void pnlFreshie_MouseHover(object sender, EventArgs e)
