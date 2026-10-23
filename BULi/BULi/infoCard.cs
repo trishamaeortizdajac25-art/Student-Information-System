@@ -9,11 +9,15 @@ namespace BULi
 {
     public partial class infoCard : Form
     {
+<<<<<<< HEAD
         
         private string connectionString = "Server=localhost;Database=sis_db;Uid=root;Pwd=kleenpIn*1;";
+=======
+        private string connectionString = "Server=localhost;Database=sis_db;Uid=root;Pwd=Trishamae1122;";
+>>>>>>> 04387c2e81e1cad1c09615bacc573b1a74d486d1
 
         private string currentUsername;
-        private string returnYearLevel;   // year list to go back to (teacher flow), e.g. "Sophomore"
+        private string returnYearLevel; // year list to go back to (teacher flow), e.g. "Sophomore"
 
         public infoCard()
         {
@@ -76,7 +80,11 @@ namespace BULi
             ControlRounder.MakeRounded(lnkReturn, 10);
             ControlRounder.MakeRounded(btnExit, 10);
 
-            // Display only: hide the + button
+            // Hide the dropdown/add button on display-only infoCard
+           // if (btnDrop != null)
+           // {
+            //    btnDrop.Visible = false;
+            //}
 
             lnkReturn.LinkClicked -= lnkReturn_LinkClicked;
             lnkReturn.LinkClicked += lnkReturn_LinkClicked;

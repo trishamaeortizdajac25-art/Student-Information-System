@@ -13,9 +13,15 @@ namespace BULi
 {
     public partial class HomePage : Form
     {
+<<<<<<< HEAD
 
         private string connectionString = "Server=localhost;Database=sis_db;Uid=root;Pwd=kleenpIn*1;";
 
+=======
+
+        private string connectionString = "Server=localhost;Database=sis_db;Uid=root;Pwd=Trishamae1122;";
+
+>>>>>>> 04387c2e81e1cad1c09615bacc573b1a74d486d1
 
         private DataTable studentDataTable = new DataTable();
 

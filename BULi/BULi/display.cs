@@ -13,9 +13,15 @@ namespace BULi
 {
     public partial class display : Form
     {
+<<<<<<< HEAD
         private const string ConnStr = "Server=localhost;Database=sis_db;Uid=root;Pwd=kleenpIn*1;";
 
+=======
+        private const string ConnStr = "Server=localhost;Database=sis_db;Uid=root;Pwd=Trishamae1122;";
+>>>>>>> 04387c2e81e1cad1c09615bacc573b1a74d486d1
 
+        // Default password given to every account created by a teacher
+        private const string DefaultPassword = "student123";
 
         private String yearLvl;        // what the homepage sent, e.g. "Senior"
         private string dbYearLevel;      // what the database stores, e.g. "4th Year"
@@ -54,7 +60,6 @@ namespace BULi
                 this.BackgroundImage = Properties.Resources.darknull;
                 this.BackgroundImageLayout = ImageLayout.Stretch;
 
-                // Style panels to navy dark mode
                 pnlhawakupdate.BackColor = navyDarkMode;
                 pnlID.BackColor = navyDarkMode;
                 pnlName.BackColor = navyDarkMode;
@@ -66,7 +71,6 @@ namespace BULi
                 this.BackgroundImage = Properties.Resources.gradient;
                 this.BackgroundImageLayout = ImageLayout.Stretch;
 
-                // Revert panels back to default/transparent so their Paint events handle gradients normally
                 pnlhawakupdate.BackColor = Color.Transparent;
                 pnlID.BackColor = Color.Transparent;
                 pnlName.BackColor = Color.Transparent;
@@ -113,7 +117,6 @@ namespace BULi
                 dbYearLevel = ToDbYearLevel(yearLvl);
                 lblYearTitle.Text = $"{yearLvl} Student Register";
             }
-
 
             SetupGrid();
             SetupSortMenu();
@@ -336,10 +339,6 @@ namespace BULi
             txtProgram.Clear();
         }
 
-        /// <summary>
-        /// Deselects the student and empties the modification bars so a new one can be added.
-        /// Not wired to any button yet: later, just add a button and set its Click to btnClear_Click.
-        /// </summary>
         private void ClearForm()
         {
             bool wasLoading = _loading;
@@ -453,6 +452,43 @@ namespace BULi
             return true;
         }
 
+        // ---- default account helpers ----------------------------------------
+        // keeps only letters/digits, lowercase: "Dela Cruz" -> "delacruz"
+        private static string Slug(string s)
+        {
+            if (string.IsNullOrEmpty(s)) return "";
+            return new string(s.ToLowerInvariant().Where(char.IsLetterOrDigit).ToArray());
+        }
+
+        private static bool UsernameExists(MySqlConnection conn, string username)
+        {
+            using (MySqlCommand cmd = new MySqlCommand(
+                "SELECT COUNT(*) FROM students WHERE username = @u", conn))
+            {
+                cmd.Parameters.AddWithValue("@u", username);
+                return Convert.ToInt64(cmd.ExecuteScalar()) > 0;
+            }
+        }
+
+        // firstname.lastname (lowercase). If taken, adds a number: juan.delacruz2, juan.delacruz3 ...
+        private static string BuildUniqueUsername(MySqlConnection conn, string first, string last, string studentNo)
+        {
+            string f = Slug(first);
+            string l = Slug(last);
+
+            string baseName = (f.Length > 0 && l.Length > 0) ? f + "." + l : Slug(studentNo);
+            if (baseName.Length == 0) baseName = "student";
+
+            string candidate = baseName;
+            int n = 1;
+            while (UsernameExists(conn, candidate))
+            {
+                n++;
+                candidate = baseName + n;
+            }
+            return candidate;
+        }
+
         private static void LogActivity(MySqlConnection conn, string action, int? targetId, string details)
         {
             try
@@ -485,6 +521,8 @@ namespace BULi
                 return;
             }
 
+            string createdUsername = null;
+
             try
             {
                 using (MySqlConnection conn = new MySqlConnection(ConnStr))
@@ -495,7 +533,10 @@ namespace BULi
                     if (!ValidateInputs(conn, out studentNo, out first, out middle, out last, out block, out program))
                         return;
 
-                    // Login defaults: username = student ID, password = student ID (student can change it later)
+                    // Default login: username = firstname.lastname (lowercase), password = student123
+                    string username = BuildUniqueUsername(conn, first, last, studentNo);
+
+                    // gender / birthdate / contact / email / photo are left for the student to fill in setUp
                     string sql = @"
                         INSERT INTO students
                             (student_number, first_name, middle_name, last_name, gender, birthdate,
@@ -514,24 +555,27 @@ namespace BULi
                         cmd.Parameters.AddWithValue("@yl", dbYearLevel);
                         cmd.Parameters.AddWithValue("@prog", program);
                         cmd.Parameters.AddWithValue("@blk", block);
-                        cmd.Parameters.AddWithValue("@user", studentNo);
-                        cmd.Parameters.AddWithValue("@pass", studentNo);
+                        cmd.Parameters.AddWithValue("@user", username);
+                        cmd.Parameters.AddWithValue("@pass", DefaultPassword);
                         cmd.ExecuteNonQuery();
                         newId = cmd.LastInsertedId;
                     }
 
-                    LogActivity(conn, "ADD", (int)newId, "Student " + studentNo + " added");
+                    createdUsername = username;
+                    LogActivity(conn, "ADD", (int)newId, "Student " + studentNo + " added (account: " + username + ")");
                 }
 
-                MessageBox.Show("Student added successfully.", "Success",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(
+                    "Student added successfully.\n\nA student account was created:\nUsername: " + createdUsername +
+                    "\nPassword: " + DefaultPassword,
+                    "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 ClearForm();
                 LoadStudents();
             }
             catch (MySqlException ex) when (ex.Number == 1062)
             {
-                MessageBox.Show("That Student ID already exists.", "Duplicate",
+                MessageBox.Show("That Student ID (or username) already exists.", "Duplicate",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             catch (Exception ex)
@@ -647,8 +691,9 @@ namespace BULi
                 return;
             }
 
-            // pass the current year level so "Return" comes back to this same list
-            SIS.Instance.OpenChildForm(new infoCard(_selectedUsername, yearLvl));
+            // teacher's view of the card: only teacher-entered info + "Not yet updated" for the rest.
+            // yearLvl is passed so "Return" comes back to this same list.
+            SIS.Instance.OpenChildForm(new tcrInfoCard(_selectedUsername, yearLvl));
         }
 
         private void btnSort_Click(object sender, EventArgs e)
@@ -678,10 +723,8 @@ namespace BULi
 
         private void StyleDataGridView()
         {
-            // Apply Font (Segoe UI Semibold, 9pt)
             dataGridView1.Font = new Font("Segoe UI Semibold", 9f, FontStyle.Regular);
 
-            // General Grid Settings
             dataGridView1.EnableHeadersVisualStyles = false;
             dataGridView1.BorderStyle = BorderStyle.None;
             dataGridView1.GridColor = Color.FromArgb(226, 232, 240);
@@ -690,19 +733,16 @@ namespace BULi
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
-            // Column Headers Styling (Using Blue Accent: 12, 78, 192)
             dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(12, 78, 192);
             dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI Semibold", 9.5f, FontStyle.Bold);
             dataGridView1.ColumnHeadersHeight = 35;
             dataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
 
-            // Row Styling
             dataGridView1.DefaultCellStyle.BackColor = Color.White;
             dataGridView1.DefaultCellStyle.ForeColor = Color.FromArgb(30, 41, 59);
             dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(248, 250, 252);
 
-            // Selection Styling (Using Green Accent: 40, 167, 100)
             dataGridView1.DefaultCellStyle.SelectionBackColor = Color.FromArgb(40, 167, 100);
             dataGridView1.DefaultCellStyle.SelectionForeColor = Color.White;
         }
@@ -744,7 +784,6 @@ namespace BULi
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
-
             if (!ThemeState.IsDarkMode)
             {
                 UIcolor.ApplyDeepHeaderGradient((Control)sender, e);
@@ -755,8 +794,6 @@ namespace BULi
         {
             if (!ThemeState.IsDarkMode)
                 UIcolor.ApplyLightInnerPanelGradient((Control)sender, e);
-
-
         }
 
         private void pnlID_Paint(object sender, PaintEventArgs e)
@@ -791,7 +828,6 @@ namespace BULi
 
         private void pnlFixed_Paint(object sender, PaintEventArgs e)
         {
-
         }
     }
 }
