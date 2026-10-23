@@ -89,13 +89,14 @@
             // 
             this.lblYearTitle.AutoSize = true;
             this.lblYearTitle.BackColor = System.Drawing.Color.Transparent;
-            this.lblYearTitle.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold);
+            this.lblYearTitle.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
             this.lblYearTitle.ForeColor = System.Drawing.Color.White;
-            this.lblYearTitle.Location = new System.Drawing.Point(28, 39);
+            this.lblYearTitle.Location = new System.Drawing.Point(29, 46);
             this.lblYearTitle.Name = "lblYearTitle";
-            this.lblYearTitle.Size = new System.Drawing.Size(396, 46);
+            this.lblYearTitle.Size = new System.Drawing.Size(321, 37);
             this.lblYearTitle.TabIndex = 0;
             this.lblYearTitle.Text = "Smth student\'s Register";
+            this.lblYearTitle.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // panel1
             // 
