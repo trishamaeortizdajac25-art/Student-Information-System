@@ -245,3 +245,32 @@ SHOW COLUMNS FROM students;
 
 SELECT student_id, student_number, first_name, last_name, year_level, program, block, created_at
 FROM students ORDER BY student_id DESC LIMIT 5;
+
+USE sis_db;
+INSERT INTO year_levels (year_level, sort_order) VALUES
+    ('5th Year', 5),
+    ('6th Year', 6);
+    
+USE sis_db;
+SELECT year_level, total_students
+FROM vw_year_level_counts
+ORDER BY sort_order;
+
+USE sis_db;
+INSERT INTO students
+    (student_number, first_name, middle_name, last_name, gender, birthdate,
+     year_level, program, block, contact_number, email, address, status, username, password_hash)
+VALUES
+    -- 5th Year
+    ('2022-0041', 'Rafael',  'Lopez',  'Salazar',   'Male',   '2003-02-12', '5th Year', 'BS Information Technology', 'A', '09171230041', 'rafael.salazar@example.com',  'Legazpi City, Albay', 'Active', 'rafael.salazar',  SHA2('student123', 256)),
+    ('2022-0042', 'Camille', NULL,     'Fernandez', 'Female', '2003-06-25', '5th Year', 'BS Computer Science',       'B', '09281230042', 'camille.fernandez@example.com','Daraga, Albay',       'Active', 'camille.fernandez', SHA2('student123', 256)),
+    ('2022-0043', 'Daniel',  'Cruz',   'Morales',   'Male',   '2003-09-08', '5th Year', 'BS Chemistry',             'A', '09451230043', 'daniel.morales@example.com',   'Tabaco City, Albay',  'Active', 'daniel.morales',   SHA2('student123', 256)),
+
+    -- 6th Year
+    ('2021-0051', 'Isabel',  'Reyes',  'Domingo',   'Female', '2002-01-19', '6th Year', 'BS Biology',               'A', '09671230051', 'isabel.domingo@example.com',   'Polangui, Albay',     'Active', 'isabel.domingo',   SHA2('student123', 256)),
+    ('2021-0052', 'Gabriel', NULL,     'Pascual',   'Male',   '2002-05-30', '6th Year', 'BS Meteorology',           'A', '09181230052', 'gabriel.pascual@example.com',  'Camalig, Albay',      'Active', 'gabriel.pascual',  SHA2('student123', 256)),
+    ('2021-0053', 'Patricia','Tan',    'Valdez',    'Female', '2002-11-14', '6th Year', 'BS Information Technology', 'B', '09201230053', 'patricia.valdez@example.com',  'Ligao City, Albay',   'Active', 'patricia.valdez',  SHA2('student123', 256));
+    
+SELECT year_level, total_students
+FROM vw_year_level_counts
+ORDER BY sort_order;
