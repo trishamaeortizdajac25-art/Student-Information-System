@@ -13,34 +13,31 @@ namespace BULi
 {
     public partial class HomePage : Form
     {
-
-
         private string connectionString = "Server=localhost;Database=sis_db;Uid=root;Pwd=Trishamae1122;";
-
-
 
         private DataTable studentDataTable = new DataTable();
 
-        // DB year_level value -> name expected by display.cs
-        private readonly Dictionary<string, string> yearToDisplayName = new Dictionary<string, string>
+
+        private readonly string[] programKeywords = new string[]
         {
-            { "1st Year", "Freshmen"   },
-            { "2nd Year", "Sophomore"  },
-            { "3rd Year", "Junior"     },
-            { "4th Year", "Senior"     }
+            "Biology",
+            "Chemistry",
+            "Computer Science",
+            "Information Technology",
+            "Meteorology"
         };
 
-        // Search suggestions (created in code, so no Designer changes needed)
+        
         private ListBox lstSuggestions;
         private bool suppressSearchEvent = false;
 
         private class Suggestion
         {
             public string FullName { get; set; }
-            public string YearLevel { get; set; }
+            public string Program { get; set; }   
             public override string ToString()
             {
-                return FullName + "  (" + YearLevel + ")";
+                return FullName + "  (" + Program + ")";
             }
         }
 
@@ -49,69 +46,92 @@ namespace BULi
             InitializeComponent();
             this.DoubleBuffered = true;
 
-            // Subscribe to global live theme toggles
+            
             ThemeState.ThemeChanged += OnThemeChanged;
         }
 
         private void HomePage_Load(object sender, EventArgs e)
         {
-            // Apply initial theme styles for header label, button, and search box on load
+           
             ApplyHomePageTheme(ThemeState.IsDarkMode);
 
-            // UI Rounding setup
-            ControlRounder.MakeRounded(pnlFreshie, 20);
-            ControlRounder.MakeRounded(pnlSophomore, 20);
-            ControlRounder.MakeRounded(pnlJunior, 20);
-            ControlRounder.MakeRounded(pnlSenior, 20);
+            
+            ControlRounder.MakeRounded(pnlBio, 20);
+            ControlRounder.MakeRounded(pnlChem, 20);
+            ControlRounder.MakeRounded(pnlAyti, 20);
+            ControlRounder.MakeRounded(pnlComSci, 20);
+            ControlRounder.MakeRounded(pnlMeteo, 20);      
 
             ControlRounder.MakeRounded(lblView1, 5);
             ControlRounder.MakeRounded(lblView2, 5);
             ControlRounder.MakeRounded(lblView3, 5);
             ControlRounder.MakeRounded(lblView4, 5);
+            ControlRounder.MakeRounded(lblView5, 5);       
 
             ControlRounder.MakeRounded(btnColorScheme, 10);
 
             ControlRounder.MakeRounded(txtSearch, 10);
             ControlRounder.MakeRounded(btnSearch, 10);
 
-            // Make the whole card clickable (labels / icons inside the panel too)
-            WireCardClicks(pnlFreshie, pnlFreshie_Click);
-            WireCardClicks(pnlSophomore, pnlSophomore_Click);
-            WireCardClicks(pnlJunior, pnlJunior_Click);
-            WireCardClicks(pnlSenior, pnlSenior_Click);
+          
+            WireCardClicks(pnlBio, pnlBio_Click);
+            WireCardClicks(pnlChem, pnlChem_Click);
+            WireCardClicks(pnlAyti, pnlAyti_Click);
+            WireCardClicks(pnlComSci, pnlComSci_Click);
+            WireCardClicks(pnlMeteo, pnlMeteo_Click);      
 
-            // Logout icon (upper right)
+           
             btnProfile.Cursor = Cursors.Hand;
             btnProfile.Click += btnProfile_Click;
 
-            // Search wiring
+           
             SetupSuggestionList();
             txtSearch.TextChanged += txtSearch_TextChanged;
             txtSearch.KeyDown += txtSearch_KeyDown;
             txtSearch.Leave += txtSearch_Leave;
             btnSearch.Click += btnSearch_Click;
 
-            // Load the real numbers from the database
-            LoadYearLevelCounts();
+          
+            LoadProgramCounts();                           
         }
 
         protected override void OnFormClosed(FormClosedEventArgs e)
         {
-            // Unsubscribe from global theme event to prevent memory leaks
+           
             ThemeState.ThemeChanged -= OnThemeChanged;
             base.OnFormClosed(e);
         }
 
+
+        private string GetProgramKey(string program)
+        {
+            if (string.IsNullOrWhiteSpace(program)) return null;
+
+           
+            if (program.IndexOf("Metreology", StringComparison.OrdinalIgnoreCase) >= 0)
+                return "Meteorology";
+
+            foreach (string key in programKeywords)
+            {
+                if (program.IndexOf(key, StringComparison.OrdinalIgnoreCase) >= 0)
+                    return key;
+            }
+            return null;
+        }
         // ============================================================
-        // DATABASE: total students per year level
+        // DATABASE: total students per program  
         // ============================================================
-        private void LoadYearLevelCounts()
+        private void LoadProgramCounts()
         {
             // Default to 0 so the cards never show stale designer text
-            SetCount(label14, 0);
-            SetCount(label3, 0);
-            SetCount(label11, 0);
-            SetCount(label16, 0);
+            SetCount(lblBio, 0);
+            SetCount(lblChem, 0);
+            SetCount(lblComSci, 0);
+            SetCount(lblAyti, 0);
+            SetCount(lblMeteo, 0);
+
+            Dictionary<string, int> totals = new Dictionary<string, int>();
+            foreach (string key in programKeywords) totals[key] = 0;
 
             try
             {
@@ -119,24 +139,26 @@ namespace BULi
                 {
                     conn.Open();
                     using (MySqlCommand cmd = new MySqlCommand(
-                        "SELECT year_level, total_students FROM vw_year_level_counts", conn))
+                        @"SELECT program, COUNT(*) AS total
+                          FROM students
+                          WHERE is_deleted = 0 AND program IS NOT NULL
+                          GROUP BY program", conn))
                     using (MySqlDataReader reader = cmd.ExecuteReader())
                     {
                         while (reader.Read())
                         {
-                            string year = reader.GetString("year_level");
-                            int total = Convert.ToInt32(reader["total_students"]);
-
-                            switch (year)
-                            {
-                                case "1st Year": SetCount(label14, total); break;
-                                case "2nd Year": SetCount(label3, total); break;
-                                case "3rd Year": SetCount(label11, total); break;
-                                case "4th Year": SetCount(label16, total); break;
-                            }
+                            string key = GetProgramKey(reader["program"].ToString());
+                            if (key != null)
+                                totals[key] += Convert.ToInt32(reader["total"]);
                         }
                     }
                 }
+
+                SetCount(lblBio, totals["Biology"]);
+                SetCount(lblChem, totals["Chemistry"]);
+                SetCount(lblComSci, totals["Computer Science"]);
+                SetCount(lblAyti, totals["Information Technology"]);
+                SetCount(lblMeteo, totals["Meteorology"]);
             }
             catch (Exception ex)
             {
@@ -169,24 +191,31 @@ namespace BULi
             }
         }
 
-        private void pnlFreshie_Click(object sender, EventArgs e)
+        
+        private void pnlBio_Click(object sender, EventArgs e)
         {
-            SIS.Instance.OpenChildForm(new display("Freshmen"));
+            SIS.Instance.OpenChildForm(new display("Biology"));
         }
 
-        private void pnlSophomore_Click(object sender, EventArgs e)
+        private void pnlChem_Click(object sender, EventArgs e)
         {
-            SIS.Instance.OpenChildForm(new display("Sophomore"));
+            SIS.Instance.OpenChildForm(new display("Chemistry"));
         }
 
-        private void pnlJunior_Click(object sender, EventArgs e)
+        private void pnlAyti_Click(object sender, EventArgs e)
         {
-            SIS.Instance.OpenChildForm(new display("Junior"));
+            SIS.Instance.OpenChildForm(new display("Information Technology"));
         }
 
-        private void pnlSenior_Click(object sender, EventArgs e)
+        private void pnlComSci_Click(object sender, EventArgs e)
         {
-            SIS.Instance.OpenChildForm(new display("Senior"));
+            SIS.Instance.OpenChildForm(new display("Computer Science"));
+        }
+
+        // NEW
+        private void pnlMeteo_Click(object sender, EventArgs e)
+        {
+            SIS.Instance.OpenChildForm(new display("Meteorology"));
         }
 
         // ============================================================
@@ -203,7 +232,7 @@ namespace BULi
             lstSuggestions.KeyDown += lstSuggestions_KeyDown;
             lstSuggestions.Leave += (s, ev) => HideSuggestionsIfUnfocused();
 
-            // Added to the form (not the header panel) so it can float over the cards
+            
             this.Controls.Add(lstSuggestions);
             lstSuggestions.BringToFront();
 
@@ -235,8 +264,9 @@ namespace BULi
                 using (MySqlConnection conn = new MySqlConnection(connectionString))
                 {
                     conn.Open();
+                    
                     using (MySqlCommand cmd = new MySqlCommand(
-                        @"SELECT full_name, year_level
+                        @"SELECT full_name, program
                           FROM vw_student_information
                           WHERE full_name LIKE @q
                              OR CONCAT(last_name, ' ', first_name) LIKE @q
@@ -251,7 +281,7 @@ namespace BULi
                                 matches.Add(new Suggestion
                                 {
                                     FullName = reader["full_name"].ToString(),
-                                    YearLevel = reader["year_level"] == DBNull.Value ? "" : reader["year_level"].ToString()
+                                    Program = reader["program"] == DBNull.Value ? "" : reader["program"].ToString()
                                 });
                             }
                         }
@@ -260,7 +290,7 @@ namespace BULi
             }
             catch
             {
-                // A search hiccup should never crash the home page
+            
                 lstSuggestions.Visible = false;
                 return;
             }
@@ -335,7 +365,6 @@ namespace BULi
 
         private void HideSuggestionsIfUnfocused()
         {
-            // Wait until focus has actually moved, so clicking a suggestion still works
             this.BeginInvoke((MethodInvoker)delegate
             {
                 if (!txtSearch.Focused && !lstSuggestions.Focused)
@@ -350,7 +379,7 @@ namespace BULi
             suppressSearchEvent = false;
 
             lstSuggestions.Visible = false;
-            OpenYearForStudent(s.YearLevel, s.FullName);
+            OpenProgramForStudent(s.Program, s.FullName);   
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -368,8 +397,9 @@ namespace BULi
                 using (MySqlConnection conn = new MySqlConnection(connectionString))
                 {
                     conn.Open();
+
                     using (MySqlCommand cmd = new MySqlCommand(
-                        @"SELECT full_name, year_level
+                        @"SELECT full_name, program
                           FROM vw_student_information
                           WHERE full_name LIKE @q
                              OR CONCAT(last_name, ' ', first_name) LIKE @q
@@ -383,9 +413,9 @@ namespace BULi
                         {
                             if (reader.Read())
                             {
-                                string year = reader["year_level"] == DBNull.Value ? "" : reader["year_level"].ToString();
+                                string program = reader["program"] == DBNull.Value ? "" : reader["program"].ToString();
                                 lstSuggestions.Visible = false;
-                                OpenYearForStudent(year, reader["full_name"].ToString());
+                                OpenProgramForStudent(program, reader["full_name"].ToString());   // CHANGED
                             }
                             else
                             {
@@ -403,17 +433,18 @@ namespace BULi
             }
         }
 
-        private void OpenYearForStudent(string yearLevel, string fullName)
+       
+        private void OpenProgramForStudent(string program, string fullName)
         {
-            string displayName;
-            if (!yearToDisplayName.TryGetValue(yearLevel ?? "", out displayName))
+            string key = GetProgramKey(program);
+            if (key == null)
             {
-                MessageBox.Show(fullName + " has not set a year level yet.", "Search",
+                MessageBox.Show(fullName + " does not belong to a listed program.", "Search",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
-            SIS.Instance.OpenChildForm(new display(displayName));
+            SIS.Instance.OpenChildForm(new display(key));
         }
 
         // ============================================================
@@ -446,26 +477,27 @@ namespace BULi
         private void ApplyHomePageTheme(bool isDark)
         {
             // Force all custom painted panels to redraw with the new theme gradients live
-            pnlFreshie.Invalidate();
-            pnlSophomore.Invalidate();
-            pnlJunior.Invalidate();
-            pnlSenior.Invalidate();
-            panel1.Invalidate(); // Header panel
+            pnlBio.Invalidate();
+            pnlChem.Invalidate();
+            pnlAyti.Invalidate();
+            pnlComSci.Invalidate();
+            pnlMeteo.Invalidate();   
+            panel1.Invalidate(); 
 
-            // ONLY change label1 (header title text color). All other labels remain completely untouched.
+            
             if (label1 != null)
             {
                 label1.ForeColor = isDark ? Color.White : Color.FromArgb(51, 41, 36);
             }
 
-            // Update search box colors for dark/light mode
+            
             if (txtSearch != null)
             {
                 txtSearch.BackColor = isDark ? Color.FromArgb(20, 25, 45) : Color.White;
                 txtSearch.ForeColor = isDark ? Color.White : Color.FromArgb(51, 41, 36);
             }
 
-            // Update the theme toggle button color dynamically (btnColorScheme)
+          
             Color navyDarkMode = Color.FromArgb(15, 23, 42);
             Color dayOrangeMode = Color.FromArgb(254, 180, 123);
 
@@ -486,49 +518,49 @@ namespace BULi
             StyleSuggestionList(isDark);
         }
 
-        // --- Theme Toggle Button ---
+        // Theme Toggle Button
         private void btnColorScheme_Click(object sender, EventArgs e)
         {
             ThemeState.ToggleTheme();
         }
 
-        private void pnlFreshie_MouseHover(object sender, EventArgs e)
+        private void pnlBio_MouseHover(object sender, EventArgs e)
         {
-            pnlFreshie.BackColor = Color.FromArgb(238, 240, 243);
+            pnlBio.BackColor = Color.FromArgb(238, 240, 243);
         }
 
-        private void pnlSophomore_MouseHover(object sender, EventArgs e)
+        private void pnlChem_MouseHover(object sender, EventArgs e)
         {
-            pnlSophomore.BackColor = Color.FromArgb(238, 240, 243);
+            pnlChem.BackColor = Color.FromArgb(238, 240, 243);
         }
 
-        private void pnlJunior_MouseHover(object sender, EventArgs e)
+        private void pnlAyti_MouseHover(object sender, EventArgs e)
         {
-            pnlJunior.BackColor = Color.FromArgb(238, 240, 243);
+            pnlAyti.BackColor = Color.FromArgb(238, 240, 243);
         }
 
-        private void pnlSenior_MouseHover(object sender, EventArgs e)
+        private void pnlComSci_MouseHover(object sender, EventArgs e)
         {
-            pnlSenior.BackColor = Color.FromArgb(238, 240, 243);
+            pnlComSci.BackColor = Color.FromArgb(238, 240, 243);
         }
 
-        // --- Smart Panel Paint Events (Automatically switches between Sunset and Navy) ---
-        private void pnlFreshie_Paint(object sender, PaintEventArgs e)
-        {
-            UIcolor.ApplyPanelGradient((Control)sender, e);
-        }
-
-        private void pnlSophomore_Paint(object sender, PaintEventArgs e)
+        // --- Smart Panel Paint Events (Automatically switches between Sunset and Navy) 
+        private void pnlBio_Paint(object sender, PaintEventArgs e)
         {
             UIcolor.ApplyPanelGradient((Control)sender, e);
         }
 
-        private void pnlJunior_Paint(object sender, PaintEventArgs e)
+        private void pnlChem_Paint(object sender, PaintEventArgs e)
         {
             UIcolor.ApplyPanelGradient((Control)sender, e);
         }
 
-        private void pnlSenior_Paint(object sender, PaintEventArgs e)
+        private void pnlAyti_Paint(object sender, PaintEventArgs e)
+        {
+            UIcolor.ApplyPanelGradient((Control)sender, e);
+        }
+
+        private void pnlComSci_Paint(object sender, PaintEventArgs e)
         {
             UIcolor.ApplyPanelGradient((Control)sender, e);
         }
@@ -538,14 +570,9 @@ namespace BULi
             UIcolor.ApplyHeaderGradient((Control)sender, e);
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void pnlMeteo_Paint(object sender, PaintEventArgs e)
         {
-
-        }
-
-        private void label13_Click(object sender, EventArgs e)
-        {
-
+            UIcolor.ApplyPanelGradient((Control)sender, e);
         }
     }
 }

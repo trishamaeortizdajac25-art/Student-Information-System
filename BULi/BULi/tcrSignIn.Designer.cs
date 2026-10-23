@@ -33,10 +33,10 @@
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.btnEnter = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblView5 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblChem = new System.Windows.Forms.Label();
+            this.lblMeteo = new System.Windows.Forms.Label();
             this.btnReturn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -95,10 +95,10 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(23)))), ((int)(((byte)(42)))));
-            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.lblView5);
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.lblChem);
+            this.panel1.Controls.Add(this.lblMeteo);
             this.panel1.Controls.Add(this.btnEnter);
             this.panel1.Controls.Add(this.txtPassword);
             this.panel1.Controls.Add(this.txtName);
@@ -111,18 +111,18 @@
             this.panel1.TabIndex = 4;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // label4
+            // lblView5
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(294, 174);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(119, 23);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Faculty Access";
+            this.lblView5.AutoSize = true;
+            this.lblView5.BackColor = System.Drawing.Color.Transparent;
+            this.lblView5.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblView5.ForeColor = System.Drawing.Color.White;
+            this.lblView5.Location = new System.Drawing.Point(294, 174);
+            this.lblView5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblView5.Name = "lblView5";
+            this.lblView5.Size = new System.Drawing.Size(119, 23);
+            this.lblView5.TabIndex = 7;
+            this.lblView5.Text = "Faculty Access";
             // 
             // pictureBox1
             // 
@@ -136,29 +136,29 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // label3
+            // lblChem
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(145, 283);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(91, 23);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Password: ";
+            this.lblChem.AutoSize = true;
+            this.lblChem.BackColor = System.Drawing.Color.Transparent;
+            this.lblChem.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblChem.ForeColor = System.Drawing.Color.White;
+            this.lblChem.Location = new System.Drawing.Point(145, 283);
+            this.lblChem.Name = "lblChem";
+            this.lblChem.Size = new System.Drawing.Size(91, 23);
+            this.lblChem.TabIndex = 5;
+            this.lblChem.Text = "Password: ";
             // 
-            // label2
+            // lblMeteo
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(145, 207);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(96, 23);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Username: ";
+            this.lblMeteo.AutoSize = true;
+            this.lblMeteo.BackColor = System.Drawing.Color.Transparent;
+            this.lblMeteo.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMeteo.ForeColor = System.Drawing.Color.White;
+            this.lblMeteo.Location = new System.Drawing.Point(145, 207);
+            this.lblMeteo.Name = "lblMeteo";
+            this.lblMeteo.Size = new System.Drawing.Size(96, 23);
+            this.lblMeteo.TabIndex = 4;
+            this.lblMeteo.Text = "Username: ";
             // 
             // btnReturn
             // 
@@ -201,9 +201,9 @@
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Button btnEnter;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblChem;
+        private System.Windows.Forms.Label lblMeteo;
+        private System.Windows.Forms.Label lblView5;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnReturn;
     }

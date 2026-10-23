@@ -34,9 +34,9 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblChem = new System.Windows.Forms.Label();
+            this.lblMeteo = new System.Windows.Forms.Label();
+            this.lblView5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -57,9 +57,9 @@
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.lblChem);
+            this.panel1.Controls.Add(this.lblMeteo);
+            this.panel1.Controls.Add(this.lblView5);
             this.panel1.Location = new System.Drawing.Point(96, 183);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(785, 346);
@@ -107,49 +107,49 @@
             this.label6.Size = new System.Drawing.Size(0, 20);
             this.label6.TabIndex = 14;
             // 
-            // label3
+            // lblChem
             // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.lblChem.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 10.5F, System.Drawing.FontStyle.Bold);
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(41)))), ((int)(((byte)(36)))));
-            this.label3.Location = new System.Drawing.Point(61, 73);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(665, 200);
-            this.label3.TabIndex = 12;
-            this.label3.Text = resources.GetString("label3.Text");
+            this.lblChem.AutoSize = true;
+            this.lblChem.BackColor = System.Drawing.Color.Transparent;
+            this.lblChem.Font = new System.Drawing.Font("Segoe UI Semibold", 10.5F, System.Drawing.FontStyle.Bold);
+            this.lblChem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(41)))), ((int)(((byte)(36)))));
+            this.lblChem.Location = new System.Drawing.Point(61, 73);
+            this.lblChem.Name = "lblChem";
+            this.lblChem.Size = new System.Drawing.Size(665, 200);
+            this.lblChem.TabIndex = 12;
+            this.lblChem.Text = resources.GetString("lblChem.Text");
             // 
-            // label2
+            // lblMeteo
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.lblMeteo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(41)))), ((int)(((byte)(36)))));
-            this.label2.Location = new System.Drawing.Point(-74, 157);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(0, 25);
-            this.label2.TabIndex = 11;
+            this.lblMeteo.AutoSize = true;
+            this.lblMeteo.BackColor = System.Drawing.Color.Transparent;
+            this.lblMeteo.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMeteo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(41)))), ((int)(((byte)(36)))));
+            this.lblMeteo.Location = new System.Drawing.Point(-74, 157);
+            this.lblMeteo.Name = "lblMeteo";
+            this.lblMeteo.Size = new System.Drawing.Size(0, 25);
+            this.lblMeteo.TabIndex = 11;
             // 
-            // label4
+            // lblView5
             // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.lblView5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(41)))), ((int)(((byte)(36)))));
-            this.label4.Location = new System.Drawing.Point(312, 13);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(187, 41);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "About BULi ";
+            this.lblView5.AutoSize = true;
+            this.lblView5.BackColor = System.Drawing.Color.Transparent;
+            this.lblView5.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
+            this.lblView5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(41)))), ((int)(((byte)(36)))));
+            this.lblView5.Location = new System.Drawing.Point(312, 13);
+            this.lblView5.Name = "lblView5";
+            this.lblView5.Size = new System.Drawing.Size(187, 41);
+            this.lblView5.TabIndex = 9;
+            this.lblView5.Text = "About BULi ";
             // 
             // About
             // 
@@ -175,9 +175,9 @@
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblView5;
+        private System.Windows.Forms.Label lblMeteo;
+        private System.Windows.Forms.Label lblChem;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button1;

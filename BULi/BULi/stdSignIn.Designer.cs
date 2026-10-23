@@ -28,34 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblChem = new System.Windows.Forms.Label();
             this.btnSignUp = new System.Windows.Forms.Button();
             this.pnlPlaceholder = new System.Windows.Forms.Panel();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblMeteo = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblView5 = new System.Windows.Forms.Label();
             this.lnkSignUpRDT = new System.Windows.Forms.LinkLabel();
             this.btnReturn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // label3
+            // lblChem
             // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.lblChem.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Black", 23F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
-            this.label3.Location = new System.Drawing.Point(560, 77);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(214, 52);
-            this.label3.TabIndex = 16;
-            this.label3.Text = "Welcome!";
+            this.lblChem.AutoSize = true;
+            this.lblChem.BackColor = System.Drawing.Color.Transparent;
+            this.lblChem.Font = new System.Drawing.Font("Segoe UI Black", 23F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblChem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
+            this.lblChem.Location = new System.Drawing.Point(560, 77);
+            this.lblChem.Name = "lblChem";
+            this.lblChem.Size = new System.Drawing.Size(214, 52);
+            this.lblChem.TabIndex = 16;
+            this.lblChem.Text = "Welcome!";
             // 
             // btnSignUp
             // 
@@ -115,20 +115,20 @@
             this.textBox1.Size = new System.Drawing.Size(400, 10);
             this.textBox1.TabIndex = 11;
             // 
-            // label2
+            // lblMeteo
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.lblMeteo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
-            this.label2.Location = new System.Drawing.Point(456, 269);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(108, 28);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "Password: ";
+            this.lblMeteo.AutoSize = true;
+            this.lblMeteo.BackColor = System.Drawing.Color.Transparent;
+            this.lblMeteo.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMeteo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
+            this.lblMeteo.Location = new System.Drawing.Point(456, 269);
+            this.lblMeteo.Name = "lblMeteo";
+            this.lblMeteo.Size = new System.Drawing.Size(108, 28);
+            this.lblMeteo.TabIndex = 10;
+            this.lblMeteo.Text = "Password: ";
             // 
             // label1
             // 
@@ -165,23 +165,23 @@
             this.txtPassword.Size = new System.Drawing.Size(399, 30);
             this.txtPassword.TabIndex = 18;
             // 
-            // label4
+            // lblView5
             // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.lblView5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
-            this.label4.Location = new System.Drawing.Point(504, 487);
-            this.label4.Margin = new System.Windows.Forms.Padding(0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(248, 28);
-            this.label4.TabIndex = 19;
-            this.label4.Text = "Dont have an account yet? ";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblView5.AutoSize = true;
+            this.lblView5.BackColor = System.Drawing.Color.Transparent;
+            this.lblView5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblView5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblView5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
+            this.lblView5.Location = new System.Drawing.Point(504, 487);
+            this.lblView5.Margin = new System.Windows.Forms.Padding(0);
+            this.lblView5.Name = "lblView5";
+            this.lblView5.Size = new System.Drawing.Size(248, 28);
+            this.lblView5.TabIndex = 19;
+            this.lblView5.Text = "Dont have an account yet? ";
+            this.lblView5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lnkSignUpRDT
             // 
@@ -224,15 +224,15 @@
             this.ClientSize = new System.Drawing.Size(981, 562);
             this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.lnkSignUpRDT);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.lblView5);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsername);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblChem);
             this.Controls.Add(this.btnSignUp);
             this.Controls.Add(this.pnlPlaceholder);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblMeteo);
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "stdSignIn";
@@ -245,16 +245,16 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblChem;
         private System.Windows.Forms.Button btnSignUp;
         private System.Windows.Forms.Panel pnlPlaceholder;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblMeteo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.TextBox txtPassword;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblView5;
         private System.Windows.Forms.LinkLabel lnkSignUpRDT;
         private System.Windows.Forms.Button btnReturn;
     }

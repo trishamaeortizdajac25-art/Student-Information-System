@@ -109,4 +109,11 @@ public static class UIcolor
             e.Graphics.DrawRectangle(borderPen, 0, 0, control.Width - 1, control.Height - 1);
         }
     }
+    private static Bitmap _sidebarCache;
+    private static Size _sidebarCacheSize;
+    private static bool _sidebarCacheDark;
+
+   
+   
 }
+

@@ -45,19 +45,19 @@
             this.txtBloc = new System.Windows.Forms.TextBox();
             this.panel10 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblMeteo = new System.Windows.Forms.Label();
             this.pnlName = new System.Windows.Forms.Panel();
             this.txtName = new System.Windows.Forms.TextBox();
             this.panel8 = new System.Windows.Forms.Panel();
             this.pnlProgram = new System.Windows.Forms.Panel();
             this.txtProgram = new System.Windows.Forms.TextBox();
             this.panel14 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblChem = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.pnlID = new System.Windows.Forms.Panel();
             this.txtID = new System.Windows.Forms.TextBox();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblView5 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnProfile = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -96,7 +96,6 @@
             this.lblYearTitle.Size = new System.Drawing.Size(396, 46);
             this.lblYearTitle.TabIndex = 0;
             this.lblYearTitle.Text = "Smth student\'s Register";
-            this.lblYearTitle.Click += new System.EventHandler(this.lblYearTitle_Click);
             // 
             // panel1
             // 
@@ -133,7 +132,7 @@
             this.pnlhawakupdate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlhawakupdate.Controls.Add(this.pnlFixed);
             this.pnlhawakupdate.Controls.Add(this.pnlScroll);
-            this.pnlhawakupdate.Controls.Add(this.label4);
+            this.pnlhawakupdate.Controls.Add(this.lblView5);
             this.pnlhawakupdate.Location = new System.Drawing.Point(19, 96);
             this.pnlhawakupdate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlhawakupdate.Name = "pnlhawakupdate";
@@ -234,10 +233,10 @@
             this.pnlScroll.BackColor = System.Drawing.Color.Transparent;
             this.pnlScroll.Controls.Add(this.pnlBloc);
             this.pnlScroll.Controls.Add(this.label1);
-            this.pnlScroll.Controls.Add(this.label2);
+            this.pnlScroll.Controls.Add(this.lblMeteo);
             this.pnlScroll.Controls.Add(this.pnlName);
             this.pnlScroll.Controls.Add(this.pnlProgram);
-            this.pnlScroll.Controls.Add(this.label3);
+            this.pnlScroll.Controls.Add(this.lblChem);
             this.pnlScroll.Controls.Add(this.label6);
             this.pnlScroll.Controls.Add(this.pnlID);
             this.pnlScroll.Location = new System.Drawing.Point(7, 57);
@@ -267,7 +266,6 @@
             this.txtBloc.Name = "txtBloc";
             this.txtBloc.Size = new System.Drawing.Size(201, 26);
             this.txtBloc.TabIndex = 9;
-            this.txtBloc.TextChanged += new System.EventHandler(this.txtBloc_TextChanged);
             // 
             // panel10
             // 
@@ -288,19 +286,17 @@
             this.label1.Size = new System.Drawing.Size(89, 20);
             this.label1.TabIndex = 9;
             this.label1.Text = "Student ID: ";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // label2
+            // lblMeteo
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(167)))), ((int)(((byte)(100)))));
-            this.label2.Location = new System.Drawing.Point(8, 76);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(115, 20);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "Student Name: ";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.lblMeteo.AutoSize = true;
+            this.lblMeteo.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
+            this.lblMeteo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(167)))), ((int)(((byte)(100)))));
+            this.lblMeteo.Location = new System.Drawing.Point(8, 76);
+            this.lblMeteo.Name = "lblMeteo";
+            this.lblMeteo.Size = new System.Drawing.Size(115, 20);
+            this.lblMeteo.TabIndex = 12;
+            this.lblMeteo.Text = "Student Name: ";
             // 
             // pnlName
             // 
@@ -323,7 +319,6 @@
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(201, 26);
             this.txtName.TabIndex = 9;
-            this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             // 
             // panel8
             // 
@@ -355,7 +350,6 @@
             this.txtProgram.Name = "txtProgram";
             this.txtProgram.Size = new System.Drawing.Size(201, 26);
             this.txtProgram.TabIndex = 9;
-            this.txtProgram.TextChanged += new System.EventHandler(this.txtProgram_TextChanged);
             // 
             // panel14
             // 
@@ -366,17 +360,16 @@
             this.panel14.Size = new System.Drawing.Size(3, 32);
             this.panel14.TabIndex = 17;
             // 
-            // label3
+            // lblChem
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(204)))), ((int)(((byte)(21)))));
-            this.label3.Location = new System.Drawing.Point(8, 143);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(46, 20);
-            this.label3.TabIndex = 13;
-            this.label3.Text = "Bloc: ";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            this.lblChem.AutoSize = true;
+            this.lblChem.Font = new System.Drawing.Font("Segoe UI Semibold", 9F);
+            this.lblChem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(204)))), ((int)(((byte)(21)))));
+            this.lblChem.Location = new System.Drawing.Point(8, 143);
+            this.lblChem.Name = "lblChem";
+            this.lblChem.Size = new System.Drawing.Size(46, 20);
+            this.lblChem.TabIndex = 13;
+            this.lblChem.Text = "Bloc: ";
             // 
             // label6
             // 
@@ -410,7 +403,6 @@
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(201, 26);
             this.txtID.TabIndex = 9;
-            this.txtID.TextChanged += new System.EventHandler(this.txtID_TextChanged);
             // 
             // panel6
             // 
@@ -421,17 +413,17 @@
             this.panel6.Size = new System.Drawing.Size(3, 32);
             this.panel6.TabIndex = 17;
             // 
-            // label4
+            // lblView5
             // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(23, 22);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(208, 23);
-            this.label4.TabIndex = 14;
-            this.label4.Text = "MODIFY STUDENT DATA";
+            this.lblView5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblView5.AutoSize = true;
+            this.lblView5.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblView5.ForeColor = System.Drawing.Color.White;
+            this.lblView5.Location = new System.Drawing.Point(23, 22);
+            this.lblView5.Name = "lblView5";
+            this.lblView5.Size = new System.Drawing.Size(208, 23);
+            this.lblView5.TabIndex = 14;
+            this.lblView5.Text = "MODIFY STUDENT DATA";
             // 
             // panel2
             // 
@@ -473,7 +465,6 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(605, 306);
             this.dataGridView1.TabIndex = 3;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // btnView
             // 
@@ -636,11 +627,11 @@
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Button btnUpdateSI;
         private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblChem;
+        private System.Windows.Forms.Label lblMeteo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtID;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblView5;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button btnReturn;
         private System.Windows.Forms.Panel pnlID;

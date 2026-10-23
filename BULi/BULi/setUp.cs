@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.IO;
 using System.Linq;
+using System.Management.Instrumentation;
 using System.Windows.Forms;
 using static BULi.SIS;
 
@@ -11,18 +12,15 @@ namespace BULi
 {
     public partial class setUp : Form
     {
-
-
         private string connectionString = "Server=localhost;Database=sis_db;Uid=root;Pwd=nunez26*7;";
-
-
-
 
         private string currentUsername;
         private bool isSignUpMode;
 
-        private const int ContactLength = 11;   // contact number must be exactly 11 digits
-        private const int AgeMaxLength = 2;      // age: up to 2 digits
+        private const int ContactLength = 11;
+        private const int AgeMaxLength = 2;
+
+        private bool isExpanded = false;
 
         public setUp()
         {
@@ -85,8 +83,24 @@ namespace BULi
             TextBoxHelper.AddPlaceholder(txtYearlvl, "e.g. 1st Year");
             TextBoxHelper.AddPlaceholder(txtContact, "e.g. 09123456789");
 
+            pnlSidebar.Width = 0;
 
             WireControls();
+            txtNewUsername.Text = currentUsername;
+
+            btnSaveAccount.Click -= btnSaveAccount_Click;
+            btnSaveAccount.Click += btnSaveAccount_Click;
+
+            btnCancelAccount.Click -= btnCancelAccount_Click;
+            btnCancelAccount.Click += btnCancelAccount_Click;
+
+            chkShow.CheckedChanged -= chkShow_CheckedChanged;
+            chkShow.CheckedChanged += chkShow_CheckedChanged;
+            chkShow_CheckedChanged(null, EventArgs.Empty);
+
+            btnLogout.Click -= btnLogout_Click;
+            btnLogout.Click += btnLogout_Click;
+            ControlRounder.MakeRounded(btnLogout, 8);
 
             if (isSignUpMode)
             {
@@ -100,6 +114,7 @@ namespace BULi
             ControlRounder.MakeRounded(btnUpdate, 8);
             ControlRounder.MakeRounded(btnShowCard, 8);
             ControlRounder.MakeRounded(pnlGlassCard, 16);
+             
         }
 
         // Connect events in code (unsubscribe first to avoid double firing)
@@ -637,6 +652,7 @@ namespace BULi
         private void label2_Click(object sender, EventArgs e) { }
         private void label7_Click(object sender, EventArgs e) { }
         private void pictureBox1_Click(object sender, EventArgs e) { }
+        private void label9_Click(object sender, EventArgs e) { }
 
         private void btnTheme_Click(object sender, EventArgs e)
         {
@@ -662,6 +678,260 @@ namespace BULi
             }
         }
 
+        private void pnlSidebar_Paint(object sender, PaintEventArgs e)
+        {
+            if (!ThemeState.IsDarkMode)
+                UIcolor.ApplySunsetGradient((Control)sender, e);
+        }
 
+        private void btnToggle_Click(object sender, EventArgs e)
+        {
+            isExpanded = !isExpanded;
+
+            if (isExpanded)
+            {
+                pnlSidebar.Width = 230;
+                pnlSidebar.Visible = true;
+            }
+            else
+            {
+                pnlSidebar.Width = 0;
+                pnlSidebar.Visible = false;
+            }
+        }
+
+        // ==========================================================
+        // ACCOUNT: change username / password (sidebar)
+        // ==========================================================
+        private void chkShow_CheckedChanged(object sender, EventArgs e)
+        {
+            bool hide = !chkShow.Checked;
+            foreach (TextBox tb in new[] { txtCurrentPassword, txtNewPassword, txtConfirmPassword })
+            {
+                tb.UseSystemPasswordChar = false;
+                tb.PasswordChar = hide ? '•' : '\0';
+                tb.Refresh();
+            }
+        }
+
+        private void btnCancelAccount_Click(object sender, EventArgs e)
+        {
+            ResetAccountFields();
+            CloseSidebar();
+        }
+
+        private void ResetAccountFields()
+        {
+            txtNewUsername.Text = currentUsername;
+            txtCurrentPassword.Clear();
+            txtNewPassword.Clear();
+            txtConfirmPassword.Clear();      // FIXED: was clearing txtCurrentPassword twice
+            chkShow.Checked = false;
+        }
+
+        private void CloseSidebar()
+        {
+            isExpanded = false;
+            pnlSidebar.Width = 0;
+            pnlSidebar.Visible = false;
+        }
+
+        private string ComputeSha256Hash(string rawData)
+        {
+            using (System.Security.Cryptography.SHA256 sha = System.Security.Cryptography.SHA256.Create())
+            {
+                byte[] bytes = sha.ComputeHash(System.Text.Encoding.UTF8.GetBytes(rawData));
+                System.Text.StringBuilder sb = new System.Text.StringBuilder();
+                foreach (byte b in bytes) sb.Append(b.ToString("x2"));
+                return sb.ToString();
+            }
+        }
+
+        // FIXED: rewritten as one clean method with unique command names
+        private void btnSaveAccount_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(currentUsername))
+            {
+                MessageBox.Show("No active account. Please sign in again.", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // same trimming as stdSignIn / SignUp
+            string newUser = txtNewUsername.Text.Trim();
+            string currentPass = txtCurrentPassword.Text.Trim();
+            string newPass = txtNewPassword.Text.Trim();
+            string confirm = txtConfirmPassword.Text.Trim();   // FIXED: was reading txtCurrentPassword
+
+            if (newUser.Length == 0)
+            {
+                MessageBox.Show("Username cannot be empty.", "Account", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (newUser.Contains(" "))
+            {
+                MessageBox.Show("Username cannot contain spaces.", "Account", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (currentPass.Length == 0)
+            {
+                MessageBox.Show("Please enter your current password to confirm the change.", "Account",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            bool changeUser = !string.Equals(newUser, currentUsername, StringComparison.Ordinal);
+            bool changePass = newPass.Length > 0;
+
+            if (changePass)
+            {
+                if (newPass.Length < 6)
+                {
+                    MessageBox.Show("New password must be at least 6 characters.", "Account",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                if (newPass != confirm)
+                {
+                    MessageBox.Show("New password and confirmation do not match.", "Account",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+            }
+
+            if (!changeUser && !changePass)
+            {
+                MessageBox.Show("Nothing to change.", "Account", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(connectionString))
+                {
+                    conn.Open();
+
+                    // 1) verify the current password (same hashing as stdSignIn)
+                    long studentId;
+                    string storedHash;
+                    using (MySqlCommand verifyCmd = new MySqlCommand(
+                        "SELECT student_id, password_hash FROM students WHERE username = @u AND is_deleted = 0", conn))
+                    {
+                        verifyCmd.Parameters.AddWithValue("@u", currentUsername);
+                        using (MySqlDataReader rd = verifyCmd.ExecuteReader())
+                        {
+                            if (!rd.Read())
+                            {
+                                MessageBox.Show("Account not found for username \"" + currentUsername + "\". Please sign in again.",
+                                    "Account", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                return;
+                            }
+                            studentId = Convert.ToInt64(rd["student_id"]);
+                            storedHash = rd["password_hash"].ToString();
+                        }
+                    }
+
+                    if (!string.Equals(storedHash, ComputeSha256Hash(currentPass), StringComparison.OrdinalIgnoreCase))
+                    {
+                        MessageBox.Show("Current password is incorrect.", "Account",
+                            MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+
+                    // 2) new username must be free
+                    if (changeUser)
+                    {
+                        using (MySqlCommand checkCmd = new MySqlCommand(
+                            "SELECT COUNT(*) FROM students WHERE username = @n AND student_id <> @id", conn))
+                        {
+                            checkCmd.Parameters.AddWithValue("@n", newUser);
+                            checkCmd.Parameters.AddWithValue("@id", studentId);
+                            if (Convert.ToInt64(checkCmd.ExecuteScalar()) > 0)
+                            {
+                                MessageBox.Show("That username is already taken. Please choose another one.", "Account",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                return;
+                            }
+                        }
+                    }
+
+                    // 3) save
+                    string sql = "UPDATE students SET username = @n";
+                    if (changePass) sql += ", password_hash = @nh";
+                    sql += " WHERE student_id = @id AND is_deleted = 0";
+
+                    using (MySqlCommand saveCmd = new MySqlCommand(sql, conn))
+                    {
+                        saveCmd.Parameters.AddWithValue("@n", newUser);
+                        if (changePass) saveCmd.Parameters.AddWithValue("@nh", ComputeSha256Hash(newPass));
+                        saveCmd.Parameters.AddWithValue("@id", studentId);
+                        if (saveCmd.ExecuteNonQuery() == 0)
+                        {
+                            MessageBox.Show("Nothing was updated. Please sign in again and retry.", "Account",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+                    }
+
+                    // 4) log it (never the password itself)
+                    string what = changeUser && changePass ? "username and password changed"
+                                : changeUser ? "username changed"
+                                : "password changed";
+                    try
+                    {
+                        using (MySqlCommand logCmd = new MySqlCommand(
+                            @"INSERT INTO activity_logs (actor_type, actor_id, action, target_student_id, details)
+                              VALUES ('Student', @id, 'EDIT', @id, @d)", conn))
+                        {
+                            logCmd.Parameters.AddWithValue("@id", studentId);
+                            logCmd.Parameters.AddWithValue("@d", "Student " + what + " (" + currentUsername + " -> " + newUser + ")");
+                            logCmd.ExecuteNonQuery();
+                        }
+                    }
+                    catch { /* logging must never break the main action */ }
+                }
+
+                // keep the form in sync, otherwise the profile Save would look for the old username
+                currentUsername = newUser;
+                ResetAccountFields();
+                CloseSidebar();
+
+                MessageBox.Show("Account updated successfully.", "Success",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (MySqlException ex) when (ex.Number == 1062)
+            {
+                MessageBox.Show("That username is already taken. Please choose another one.", "Account",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error updating account: " + ex.Message, "Database Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show(
+                "Are you sure you want to log out?",
+                "Confirm Log Out",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+
+            if (result != DialogResult.Yes) return;
+
+            // clear the session on this form, then go back to the student sign-in
+            currentUsername = null;
+            ResetAccountFields();
+            CloseSidebar();
+
+            SIS.Instance.OpenChildForm(new stdSignIn());
+        }
+
+        private void txtCurrentPassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

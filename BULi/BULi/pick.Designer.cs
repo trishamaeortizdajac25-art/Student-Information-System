@@ -33,11 +33,11 @@
             this.btnTeacher = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblChem = new System.Windows.Forms.Label();
+            this.lblMeteo = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblView5 = new System.Windows.Forms.Label();
             this.btnAboutUs = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -102,8 +102,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.lblChem);
+            this.panel1.Controls.Add(this.lblMeteo);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.panel3);
@@ -113,35 +113,35 @@
             this.panel1.TabIndex = 4;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // label3
+            // lblChem
             // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.lblChem.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
-            this.label3.Location = new System.Drawing.Point(452, 266);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(85, 28);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Teacher";
+            this.lblChem.AutoSize = true;
+            this.lblChem.BackColor = System.Drawing.Color.Transparent;
+            this.lblChem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.lblChem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
+            this.lblChem.Location = new System.Drawing.Point(452, 266);
+            this.lblChem.Name = "lblChem";
+            this.lblChem.Size = new System.Drawing.Size(85, 28);
+            this.lblChem.TabIndex = 7;
+            this.lblChem.Text = "Teacher";
             // 
-            // label2
+            // lblMeteo
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.lblMeteo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
-            this.label2.Location = new System.Drawing.Point(133, 266);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(86, 28);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Student";
+            this.lblMeteo.AutoSize = true;
+            this.lblMeteo.BackColor = System.Drawing.Color.Transparent;
+            this.lblMeteo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.lblMeteo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
+            this.lblMeteo.Location = new System.Drawing.Point(133, 266);
+            this.lblMeteo.Name = "lblMeteo";
+            this.lblMeteo.Size = new System.Drawing.Size(86, 28);
+            this.lblMeteo.TabIndex = 6;
+            this.lblMeteo.Text = "Student";
             // 
             // panel2
             // 
@@ -167,20 +167,20 @@
             this.panel3.TabIndex = 5;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
-            // label4
+            // lblView5
             // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.lblView5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(41)))), ((int)(((byte)(36)))));
-            this.label4.Location = new System.Drawing.Point(324, 170);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(328, 28);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "College of Science Student Portal";
+            this.lblView5.AutoSize = true;
+            this.lblView5.BackColor = System.Drawing.Color.Transparent;
+            this.lblView5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.lblView5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(41)))), ((int)(((byte)(36)))));
+            this.lblView5.Location = new System.Drawing.Point(324, 170);
+            this.lblView5.Name = "lblView5";
+            this.lblView5.Size = new System.Drawing.Size(328, 28);
+            this.lblView5.TabIndex = 8;
+            this.lblView5.Text = "College of Science Student Portal";
             // 
             // btnAboutUs
             // 
@@ -204,7 +204,7 @@
             this.BackgroundImage = global::BULi.Properties.Resources.gradientnull;
             this.ClientSize = new System.Drawing.Size(982, 563);
             this.Controls.Add(this.btnAboutUs);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.lblView5);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
             this.Name = "pick";
@@ -228,9 +228,9 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblMeteo;
+        private System.Windows.Forms.Label lblChem;
+        private System.Windows.Forms.Label lblView5;
         private System.Windows.Forms.Button btnAboutUs;
     }
 }

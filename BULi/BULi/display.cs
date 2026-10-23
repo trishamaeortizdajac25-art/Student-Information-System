@@ -15,22 +15,20 @@ namespace BULi
     {
         private const string ConnStr = "Server=localhost;Database=sis_db;Uid=root;Pwd=nunez26*7;";
 
-        // Default password given to every account created by a teacher
         private const string DefaultPassword = "student123";
 
-        private String yearLvl;        // what the homepage sent, e.g. "Senior"
-        private string dbYearLevel;      // what the database stores, e.g. "4th Year"
+        private string programName;      
+        private string programPattern;  
 
-        private int _selectedId = -1;    // student_id of the selected student (-1 = none)
+        private int _selectedId = -1;    
         private string _selectedUsername = null;
-        private bool _loading = false;   // blocks selection events while the grid is rebinding
+        private bool _loading = false;  
         private string _sortMode = "Alphabetical";
 
         public display()
         {
             InitializeComponent();
 
-            // Subscribe to global theme changes and apply initial theme
             ThemeState.ThemeChanged += OnThemeChanged;
             ApplyTheme(ThemeState.IsDarkMode);
         }
@@ -76,12 +74,18 @@ namespace BULi
             this.Invalidate(true);
         }
 
-        public display(string yearLevel) : this()
+
+        public display(string program) : this()
         {
-            yearLvl = yearLevel;
-            dbYearLevel = ToDbYearLevel(yearLevel);
-            yearLvl = ToTitleName(dbYearLevel);
-            lblYearTitle.Text = $"{yearLvl} Student Register";
+            SetProgram(program);
+        }
+
+
+        private void SetProgram(string program)
+        {
+            programName = string.IsNullOrWhiteSpace(program) ? null : program.Trim();
+            programPattern = ToProgramPattern(programName);
+            lblYearTitle.Text = $"{programName} Student Register";
         }
 
         // =====================================================
@@ -105,16 +109,14 @@ namespace BULi
 
             StyleDataGridView();
 
-            // Student ID: no letters (digits and symbols allowed)
+       
             txtID.KeyPress -= txtID_KeyPress;
             txtID.KeyPress += txtID_KeyPress;
 
-            // opened without a year (e.g. returning from the info card with no argument)
-            if (string.IsNullOrEmpty(dbYearLevel))
+           
+            if (string.IsNullOrEmpty(programName))
             {
-                yearLvl = "Freshmen";
-                dbYearLevel = ToDbYearLevel(yearLvl);
-                lblYearTitle.Text = $"{yearLvl} Student Register";
+                SetProgram("Biology");
             }
 
             SetupGrid();
@@ -165,31 +167,31 @@ namespace BULi
         }
 
         // =====================================================
-        //  YEAR LEVEL MAPPING
+        //  PROGRAM MAPPING   (CHANGED: replaces the year-level mapping)
         // =====================================================
-        private static string ToDbYearLevel(string y)
+        // Turns the card name into a SQL LIKE pattern for students.program.
+        // "Meteorology" uses a looser pattern because the programs table spells it "BS Metreology".
+        private static string ToProgramPattern(string program)
         {
-            if (string.IsNullOrWhiteSpace(y)) return null;
-            string s = y.Trim().ToLowerInvariant();
+            if (string.IsNullOrWhiteSpace(program)) return null;
+            string p = program.Trim();
 
-            if (s.StartsWith("fresh") || s.StartsWith("1")) return "1st Year";
-            if (s.StartsWith("soph") || s.StartsWith("2")) return "2nd Year";
-            if (s.StartsWith("jun") || s.StartsWith("3")) return "3rd Year";
-            if (s.StartsWith("sen") || s.StartsWith("4")) return "4th Year";
-            return y.Trim();
+            if (p.StartsWith("Met", StringComparison.OrdinalIgnoreCase))
+                return "%Met%ology%";
+
+            return "%" + p + "%";
         }
 
-        // "4th Year" -> "Senior", so the title stays the same however the form was opened
-        private static string ToTitleName(string dbYear)
+      
+        private bool ProgramBelongsToThisPage(string program)
         {
-            switch (dbYear)
-            {
-                case "1st Year": return "Freshmen";
-                case "2nd Year": return "Sophomore";
-                case "3rd Year": return "Junior";
-                case "4th Year": return "Senior";
-                default: return dbYear;
-            }
+            if (string.IsNullOrEmpty(program) || string.IsNullOrEmpty(programName)) return false;
+
+            if (programName.StartsWith("Met", StringComparison.OrdinalIgnoreCase))
+                return program.IndexOf("Metreology", StringComparison.OrdinalIgnoreCase) >= 0
+                    || program.IndexOf("Meteorology", StringComparison.OrdinalIgnoreCase) >= 0;
+
+            return program.IndexOf(programName, StringComparison.OrdinalIgnoreCase) >= 0;
         }
 
         // =====================================================
@@ -212,6 +214,7 @@ namespace BULi
 
                 string search = (txtSearch.Text ?? "").Trim();
 
+               
                 string sql = @"
                     SELECT student_id, username, first_name, middle_name, last_name,
                            student_number AS `Student ID`,
@@ -220,7 +223,7 @@ namespace BULi
                            block AS `Bloc`,
                            program AS `Program`
                     FROM students
-                    WHERE is_deleted = 0 AND year_level = @yl";
+                    WHERE is_deleted = 0 AND program LIKE @prog";
 
                 if (search.Length > 0)
                 {
@@ -239,7 +242,7 @@ namespace BULi
                 using (MySqlConnection conn = new MySqlConnection(ConnStr))
                 using (MySqlCommand cmd = new MySqlCommand(sql, conn))
                 {
-                    cmd.Parameters.AddWithValue("@yl", dbYearLevel);
+                    cmd.Parameters.AddWithValue("@prog", programPattern); 
                     if (search.Length > 0)
                     {
                         string escaped = search.Replace("\\", "\\\\").Replace("%", "\\%").Replace("_", "\\_");
@@ -254,7 +257,6 @@ namespace BULi
                 _loading = true;
                 dataGridView1.DataSource = dt;
 
-                // internal columns stay hidden
                 foreach (string hidden in new[] { "student_id", "username", "first_name", "middle_name", "last_name" })
                 {
                     if (dataGridView1.Columns.Contains(hidden))
@@ -264,7 +266,7 @@ namespace BULi
                 dataGridView1.ClearSelection();
                 dataGridView1.CurrentCell = null;
 
-                // keep the previous selection if that student is still in the list
+               
                 DataGridViewRow match = null;
                 if (keepId != -1)
                 {
@@ -361,7 +363,7 @@ namespace BULi
         // =====================================================
         //  INPUT HELPERS
         // =====================================================
-        // Accepts "Last, First Middle" (what the list shows) or "First [Middle] Last".
+        // 
         private static bool ParseName(string input, out string first, out string middle, out string last)
         {
             first = middle = last = null;
@@ -391,7 +393,7 @@ namespace BULi
             return true;
         }
 
-        // Matches the typed program to the programs table (full name or short code).
+        
         private string ResolveProgram(MySqlConnection conn, string typed)
         {
             if (string.IsNullOrWhiteSpace(typed)) return null;
@@ -457,7 +459,7 @@ namespace BULi
             return true;
         }
 
-        // Student ID: no letters and no spaces; digits and symbols (e.g. -, /) are allowed
+       
         private void txtID_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && (char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar)))
@@ -468,11 +470,9 @@ namespace BULi
         {
             if (string.IsNullOrEmpty(id)) return false;
             if (id.Any(c => char.IsLetter(c) || char.IsWhiteSpace(c))) return false;
-            return id.Any(char.IsDigit);   // symbols alone (e.g. "---") are not an ID
+            return id.Any(char.IsDigit);   
         }
 
-        // ---- default account helpers ----------------------------------------
-        // keeps only letters/digits, lowercase: "Dela Cruz" -> "delacruz"
         private static string Slug(string s)
         {
             if (string.IsNullOrEmpty(s)) return "";
@@ -524,7 +524,7 @@ namespace BULi
             }
             catch
             {
-                // logging must never break the main action
+                
             }
         }
 
@@ -552,10 +552,19 @@ namespace BULi
                     if (!ValidateInputs(conn, out studentNo, out first, out middle, out last, out block, out program))
                         return;
 
+                  
+                    if (!ProgramBelongsToThisPage(program))
+                    {
+                        MessageBox.Show("This page is for " + programName + ". The program you entered (" + program +
+                                        ") belongs to a different page.",
+                            "Wrong Program", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+
                     // Default login: username = firstname.lastname (lowercase), password = student123
                     string username = BuildUniqueUsername(conn, first, last, studentNo);
 
-                    // gender / birthdate / contact / email / photo are left for the student to fill in setUp
+   
                     string sql = @"
                         INSERT INTO students
                             (student_number, first_name, middle_name, last_name, gender, birthdate,
@@ -571,7 +580,7 @@ namespace BULi
                         cmd.Parameters.AddWithValue("@fn", first);
                         cmd.Parameters.AddWithValue("@mn", string.IsNullOrEmpty(middle) ? (object)DBNull.Value : middle);
                         cmd.Parameters.AddWithValue("@ln", last);
-                        cmd.Parameters.AddWithValue("@yl", dbYearLevel);
+                        cmd.Parameters.AddWithValue("@yl", "1st Year"); 
                         cmd.Parameters.AddWithValue("@prog", program);
                         cmd.Parameters.AddWithValue("@blk", block);
                         cmd.Parameters.AddWithValue("@user", username);
@@ -647,7 +656,7 @@ namespace BULi
                 MessageBox.Show("Student information updated.", "Success",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                LoadStudents();   // keeps the student selected
+                LoadStudents();  
             }
             catch (MySqlException ex) when (ex.Number == 1062)
             {
@@ -681,7 +690,6 @@ namespace BULi
                 using (MySqlConnection conn = new MySqlConnection(ConnStr))
                 {
                     conn.Open();
-                    // soft delete (recycle bin), matches the is_deleted design in the database
                     using (MySqlCommand cmd = new MySqlCommand(
                         "UPDATE students SET is_deleted = 1 WHERE student_id = @id", conn))
                     {
@@ -710,9 +718,8 @@ namespace BULi
                 return;
             }
 
-            // teacher's view of the card: only teacher-entered info + "Not yet updated" for the rest.
-            // yearLvl is passed so "Return" comes back to this same list.
-            SIS.Instance.OpenChildForm(new tcrInfoCard(_selectedUsername, yearLvl));
+           
+            SIS.Instance.OpenChildForm(new tcrInfoCard(_selectedUsername, programName));
         }
 
         private void btnSort_Click(object sender, EventArgs e)
@@ -725,7 +732,7 @@ namespace BULi
             SIS.Instance.OpenChildForm(new HomePage());
         }
 
-        // Top-right icon = log out
+    
         private void btnProfile_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show(
@@ -766,33 +773,23 @@ namespace BULi
             dataGridView1.DefaultCellStyle.SelectionForeColor = Color.White;
         }
 
-        // Live search: shows matching students of this year level as the teacher types
+        
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            if (dbYearLevel == null) return;    // fires before Load finishes
+            if (programPattern == null) return;   
             LoadStudents();
         }
 
-        // =====================================================
-        //  DESIGNER-WIRED HANDLERS (kept so the designer still compiles)
-        // =====================================================
-        private void label2_Click(object sender, EventArgs e) { }
-        private void label1_Click(object sender, EventArgs e) { }
-        private void label3_Click(object sender, EventArgs e) { }
-        private void textBox4_TextChanged(object sender, EventArgs e) { }
-        private void textBox3_TextChanged(object sender, EventArgs e) { }
-        private void lblYearTitle_Click(object sender, EventArgs e) { }
+
+
+
+       
+
         private void panel3_Paint(object sender, PaintEventArgs e)
         {
             UIcolor.ApplyInnerPanelGradient(this, e);
         }
-        private void txtID_TextChanged(object sender, EventArgs e) { }
-        private void txtName_TextChanged(object sender, EventArgs e) { }
-        private void txtBloc_TextChanged(object sender, EventArgs e) { }
-        private void txtYearlvl_TextChanged(object sender, EventArgs e) { }
-        private void txtProgram_TextChanged(object sender, EventArgs e) { }
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e) { }
-
+    
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
             if (!ThemeState.IsDarkMode)

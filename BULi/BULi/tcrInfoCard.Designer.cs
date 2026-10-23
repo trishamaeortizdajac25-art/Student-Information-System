@@ -35,21 +35,21 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblView5 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblMeteo = new System.Windows.Forms.Label();
             this.lblProgram = new System.Windows.Forms.Label();
             this.lblBloc = new System.Windows.Forms.Label();
             this.lblID = new System.Windows.Forms.Label();
             this.lblYearlvl = new System.Windows.Forms.Label();
             this.lblContact = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblChem = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.lblAge = new System.Windows.Forms.Label();
             this.lblGender = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
+            this.lblAyti = new System.Windows.Forms.Label();
             this.lblEmailAdd = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -149,17 +149,17 @@
             this.label7.TabIndex = 22;
             this.label7.Text = "Contact No: ";
             // 
-            // label4
+            // lblView5
             // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(73, 222);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(0, 31);
-            this.label4.TabIndex = 19;
+            this.lblView5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblView5.AutoSize = true;
+            this.lblView5.BackColor = System.Drawing.Color.Transparent;
+            this.lblView5.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblView5.ForeColor = System.Drawing.Color.White;
+            this.lblView5.Location = new System.Drawing.Point(73, 222);
+            this.lblView5.Name = "lblView5";
+            this.lblView5.Size = new System.Drawing.Size(0, 31);
+            this.lblView5.TabIndex = 19;
             // 
             // label8
             // 
@@ -190,18 +190,18 @@
             this.lblName.Text = "name of student ";
             this.lblName.Click += new System.EventHandler(this.lblName_Click);
             // 
-            // label2
+            // lblMeteo
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(283, 111);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(79, 28);
-            this.label2.TabIndex = 17;
-            this.label2.Text = "Name: ";
+            this.lblMeteo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblMeteo.AutoSize = true;
+            this.lblMeteo.BackColor = System.Drawing.Color.Transparent;
+            this.lblMeteo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.lblMeteo.ForeColor = System.Drawing.Color.White;
+            this.lblMeteo.Location = new System.Drawing.Point(283, 111);
+            this.lblMeteo.Name = "lblMeteo";
+            this.lblMeteo.Size = new System.Drawing.Size(79, 28);
+            this.lblMeteo.TabIndex = 17;
+            this.lblMeteo.Text = "Name: ";
             // 
             // lblProgram
             // 
@@ -273,19 +273,19 @@
             this.lblContact.Text = "name of student ";
             this.lblContact.Click += new System.EventHandler(this.lblContact_Click);
             // 
-            // label3
+            // lblChem
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(385, 176);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(118, 28);
-            this.label3.TabIndex = 27;
-            this.label3.Text = "Year Level: ";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            this.lblChem.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblChem.AutoSize = true;
+            this.lblChem.BackColor = System.Drawing.Color.Transparent;
+            this.lblChem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.lblChem.ForeColor = System.Drawing.Color.White;
+            this.lblChem.Location = new System.Drawing.Point(385, 176);
+            this.lblChem.Name = "lblChem";
+            this.lblChem.Size = new System.Drawing.Size(118, 28);
+            this.lblChem.TabIndex = 27;
+            this.lblChem.Text = "Year Level: ";
+            this.lblChem.Click += new System.EventHandler(this.label3_Click);
             // 
             // label12
             // 
@@ -343,18 +343,18 @@
             this.label9.Text = "Gender:";
             this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
-            // label11
+            // lblAyti
             // 
-            this.label11.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(527, 312);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(150, 28);
-            this.label11.TabIndex = 34;
-            this.label11.Text = "Email Address:";
+            this.lblAyti.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblAyti.AutoSize = true;
+            this.lblAyti.BackColor = System.Drawing.Color.Transparent;
+            this.lblAyti.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.lblAyti.ForeColor = System.Drawing.Color.White;
+            this.lblAyti.Location = new System.Drawing.Point(527, 312);
+            this.lblAyti.Name = "lblAyti";
+            this.lblAyti.Size = new System.Drawing.Size(150, 28);
+            this.lblAyti.TabIndex = 34;
+            this.lblAyti.Text = "Email Address:";
             // 
             // lblEmailAdd
             // 
@@ -374,21 +374,21 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.panel1.Controls.Add(this.lblEmailAdd);
-            this.panel1.Controls.Add(this.label11);
+            this.panel1.Controls.Add(this.lblAyti);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.lblGender);
             this.panel1.Controls.Add(this.lblAge);
             this.panel1.Controls.Add(this.label12);
-            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.lblChem);
             this.panel1.Controls.Add(this.lblContact);
             this.panel1.Controls.Add(this.lblYearlvl);
             this.panel1.Controls.Add(this.lblID);
             this.panel1.Controls.Add(this.lblBloc);
             this.panel1.Controls.Add(this.lblProgram);
-            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.lblMeteo);
             this.panel1.Controls.Add(this.lblName);
             this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.lblView5);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
@@ -428,21 +428,21 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblView5;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label lblName;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblMeteo;
         private System.Windows.Forms.Label lblProgram;
         private System.Windows.Forms.Label lblBloc;
         private System.Windows.Forms.Label lblID;
         private System.Windows.Forms.Label lblYearlvl;
         private System.Windows.Forms.Label lblContact;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblChem;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label lblAge;
         private System.Windows.Forms.Label lblGender;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label lblAyti;
         private System.Windows.Forms.Label lblEmailAdd;
         private System.Windows.Forms.Panel panel1;
     }

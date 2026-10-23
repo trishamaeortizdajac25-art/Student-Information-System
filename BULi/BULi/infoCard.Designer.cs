@@ -31,12 +31,12 @@
             this.components = new System.ComponentModel.Container();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblMeteo = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblView5 = new System.Windows.Forms.Label();
             this.lblContact = new System.Windows.Forms.Label();
             this.lblID = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblChem = new System.Windows.Forms.Label();
             this.lblProgram = new System.Windows.Forms.Label();
             this.lblYearlvl = new System.Windows.Forms.Label();
             this.lblBloc = new System.Windows.Forms.Label();
@@ -77,18 +77,18 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Student Information Card";
             // 
-            // label2
+            // lblMeteo
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(256, 84);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 31);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Name: ";
+            this.lblMeteo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblMeteo.AutoSize = true;
+            this.lblMeteo.BackColor = System.Drawing.Color.Transparent;
+            this.lblMeteo.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMeteo.ForeColor = System.Drawing.Color.White;
+            this.lblMeteo.Location = new System.Drawing.Point(256, 84);
+            this.lblMeteo.Name = "lblMeteo";
+            this.lblMeteo.Size = new System.Drawing.Size(89, 31);
+            this.lblMeteo.TabIndex = 3;
+            this.lblMeteo.Text = "Name: ";
             // 
             // lblName
             // 
@@ -103,17 +103,17 @@
             this.lblName.TabIndex = 4;
             this.lblName.Text = "name of student ";
             // 
-            // label4
+            // lblView5
             // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(256, 141);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(0, 31);
-            this.label4.TabIndex = 5;
+            this.lblView5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblView5.AutoSize = true;
+            this.lblView5.BackColor = System.Drawing.Color.Transparent;
+            this.lblView5.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblView5.ForeColor = System.Drawing.Color.White;
+            this.lblView5.Location = new System.Drawing.Point(256, 141);
+            this.lblView5.Name = "lblView5";
+            this.lblView5.Size = new System.Drawing.Size(0, 31);
+            this.lblView5.TabIndex = 5;
             // 
             // lblContact
             // 
@@ -141,18 +141,18 @@
             this.lblID.TabIndex = 15;
             this.lblID.Text = "name of student ";
             // 
-            // label3
+            // lblChem
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(256, 169);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(132, 31);
-            this.label3.TabIndex = 14;
-            this.label3.Text = "Year Level: ";
+            this.lblChem.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblChem.AutoSize = true;
+            this.lblChem.BackColor = System.Drawing.Color.Transparent;
+            this.lblChem.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblChem.ForeColor = System.Drawing.Color.White;
+            this.lblChem.Location = new System.Drawing.Point(256, 169);
+            this.lblChem.Name = "lblChem";
+            this.lblChem.Size = new System.Drawing.Size(132, 31);
+            this.lblChem.TabIndex = 14;
+            this.lblChem.Text = "Year Level: ";
             // 
             // lblProgram
             // 
@@ -268,7 +268,7 @@
             // 
             this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(32)))), ((int)(((byte)(42)))));
-            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.lblChem);
             this.panel1.Controls.Add(this.lblContact);
             this.panel1.Controls.Add(this.lblYearlvl);
             this.panel1.Controls.Add(this.label1);
@@ -276,10 +276,10 @@
             this.panel1.Controls.Add(this.lblBloc);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.lblProgram);
-            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.lblMeteo);
             this.panel1.Controls.Add(this.lblName);
             this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.lblView5);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
@@ -350,9 +350,9 @@
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblMeteo;
         private System.Windows.Forms.Label lblName;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblView5;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label8;
@@ -360,7 +360,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lblYearlvl;
         private System.Windows.Forms.Label lblProgram;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblChem;
         private System.Windows.Forms.LinkLabel lnkReturn;
         private System.Windows.Forms.Label lblContact;
         private System.Windows.Forms.Label lblID;
