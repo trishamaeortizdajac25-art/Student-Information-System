@@ -3,6 +3,7 @@ using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 using static BULi.SIS;
 
@@ -12,7 +13,7 @@ namespace BULi
     {
 
 
-        private string connectionString = "Server=localhost;Database=sis_db;Uid=root;Pwd=nunez26*7;";
+        private string connectionString = "Server=localhost;Database=sis_db;Uid=root;Pwd=Trishamae1122;";
 
 
 
@@ -224,8 +225,9 @@ namespace BULi
                                 string middleName = reader["middle_name"].ToString();
                                 string lastName = reader["last_name"].ToString();
 
-                                txtName.Text = $"{firstName} {middleName} {lastName}"
-                                    .Replace("  ", " ").Trim();
+                                txtName.Text = string.Join(" ",
+                                    new[] { firstName, middleName, lastName }
+                                        .Where(p => !string.IsNullOrWhiteSpace(p))).Trim();
                                 txtID.Text = reader["student_number"].ToString();
                                 txtProgram.Text = reader["program"].ToString();
                                 txtYearlvl.Text = reader["year_level"].ToString();
@@ -236,8 +238,13 @@ namespace BULi
                                     txtDate.Text = Convert.ToDateTime(reader["birthdate"]).ToString("yyyy-MM-dd");
                                 }
 
-                                txtAge.Text = reader["calculated_age"].ToString();
-                                btnGender.Text = reader["gender"].ToString();
+                                // birthdate is NULL until the student completes this form for the first time.
+                                // Accounts created by the teacher start with a placeholder gender,
+                                // so leave gender/age blank until then and let the student choose.
+                                bool profileDone = reader["birthdate"] != DBNull.Value;
+
+                                txtAge.Text = profileDone ? reader["calculated_age"].ToString() : "";
+                                btnGender.Text = profileDone ? reader["gender"].ToString() : "";
                                 txtContact.Text = reader["contact_number"].ToString();
                                 txtEmailAdd.Text = reader["email"].ToString();
 
