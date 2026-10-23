@@ -76,7 +76,6 @@ namespace BULi
         {
             ControlRounder.MakeRounded(panel1, 16);
             ControlRounder.MakeRounded(lnkReturn, 10);
-            ControlRounder.MakeRounded(btnExit, 10);
 
             // Hide the dropdown/add button on display-only infoCard
            // if (btnDrop != null)
@@ -87,8 +86,6 @@ namespace BULi
             lnkReturn.LinkClicked -= lnkReturn_LinkClicked;
             lnkReturn.LinkClicked += lnkReturn_LinkClicked;
 
-            btnExit.Click -= btnExit_Click;
-            btnExit.Click += btnExit_Click;
 
             if (!string.IsNullOrEmpty(currentUsername))
             {
@@ -217,9 +214,6 @@ namespace BULi
                 UIcolor.ApplySunsetGradient((Control)sender, e);
         }
 
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            SIS.Instance.OpenChildForm(new setUp());
-        }
+
     }
 }

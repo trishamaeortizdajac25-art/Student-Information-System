@@ -46,7 +46,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.lnkReturn = new System.Windows.Forms.LinkLabel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnExit = new System.Windows.Forms.Button();
             this.uploadImageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteImageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -289,19 +288,6 @@
             this.panel1.TabIndex = 17;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // btnExit
-            // 
-            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(78)))), ((int)(((byte)(192)))));
-            this.btnExit.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.btnExit.ForeColor = System.Drawing.Color.White;
-            this.btnExit.Location = new System.Drawing.Point(550, 414);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(123, 30);
-            this.btnExit.TabIndex = 19;
-            this.btnExit.Text = "Finish";
-            this.btnExit.UseVisualStyleBackColor = false;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
             // uploadImageToolStripMenuItem
             // 
             this.uploadImageToolStripMenuItem.Name = "uploadImageToolStripMenuItem";
@@ -329,7 +315,6 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(250)))), ((int)(((byte)(236)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(982, 563);
-            this.Controls.Add(this.btnExit);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lnkReturn);
             this.DoubleBuffered = true;
@@ -365,7 +350,6 @@
         private System.Windows.Forms.Label lblContact;
         private System.Windows.Forms.Label lblID;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.ToolStripMenuItem uploadImageToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deleteImageToolStripMenuItem;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
