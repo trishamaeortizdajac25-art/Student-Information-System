@@ -13,12 +13,8 @@ namespace BULi
 {
     public partial class display : Form
     {
-<<<<<<< HEAD
         private const string ConnStr = "Server=localhost;Database=sis_db;Uid=root;Pwd=kleenpIn*1;";
 
-=======
-        private const string ConnStr = "Server=localhost;Database=sis_db;Uid=root;Pwd=Trishamae1122;";
->>>>>>> 04387c2e81e1cad1c09615bacc573b1a74d486d1
 
         // Default password given to every account created by a teacher
         private const string DefaultPassword = "student123";
