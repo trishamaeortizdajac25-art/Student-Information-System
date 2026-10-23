@@ -669,10 +669,9 @@ namespace BULi
             }
             else
             {
-                this.BackgroundImage = Properties.Resources._default; // Or your light background
+                this.BackgroundImage = Properties.Resources._default; 
                 this.BackgroundImageLayout = ImageLayout.Stretch;
 
-                // Day/Light Mode: Change button to Orange (or whatever your light theme color is)
                 btnTheme.BackColor = Color.FromArgb(254, 180, 123);
                 btnTheme.ForeColor = Color.Black;
             }
@@ -929,9 +928,6 @@ namespace BULi
             SIS.Instance.OpenChildForm(new stdSignIn());
         }
 
-        private void txtCurrentPassword_TextChanged(object sender, EventArgs e)
-        {
 
-        }
     }
 }
