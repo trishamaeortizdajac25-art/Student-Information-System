@@ -13,9 +13,7 @@ namespace BULi
 {
     public partial class display : Form
     {
-
         private const string ConnStr = "Server=localhost;Database=sis_db;Uid=root;Pwd=nunez26*7;";
-
 
         // Default password given to every account created by a teacher
         private const string DefaultPassword = "student123";
@@ -106,6 +104,10 @@ namespace BULi
             ControlRounder.MakeRounded(txtSearch, 6);
 
             StyleDataGridView();
+
+            // Student ID: no letters (digits and symbols allowed)
+            txtID.KeyPress -= txtID_KeyPress;
+            txtID.KeyPress += txtID_KeyPress;
 
             // opened without a year (e.g. returning from the info card with no argument)
             if (string.IsNullOrEmpty(dbYearLevel))
@@ -427,6 +429,12 @@ namespace BULi
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
+            if (!IsValidStudentId(studentNo))
+            {
+                MessageBox.Show("Student ID must not contain letters or spaces (numbers and symbols only).",
+                    "Invalid Student ID", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
             if (!ParseName(txtName.Text, out first, out middle, out last))
             {
                 MessageBox.Show("Please enter the full name as \"Last, First Middle\" (e.g. Dela Cruz, Juan Santos).",
@@ -447,6 +455,20 @@ namespace BULi
                 return false;
             }
             return true;
+        }
+
+        // Student ID: no letters and no spaces; digits and symbols (e.g. -, /) are allowed
+        private void txtID_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && (char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar)))
+                e.Handled = true;
+        }
+
+        private static bool IsValidStudentId(string id)
+        {
+            if (string.IsNullOrEmpty(id)) return false;
+            if (id.Any(c => char.IsLetter(c) || char.IsWhiteSpace(c))) return false;
+            return id.Any(char.IsDigit);   // symbols alone (e.g. "---") are not an ID
         }
 
         // ---- default account helpers ----------------------------------------
