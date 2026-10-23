@@ -215,7 +215,6 @@ namespace BULi
                 childForm.FormBorderStyle = FormBorderStyle.None;
                 childForm.Dock = DockStyle.Fill;
 
-                // Apply correct background image and panel styling based on current theme
                 ApplyFormTheme(childForm, ThemeState.IsDarkMode);
 
                 pnlMain.Controls.Clear();
@@ -230,5 +229,7 @@ namespace BULi
                 pnlMain.ResumeLayout(true);
             }
         }
+
+
     }
 }

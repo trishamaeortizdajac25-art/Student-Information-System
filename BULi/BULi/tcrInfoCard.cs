@@ -26,7 +26,7 @@ namespace BULi
             _yearLevel = yearLevel;
         }
 
-        private void tcrInfoCard_Load(object sender, EventArgs e)
+        private void tcrInfoCard_Load(object sender, EventArgs e)  
         {
             ControlRounder.MakeRounded(panel1, 16);
             LoadCard();
