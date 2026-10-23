@@ -16,10 +16,10 @@ namespace BULi
         private string connectionString = "Server=localhost;Database=sis_db;Uid=root;Pwd=nunez26*7;";
 
 
-
-
         private string currentUsername;
         private bool isSignUpMode;
+
+        private const int ContactLength = 13;   // contact number must be exactly 13 digits
 
         public setUp()
         {
@@ -112,6 +112,13 @@ namespace BULi
 
             btnShowCard.Click -= btnShowCard_Click;
             btnShowCard.Click += btnShowCard_Click;
+
+            // Contact number: digits only, never more than 13
+            txtContact.MaxLength = ContactLength;
+            txtContact.KeyPress -= txtContact_KeyPress;
+            txtContact.KeyPress += txtContact_KeyPress;
+            txtContact.TextChanged -= txtContact_Sanitize;
+            txtContact.TextChanged += txtContact_Sanitize;
 
             bool uploadWired = false, deleteWired = false;
 
@@ -312,6 +319,16 @@ namespace BULi
                 return;
             }
 
+            // contact: exactly 13 digits (0-9 only), and not all zeros
+            if (!IsValidContact(contact))
+            {
+                MessageBox.Show("Contact number must be exactly " + ContactLength +
+                                " digits (numbers only, no spaces, letters, or symbols).",
+                    "Invalid Contact Number", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtContact.Focus();
+                return;
+            }
+
             DateTime birthdate;
             if (!DateTime.TryParse(txtDate.Text.Trim(), out birthdate) || birthdate > DateTime.Today)
             {
@@ -427,6 +444,47 @@ namespace BULi
         private void btnShowCard_Click(object sender, EventArgs e)
         {
             SIS.Instance.OpenChildForm(new infoCard(currentUsername));
+        }
+
+        // ==========================================================
+        // CONTACT NUMBER: 13 digits, positive whole numbers only
+        // ==========================================================
+        private static bool IsValidContact(string value)
+        {
+            if (value == null || value.Length != ContactLength) return false;
+
+            bool allZero = true;
+            foreach (char c in value)
+            {
+                if (c < '0' || c > '9') return false;   // no letters, '-', '+', '.', spaces
+                if (c != '0') allZero = false;
+            }
+            return !allZero;
+        }
+
+        // blocks anything that is not 0-9 as it is typed (Backspace etc. still work)
+        private void txtContact_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && (e.KeyChar < '0' || e.KeyChar > '9'))
+                e.Handled = true;
+        }
+
+        // cleans pasted / programmatically set text: keep digits only, cut to 13
+        private bool _sanitizingContact = false;
+        private void txtContact_Sanitize(object sender, EventArgs e)
+        {
+            if (_sanitizingContact) return;
+
+            string digits = new string(txtContact.Text.Where(c => c >= '0' && c <= '9').ToArray());
+            if (digits.Length > ContactLength) digits = digits.Substring(0, ContactLength);
+
+            if (digits != txtContact.Text)
+            {
+                _sanitizingContact = true;
+                txtContact.Text = digits;
+                txtContact.SelectionStart = txtContact.Text.Length;
+                _sanitizingContact = false;
+            }
         }
 
         // ==========================================================
