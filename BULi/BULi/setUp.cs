@@ -16,10 +16,13 @@ namespace BULi
         private string connectionString = "Server=localhost;Database=sis_db;Uid=root;Pwd=nunez26*7;";
 
 
+
+
         private string currentUsername;
         private bool isSignUpMode;
 
-        private const int ContactLength = 13;   // contact number must be exactly 13 digits
+        private const int ContactLength = 11;   // contact number must be exactly 11 digits
+        private const int AgeMaxLength = 2;      // age: up to 2 digits
 
         public setUp()
         {
@@ -119,6 +122,22 @@ namespace BULi
             txtContact.KeyPress += txtContact_KeyPress;
             txtContact.TextChanged -= txtContact_Sanitize;
             txtContact.TextChanged += txtContact_Sanitize;
+
+            // Student ID: no letters (digits and symbols allowed)
+            txtID.KeyPress -= txtID_KeyPress;
+            txtID.KeyPress += txtID_KeyPress;
+
+            // Age: digits only, max 2
+            txtAge.MaxLength = AgeMaxLength;
+            txtAge.KeyPress -= txtAge_KeyPress;
+            txtAge.KeyPress += txtAge_KeyPress;
+            txtAge.TextChanged -= txtAge_Sanitize;
+            txtAge.TextChanged += txtAge_Sanitize;
+
+            // Birthdate: digits and '-' only, max 10 (YYYY-MM-DD)
+            txtDate.MaxLength = 10;
+            txtDate.KeyPress -= txtDate_KeyPress;
+            txtDate.KeyPress += txtDate_KeyPress;
 
             bool uploadWired = false, deleteWired = false;
 
@@ -319,20 +338,30 @@ namespace BULi
                 return;
             }
 
+            if (!IsValidStudentId(studentId))
+            {
+                MessageBox.Show("Student ID must not contain letters or spaces (numbers and symbols only).",
+                    "Invalid Student ID", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtID.Focus();
+                return;
+            }
+
             // contact: exactly 13 digits (0-9 only), and not all zeros
             if (!IsValidContact(contact))
             {
-                MessageBox.Show("Contact number must be exactly " + ContactLength +
-                                " digits (numbers only, no spaces, letters, or symbols).",
+                MessageBox.Show("Contact number must be exactly " + ContactLength + " digits.",
                     "Invalid Contact Number", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtContact.Focus();
                 return;
             }
 
             DateTime birthdate;
-            if (!DateTime.TryParse(txtDate.Text.Trim(), out birthdate) || birthdate > DateTime.Today)
+            if (!DateTime.TryParseExact(txtDate.Text.Trim(), "yyyy-MM-dd",
+                    System.Globalization.CultureInfo.InvariantCulture,
+                    System.Globalization.DateTimeStyles.None, out birthdate)
+                || birthdate > DateTime.Today)
             {
-                MessageBox.Show("Please enter a valid birthdate (e.g. 2004-05-21).", "Validation Error",
+                MessageBox.Show("Please enter a valid birthdate in YYYY-MM-DD format (e.g. 2004-05-21).", "Validation Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
@@ -485,6 +514,55 @@ namespace BULi
                 txtContact.SelectionStart = txtContact.Text.Length;
                 _sanitizingContact = false;
             }
+        }
+
+        // Student ID: no letters and no spaces; digits and symbols (e.g. -, /) are allowed
+        private void txtID_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && (char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar)))
+                e.Handled = true;
+        }
+
+        private static bool IsValidStudentId(string id)
+        {
+            if (string.IsNullOrEmpty(id)) return false;
+            if (id.Any(c => char.IsLetter(c) || char.IsWhiteSpace(c))) return false;
+            return id.Any(char.IsDigit);   // symbols alone (e.g. "---") are not an ID
+        }
+
+        // ==========================================================
+        // AGE: digits only, max 2
+        // ==========================================================
+        private void txtAge_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && (e.KeyChar < '0' || e.KeyChar > '9'))
+                e.Handled = true;
+        }
+
+        private bool _sanitizingAge = false;
+        private void txtAge_Sanitize(object sender, EventArgs e)
+        {
+            if (_sanitizingAge) return;
+
+            string digits = new string(txtAge.Text.Where(c => c >= '0' && c <= '9').ToArray());
+            if (digits.Length > AgeMaxLength) digits = digits.Substring(0, AgeMaxLength);
+
+            if (digits != txtAge.Text)
+            {
+                _sanitizingAge = true;
+                txtAge.Text = digits;
+                txtAge.SelectionStart = txtAge.Text.Length;
+                _sanitizingAge = false;
+            }
+        }
+
+        // ==========================================================
+        // BIRTHDATE: only digits and '-' while typing (format YYYY-MM-DD, checked on save)
+        // ==========================================================
+        private void txtDate_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && e.KeyChar != '-' && (e.KeyChar < '0' || e.KeyChar > '9'))
+                e.Handled = true;
         }
 
         // ==========================================================
