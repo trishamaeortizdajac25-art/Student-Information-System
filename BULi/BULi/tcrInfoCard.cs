@@ -9,7 +9,7 @@ namespace BULi
    
     public partial class tcrInfoCard : Form
     {
-        private const string ConnStr = "Server=localhost;Database=sis_db;Uid=root;Pwd=Trishamae1122;";
+        private const string ConnStr = "Server=localhost;Database=sis_db;Uid=root;Pwd=nunez26*7;";
         private const string NotYet = "Not yet updated";
 
         private readonly string _username;
@@ -156,14 +156,7 @@ namespace BULi
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show(
-                           "Are you sure you want to exit the application?",
-                           "Confirm Exit",
-                           MessageBoxButtons.YesNo,
-                           MessageBoxIcon.Question);
-
-            if (result == DialogResult.Yes)
-                Application.Exit();
+            SIS.Instance.OpenChildForm(new HomePage());
         }
 
         // "Return to ..." -> back to the register list of the same year level

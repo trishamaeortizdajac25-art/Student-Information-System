@@ -4,13 +4,14 @@ using System;
 using System.Security.Cryptography;
 using System.Text;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace BULi
 {
     public partial class SignUp : Form
     {
 
-        private string connectionString = "Server=localhost;Database=sis_db;Uid=root;Pwd=Trishamae1122;";
+        private string connectionString = "Server=localhost;Database=sis_db;Uid=root;Pwd=nunez26*7;";
 
 
         public SignUp()
@@ -125,6 +126,11 @@ namespace BULi
                 foreach (byte b in bytes) sb.Append(b.ToString("x2"));
                 return sb.ToString();
             }
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            SIS.Instance.OpenChildForm(new stdSignIn());
         }
     }
 }

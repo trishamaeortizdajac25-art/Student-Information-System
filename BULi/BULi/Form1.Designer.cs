@@ -36,6 +36,7 @@ namespace BULi
             // 
             // pnlMain
             // 
+            this.pnlMain.AutoScroll = true;
             this.pnlMain.AutoSize = true;
             this.pnlMain.BackColor = System.Drawing.Color.Transparent;
             this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;

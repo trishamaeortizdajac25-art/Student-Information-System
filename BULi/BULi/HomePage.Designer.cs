@@ -58,12 +58,18 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnSearch = new System.Windows.Forms.Button();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.pnlFreshie.SuspendLayout();
             this.pnlSophomore.SuspendLayout();
             this.panel2.SuspendLayout();
             this.pnlJunior.SuspendLayout();
             this.pnlSenior.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlFreshie
@@ -81,7 +87,7 @@
             this.pnlFreshie.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F);
             this.pnlFreshie.Location = new System.Drawing.Point(119, 165);
             this.pnlFreshie.Name = "pnlFreshie";
-            this.pnlFreshie.Size = new System.Drawing.Size(350, 150);
+            this.pnlFreshie.Size = new System.Drawing.Size(350, 164);
             this.pnlFreshie.TabIndex = 1;
             this.pnlFreshie.Click += new System.EventHandler(this.pnlFreshie_Click);
             this.pnlFreshie.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlFreshie_Paint);
@@ -366,11 +372,11 @@
             // txtSearch
             // 
             this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtSearch.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
+            this.txtSearch.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
             this.txtSearch.Location = new System.Drawing.Point(283, 27);
             this.txtSearch.Multiline = true;
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(330, 32);
+            this.txtSearch.Size = new System.Drawing.Size(330, 30);
             this.txtSearch.TabIndex = 7;
             // 
             // btnProfile
@@ -425,20 +431,86 @@
             this.btnSearch.ForeColor = System.Drawing.Color.White;
             this.btnSearch.Location = new System.Drawing.Point(631, 27);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(110, 36);
+            this.btnSearch.Size = new System.Drawing.Size(110, 30);
             this.btnSearch.TabIndex = 8;
             this.btnSearch.Text = " Search";
             this.btnSearch.UseVisualStyleBackColor = false;
+            // 
+            // panel6
+            // 
+            this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(72)))), ((int)(((byte)(63)))));
+            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel6.Controls.Add(this.panel7);
+            this.panel6.Controls.Add(this.label2);
+            this.panel6.Controls.Add(this.label4);
+            this.panel6.Controls.Add(this.label7);
+            this.panel6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panel6.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F);
+            this.panel6.Location = new System.Drawing.Point(309, 515);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(350, 150);
+            this.panel6.TabIndex = 10;
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.Transparent;
+            this.panel7.BackgroundImage = global::BULi.Properties.Resources.redhp;
+            this.panel7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel7.Location = new System.Drawing.Point(18, 11);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(120, 120);
+            this.panel7.TabIndex = 9;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 28.2F, System.Drawing.FontStyle.Bold);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(151, 49);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(54, 62);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "0";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(113)))), ((int)(((byte)(113)))));
+            this.label4.Location = new System.Drawing.Point(158, 111);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(135, 20);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "View Students >>";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold);
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(113)))), ((int)(((byte)(113)))));
+            this.label7.Location = new System.Drawing.Point(155, 14);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(101, 38);
+            this.label7.TabIndex = 2;
+            this.label7.Text = "Senior";
             // 
             // HomePage
             // 
             this.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuBar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(250)))), ((int)(((byte)(236)))));
             this.BackgroundImage = global::BULi.Properties.Resources.homepage;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(982, 563);
+            this.Controls.Add(this.panel6);
             this.Controls.Add(this.btnColorScheme);
             this.Controls.Add(this.pnlSenior);
             this.Controls.Add(this.pnlJunior);
@@ -462,6 +534,8 @@
             this.pnlSenior.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -496,5 +570,10 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label7;
     }
 }

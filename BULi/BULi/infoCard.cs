@@ -9,7 +9,7 @@ namespace BULi
 {
     public partial class infoCard : Form
     {
-        private string connectionString = "Server=localhost;Database=sis_db;Uid=root;Pwd=Trishamae1122;";
+        private string connectionString = "Server=localhost;Database=sis_db;Uid=root;Pwd=nunez26*7;";
 
         
 
@@ -219,14 +219,7 @@ namespace BULi
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show(
-                "Are you sure you want to exit the application?",
-                "Confirm Exit",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Question);
-
-            if (result == DialogResult.Yes)
-                Application.Exit();
+            SIS.Instance.OpenChildForm(new setUp());
         }
     }
 }
